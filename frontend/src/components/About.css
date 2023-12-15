@@ -12,17 +12,16 @@
   position: relative;
 }
 .div::after {
-  content: '';
+  content: "";
   background-color: rgb(44, 43, 43);
   clip-path: polygon(0 0, 95% 0%, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
   position: absolute;
-  width:99%;
-  height:98.5%;
-  top:0.75%;
-  left:0.5%;
-  z-index:-1;
+  width: 99%;
+  height: 98.5%;
+  top: 0.75%;
+  left: 0.5%;
+  z-index: -1;
 }
-
 
 .content {
   color: #ffffff;
@@ -33,7 +32,6 @@
   line-height: 46px;
 }
 
-
 .text-wrapper {
   font-weight: 700;
 }
@@ -41,20 +39,19 @@
 .h {
   padding-bottom: 3%;
   color: #16b9ff;
-  font-family: 'Bruno Ace SC';
+  font-family: "Bruno Ace SC";
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 9px;
   line-height: normal;
   text-align: left;
 }
-@media (max-width: 768px) 
-{
+@media (max-width: 768px) {
   .div {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
     padding: 5% 2% 5% 2%;
     margin: 5%;
-    border:1% solid #16b9ff;
+    border: 1% solid #16b9ff;
   }
 
   .div::after {
