@@ -5,7 +5,12 @@ export const About = () => {
   return (
     <div class="center">
       <div className="div">
-        <div className="h">About Us</div>
+        <div class="upper">
+          <div className="h">About Us</div>
+          <div class='svg'>
+            <img src="\Frame (1).svg" class='img'></img>
+          </div>
+        </div>
         <p className="content">
           <span className="text-wrapper">
             vitae sapien pellentesque habitant morbi tristique senectus et netus

@@ -3,11 +3,21 @@
   align-items: center;
   justify-content: center;
 }
-
+.upper
+{
+  display: flex;
+  align-items:center;
+  justify-content:space-evenly;
+  padding-bottom:3%;
+}
+.img,.svg
+{
+  height:80px;
+}
 .div {
   background-color: #16b9ff;
-  padding: 5%;
-  margin: 5% 10% 5% 20%;
+  padding: 7% 2%;
+  margin: 10% 5% 10% 10%;
   clip-path: polygon(0 0, 95% 0%, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
   position: relative;
 }
@@ -37,15 +47,20 @@
 }
 
 .h {
-  padding-bottom: 3%;
   color: #16b9ff;
   font-family: "Bruno Ace SC";
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 9px;
   line-height: normal;
-  text-align: left;
 }
+@media(max-width:900px)
+{
+  .img{
+    height:0;
+  }
+}
+
 @media (max-width: 768px) {
   .div {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
