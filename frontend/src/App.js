@@ -2,15 +2,20 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage";
 import Footer from "./components/Footer";
+import Schedule from "./components/Schedule";
 
 function App() {
   return (
-    <Router>
+    <div className="flex flex-col items-center"> <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
       </Routes>
-      <Footer></Footer>
+      <Schedule></Schedule>
+      <Footer>
+      </Footer>
     </Router>
+  
+    </div>
   );
 }
 

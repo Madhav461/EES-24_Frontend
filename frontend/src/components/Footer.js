@@ -1,10 +1,12 @@
 import React from "react";
-
+import Icons from'./SocialIcons';
+import Triangle from "./triangle";
+import VerticalLine from "./lins";
 const Footer = () => {
   return (
-    <div className="relative bg-black w-full h-[8088px] overflow-hidden text-left text-77xl text-pitchdeck-slide-background font-goldman">
+    <div className="relative  w-full h-[8088px] overflow-hidden text-left text-77xl text-pitchdeck-slide-background font-goldman">
       <div className="relative top-[7432px] left-[-295px] w-[1728px] overflow-hidden flex flex-col items-end justify-center text-mini font-bruno-ace-sc">
-        <div className="relative w-[1468px] h-[771px] overflow-hidden shrink-0 ">
+        <div className="relative w-[1468px] h-[771px] overflow-hidden shrink-0 " style={{padding:''}}>
           {/* this is the background image  */}
           <img
             className="absolute top-[127px] left-[28px] w-[1440px] h-[644px] object-cover"
@@ -27,20 +29,27 @@ const Footer = () => {
           </div>
 
           {/* zig-zag pattern at the bottom of input tag */}
-          <div className="absolute top-[557px] left-[373px] text-77xl font-libre-barcode-39 whitespace-pre-wrap inline-block w-[10rem]  h-[66px]">{`Elecyvt  s `}</div>
+          <div className="absolute top-[590px] left-[343px] text-77xl font-libre-barcode-39 whitespace-pre-wrap inline-block w-[10rem]  h-[66px]" style={{margin:'2rem'}}>{`Elecyvt  s `}</div>
 
-          <div className="absolute top-[69px] left-[0px] w-[70.71px] h-[88px] flex items-center justify-center">
+          {/* <div className="absolute top-[69px] left-[0px] w-[70.71px] h-[88px] flex items-center justify-center">
             <img
               className="w-full h-full object-contain absolute left-[77px] top-[21px] [transform:scale(3.182)]"
               alt=""
               src="/frame-188@2x.png"
             />
-          </div>
-          <div className="absolute top-[0px] left-[1333px] w-[70.71px] h-[88px] flex flex-col items-start justify-end py-11 pr-[14.26552963256836px] pl-0 box-border">
-            <div className="relative bg-pitchdeck-slide-background w-[56.45px] h-[56.45px] [transform:_rotate(-51.22deg)]" />
+          </div> */}
+          {/* <div className="absolute top-[0px] left-[1333px] w-[70.71px] h-[88px] flex flex-col items-start justify-end py-11 pr-[14.26552963256836px] pl-0 box-border triangle2" style={{
+            marginTop:'42px',
+            marginLeft:'70px',
+            transform:'rotate(180deg)',
+          }}> */}
+            {/* <div className="relative bg-pitchdeck-slide-background w-[100.45px] h-[10000.45px] [transform:_rotate(-51.22deg)]" style={{marginTop:'50px'}} />
             <div className="relative bg-pitchdeck-slide-background [filter:blur(154.3px)] w-[56.45px] h-[56.45px] [transform:_rotate(-51.22deg)] mt-[-70px]" />
-          </div>
+          </div> */}
+          {/* <Triangle/>
+         </div> */}
           <div className="absolute top-[141px] left-[108px] w-[472px] h-[514px]">
+            <Icons/>
             <div className="absolute top-[0px] left-[0px] box-border w-[472px] h-[89.99px] border-[2px] border-solid border-pitchdeck-slide-background" />
             <div className="absolute top-[88.13px] left-[143px] box-border w-0.5 h-[426.87px] border-r-[2px] border-solid border-pitchdeck-slide-background" />
           </div>
@@ -101,7 +110,9 @@ const Footer = () => {
           </div>
 
           {/* this is the code for a link container */}
-          <div className=" flex flex-col bg-white w-[100px] h-[100px] ">
+          <div>
+            <div className="">
+            <Triangle/></div>
             {/* quick vertical text */}
             <h4 className="m-0 absolute top-[328px] left-[1050px] text-inherit tracking-[0.08em] font-normal font-goldman flex items-center w-[69px] h-[31px] [transform:_rotate(-90deg)] [transform-origin:0_0]">{`QUICK `}</h4>
 
@@ -111,6 +122,36 @@ const Footer = () => {
                 alt=""
                 src="/vector-75@2x.png"
               />
+                <img
+                className="absolute top-[1660px] left-[580px]  h-[57px] object-cover rotate-90"
+                alt=""
+                src="/vector-85@2x.png"
+              />
+              <a className="[text-decoration:none] absolute top-[366px] left-[1018px] w-[366px] h-1 flex flex-row items-start justify-start gap-[27px] text-[inherit]">
+                <div className="relative w-[306px] h-11">
+                  <div className="absolute top-[3px] left-[0px] w-[306px] h-[41px] flex items-center justify-center">
+                    <img
+                      className="w-full h-full object-contain absolute left-[0px] top-[4px] [transform:scale(1.22)]"
+                      alt=""
+                      src="/vector-74@2x.png"
+                    />
+                  </div>
+                  <div className="bg-black w-[310px] h-[33px] relative  flex">
+                    <a className="absolute  cursor-pointer items-center px-2 py-2 ">
+                      Links
+                    </a>
+                  </div>
+                </div>
+                <img
+                  className="relative w-[33px] h-[33px] object-cover"
+                  alt=""
+                  src="/vector-76@2x.png"
+                />
+              </a>
+            </div>
+
+            {/* 4th link */}
+            <div className=" translate-y-[40px] ">
               <a className="[text-decoration:none] absolute top-[366px] left-[1018px] w-[366px] h-11 flex flex-row items-start justify-start gap-[27px] text-[inherit]">
                 <div className="relative w-[306px] h-11">
                   <div className="absolute top-[3px] left-[0px] w-[306px] h-[41px] flex items-center justify-center">
@@ -135,7 +176,7 @@ const Footer = () => {
             </div>
 
             {/* 2nd link */}
-            <div className=" translate-y-[75px] ">
+            <div className=" translate-y-[-95px] ">
               <a className="[text-decoration:none] absolute top-[366px] left-[1018px] w-[366px] h-11 flex flex-row items-start justify-start gap-[27px] text-[inherit]">
                 <div className="relative w-[306px] h-11">
                   <div className="absolute top-[3px] left-[0px] w-[306px] h-[41px] flex items-center justify-center">
@@ -160,32 +201,7 @@ const Footer = () => {
             </div>
 
             {/* 3rd link */}
-            <div className=" translate-y-[150px] ">
-              <a className="[text-decoration:none] absolute top-[366px] left-[1018px] w-[366px] h-11 flex flex-row items-start justify-start gap-[27px] text-[inherit]">
-                <div className="relative w-[306px] h-11">
-                  <div className="absolute top-[3px] left-[0px] w-[306px] h-[41px] flex items-center justify-center">
-                    <img
-                      className="w-full h-full object-contain absolute left-[0px] top-[4px] [transform:scale(1.22)]"
-                      alt=""
-                      src="/vector-74@2x.png"
-                    />
-                  </div>
-                  <div className="bg-black w-[310px] h-[33px] relative  flex">
-                    <a className="absolute  cursor-pointer items-center px-2 py-2 ">
-                      Links
-                    </a>
-                  </div>
-                </div>
-                <img
-                  className="relative w-[33px] h-[33px] object-cover"
-                  alt=""
-                  src="/vector-76@2x.png"
-                />
-              </a>
-            </div>
-
-            {/* 4th link */}
-            <div className=" translate-y-[225px] ">
+            <div className=" translate-y-[-28px] ">
               <a className="[text-decoration:none] absolute top-[366px] left-[1018px] w-[366px] h-11 flex flex-row items-start justify-start gap-[27px] text-[inherit]">
                 <div className="relative w-[306px] h-11">
                   <div className="absolute top-[3px] left-[0px] w-[306px] h-[41px] flex items-center justify-center">
