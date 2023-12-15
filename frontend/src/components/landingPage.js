@@ -8,13 +8,13 @@ import Hero from "./hero";
 
 const LandingPage = () => {
   return (
-    <div className="text-white">
+    <div className="text-white relative">
       <Background />
 
-      <h1 className="text-white text-center text-2xl">EES hehe</h1> 
-      <About />
-
       <Hero />
+      {/* <About className="relative" /> */}
+
+      
       {/* <h1 className="text-white text-center text-2xl">EES hehe</h1> */}
 
     </div>
