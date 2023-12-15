@@ -1,74 +1,76 @@
-.box {
-    height: 858px;
-    width: 1519px;
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div {
+  background-color: #16b9ff;
+  padding: 5%;
+  margin: 5% 10% 5% 20%;
+  clip-path: polygon(0 0, 95% 0%, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
+  position: relative;
+}
+.div::after {
+  content: '';
+  background-color: rgb(44, 43, 43);
+  clip-path: polygon(0 0, 95% 0%, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
+  position: absolute;
+  width:99%;
+  height:98.5%;
+  top:0.75%;
+  left:0.5%;
+  z-index:-1;
+}
+
+
+.content {
+  color: #ffffff;
+  font-family: "Ligconsolata-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 46px;
+}
+
+
+.text-wrapper {
+  font-weight: 700;
+}
+
+.h {
+  padding-bottom: 3%;
+  color: #16b9ff;
+  font-family: 'Bruno Ace SC';
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 9px;
+  line-height: normal;
+  text-align: left;
+}
+@media (max-width: 768px) 
+{
+  .div {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    padding: 5% 2% 5% 2%;
+    margin: 5%;
+    border:1% solid #16b9ff;
   }
-  
-  .box .group {
-    box-shadow: 0px 4px 4px #00000040;
-    height: 858px;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 1519px;
+
+  .div::after {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    width: 98%;
+    height: 97.5%;
+    top: 1.5%;
+    left: 1%;
   }
-  
-  .box .overlap {
-    height: 858px;
-    position: relative;
+
+  .content {
+    font-size: 18px;
+    line-height: 36px;
   }
-  
-  .box .overlap-group-wrapper {
-    height: 682px;
-    left: 219px;
-    position: absolute;
-    top: 116px;
-    width: 1207px;
+
+  .h {
+    font-size: 40px;
   }
-  
-  .box .overlap-group {
-    height: 694px;
-    left: -12px;
-    position: relative;
-    top: -12px;
-    width: 1218px;
-  }
- 
-  .box .div {
-    height: 625px;
-    left: 86px;
-    position: absolute;
-    top: 70px;
-    width: 926px;
-  }
-  
-  .box .content {
-    color: #ffffff;
-    font-family: "Ligconsolata-Bold", Helvetica;
-    font-size: 24px;
-    font-weight: 400;
-    left: 25px;
-    letter-spacing: 0;
-    line-height: 46px;
-    position: absolute;
-    top: 111px;
-    width: 897px;
-  }
-  
-  .box .text-wrapper {
-    font-weight: 700;
-  }
-  
-  
-  .box .h {
-    color: #16b9ff;
-    font-family: "Bruno Ace SC-Regular", Helvetica;
-    font-size: 60px;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 9px;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 467px;
-  }
+}
