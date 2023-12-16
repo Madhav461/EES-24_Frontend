@@ -7,10 +7,13 @@ import Navhome from "./navhome";
 const LandingPage = () => {
   return (
     <div className="text-white absolute">
+
       <Background />
       <Navhome />
       <Hero />
       <About />
+
+      
     </div>
   );
 };
