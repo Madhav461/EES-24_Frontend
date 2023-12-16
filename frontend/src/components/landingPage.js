@@ -10,9 +10,10 @@ const LandingPage = () => {
   return (
     <div className="text-white absolute">
        <Navhome/>
-      <Background /
+      <Background/>
+      <Hero />
       <About />
-       <Hero />
+       
     </div>
   );
 };

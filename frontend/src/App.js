@@ -1,13 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage";
-
-import Footer from "./components/Footer";
-import Schedule from "./components/Schedule";
-
 import About from "./components/About";
 import navhome from "./components/navhome";
-
 
 function App() {
   return (
