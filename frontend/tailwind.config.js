@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         gray: "#111115",
+
         "pitchdeck-slide-background": "#fff",
         whitesmoke: "#f8f8f8",
         gainsboro: {
@@ -36,6 +37,17 @@ module.exports = {
       "13xl": "32px",
       "2xl": "21px",
       "14xl": "33px",
+
+        white: "#fff",
+      },
+      spacing: {},
+      fontFamily: {
+        audiowide: "Audiowide",
+      },
+    },
+    fontSize: {
+      base: "16px",
+
       inherit: "inherit",
     },
   },

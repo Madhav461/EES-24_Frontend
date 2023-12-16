@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide:wght@400&display=swap");
+
+/* body {
+  @apply leading-[normal] m-0;
+} */
+*,
+::before,
+::after {
+  border-width: 0;
+}
+/* CSS for glowing text and increasing size on hover */
+.glow-text {
+  font-size: 16px;
+   /* Set the initial text color */
+  transition: color 0.3s, text-shadow 0.3s, font-size 0.3s;
+}
+
+.glow-text:hover {
+  color:white; /* Set the color when hovering */
+  text-shadow: 0 0 10px #16B9FF, 0 0 20px #16B9FF, 0 0 30px #16B9FF; /* Add glow effect */
+  font-size: 20px; /* Set the font size when hovering */
+}
+
+/* CSS for continuous glowing animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #16B9FF, 0 0 20px #16B9FF, 0 0 30px #16B9FF;
+  }
+  50% {
+    text-shadow: 0 0 20px #16B9FF, 0 0 30px #16B9FF, 0 0 40px #16B9FF;
+  }
+  100% {
+    text-shadow: 0 0 10px #16B9FF, 0 0 20px #16B9FF, 0 0 30px #16B9FF;
+  }
+}
+
+.glow-animation {
+  font-size: 16px;
+  color: #fff; /* Set the initial text color */
+  transition: color 0.3s, text-shadow 0.3s, font-size 0.3s;
+  animation: glow 1s infinite; /* Apply the glow animation */
+}
+
+.glow-animation:hover {
+  color: white; /* Set the color when hovering */
+  text-shadow: 0 0 10px #16B9FF, 0 0 20px #16B9FF, 0 0 30px #16B9FF; /* Set the initial glow on hover */
+  font-size: 20px; /* Set the font size when hovering */
+  animation: none; /* Disable the continuous glow animation on hover */
+}
+
