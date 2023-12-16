@@ -4,12 +4,15 @@ import Background from "./background";
 import About from './About'; 
 
 import Hero from "./hero";
+import Navhome from "./navhome";
 
 
 const LandingPage = () => {
   return (
-    <div className="text-white relative">
+    <div className="text-white absolute">
+       <Navhome/>
       <Background />
+     
 
       <Hero />
       {/* <About className="relative" /> */}
