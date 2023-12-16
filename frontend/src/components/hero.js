@@ -1,7 +1,7 @@
 // import "./navHero.css"
 import "./hero.css"
 
-function Hero() {
+const Hero = () => {
   return (
     <div className="container">
       <div className="p1"> <div className="text">Currents of Creativity, Voltage of Vision: Electrify the Future.</div></div>
