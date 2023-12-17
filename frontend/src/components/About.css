@@ -27,6 +27,7 @@
   position: relative;
   left: 200px;
   top: 100px;
+  width: fit-content;
 }
 .column1 {
   padding: 5%;

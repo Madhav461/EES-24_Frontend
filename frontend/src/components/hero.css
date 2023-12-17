@@ -1,6 +1,6 @@
 .container {
-    padding: 10%;
-    min-width: 100vw;
+    padding: 9%;
+    /* min-width: 100vw; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
