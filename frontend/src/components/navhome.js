@@ -4,7 +4,7 @@ import "./nav.css";
 const Navhome = () => {
   return (
     <div>
-      <div className="relative  bg-gray w-auto h-[110px] overflow-hidden text-center text-base text-white font-audiowide">
+      <div className="relative  bg-gray w-[100vw] h-[110px] overflow-hidden text-center text-base text-white font-audiowide">
         <ul
           className="m-0  absolute top-[55px] left-[480px] w-[555px] h-[38px]"
           id="list"
@@ -37,11 +37,11 @@ const Navhome = () => {
         </div>
         <div className="absolute top-[79px] left-[calc(50%_-_1015px)] w-[2030px] h-[26px]">
           <img
-            className="absolute top-[0px] left-[calc(50%_-_1015px)] w-[2030px] h-[26px]"
+            className="absolute top-[0px] left-[calc(50%_-_1015px)]  w-[2030px] h-[26px]"
             alt=""
             src="/vector-line2.svg" //dark bottom
           />
-          <div className="absolute top-[0px] left-[calc(50%_-_1015px)] w-[2030px] h-[26px] flex items-center justify-center">
+          <div className="absolute top-[0px] left-[calc(50%_-_1015px)]  w-[2030px] h-[26px] flex items-center justify-center">
             <img
               className="w-full h-full object-contain absolute left-[0px] top-[0px] [transform:scale(1.7)]"
               alt=""
