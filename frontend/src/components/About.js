@@ -4,8 +4,8 @@ import "./About.css";
 export const About = () => {
   return (
     <div id="container">
-      <div class="svg4">
-        <img src="Group 12.svg"></img>
+      <div class="svg4 " >
+        <img src="Group 12.svg" ></img>
       </div>
       <div class="center">
         <div class="column1">

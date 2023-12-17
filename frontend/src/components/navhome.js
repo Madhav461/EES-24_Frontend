@@ -43,7 +43,7 @@ const Navhome = () => {
           />
           <div className="absolute top-[0px] left-[calc(50%_-_1015px)]  w-[2030px] h-[26px] flex items-center justify-center">
             <img
-              className="w-full h-full object-contain absolute left-[0px] top-[0px] [transform:scale(1.7)]"
+              className="w-[100%] h-[100%] object-contain absolute left-[0px] top-[0px] [transform:scale(1.7)]"
               alt=""
               src="/vector-line3.svg"
             />

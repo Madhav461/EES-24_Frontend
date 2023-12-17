@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/about"  element={<About />} />
       </Routes>
       </div>
-       <div className="relative z-10 translate-y-[120rem] ">
+       <div className="relative z-10 translate-y-[120rem]">
       <Schedule></Schedule>
       </div>
       <div>
