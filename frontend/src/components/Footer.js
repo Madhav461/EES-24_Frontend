@@ -27,7 +27,9 @@ const Footer = () => {
               src="/group-235@2x.png"
             />
           </div>
-
+<div className="line">
+  <VerticalLine/>
+</div>
           {/* zig-zag pattern at the bottom of input tag */}
           <div className="absolute top-[590px] left-[343px] text-77xl font-libre-barcode-39 whitespace-pre-wrap inline-block w-[10rem]  h-[66px]" style={{margin:'2rem'}}>{`Elecyvt  s `}</div>
 
