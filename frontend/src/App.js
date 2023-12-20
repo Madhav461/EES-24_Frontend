@@ -9,23 +9,10 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-     <div className="flex flex-col ">
-      <div >
+     <div className="flex flex-col w-[100vw]  max-h-fit  ">
      <Routes>
         <Route exact path="/" element={<LandingPage />} />
       </Routes>
-      </div>
-      <div>
-      <Routes>
-        <Route exact path="/about"  element={<About />} />
-      </Routes>
-      </div>
-       <div className="relative z-10 translate-y-[120rem]">
-      <Schedule></Schedule>
-      </div>
-      <div>
-      <Footer></Footer>
-      </div>
     </div>
       </Router>
   

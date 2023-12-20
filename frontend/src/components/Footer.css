@@ -1,0 +1,34 @@
+/* Your existing styles */
+
+.footer-container {
+   background-repeat: no-repeat;
+   background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/footerBackground.svg");
+   background-size: contain;
+   background-position: center;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   box-sizing: border-box;
+}
+
+/* New media query for smaller screens */
+@media (max-width: 1190px) {
+  .footer-container {
+   background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/footerBackground.svg");
+    background-size: cover; /* Adjust as needed */
+  }
+}
+
+
+.footer-line{
+
+   background-image: url("/public/vector-75@2x.png");
+   background-size: cover;
+
+
+}
+
+

@@ -1,7 +1,23 @@
-i{
+/* icons.css */
+
+i {
     color: white;
-    padding: 100% ;
+    padding: 25%;
     background: black;
     border-radius: 50%;
-    font-size: 2.2rem;
-}
+    font-size: 40px;
+  }
+  
+  /* Default styles for larger screens */
+  .object-contain i {
+    font-size: 40px;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .object-contain i {
+      font-size: 20px; /* Adjust the size for smaller screens as needed */
+    }
+  }
+  
+  
