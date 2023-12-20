@@ -4,7 +4,7 @@ import "./nav.css";
 const Navhome = () => {
   return (
     <div>
-      <div className="relative  bg-gray w-[100vw] h-[110px] overflow-hidden text-center text-base text-white font-audiowide">
+      <div className="relative z-0 bg-gray w-[100vw] h-[110px] overflow-hidden text-center text-base text-white font-audiowide">
         <ul
           className="m-0  absolute top-[55px] left-[480px] w-[555px] h-[38px]"
           id="list"

@@ -3,7 +3,7 @@ import React from 'react'
 // bg-[#111115]
 function Schedule() {
     return (
-        <div className='max-h-fit   border-solid  border-[#FFF] border-y-[0.5px]'>
+        <div className='max-h-fit   pb-32  border-solid  border-[#FFF] '>
             <div className='md:mx-[100px] h-[988px]  border-solid border-[#FFF] border-x-[0.5px]'>
                 <div className=' h-[210px] flex '>
                     <p className='font-goldman text-white text-[2.5rem] lg:text-[6rem] md:text-[4rem] underline  tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>SCHEDULE</p>

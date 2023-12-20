@@ -9,10 +9,7 @@ module.exports = {
         gray: "#111115",
         "pitchdeck-slide-background": "#fff",
         whitesmoke: "#f8f8f8",
-        gainsboro: {
-          "100": "#d9d9d9",
-          "200": "rgba(217, 217, 217, 0.2)",
-        },
+        gainsboro: "rgba(217, 217, 217, 0.05)",
         deepskyblue: "#16b9ff",
         turquoise: "#25f2da",
       },
@@ -43,6 +40,7 @@ module.exports = {
       "14xl": "33px",
       inherit: "inherit",
     },
+   
   },
   corePlugins: {
     preflight: false,

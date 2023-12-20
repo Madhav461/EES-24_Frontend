@@ -6,7 +6,7 @@ const Triangle = () => {
     height: '0',
     borderLeft: '50px solid transparent',
     borderRight: '50px solid transparent',
-    borderBottom: '86.6px solid #fff', // Height of the equilateral triangle
+    borderBottom: '90px solid #fff', // Height of the equilateral triangle
   };
 
   return (
