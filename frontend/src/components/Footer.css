@@ -2,7 +2,7 @@
 
 .footer-container {
    background-repeat: no-repeat;
-   background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/footerBackground.svg");
+   background-image: url("/public/footerBackground.svg");
    background-size: contain;
    background-position: center;
    min-height: 100vh;
@@ -17,7 +17,7 @@
 /* New media query for smaller screens */
 @media (max-width: 1190px) {
   .footer-container {
-   background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/footerBackground.svg");
+   background-image: url("/public/footerBackground.svg");
     background-size: cover; /* Adjust as needed */
   }
 }
