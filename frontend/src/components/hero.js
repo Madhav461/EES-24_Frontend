@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 const Hero = () => {
   return (
     <div className="h-screen w-screen">
-      <Marquee  className="border-solid  border-teal-300 border-y md:h-[7%] h-[10%] font-bold tracking-widest  glow-animation"><p class="marquee">EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *</p></Marquee>
+      <Marquee  className="border-solid  border-teal-300 border-y md:h-[7%] h-[10%] font-bold tracking-widest glow-text"><p class="marquee">EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *</p></Marquee>
     <div className="container z-0 m-auto">
       
       <div className="p1">
