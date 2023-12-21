@@ -4,7 +4,9 @@ import './Schedule.css'
 // bg-[#111115]
 function Schedule() {
     return (
-        <div className='max-h-fit w-screen   pb-32  border-solid  border-[#FFF] '>
+        <div>
+            <div className='h-[1px] w-screen bg-white mb-[6%] '></div>
+        <div className=' border-solid  w-screen   h-[988px]  border-[#FFF] border-y-[0.5px]'>
             <div className='md:mx-[100px] h-[988px]  border-solid border-[#FFF] border-x-[0.5px]'>
                 <div className=' h-[210px] flex '>
                     <p id="schedule_title" className=' text-white text-[2.5rem]  ml-3 lg:text-[6rem] text-center md:text-[4rem] underline  tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>SCHEDULE</p>
@@ -53,6 +55,8 @@ function Schedule() {
                 </div>
 
             </div>
+        </div>
+        <div className='h-[1px] w-screen bg-white mt-[6%] mb-[4%]'></div>
         </div>
 
     )
