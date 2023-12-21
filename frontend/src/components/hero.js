@@ -11,7 +11,8 @@ const Hero = () => {
         </div>
       </div>
       {/* <img className="logo w-[100%] h-[100%]" src="ees_logo_1.svg" alt="EES Logo" /> */}
-      <Icon></Icon>
+      {/* <Icon></Icon> */}
+      <div className="logo"><Icon></Icon></div>
       <div className="p2">
         <div>
           {/* Keep the content that you want here */}
