@@ -38,7 +38,7 @@ const Footer = () => {
             {/* icons and form separating line ka div */}
             <div className="h-full w-0.5 bg-pitchdeck-slide-background" />
 
-            <div className="h-full w-[35%] flex items-center">
+            <div className="h-full w-[35%] overflow-hidden flex items-center">
               <Footerlinks></Footerlinks>
             </div>
           </div>

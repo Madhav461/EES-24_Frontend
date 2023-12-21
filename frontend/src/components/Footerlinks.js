@@ -13,34 +13,33 @@ const Footerlinks = () => {
           </h2>
         </div>
 
-
-        {[...Array(4)].map((_, index) => (
-          <div key={index} className="relative mb-4">
-            <a className="[text-decoration:none] w-full h-11 flex flex-row items-start justify-start gap-6 md:gap-12 text-[inherit]">
-              <div className="relative">
-                <div className="absolute w-3/4 md:w-[306px] h-[41px] flex items-center justify-center">
-                  <img
-                    className="w-full h-full object-contain absolute left-[0px] top-[4px] [transform:scale(1.22)]"
-                    alt=""
-                    src="/vector-74@2x.png"
-                  />
+        <div className="">
+          {[...Array(4)].map((_, index) => (
+            <div key={index} className="relative mb-4">
+              <a className="[text-decoration:none] w-full h-11 flex flex-row items-start justify-start gap-6 md:gap-12 text-[inherit] ">
+                <div className="relative">
+                  <div className="absolute w-3/4 md:w-[306px] h-[41px] flex items-center justify-center">
+                    <img
+                      className="w-full h-full object-contain absolute left-[0px] top-[4px] [transform:scale(1.22)]"
+                      alt=""
+                      src="/vector-74@2x.png"
+                    />
+                  </div>
+                  <div className="bg-black w-full md:w-[310px] h-[33px] relative flex">
+                    <a className="absolute cursor-pointer items-center px-2 py-2">
+                      Links
+                    </a>
+                  </div>
                 </div>
-                <div className="bg-black w-full md:w-[310px] h-[33px] relative flex">
-                  <a className="absolute cursor-pointer items-center px-2 py-2">
-                    Links
-                  </a>
-                </div>
-              </div>
-              <img
-                className="relative w-[33px] h-[33px] object-cover"
-                alt=""
-                src="/vector-76@2x.png"
-              />
-            </a>
-          </div>
-        ))}
-
-        
+                <img
+                  className="relative w-[33px] h-[33px] object-cover"
+                  alt=""
+                  src="/vector-76@2x.png"
+                />
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
