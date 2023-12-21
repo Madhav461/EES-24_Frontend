@@ -8,6 +8,56 @@
     column-gap: 0;
     row-gap: 0;
 }
+.glow-text {
+    font-size: 16px;
+    /* Set the initial text color */
+    transition: color 0.3s, text-shadow 0.3s, font-size 0.3s;
+  }
+  
+  .glow-text:hover {
+    color: white; /* Set the color when hovering */
+    text-shadow: 0 0 1px #25F2DA, 0 0 2px #25F2DA, 0 0 3px #25F2DA; /* Add glow effect */
+    font-size: 20px; /* Set the font size when hovering */
+  }
+  
+  /* CSS for continuous glowing animation */
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 1px #16b9ff, 0 0 2px #16b9ff, 0 0 3px #16b9ff;
+    }
+    50% {
+      text-shadow: 0 0 2px #16b9ff, 0 0 3px #16b9ff, 0 0 4px #16b9ff;
+    }
+    100% {
+      text-shadow: 0 0 1px #16b9ff, 0 0 2px #16b9ff, 0 0 3px #16b9ff;
+    }
+  }
+  
+  .glow-animation {
+    font-size: 16px;
+    color: #fff; /* Set the initial text color */
+    transition: color 0.3s, text-shadow 0.6s, font-size 0.6s;
+    animation: glow 1s infinite; /* Apply the glow animation */
+  }
+  
+  .glow-animation:hover {
+    color: white; /* Set the color when hovering */
+    text-shadow: 0 0 1px #25F2DA, 0 0 2px #25F2DA, 0 0 3px #25F2DA; /* Set the initial glow on hover */
+    font-size: 20px; /* Set the font size when hovering */
+    animation: none; /* Disable the continuous glow animation on hover */
+  }
+  
+.marquee{
+    overflow: hidden;
+    color:#25F2DA;
+    font-weight: 900;
+
+    /* height: 92vh; */
+    /* width: 84vw; */
+    /* animation: marquee 6s linear infinite;
+     */
+     /* font-style: normal; */
+}
 
 .p1 {
     grid-column: 1 / 3;
@@ -39,7 +89,7 @@
     /* background: radial-gradient(circle, rgba(128,128,128,1) 0%, rgba(17, 17, 21, 1) 60%); */
 }
 
-.p1, .p2 {
+.p1, .p2 ,.marquee{
     font-family: 'Afacad', sans-serif;
     font-family: 'Bruno Ace SC', sans-serif;
     font-family: 'Michroma', sans-serif;
@@ -70,7 +120,8 @@
         grid-row: 1 / 3;
         width: 400px;
         height: 300px;
-        margin-top: 25%;
+        margin-top: 10%;
+        /* padding-bottom: 10%; */
     }
 }    
 
