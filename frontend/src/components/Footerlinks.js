@@ -25,8 +25,8 @@ const Footerlinks = () => {
                       src="/vector-74@2x.png"
                     />
                   </div>
-                  <div className="bg-black w-full md:w-[310px] h-[33px] relative flex">
-                    <a className="absolute cursor-pointer items-center px-2 py-2">
+                  <div className="bg-black w-full md:w-[310px] h-[33px] relative flex items-center justify-center">
+                    <a className="absolute   cursor-pointer items-center px-2 py-2">
                       Links
                     </a>
                   </div>
