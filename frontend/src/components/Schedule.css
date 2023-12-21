@@ -1,0 +1,35 @@
+#schedule_title{
+    font-style: normal;
+    text-align: center;
+}
+@media screen and (max-width: 1080px){
+    #schedule_title{
+        font-size: 68px;
+    }
+}
+@media screen and (max-width: 860px){
+    #schedule_title{
+        font-size: 54px;
+    }
+}
+@media screen and (max-width: 650px){
+    #schedule_title{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 480px){
+    #schedule_title{
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 375px){
+    #schedule_title{
+        font-size: 24px;
+    }
+}
+
+#schedule_title{
+    font-family: 'Afacad', sans-serif;
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-family: 'Michroma', sans-serif;
+}

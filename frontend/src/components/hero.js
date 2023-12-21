@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import Marquee from "react-fast-marquee";
 const Hero = () => {
   return (
-    <div className="h-screen w-screen ">
+    <div className="h-auto w-screen ">
       <div className="border-x-8 border-solid border-white ">
       <Marquee  className="border-solid  border-white border-y-2  sm:h-[35px] ls:h-[40px] xl:h-[50px] h-[20px] font-bold tracking-widest glow-text "><p class="marquee">EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *</p></Marquee>
     <div className="container z-0 m-auto overflow-hidden">

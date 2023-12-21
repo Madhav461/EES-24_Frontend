@@ -1,12 +1,13 @@
 import React from 'react'
-// import './Schedule.css'
+
+import './Schedule.css'
 // bg-[#111115]
 function Schedule() {
     return (
-        <div className='max-h-fit   pb-32  border-solid  border-[#FFF] '>
+        <div className='max-h-fit w-screen   pb-32  border-solid  border-[#FFF] '>
             <div className='md:mx-[100px] h-[988px]  border-solid border-[#FFF] border-x-[0.5px]'>
                 <div className=' h-[210px] flex '>
-                    <p className='font-goldman text-white text-[2.5rem] lg:text-[6rem] md:text-[4rem] underline  tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>SCHEDULE</p>
+                    <p id="schedule_title" className=' text-white text-[2.5rem]  ml-3 lg:text-[6rem] text-center md:text-[4rem] underline  tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>SCHEDULE</p>
                 </div>
                 <div className=' h-[778px] grid grid-rows-8'>
                 <div className=' group cursor-pointer border-t-[0.5px] border-solid border-[#FFF] hover:bg-[#D9D9D9]/20 hover:border-l-[10px]  hover:border-[#FFF]'>
