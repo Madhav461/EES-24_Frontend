@@ -4,9 +4,9 @@ import "./About.css";
 export const About = () => {
   return (
     <div id="container">
-      <div class="svg4 " >
+      {/* <div class="svg4 " >
         <img src="Group 12.svg" ></img>
-      </div>
+      </div> */}
       <div class="center">
         <div class="column1">
           <div class="svg3">
