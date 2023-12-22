@@ -2,7 +2,7 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import "./Sponsors.css";
-
+// import AnimatedTextCharacter from './AnimatedTextCharacter';
 const SponsorsFull = () => {
 
     const urlsInit = [

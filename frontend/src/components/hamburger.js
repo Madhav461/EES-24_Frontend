@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const COLORS = {
   primaryDark: "black",
-  primaryLight: "#16b9ff",
+  primaryLight: "white",
 };
 
 const MenuLabel = styled.label`
@@ -130,14 +130,14 @@ function HamburgerMenu() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   return (
-    <div className="z-10 ">
+    <div id="ham_txt" className="z-10 ">
       <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
         <Icon clicked={click}>&nbsp;</Icon>
       </MenuLabel>
       <NavBackground className="h-screen" clicked={click}>&nbsp;</NavBackground>
 
       <Navigation className="h-screen" clicked={click}>
-        <List className="font-audiowide text-white">
+        <List  className="font-goldman glow-text text-white">
           <li>
             <ItemLink onClick={handleClick} to="/">
               Workshops
