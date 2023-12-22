@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.text {
+.sponsors_title {
     font-family: 'Afacad', sans-serif;
     font-family: 'Bruno Ace SC', sans-serif;
     font-family: 'Michroma', sans-serif;
@@ -156,7 +156,7 @@ body {
         /* height: 0px; */
     }
 
-    .text {
+    .sponsors_title {
         margin: 0;
         font-size: 52px;
         font-style: normal;
@@ -215,7 +215,7 @@ body {
         /* height: 0px; */
     }
 
-    .text {
+    .sponsors_title {
         margin: 0;
         font-size: 42px;
         font-style: normal;
@@ -260,7 +260,7 @@ body {
         /* height: 0px; */
     }
 
-    .text {
+    .sponsors_title {
         margin: 0;
         font-size: 32px;
         font-style: normal;
