@@ -2,7 +2,7 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import "./Sponsors.css";
-
+// import AnimatedTextCharacter from './AnimatedTextCharacter';
 const SponsorsFull = () => {
 
     const urlsInit = [
@@ -59,7 +59,7 @@ const SponsorsFull = () => {
     });
 
     const properties = {
-        arrows: false,
+        arrows: true,
     }
 
     return (
@@ -70,7 +70,7 @@ const SponsorsFull = () => {
                 </Fade>
             </div>
             <div className="spacer-50"></div>
-            <div className="container flex-vertical">
+            <div className="container flex-vertical w-screen overflow-hidden">
                 <div className="marquee-vertical-css w-embed">
                 </div>
                 <div className="flex-horizontal flip-svp">
@@ -83,7 +83,7 @@ const SponsorsFull = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="text">PATRONS</div>
+                        <div className="sponsors_title">PATRONS</div>
                         <div className="marquee-horizontal-large">
                             <div className="marquee-cover-horizontal"></div>
                             <div className="track-horizontal-alt">

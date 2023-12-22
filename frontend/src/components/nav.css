@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide:wght@400&display=swap");
 
+
 /* body {
   @apply leading-[normal] m-0;
 } */
@@ -47,3 +48,155 @@
   font-size: 20px; /* Set the font size when hovering */
   animation: none; /* Disable the continuous glow animation on hover */
 }
+
+
+/* 
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|Noto+Serif+JP:900|Noto+Serif:900|Gentium+Book+Basic|Open+Sans:400,800");
+ body {
+	 width: 100vw;
+	 height: 100vh;
+	 background-color: #ef4723;
+	 font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (2100 - 300)));
+	 line-height: 1.45;
+	 font-family: "Gentium Book Basic", serif;
+}
+ main {
+	 width: 100%;
+	 height: 100vh;
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: stretch;
+	 flex-wrap: wrap;
+}
+ .article {
+	 flex: 3 0 auto;
+	 margin: 3em;
+	 position: relative;
+}
+ .article__wrapper-text {
+	 max-width: 26em;
+}
+ .sidebar {
+	 flex: 1 5 auto;
+	 text-align: left;
+	 padding: 3em;
+	 background-image: linear-gradient(black, #151414);
+	 position: relative;
+	 z-index: 1;
+}
+ .sidebar__wrapper-text {
+	 max-width: 22em;
+}
+ .sidebar:before {
+	 content: "";
+	 position: absolute;
+	 background-image: linear-gradient(to left, #151414, black);
+	 height: 13em;
+	 width: 13em;
+	 border-radius: 13em;
+	 top: 0;
+	 right: 2em;
+	 z-index: -1;
+}
+ .sidebar__text--light {
+	 color: pink;
+}
+ h1 {
+	 font-family: "Noto Serif JP", serif;
+	 font-size: 3.45em;
+	 line-height: 1.15;
+	 margin-bottom: 0.4em;
+}
+ h2 {
+	 font-family: "Open Sans", sans-serif;
+	 text-transform: uppercase;
+	 font-size: 1.24em;
+	 letter-spacing: 0.04em;
+	 font-weight: 800;
+	 line-height: 1.8;
+}
+ h3 {
+	 font-family: "Noto Serif JP", serif;
+	 color: pink;
+	 font-size: 2em;
+	 text-weight: 800;
+	 margin-bottom: 0.6em;
+	 z-index: 1;
+}
+ .subtitle {
+	 border-top: 2px black solid;
+	 border-bottom: 2px black solid;
+	 margin: 0.8em 0;
+}
+ ul li {
+	 list-style: none;
+	 margin-bottom: 0.8em;
+}
+ ul li a {
+	 color: #ef4723;
+	 text-decoration: none;
+	 padding-top: 0.2em;
+	 padding-bottom: 0.2em;
+	 font-family: "Open Sans", sans-serif;
+	 text-transform: uppercase;
+	 font-size: 0.8em;
+	 letter-spacing: 0.24em;
+	 font-weight: 800;
+	 position: relative;
+	 transition: color 0.3s ease-in;
+}
+ ul li a:before, ul li a:after {
+	 content: "";
+	 display: block;
+	 position: absolute;
+	 width: 100%;
+	 height: 1px;
+	 background-color: #ef4723;
+	 transform: scaleX(0);
+	 transition: transform 0.8s cubic-bezier(0.6, -0.01, 0.11, 0.99);
+}
+ ul li a:before {
+	 top: 0;
+	 left: 0;
+	 transform-origin: top left;
+}
+ ul li a:after {
+	 bottom: 0;
+	 right: 0;
+	 transform-origin: bottom right;
+}
+ ul li a:hover {
+	 color: pink;
+}
+ ul li a:hover:before, ul li a:hover:after {
+	 transform: scaleX(1);
+}
+ .badge {
+	 position: absolute;
+	 bottom: 2em;
+	 right: 2em;
+	 width: 10em;
+	 fill: #ef4723;
+	 z-index: -1;
+}
+ .thing1 {
+	 transform-origin: center;
+	 animation: rotation 7s linear infinite;
+}
+ @keyframes rotation {
+	 from {
+		 transform: rotate(0deg);
+	}
+	 to {
+		 transform: rotate(-360deg);
+	}
+}
+ @keyframes gradient-fade {
+	 from {
+		 transform: translate(50%, -50%) rotate(0deg);
+	}
+	 to {
+		 transform: translate(50%, -50%) rotate(360deg);
+	}
+}
+  */
