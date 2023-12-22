@@ -2,6 +2,10 @@
     font-style: normal;
     text-align: center;
 }
+#overlay{
+    font-size: 20px;
+
+}
 @media screen and (max-width: 1080px){
     #schedule_title{
         font-size: 68px;
