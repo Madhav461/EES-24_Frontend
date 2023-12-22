@@ -8,9 +8,9 @@ const Hero = () => {
   return (
     <div className="h-auto w-screen ">
       <div id="hero_container" className=" border-solid border-white ">
-        <div className="glow-text"><Marquee className="marquee_container"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div>
+    <div className="glow-text tracking-widest "><Marquee className="marquee_container"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div>
       
-    <div className="container z-0 m-auto overflow-hidden">
+    <div className="container">
       
       
       <div className="p1">
@@ -27,10 +27,14 @@ const Hero = () => {
         <div>
 
           Greetings. Electronics Engineers. To the fest beyond imagination!
+          <div class="tatvaa_container">
+        <img className="tatva_card" src="tatvaa.svg"></img>
+      </div>
         </div>
         
         
       </div>
+      
       
       
     </div>
