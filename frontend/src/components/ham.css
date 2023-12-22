@@ -7,6 +7,13 @@
     justify-content: space-between;
     cursor: pointer;
 }
+
+/*  */
+.list_point{
+    justify-content: left;
+}
+
+
 .glow-text {
     font-size: 16px;
     /* Set the initial text color */

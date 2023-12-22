@@ -55,11 +55,12 @@ const Navhome = () => {
         </div>
 
         <div className="flex  justify-end items-center">
-        <img
-          className="absolute lag:top-[3px] top-[5px] lag:left-[0px] left-[80px] lag:w-[98px]  lag:h-[70px] h-auto w-auto"
+        <a href='/'><img
+          className="absolute cursor-pointer lag:top-[3px] top-[5px] lag:left-[0px] left-[80px] lag:w-[98px]  lag:h-[70px] h-auto w-auto"
           alt=""
           src="/ees-logo-fcfbfc-1.svg"
         />
+        </a>
            
       
 
