@@ -11,13 +11,18 @@ const Triangle = () => {
 
   return (
     <div style={{
-        width: '0',
-        height: '0',
-        marginTop:'5.123rem',
-        borderLeft: '50px solid transparent',
-        borderRight: '50px solid transparent',
-        borderBottom: '86.6px solid #fff',
-        transform:'rotate(90deg)'
+      position:'relative',
+        width: 'auto',
+        height: 'auto',
+        zIndex:'-1',
+       
+        borderLeft: '3rem solid transparent',
+        borderRight: '3rem solid transparent',
+        borderBottom: '5rem solid #fff',
+        transform:'rotate(90deg)' ,
+        position:'absolute',
+        top:'-5%',
+        left:'-2%',
     }}>
       {/* Your content goes here */}
     </div>
