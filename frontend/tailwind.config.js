@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens:{
+      'lag': '1440px',
+
+    },
     extend: {
       colors: {
         gray: "#111115",
