@@ -3,12 +3,13 @@
     min-width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     align-items: center;
     column-gap: 0;
     row-gap: 0;
 }
-#hero_container{
+
+#hero_container {
     /* border-color: white; */
     border-width: 14px;
     /* align-items: baseline; */
@@ -29,77 +30,88 @@
     font-size: 16px;
     /* Set the initial text color */
     transition: color 0.3s, text-shadow 0.3s, font-size 0.3s;
-  }
-  
-  .glow-text:hover {
-    color: white; /* Set the color when hovering */
-    text-shadow: 0 0 1px #25F2DA, 0 0 2px #25F2DA, 0 0 3px #25F2DA; /* Add glow effect */
-    font-size: 20px; /* Set the font size when hovering */
-  }
-  
-  /* CSS for continuous glowing animation */
-  @keyframes glow {
+}
+
+.glow-text:hover {
+    color: white;
+    /* Set the color when hovering */
+    text-shadow: 0 0 1px #25F2DA, 0 0 2px #25F2DA, 0 0 3px #25F2DA;
+    /* Add glow effect */
+    font-size: 20px;
+    /* Set the font size when hovering */
+}
+
+/* CSS for continuous glowing animation */
+@keyframes glow {
     0% {
-      text-shadow: 0 0 1px #16b9ff, 0 0 2px #16b9ff, 0 0 3px #16b9ff;
+        text-shadow: 0 0 1px #16b9ff, 0 0 2px #16b9ff, 0 0 3px #16b9ff;
     }
+
     50% {
-      text-shadow: 0 0 2px #16b9ff, 0 0 3px #16b9ff, 0 0 4px #16b9ff;
+        text-shadow: 0 0 2px #16b9ff, 0 0 3px #16b9ff, 0 0 4px #16b9ff;
     }
+
     100% {
-      text-shadow: 0 0 1px #16b9ff, 0 0 2px #16b9ff, 0 0 3px #16b9ff;
+        text-shadow: 0 0 1px #16b9ff, 0 0 2px #16b9ff, 0 0 3px #16b9ff;
     }
-  }
-  
-  .glow-animation {
+}
+
+.glow-animation {
     font-size: 16px;
-    color: #fff; /* Set the initial text color */
+    color: #fff;
+    /* Set the initial text color */
     transition: color 0.3s, text-shadow 0.6s, font-size 0.6s;
-    animation: glow 1s infinite; /* Apply the glow animation */
-  }
-  
-  .glow-animation:hover {
-    color: white; /* Set the color when hovering */
-    text-shadow: 0 0 1px #25F2DA, 0 0 2px #25F2DA, 0 0 3px #25F2DA; /* Set the initial glow on hover */
-    font-size: 20px; /* Set the font size when hovering */
-    animation: none; /* Disable the continuous glow animation on hover */
-  }
-  
-.marquee{
+    animation: glow 1s infinite;
+    /* Apply the glow animation */
+}
+
+.glow-animation:hover {
+    color: white;
+    /* Set the color when hovering */
+    text-shadow: 0 0 1px #25F2DA, 0 0 2px #25F2DA, 0 0 3px #25F2DA;
+    /* Set the initial glow on hover */
+    font-size: 20px;
+    /* Set the font size when hovering */
+    animation: none;
+    /* Disable the continuous glow animation on hover */
+}
+
+.marquee {
     overflow: hidden;
-    color:white;
-    font-weight: 100;
-    font-size:20px;
-    letter-spacing: 0cap;
+    color: white;
+    font-weight: 900;
+    font-size: 30px;
     /* text-shadow: #25F2DA; */
 
     /* height: 92vh; */
     /* width: 84vw; */
     /* animation: marquee 6s linear infinite;
      */
-     /* font-style: normal; */
+    /* font-style: normal; */
 }
 
 .p1 {
     grid-column: 1 / 3;
-    grid-row: 2 / 4;
+    grid-row: 1 / 3;
     font-size: 58px;
-    padding-left: 10%;
-    color:white;
+    color: white;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-style: normal;
     font-weight: 400;
     line-height: 131.4%;
+    padding-left: 10%;
 }
 
 .p2 {
     grid-column: 1 / 3;
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
     font-size: 24px;
     line-height: 1.3;
     padding-left: 10%;
-    margin-top: auto;
+    /* margin-top: auto; */
     /* letter-spacing: widest; */
 }
+
 .tatvaa_container{
     /* margin-top: 6%; */
     grid-column: 1/2;
@@ -113,12 +125,14 @@
 
 
 }
-.tatvaa_container:hover{
+
+/* .tatvaa_container:hover{
     
-}
-.tatvaa_card{
-    /* align-items: baseline; */
-}
+} */
+
+/* .tatvaa_card{
+    align-items: baseline;
+} */
 
 /* .scrolling{
     grid-column:1/5;
@@ -128,70 +142,82 @@
 
 .logo {
     grid-column: 3 / 4;
-    grid-row: 2 / 5;
+    grid-row: 1 / 4;
     margin: auto;
     width: 545px;
     height: 390px;
+    margin-bottom: 25%;
     /* background: radial-gradient(circle, rgba(128,128,128,1) 0%, rgba(17, 17, 21, 1) 60%); */
 }
 
-.p1, .p2 ,.marquee{
+.p1,
+.p2,
+.marquee {
     font-family: 'Afacad', sans-serif;
     font-family: 'Bruno Ace SC', sans-serif;
     font-family: 'Michroma', sans-serif;
 }
 
-@media screen and (max-width: 1080px){
+@media screen and (max-width: 1080px) {
     .container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
 
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 2fr) repeat(1, 1fr);
+    }
+
     .p1 {
-        grid-column: 1 / 3;
+        grid-column: 1 / 2;
         grid-row: 1 / 2;
         font-size: 48px;
+        margin-top: 5%;
     }
 
     .p2 {
-        grid-column: 1 / 3;
+        grid-column: 1 / 2;
         grid-row: 2 / 3;
         font-size: 22px;
-        margin: revert;
-        margin-bottom: 35%;
+        /* margin: revert; */
+        /* margin-bottom: 35%; */
     }
 
     .logo {
-        grid-column: 3 / 4;
+        grid-column: 2 / 3;
         grid-row: 1 / 3;
         width: 400px;
         height: 300px;
         margin-top: 10%;
         /* padding-bottom: 10%; */
     }
+
     .marquee{
         font-size: 16px;
     }
+
     .marquee_container{
         height:26px;
         margin-top: 3%;
         margin-bottom: 1%;
 
     }
+
     .tatvaa_container{
         width:220px;
     }
-    
-}    
 
-@media screen and (max-width: 860px){
+}
+
+@media screen and (max-width: 860px) {
     .p1 {
         font-size: 34px;
     }
 
     .p2 {
         font-size: 16px;
-        margin-bottom: 15%;
+        /* margin-bottom: 15%; */
     }
 
     .logo {
@@ -199,64 +225,75 @@
         height: 225px;
         margin-top: 15%;
     }
+
     .marquee{
         font-size: 16px;
     }
+
     .marquee_container{
         height:24px;
     }
+
     #hero_container{
         border-width: 6px;
     }
+
     .tatvaa_container{
         width:170px;
     }
-}  
+}
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 650px) {
     .p1 {
         font-size: 24px;
     }
 
     .p2 {
         font-size: 12px;
-        margin-bottom: 15%;
+        /* margin-bottom: 15%; */
     }
 
     .logo {
         width: 215px;
         height: 168px;
-        margin-top: 20%;
+        margin-top: 10%;
     }
+
     .marquee{
         font-size: 10px;
     }
+
     .marquee_container{
         height:16px;
     }
+
     #hero_container{
         border-width: 0px;
     }
+
     .tatvaa_container{
         width:170px;
     }
 
-}  
+    /* .tatva_card {
+        width: 25%;
+    } */
+}
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
     .p1 {
         font-size: 18px;
     }
 
     .p2 {
         font-size: 9px;
-        margin-bottom: 15%;
+        /* margin-bottom: 15%; */
     }
 
     .logo {
         width: 180px;
         height: 140px;
-        margin-top: 15%;
+        margin-top: 5%;
     }
     .marquee{
         font-size: 12px;
@@ -272,19 +309,21 @@
     }
 }
 
-@media screen and (max-width: 375px){
-    .p2 {
+@media screen and (max-width: 375px) {
+    /* .p2 {
         margin-bottom: 25%;
-    }
+    } */
 
     .logo {
         margin-top: 25%;
     }
-    .marquee{
+
+    .marquee {
         font-size: 14px;
     }
-    .marquee_container{
-        height:20px;
+
+    .marquee_container {
+        height: 20px;
         /* font-size: 12px; */
     }
     .tatvaa_container{
