@@ -6,6 +6,7 @@ import Navhome from "./navhome";
 import Schedule from "./Schedule";
 import Footer from "./Footer";
 import SponsorsFull from "./Sponsors";
+import Faq from "./faq";
 const LandingPage = () => {
   return (
     <div className="flex flex-col  w-full h-full text-white  ">
@@ -15,7 +16,8 @@ const LandingPage = () => {
       <Hero />
       <About />
       <Schedule />
-      <SponsorsFull></SponsorsFull>¸
+      <SponsorsFull></SponsorsFull>
+      <Faq/>
       < Footer />
 
       
