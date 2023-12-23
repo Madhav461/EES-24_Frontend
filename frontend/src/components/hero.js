@@ -66,17 +66,19 @@ const Hero = () => {
 
 
           </div>
-
-
-
-        </div>
-        <div class="tatvaa_container hover:scale-110 duration-300">
+          <div class="tatvaa_container hover:scale-110 duration-300">
           <img className="tatva_card w-[100%]" src="tatvaa.svg" alt="tatva-card"></img>
         </div>
 
 
 
+        </div>
+        
+
+
+
       </div>
+      
     </div>
   );
 };
