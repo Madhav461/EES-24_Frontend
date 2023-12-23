@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+// import bg_user_reg from ".../"
 
 const COLORS = {
   primaryDark: "black",
@@ -41,6 +42,7 @@ const NavBackground = styled.div`
 const Icon = styled.span`
   position: relative;
   background-color: ${(props) => (props.clicked ? "transparent" : "white")};
+
   width: 3rem;
   height: 2px;
   display: inline-block;
@@ -52,6 +54,7 @@ const Icon = styled.span`
   &::after {
     content: "";
     background-color: white;
+   
     width: 3rem;
     height: 2px;
     display: inline-block;
@@ -103,6 +106,7 @@ const List = styled.ul`
 `;
 const ItemLink = styled(NavLink)`
   display: inline-block;
+  justify-content:left;
   font-size: 3rem;
   font-weight: 300;
   text-decoration: none;
@@ -121,6 +125,7 @@ const ItemLink = styled(NavLink)`
   &:hover,
   &:active {
     background-position: 100%;
+
     color: ${COLORS.primaryDark};
     transform: translateX(1rem);
   }
@@ -134,26 +139,27 @@ function HamburgerMenu() {
       <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
         <Icon clicked={click}>&nbsp;</Icon>
       </MenuLabel>
-      <NavBackground className="h-screen" clicked={click}>&nbsp;</NavBackground>
+      {/* <img src="bg_user_reg.svg"></img> */}
+      <NavBackground className="h-auto  overflow-hidden" clicked={click}>&nbsp;</NavBackground>
 
-      <Navigation className="h-screen" clicked={click}>
-        <List  className="font-goldman glow-text text-white">
-          <li>
+      <Navigation className="h-auto  overflow-hidden" clicked={click}>
+        <List  className="font-goldman glow-text" >
+          <li class="list_point">
             <ItemLink onClick={handleClick} to="/">
               Workshops
             </ItemLink>
           </li>
-          <li>
+          <li class="list_point">
             <ItemLink onClick={handleClick} to="/about">
               Schedule
             </ItemLink>
           </li>
-          <li>
+          <li class="list_point">
             <ItemLink onClick={handleClick} to="/portfolio">
               Gallery
             </ItemLink>
           </li>
-          <li>
+          <li class="list_point">
             <ItemLink onClick={handleClick} to="/blog">
               Sponsers
             </ItemLink>

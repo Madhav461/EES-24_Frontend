@@ -65,8 +65,8 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 60px;
-    padding-right: 60px;
+    /* padding-left: 60px;
+    padding-right: 60px; */
     position: relative;
 }
 
@@ -143,8 +143,8 @@ body {
 @media screen and (max-width: 991px) {
     .container {
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        /* padding-left: 20px;
+        padding-right: 20px; */
     }
 
     .icon-container {
@@ -241,10 +241,10 @@ body {
 }
 
 @media screen and (max-width: 479px) {
-    .container {
+    /* .container {
         padding-left: 15px;
         padding-right: 15px;
-    }
+    } */
 
     .spacer-30._15-xsvp {
         height: 15px;
