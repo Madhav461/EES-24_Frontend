@@ -8,7 +8,7 @@ import AnimatedTextWord from "./AnimatedTextWord";
 
 export const Faq = () => {
     return (
-        <div className="relative h-[1122px] mt-[30px] w-[1440px]">
+        <div className="relative h-[1122px] mt-[30px] w-screen">
 <div className="absolute top-[68px] left-[calc(50%_-_203.5px)] text-[94px] tracking-[0.01em] leading-[150%] font-michroma text-turquoise text-center inline-block w-[407px]">
         FAQ’s
       </div>
