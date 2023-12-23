@@ -1,0 +1,4 @@
+.container-shape{
+    clip-path: polygon(3.5% 0% , 100% 0% , 100% 19.5% , 96.5% 37% , 96.5% 100% , 0% 100% , 0% 80.5% , 3.5% 63% );
+    background-color:#D9D9D90D;
+}
