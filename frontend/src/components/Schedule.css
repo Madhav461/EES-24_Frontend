@@ -2,6 +2,14 @@
     font-style: normal;
     text-align: center;
 }
+#side_txt{
+    font-size:18px;
+    text-align: left;
+}
+#side_title{
+    font-size:26px;
+    text-align: left;
+}
 #overlay{
     font-size: 20px;
 

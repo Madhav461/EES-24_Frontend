@@ -4,7 +4,7 @@ import "./Speaker.css"
 function Speaker() {
   return (
     <>
-    <div className="desktop-16">
+    <div className="desktop-16 mt-10">
       <div className="card-container-parent">
         <img
           className="card-container-icon"

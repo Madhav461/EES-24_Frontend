@@ -49,16 +49,16 @@ function Schedule() {
                                         className={` md:hidden absolute inset-0 backdrop-blur-md bg-black/50 flex  items-center justify-center`}
                                         onClick={() => setShowOverlay(false)}
                                     >
-                                        <div className="text-white opacity-100 " id='overlay'>{overlayText}</div>
+                                        <div className="text-white font-goldman opacity-100 " id='overlay'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dolor molestiae sunt fuga nulla ad, dolores adipisci quidem eum vero, quos eligendi voluptate ducimus sed repellat voluptas harum et itaque?</div>
                                     </div>
                                 )}
 
                             </div>
 
                             {/* 30 percent coloumn */}
-                            <div className=" w-[30%] hidden md:block">
-                                <h3>Display Text:</h3>
-                                <p >{displayText}</p>
+                            <div  className=" w-[30%] hidden md:block font-goldman overflow-hidden">
+                                <h3 id="side_title">Display Text:</h3>
+                                <p id="side_txt">{displayText}</p>
 
                             </div>
                         </div>
