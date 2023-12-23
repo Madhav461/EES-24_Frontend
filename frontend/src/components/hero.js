@@ -2,12 +2,12 @@
 import "./hero.css";
 import React from "react";
 import Icon from "./Icon";
-import {useScramble} from "use-scramble" ;
+import { useScramble } from "use-scramble";
 import Marquee from "react-fast-marquee";
 import AnimatedTextCharacter from "./AnimatedTextCharacter";
 import AnimatedTextWord from "./AnimatedTextWord";
 // const title_word="Currents of Creativity, Voltage of Vision: Electrify the Future!";
-const title_word="Innovate. Inspire . Ignite . Greetings , Electronics Engineers. To the fest beyond imagination! ! ! ";
+const title_word = "Innovate. Inspire . Ignite . Greetings , Electronics Engineers. To the fest beyond imagination! ! ! ";
 const Hero = () => {
   const [sample, setSample] = React.useState(title_word);
 
@@ -15,9 +15,9 @@ const Hero = () => {
     overdrive: false,
     speed: 0.25,
     tick: 1,
-    step:1,
+    step: 1,
     scramble: 14,
-    seed:2,
+    seed: 2,
     chance: 0.81,
     overflow: false,
   };
@@ -37,46 +37,46 @@ const Hero = () => {
   //   scramble: 4,
   //   seed: 0,
   // });
-  
+
   return (
-    
+
     <div className="h-auto w-screen ">
       <div id="hero_container" className=" border-solid  border-white">
-    <div className="glow-text tracking-widest "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={20} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div>
-      
-    <div className="container">
-      
-      
-      <div className="p1">
-      
-        <div className="text">
+        <div className="glow-text tracking-widest "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={20} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div>
 
-        Currents of Creativity, Voltage of Vision: Electrify the Future!
-        </div>
-        
-      </div>
-      
-      <div className="logo hover:scale-110 duration-300"><a href='/' > <Icon></Icon> </a></div>
-      <div className="p2">
-        <div>
+        <div className="container">
 
-           <p ref={ref}></p>
-          
+
+          <div className="p1">
+
+            <div className="text">
+
+              Currents of Creativity, Voltage of Vision: Electrify the Future!
+            </div>
+
+          </div>
+
+          <div className="logo hover:scale-110 duration-300"><a href='/' > <Icon></Icon> </a></div>
+          <div className="p2">
+            <div>
+
+              <p ref={ref}></p>
+
+            </div>
+
+
+          </div>
+
+
+
         </div>
-        
-        
+        <div class="tatvaa_container hover:scale-110 duration-300">
+          <img className="tatva_card w-[100%]" src="tatvaa.svg" alt="tatva-card"></img>
+        </div>
+
+
+
       </div>
-      
-      
-      
-    </div>
-    <div class="tatvaa_container hover:scale-110 duration-300">
-    <img className="tatva_card w-[100%]" src="tatvaa.svg"></img>
-      </div>
-    
-    
-    
-    </div>
     </div>
   );
 };
