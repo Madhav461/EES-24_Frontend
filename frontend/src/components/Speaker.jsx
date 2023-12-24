@@ -4,7 +4,7 @@ import "./Speaker.css"
 function Speaker() {
   return (
     <>
-    <div className="desktop-16">
+    <div className="desktop-16 mt-10">
       <div className="card-container-parent">
         <img
           className="card-container-icon"
@@ -141,7 +141,7 @@ function Speaker() {
           </div>
         </div>
       </div>
-      <div className="group-parent2">
+      {/* <div className="group-parent2">
         <div className="image-29-parent">
           <img className="image-29-icon" alt="" src="/facebook.svg" />
 
@@ -160,7 +160,7 @@ function Speaker() {
           <div className="group-inner"></div>
           <div className="rectangle-div"></div>
         </div>
-      </div>
+      </div> */}
       <div className="speakers">SPEAKERS</div>
       <img
         className="desktop-16-child388"

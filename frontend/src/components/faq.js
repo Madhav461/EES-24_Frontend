@@ -6,6 +6,7 @@ import AnimatedTextCharacter from "./AnimatedTextCharacter";
 import AnimatedTextWord from "./AnimatedTextWord";
 
 export const Faq = () => {
+
 const[QuesNum,setQuesNum]=useState(0);
 const clicked=(num)=>{
   setQuesNum(num);

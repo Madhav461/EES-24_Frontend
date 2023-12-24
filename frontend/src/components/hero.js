@@ -42,43 +42,34 @@ const Hero = () => {
 
     <div className="h-auto w-screen ">
       <div id="hero_container" className=" border-solid  border-white">
-        <div className="glow-text tracking-widest "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={20} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div>
+        <div className="glow-text tracking-widest "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div>
 
         <div className="container">
-
-
           <div className="p1">
-
             <div className="text">
-
               Currents of Creativity, Voltage of Vision: Electrify the Future!
             </div>
-
           </div>
 
           <div className="logo hover:scale-110 duration-300"><a href='/' > <Icon></Icon> </a></div>
+          
           <div className="p2">
             <div>
-
               <p ref={ref}></p>
-
             </div>
-
-
           </div>
+
           <div class="tatvaa_container hover:scale-110 duration-300">
-          <img className="tatva_card w-[100%]" src="tatvaa.svg" alt="tatva-card"></img>
-        </div>
-
-
+            <img className="tatva_card w-[100%]" src="tatvaa.svg" alt="tatva-card"></img>
+          </div>
 
         </div>
-        
+
 
 
 
       </div>
-      
+
     </div>
   );
 };

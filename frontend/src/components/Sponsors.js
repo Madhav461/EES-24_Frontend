@@ -32,7 +32,7 @@ const SponsorsFull = () => {
 
     const fadeImages = urlsFin.map((url, ind) => {
         return (
-            <div key={ind} className="flex-horizontal">
+            <div key={ind} className="flex-horizontal mt-10">
                 <div>
                     <div className="icon-container-alt">
                         <img
