@@ -39,11 +39,13 @@ const SponsorsFull = () => {
         return (
             <div key={ind} className="flex-horizontal">
                 <div className="icon-container-alt">
+                    <div className="line1"></div>
                     <img 
                         src={url}
                         alt=""
                         className="icon"
                     />
+                    <div className="line2"></div>
                     {/* <div className="corner-line"></div> */}
                 </div>
                 <div className="spacer-30 _25-xsvp"></div>
@@ -59,11 +61,13 @@ const SponsorsFull = () => {
             <div key={ind} className="flex-horizontal mt-10">
                 <div>
                     <div className="icon-container-alt">
+                        <div className="line1"></div>
                         <img
                             src={url}
                             alt=""
                             className="icon"
                         />
+                        <div className="line2"></div>
                     </div>
                 </div>
                 <div className="spacer-30 _25-xsvp"></div>
@@ -71,11 +75,13 @@ const SponsorsFull = () => {
                 <div className="spacer-30 _25-xsvp"></div>
                 <div>
                     <div className="icon-container-alt">
+                        <div className="line1"></div>
                         <img
                             src={url}
                             alt=""
                             className="icon"
                         />
+                        <div className="line2"></div>
                     </div>
                 </div>
             </div>
