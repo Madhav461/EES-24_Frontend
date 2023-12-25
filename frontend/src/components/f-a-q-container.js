@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './f-a-q-container.css';
 
+
 const FAQContainer1 = (props)=>{
 
 const [IsOpen,setIsOpen] = useState(false);
@@ -17,14 +18,14 @@ const toggleAns=()=>{
 
 
 return (
-  <div className="FAQ-CONTAINER flex flex-col justify-center items-center" style={{height:'min-content',marginBottom:'5px'}}>
+  <div id="faq_container" className="FAQ-CONTAINER  flex flex-col justify-center items-center" style={{height:'min-content',marginBottom:'5px'}}>
       
     <div onClick={toggleAns}
-  className="QUESTION-CONTAINER w-[1243px] text-2xl text-pitchdeck-slide-background font-ligconsolata" style={{minHeight: '79px', display:"flex", position:"relative", justifyContent:'center',alignItems:"center",margin:'7px 0 7px 0' , cursor:'pointer'}}
+  className="QUESTION-CONTAINER w-[1243px] text-5xl text-pitchdeck-slide-background " style={{minHeight: '79px', display:"flex", position:"relative", justifyContent:'center',alignItems:"center",margin:'7px 0 7px 0' , cursor:'pointer'}}
     >
-      <div className="text-center leading-[150%] inline-block w-[1044px]">
+      <div className="text-center leading-[150%] inline-block w-[1044px] font-goldman">
        {/* {props.ques} */}
-       "Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+       Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
       </div>
       <div className="absolute bottom-[0px] left-[0px] w-[44px] h-[47px]">
         <div className="absolute top-[0px] left-[0px] box-border w-[44px] h-[47px] border-b-[1px] border-solid border-pitchdeck-slide-background border-l-[1px]" />
@@ -56,12 +57,12 @@ return (
           src="/Group 241.svg" />
         </div>
 
-      <div className="container-shape absolute top-[0px] left-[0px] w-[1201px] h-[348px] text-5xl font-ligconsolata">
-        <div className="Answer_heading absolute top-[68.2px] left-[calc(50%_-_502.9px)] text-[24px] leading-[150%] inline-block w-[1008.7px] h-[104.4px]">
+      <div className="container-shape absolute top-[0px] left-[0px] w-[1201px] h-[348px] text-5xl ">
+        <div className="Answer_heading absolute top-[68.2px] left-[calc(50%_-_502.9px)] text-[24px] tracking-tighter font-goldman leading-[150%] inline-block w-[1008.7px] h-[104.4px]">
           {/* {props.Ans_h} */}
-          Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+          Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
         </div>
-        <div className="answer_content absolute top-[197.2px] left-[calc(50%_-_502.9px)] text-[14px] leading-[150%] inline-block w-[1008.7px] h-[91.3px]">
+        <div className="answer_content absolute top-[197.2px] left-[calc(50%_-_502.9px)] text-[14px] font-goldman leading-[150%] inline-block w-[1008.7px] h-[91.3px]">
          {/* {props.ans} */}
          Navigate Through Frequently Asked Questions to Enhance Your
           Understanding of Shadowfall Chronicles Navigate Through Frequently

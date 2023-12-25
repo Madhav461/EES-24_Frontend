@@ -151,7 +151,7 @@ body {
     letter-spacing: 0.2em;
     line-height: 131.4%;
     font-family: Michroma;
-    color: #4d9ca1;
+    /* color: #4d9ca1; */
     display: flex;
     align-items: center;
     width: 60%;

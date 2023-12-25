@@ -2,3 +2,90 @@
     clip-path: polygon(3.5% 0% , 100% 0% , 100% 19.5% , 96.5% 37% , 96.5% 100% , 0% 100% , 0% 80.5% , 3.5% 63% );
     background-color:#D9D9D90D;
 }
+.marquee_container{
+    /* border-width: 20px 0px;
+    border-color:white;
+    border:solid;
+    overflow: hidden; */
+    height:30px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    /* text:blue; */
+
+}
+.marquee {
+    overflow: hidden;
+    /* color: teal; */
+    font-weight: 900;
+    font-size: 30px;
+    /* text-shadow: #25F2DA; */
+
+    /* height: 92vh; */
+    /* width: 84vw; */
+    /* animation: marquee 6s linear infinite;
+     */
+    /* font-style: normal; */
+}
+@media screen and (max-width: 1080px) {
+    
+    .marquee{
+        font-size: 16px;
+    }
+
+    .marquee_container{
+        height:26px;
+        margin-top: 3%;
+        margin-bottom: 1%;
+
+
+    }
+
+
+}
+@media screen and (max-width: 860px) {
+    
+    .marquee{
+        font-size: 16px;
+    }
+
+    .marquee_container{
+        height:24px;
+    }
+
+}
+@media screen and (max-width: 650px) {
+    
+    .marquee{
+        font-size: 10px;
+    }
+
+    .marquee_container{
+        height:16px;
+    }
+
+
+}
+@media screen and (max-width: 480px) {
+    
+    .marquee{
+        font-size: 12px;
+    }
+    .marquee_container{
+        height:16px;
+    }
+
+}
+@media screen and (max-width: 375px) {
+    
+    .marquee {
+        font-size: 14px;
+    }
+
+    .marquee_container {
+        height: 20px;
+        /* font-size: 12px; */
+    }
+
+
+}
+

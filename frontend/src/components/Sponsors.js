@@ -17,13 +17,15 @@ const SponsorsFull = () => {
         return (
             <div key={ind} className="flex-horizontal">
                 <div className="icon-container-alt">
-                    <img
+                    <img 
                         src={url}
                         alt=""
                         className="icon"
                     />
+                    {/* <div className="corner-line"></div> */}
                 </div>
                 <div className="spacer-30 _25-xsvp"></div>
+                
                 <div> <img className="sponsor-img" src="sponsors1.svg" alt="" /></div>
                 <div className="spacer-30 _25-xsvp"></div>
             </div>

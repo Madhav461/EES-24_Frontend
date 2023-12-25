@@ -1,7 +1,17 @@
 body {
     margin: 0;
 }
-
+.corner-line {
+    position: absolute;
+    top: 120.1px;
+    left: 21.1px;
+    border-bottom: 1px dashed #fff;
+    border-left: 6px dashed #fff;
+    box-sizing: border-box;
+    width: 45.3px;
+    height: 39.7px;
+  }
+  
 .sponsors_title {
     font-family: 'Afacad', sans-serif;
     font-family: 'Bruno Ace SC', sans-serif;
