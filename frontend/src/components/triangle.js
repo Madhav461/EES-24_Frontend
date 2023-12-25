@@ -21,8 +21,8 @@ const Triangle = () => {
         borderBottom: '5rem solid #fff',
         transform:'rotate(90deg)' ,
         position:'absolute',
-        top:'-5%',
-        left:'-2%',
+        top:'-2%',
+        left:'-1%',
     }}>
       {/* Your content goes here */}
     </div>
