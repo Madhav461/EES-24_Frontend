@@ -1,0 +1,39 @@
+.ANSWER-CONTAINER button{
+    font-size: 30px;
+    background-color: #808080;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 4px 4px 4px black;
+}
+  
+/* Keyframe animation */
+@keyframes slidein {
+    from {
+      opacity: 0;
+      transform: translateX(-10%);
+    }
+    to {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  /* @keyframes slideout {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.element.slide-out {
+  animation: slideout 1s ease-in-out;} */
+
+  
+ .ANSWER-CONTAINER  {
+    animation: slidein 0.5s ease-in-out; /* Keyframe animation */
+    transition: background-color 0.3s ease; /* Transition on background-color */
+  }
+  
