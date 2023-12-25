@@ -2,8 +2,30 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import "./Sponsors.css";
+// import { useScramble } from 'use-scramble';
 // import AnimatedTextCharacter from './AnimatedTextCharacter';
+// const title_word="PATRONS";
 const SponsorsFull = () => {
+//     const [sample, setSample] = React.useState(title_word);
+
+//   const params = {
+//     overdrive: false,
+//     speed: 0.45,
+//     tick: 1,
+//     step: 1,
+//     scramble: 14,
+//     seed: 2,
+//     chance: 0.81,
+//     overflow: false,
+//   };
+
+//   const { ref, replay } = useScramble({
+//     text: sample,
+//     ...params,
+//   });
+//   function HandleHover(){
+//     replay();
+//   }
 
     const urlsInit = [
         "https://assets-global.website-files.com/5eee4eb84206dd808f65453b/5f03382db8b6e43bad99fc80_Lyft_logo.svg.png",
@@ -85,7 +107,7 @@ const SponsorsFull = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="sponsors_title">PATRONS</div>
+                        <div  className="sponsors_title">PATRONS</div>
                         <div className="marquee-horizontal-large">
                             <div className="marquee-cover-horizontal"></div>
                             <div className="track-horizontal-alt">
