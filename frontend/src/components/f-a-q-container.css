@@ -94,6 +94,11 @@
     padding: 2px; 
     background-color: #808080;
     border-radius: 4px;
+    transition: transform 100ms ease;
+}
+.ANSWER-CONTAINER button:hover{
+ box-shadow: 0 0 12px #000000;
+ transform: translate3d(2px,2px,2px);
 }
 
  
@@ -132,4 +137,3 @@ font-size: larger;
 font-weight: bolder;
 text-shadow: 0 0 1px white;
 }
-  
