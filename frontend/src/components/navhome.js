@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import "./nav.css";
 import Hamburger from "./hamburger.js"
+import { Link } from 'react-router-dom';
 
 
 
@@ -66,6 +67,7 @@ const Navhome = () => {
 
         {/* button login /signup */}
         <div>
+        <Link to="/login"> 
         <button className="cursor-pointer  [border:none] p-0 bg-[transparent] lag:absolute lag:top-[17px] lag:left-[1149px] w-[116px] h-[38px]">
           <div className="lag:absolute lag:top-[8px] lag:left-[19px] w-[79px] h-6">
             <div className="lag:absolute hidden lag:flex  lag:top-[11px] lag:left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
@@ -76,6 +78,9 @@ const Navhome = () => {
             Login
           </button>
         </button>
+        </Link>
+        
+        <Link to="/signup">
         <button className="cursor-pointer [border:none] p-0 bg-[transparent] lag:absolute lag:top-[17px] lag:left-[1278px] w-[116px] h-[38px]">
           <div className="lag:absolute lag:top-[8px] lag:left-[9px] w-[93px] h-6">
             <div className="lag:absolute  hidden lag:flex lag:top-[11px] lag:left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
@@ -85,6 +90,7 @@ const Navhome = () => {
             Sign Up
           </button>
         </button>
+        </Link>
         </div>
       
         </div>
