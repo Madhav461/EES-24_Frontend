@@ -34,7 +34,7 @@ return (
             Still have a question?
 
         </div>  
-        <div id="last-para" className="relative text-[21px] leading-[150%] font-ligconsolata inline-block w-[100%]">
+        <div id="last-para" className="relative text-[21px] leading-[150%] font-goldman inline-block w-[100%]">
 
             Feel free to reach out for clarifications and inquiries.
         </div>   

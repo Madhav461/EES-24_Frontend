@@ -24,11 +24,11 @@ return (
   <div id ="faq_container" className="FAQ-CONTAINER w-[100%] flex flex-col justify-center items-center" style={{height:'min-content',marginBottom:'5px'}}>
       
     <div onClick={quesClicked}
-  className="QUESTION-CONTAINER w-[100%] min-h-[79px] text-2xl text-pitchdeck-slide-background font-ligconsolata" style={{display:"flex", position:"relative", justifyContent:'center',alignItems:"center",margin:'7px 0 7px 0' , cursor:'pointer'}}
+  className="QUESTION-CONTAINER w-[100%] min-h-[79px] text-2xl text-pitchdeck-slide-background font-goldman" style={{display:"flex", position:"relative", justifyContent:'center',alignItems:"center",margin:'7px 0 7px 0' , cursor:'pointer'}}
     >
       <div className="text-center leading-[150%] inline-block w-[84%]">
        {/* {props.ques} */}
-      "Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+      Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
 
   
       </div>
@@ -47,7 +47,7 @@ return (
 
       <button onClick={toggleAns} className="h-[35px] w-[35px] absolute top-[10px] right-[10px] cursor-pointer" style={{zIndex:'5', transition:''}}>
       {/* <img src="" /> */}
-        X
+        <img src="https://img.icons8.com/?size=256&id=A4DsujzAX4rw&format=png" className="w-[100%] "></img>
       </button>
 
     <div className="answer-container absolute top-[0px] left-[3.539%] w-[96.62%] h-[100%]">
@@ -64,14 +64,14 @@ return (
         </div>
 
 
-      <div className="container-shape absolute top-[0px] left-[0px] w-[100%] h-[100%] text-5xl font-ligconsolata">
+      <div className="container-shape absolute top-[0px] left-[0px] w-[100%] h-[100%] text-5xl ">
         <div className="Answer_heading absolute top-[19.59%] text-[24px] leading-[150%] inline-block w-[83.98%] h-[30%]" style={{left:'50%', transform:'translateX(-50%)'}}>
 
           {/* {props.Ans_h} */}
           Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
         </div>
 
-        <div className="answer_content absolute top-[56.6%] text-[14px] leading-[150%] inline-block w-[83.98%] h-[26.2%]" style={{left:'50%', transform:'translateX(-50%)'}}>
+        <div className="font-goldman answer_content absolute top-[56.6%] text-[14px] leading-[150%] inline-block w-[83.98%] h-[26.2%]" style={{left:'50%', transform:'translateX(-50%)'}}>
 
          {/* {props.ans} */}
          Navigate Through Frequently Asked Questions to Enhance Your
