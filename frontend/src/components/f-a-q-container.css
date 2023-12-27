@@ -132,8 +132,16 @@
     transition: background-color 0.3s ease; /* Transition on background-color */
   }
 
-.QUESTION-CONTAINER div:hover{
+  
+/* .QUESTION-CONTAINER div:hover{
 font-size: larger;
 font-weight: bolder;
 text-shadow: 0 0 1px white;
-}
+} */
+
+
+/* 
+#faq_container:hover{
+transform: translate3d(7.5px,7.5px,7.5px);
+} */
+
