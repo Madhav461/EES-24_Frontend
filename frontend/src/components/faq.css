@@ -1,4 +1,104 @@
-.container-shape{
-    clip-path: polygon(3.5% 0% , 100% 0% , 100% 19.5% , 96.5% 37% , 96.5% 100% , 0% 100% , 0% 80.5% , 3.5% 63% );
-    background-color:#D9D9D90D;
+/* Responsiveness */
+@media (max-width:1024px){
+.STILL-HAVE-QUES{
+    font-size: 22.75px;
 }
+.still-ques{
+    margin-bottom: 22.75px;
+}
+#last-para{
+    font-size: 15px;
+}
+.faqs{
+    font-size: 67px;
+}
+.marquee-font{
+    font-size: 22.75px;
+}
+}
+
+@media (max-width:768px){
+.STILL-HAVE-QUES{
+    font-size: 17px;
+}
+.still-ques{
+    margin-bottom: 17px;
+}
+#last-para{
+    font-size: 11px;
+}
+.faqs{
+    font-size: 50px;
+}
+.marquee-font{
+    font-size: 17px;
+}
+}
+
+@media (max-width:480px){
+.STILL-HAVE-QUES{
+    font-size: 11px;
+}
+.still-ques{
+    margin-bottom: 11px;
+}
+#last-para{
+    font-size: 7px;
+}
+.faqs{
+    font-size: 31px;
+}
+.marquee-font{
+    font-size: 11px;
+}
+}
+
+@media (max-width:375px){
+.STILL-HAVE-QUES{
+    font-size: 8px;
+}
+.still-ques{
+    margin-bottom: 8px;
+}
+#last-para{
+    font-size: 5px;
+}
+.faqs{
+    font-size: 24px;
+}
+.marquee-font{
+    font-size: 8px;
+}
+}
+
+
+
+
+
+
+
+
+/* .marquee {
+    overflow: hidden;
+    color: white;
+    font-weight: 900;
+    font-size: 30px;
+}
+.marquee_container{
+    height:30px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.marquee {
+    font-family: 'Afacad', sans-serif;
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-family: 'Michroma', sans-serif;
+}
+.marquee{
+    font-size: 16px;
+}
+.marquee_container{
+    height:26px;
+    margin-top: 3%;
+    margin-bottom: 1%;
+} */
