@@ -6,6 +6,8 @@ import navhome from "./components/navhome";
 import Schedule from "./components/Schedule";
 import Footer from "./components/Footer";
 import HamburgerMenu from "./components/hamburger";
+import Login from "./components/login";
+import Signup from "./components/signup";
 
 function App() {
   return (
@@ -19,6 +21,13 @@ function App() {
      <Routes>
         <Route exact path="/" element={<LandingPage />} />
       </Routes>
+      <div>
+          <Routes>
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+          </Routes>
+       </div>
+
     </div>
       </Router>
   
