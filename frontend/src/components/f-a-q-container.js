@@ -9,7 +9,6 @@ const [IsOpen,setIsOpen] = useState(false);
 const toggleAns=()=>{
   setIsOpen(!IsOpen);
 }
-{/*25 42 44 62 66 */}
 const quesClicked=()=>{
   props.clicked(props.index);
   toggleAns();
@@ -45,21 +44,20 @@ return (
 {/* using conditional rendering of Answer-container if faq question-container is clicked */}
      { IsOpen && <div className="ANSWER-CONTAINER min-h-[348px] (IsOpen ? 'slide-out' : '') relative flex flex-col w-[100%]" style={{transition:''}} >
 
-      <button onClick={toggleAns} className="h-[35px] w-[35px] absolute top-[10px] right-[10px] cursor-pointer" style={{zIndex:'5', transition:''}}>
-      {/* <img src="" /> */}
-        <img src="https://img.icons8.com/?size=256&id=A4DsujzAX4rw&format=png" className="w-[100%] "></img>
+      <button onClick={toggleAns} className="w-[35px] h-[35px] absolute top-[3.5%] right-[0.9%] cursor-pointer" style={{zIndex:'5', transition:''}}>
+        <img src="https://img.icons8.com/?size=256&id=A4DsujzAX4rw&format=png" className="w-[100%] h-[100%] absolute top-[0px] left-[0px]"></img>
       </button>
 
     <div className="answer-container absolute top-[0px] left-[3.539%] w-[96.62%] h-[100%]">
-        <div id="left-svgs" className="absolute top-[19.54%] left-[-4.35%] w-[46px] h-[109px] object-cover">
+        <div id="left-svgs" className="absolute top-[19.54%] left-[-4.35%] w-[3.83%] h-[31.32%] object-cover">
          <img
-          className="absolute top-[0px] left-[0px]" alt=""
+          className="absolute top-[0px] left-[0px] w-[100%] h-[100%]" alt=""
           src="/Group 241.svg"/> 
         </div>
 
-        <div id="right-svgs" className="absolute top-[19.54%] right-[-0.4%] w-[46px] h-[109px] object-cover">
+        <div id="right-svgs" className="absolute top-[19.54%] right-[-0.4%] w-[3.83%] h-[31.32%] object-cover">
          <img
-          className="absolute top-[0px] left-[0px]" alt=""
+          className="absolute top-[0px] left-[0px] w-[100%] h-[100%]" alt=""
           src="/Group 241.svg" />
         </div>
 
