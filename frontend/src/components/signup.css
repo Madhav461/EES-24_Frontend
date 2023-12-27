@@ -21,13 +21,13 @@
 
 
 .SignUp-card-whiteDiv {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/Vector 91.svg");
+  background-image: url("../../public/Vector 91.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .SignUp-card-blackDiv {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/Vector 92.svg");
+  background-image: url("../../public/Vector 92.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -35,7 +35,7 @@
 }
 
 .EES-logo {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/ees_logo_FCFBFC 1.svg");
+  background-image: url("../../public/ees_logo_FCFBFC 1.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -52,13 +52,13 @@
 }
 
 .SignUp-card-blackDiv-whiteEESpattern {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/Vector 93.svg");
+  background-image: url("../../public/Vector 93.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .SignUp-card-blackDiv-eesdesign {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/EES-design-signup page .svg");
+  background-image: url("../../public/EES-design-signup page .svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -71,7 +71,7 @@
 }
 
 .signup-button-blackDiv {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/Vector 95.svg");
+  background-image: url("../../public/Vector 95.svg");
   background-image: cover;
   background-repeat: no-repeat;
   color: #000;
@@ -114,7 +114,7 @@
 }
 
 .signup-button-blackDivAlreadyHaveAnAccountButton {
-  background-image: url("/Users/amaansiddiqui/Desktop/EES-24_Frontend/frontend/public/Vector 94.svg");
+  background-image: url("../../public/Vector 94.svg");
   background-repeat: no-repeat;
   background-size: contain;
   color: black;
