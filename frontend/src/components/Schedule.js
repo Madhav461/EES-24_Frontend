@@ -7,7 +7,7 @@ function Schedule() {
 
   const params = {
     overdrive: false,
-    speed: 0.55,
+    speed: 0.2,
     tick: 1,
     step: 1,
     scramble: 14,
