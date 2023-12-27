@@ -1,8 +1,28 @@
 import React, { useState } from 'react'
-
+import {useScramble} from "use-scramble";
 import './Schedule.css'
-
+const title_word="SCHEDULE";
 function Schedule() {
+    const [sample, setSample] = React.useState(title_word);
+
+  const params = {
+    overdrive: false,
+    speed: 0.2,
+    tick: 1,
+    step: 1,
+    scramble: 14,
+    seed: 2,
+    chance: 0.81,
+    overflow: false,
+  };
+
+  const { ref, replay } = useScramble({
+    text: sample,
+    ...params,
+  });
+  function HandleHover(){
+    replay();
+  }
 
 
 
@@ -24,9 +44,9 @@ function Schedule() {
                 <div className='w-screen h-[1088px] border-solid border-[#FFF] border-y-[0.5px] my-[50px]'>
                     <div className='  h-[1088px] '>
                         <div className=' h-[210px] flex border-solid border-[#FFF] border-b-[0.5px] '>
-                            <div id="schedule_title" className=' text-white ml-3 text-center text-[100px]   tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>
+                            <div id="schedule_title" onMouseOver={HandleHover} className=' text-white ml-3 text-center text-[100px]   tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>
                                 {/* underline  */}
-                                SCHEDULE
+                                <p ref={ref}></p>
                             </div>
                         </div>
                         <div className="flex w-full">

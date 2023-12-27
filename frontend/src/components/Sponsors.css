@@ -2,6 +2,17 @@ body {
     margin: 0;
 }
 
+.corner-line {
+    position: absolute;
+    top: 120.1px;
+    left: 21.1px;
+    border-bottom: 1px dashed #fff;
+    border-left: 6px dashed #fff;
+    box-sizing: border-box;
+    width: 45.3px;
+    height: 39.7px;
+}
+
 .sponsors_title {
     font-family: 'Afacad', sans-serif;
     font-family: 'Bruno Ace SC', sans-serif;
@@ -84,12 +95,13 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    margin: 2rem 0;
 }
 
 .marquee-cover-horizontal {
     z-index: 10;
     /* background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 70%, #fff), linear-gradient(270deg, #fff, rgba(255, 255, 255, 0) 30%); */
-    background: linear-gradient(90deg, rgba(17,17,21,1) 75%, rgba(125,125,125,1) 100%);
+    background: linear-gradient(90deg, rgba(17, 17, 21, 1) 75%, rgba(125, 125, 125, 1) 100%);
     top: 0%;
     bottom: 0%;
     left: 0%;
@@ -140,6 +152,30 @@ body {
     flex: none;
 }
 
+.line1 {
+    position: relative;
+    top: 50%;
+    right: 20%;
+    border-bottom: 1px dashed #fff;
+    border-left: 6px dashed #fff;
+    box-sizing: border-box;
+    width: 45.3px;
+    height: 39.7px;
+    z-index: 500;
+}
+
+.line2 {
+    position: relative;
+    bottom: 50%;
+    left: 20%;
+    border-top: 1px dashed #fff;
+    border-right: 6px dashed #fff;
+    box-sizing: border-box;
+    width: 45.3px;
+    height: 39.7px;
+    z-index: 500;
+}
+
 @media screen and (max-width: 991px) {
     .container {
         width: 100%;
@@ -176,8 +212,34 @@ body {
     .icon-container-alt {
         width: 150px;
         height: 100px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .line1 {
+        top: 50%;
+        right: 30%;
+        border-bottom: 0.8px dashed #fff;
+        border-left: 5px dashed #fff;
+        box-sizing: border-box;
+        width: 0px;
+        height: 0px;
+        z-index: 500;
+    }
+    
+    .line2 {
+        bottom: 50%;
+        left: 30%;
+        border-top: 0.8px dashed #fff;
+        border-right: 5px dashed #fff;
+        box-sizing: border-box;
+        width: 0px;
+        height: 0px;
+        z-index: 500;
+    }
+
+    .flex-horizontal {
+        margin: 0.5rem 0;
     }
 }
 
@@ -238,6 +300,10 @@ body {
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .flex-horizontal {
+        margin: 0.5rem 0;
+    }
 }
 
 @media screen and (max-width: 479px) {
@@ -282,6 +348,10 @@ body {
         height: 50px;
         padding-left: 5px;
         padding-right: 5px;
+    }
+
+    .flex-horizontal {
+        margin: 0.25rem 0;
     }
 }
 

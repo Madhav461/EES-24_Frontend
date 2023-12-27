@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './f-a-q-container.css';
 
+
 const FAQContainer1 = (props)=>{
 
 const [IsOpen,setIsOpen] = useState(false);
@@ -19,7 +20,8 @@ if((props.Num!=props.index) && IsOpen){
 }
 
 return (
-  <div className="FAQ-CONTAINER w-[100%] flex flex-col justify-center items-center" style={{height:'min-content',marginBottom:'5px'}}>
+
+  <div id ="faq_container" className="FAQ-CONTAINER w-[100%] flex flex-col justify-center items-center" style={{height:'min-content',marginBottom:'5px'}}>
       
     <div onClick={quesClicked}
   className="QUESTION-CONTAINER w-[100%] min-h-[79px] text-2xl text-pitchdeck-slide-background font-ligconsolata" style={{display:"flex", position:"relative", justifyContent:'center',alignItems:"center",margin:'7px 0 7px 0' , cursor:'pointer'}}
@@ -27,6 +29,8 @@ return (
       <div className="text-center leading-[150%] inline-block w-[84%]">
        {/* {props.ques} */}
       "Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+
+  
       </div>
       <div className="absolute bottom-[0px] left-[0px] w-[3.5%] h-[59%]">
         <div className="absolute top-[0px] left-[0px] box-border w-[100%] h-[100%] border-b-[1px] border-solid border-pitchdeck-slide-background border-l-[1px]" />
@@ -59,12 +63,16 @@ return (
           src="/Group 241.svg" />
         </div>
 
+
       <div className="container-shape absolute top-[0px] left-[0px] w-[100%] h-[100%] text-5xl font-ligconsolata">
         <div className="Answer_heading absolute top-[19.59%] text-[24px] leading-[150%] inline-block w-[83.98%] h-[30%]" style={{left:'50%', transform:'translateX(-50%)'}}>
+
           {/* {props.Ans_h} */}
-          Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles"
+          Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
         </div>
+
         <div className="answer_content absolute top-[56.6%] text-[14px] leading-[150%] inline-block w-[83.98%] h-[26.2%]" style={{left:'50%', transform:'translateX(-50%)'}}>
+
          {/* {props.ans} */}
          Navigate Through Frequently Asked Questions to Enhance Your
           Understanding of Shadowfall Chronicles Navigate Through Frequently

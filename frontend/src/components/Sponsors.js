@@ -2,8 +2,30 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import "./Sponsors.css";
+// import { useScramble } from 'use-scramble';
 // import AnimatedTextCharacter from './AnimatedTextCharacter';
+// const title_word="PATRONS";
 const SponsorsFull = () => {
+//     const [sample, setSample] = React.useState(title_word);
+
+//   const params = {
+//     overdrive: false,
+//     speed: 0.45,
+//     tick: 1,
+//     step: 1,
+//     scramble: 14,
+//     seed: 2,
+//     chance: 0.81,
+//     overflow: false,
+//   };
+
+//   const { ref, replay } = useScramble({
+//     text: sample,
+//     ...params,
+//   });
+//   function HandleHover(){
+//     replay();
+//   }
 
     const urlsInit = [
         "https://assets-global.website-files.com/5eee4eb84206dd808f65453b/5f03382db8b6e43bad99fc80_Lyft_logo.svg.png",
@@ -17,13 +39,17 @@ const SponsorsFull = () => {
         return (
             <div key={ind} className="flex-horizontal">
                 <div className="icon-container-alt">
-                    <img
+                    <div className="line1"></div>
+                    <img 
                         src={url}
                         alt=""
                         className="icon"
                     />
+                    <div className="line2"></div>
+                    {/* <div className="corner-line"></div> */}
                 </div>
                 <div className="spacer-30 _25-xsvp"></div>
+                
                 <div> <img className="sponsor-img" src="sponsors1.svg" alt="" /></div>
                 <div className="spacer-30 _25-xsvp"></div>
             </div>
@@ -35,11 +61,13 @@ const SponsorsFull = () => {
             <div key={ind} className="flex-horizontal mt-10">
                 <div>
                     <div className="icon-container-alt">
+                        <div className="line1"></div>
                         <img
                             src={url}
                             alt=""
                             className="icon"
                         />
+                        <div className="line2"></div>
                     </div>
                 </div>
                 <div className="spacer-30 _25-xsvp"></div>
@@ -47,11 +75,13 @@ const SponsorsFull = () => {
                 <div className="spacer-30 _25-xsvp"></div>
                 <div>
                     <div className="icon-container-alt">
+                        <div className="line1"></div>
                         <img
                             src={url}
                             alt=""
                             className="icon"
                         />
+                        <div className="line2"></div>
                     </div>
                 </div>
             </div>
@@ -83,7 +113,7 @@ const SponsorsFull = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="sponsors_title">PATRONS</div>
+                        <div  className="sponsors_title">PATRONS</div>
                         <div className="marquee-horizontal-large">
                             <div className="marquee-cover-horizontal"></div>
                             <div className="track-horizontal-alt">

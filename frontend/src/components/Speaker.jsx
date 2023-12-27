@@ -161,9 +161,9 @@ function Speaker() {
           <div className="rectangle-div"></div>
         </div>
       </div> */}
-      <div className="speakers">SPEAKERS</div>
+      <div className="speakers text-teal-300">SPEAKERS</div>
       <img
-        className="desktop-16-child388"
+        className="desktop-16-child388 "
         alt=""
         src="/line.svg"
       />
