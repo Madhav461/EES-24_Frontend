@@ -4,171 +4,71 @@ import "./Speaker.css"
 function Speaker() {
   return (
     <>
-    <div className="desktop-16 mt-10">
-      <div className="card-container-parent">
+    <div class="speaker">
+        SPEAKERS
+    </div>
+    <div class="line1">
         <img
-          className="card-container-icon"
-          alt=""
-          src="/img-container.svg"
-        />
-
-        <div className="corner-line"></div>
-        <div className="corner-line1"></div>
-        <div className="name">MAGNUS</div>
-        <div className="name1">CEO of some company</div>
-        <img className="image-icon" alt="" src="/person.svg" />
-
-        <div className="group-parent">
-          <div className="image-29-parent">
-            <img className="image-29-icon" alt="" src="/facebook.svg" />
-
-            <div className="group-child"></div>
-            <div className="group-item"></div>
-          </div>
-          <div className="image-30-parent">
-            <img className="image-29-icon" alt="" src="/instagram.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-          <div className="image-31-parent">
-            <img className="image-29-icon" alt="" src="/image.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-        </div>
-      </div>
-      <div className="card-container-group">
-        <img
-          className="card-container-icon"
-          alt=""
-          src="/img-container.svg"
-        />
-
-        <div className="corner-line"></div>
-        <div className="corner-line1"></div>
-        <div className="name">MAGNUS</div>
-        <div className="name1">CEO of some company</div>
-        <img className="image-icon" alt="" src="/person.svg" />
-
-        <div className="group-parent">
-          <div className="image-29-parent">
-            <img className="image-29-icon" alt="" src="/facebook.svg" />
-
-            <div className="group-child"></div>
-            <div className="group-item"></div>
-          </div>
-          <div className="image-30-parent">
-            <img className="image-29-icon" alt="" src="/instagram.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-          <div className="image-31-parent">
-            <img className="image-29-icon" alt="" src="/image.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-        </div>
-      </div>
-      <div className="card-container-container">
-        <img
-          className="card-container-icon"
-          alt=""
-          src="/img-container.svg"
-        />
-
-        <div className="corner-line"></div>
-        <div className="corner-line1"></div>
-        <div className="name">MAGNUS</div>
-        <div className="name1">CEO of some company</div>
-        <img className="image-icon" alt="" src="/person.svg" />
-
-        <div className="group-parent">
-          <div className="image-29-parent">
-            <img className="image-29-icon" alt="" src="/facebook.svg" />
-
-            <div className="group-child"></div>
-            <div className="group-item"></div>
-          </div>
-          <div className="image-30-parent">
-            <img className="image-29-icon" alt="" src="/instagram.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-          <div className="image-31-parent">
-            <img className="image-29-icon" alt="" src="/image.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-        </div>
-      </div>
-      <div className="card-container-parent1">
-        <img
-          className="card-container-icon"
-          alt=""
-          src="/img-container.svg"
-        />
-
-        <div className="corner-line"></div>
-        <div className="corner-line1"></div>
-        <div className="name">MAGNUS</div>
-        <div className="name1">CEO of some company</div>
-        <img className="image-icon" alt="" src="/person.svg" />
-
-        <div className="group-parent">
-          <div className="image-29-parent">
-            <img className="image-29-icon" alt="" src="/facebook.svg" />
-
-            <div className="group-child"></div>
-            <div className="group-item"></div>
-          </div>
-          <div className="image-30-parent">
-            <img className="image-29-icon" alt="" src="/instagram.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-          <div className="image-31-parent">
-            <img className="image-29-icon" alt="" src="/image.svg" />
-
-            <div className="group-inner"></div>
-            <div className="rectangle-div"></div>
-          </div>
-        </div>
-      </div>
-      {/* <div className="group-parent2">
-        <div className="image-29-parent">
-          <img className="image-29-icon" alt="" src="/facebook.svg" />
-
-          <div className="group-child"></div>
-          <div className="group-item"></div>
-        </div>
-        <div className="image-30-parent">
-          <img className="image-29-icon" alt="" src="/instagram.svg" />
-
-          <div className="group-inner"></div>
-          <div className="rectangle-div"></div>
-        </div>
-        <div className="image-31-parent">
-          <img className="image-29-icon" alt="" src="/image.svg" />
-
-          <div className="group-inner"></div>
-          <div className="rectangle-div"></div>
-        </div>
-      </div> */}
-      <div className="speakers text-teal-300">SPEAKERS</div>
-      <img
-        className="desktop-16-child388 "
+        class="line"
         alt=""
-        src="/line.svg"
+        src="line.svg"
       />
-
-      <div className="ellipse-div"></div>
+    </div>
+    <div class="con1">
+        <div class="y1">
+            <div class="y2">
+                <img class="icon" alt="" src="person.svg" />
+                <div class="corner-line"></div>
+                <div class="corner-line1"></div>
+                <div class="name">MAGNUS</div>
+                <div class="name1">CEO of some company</div>
+                <img class="face" alt="" src="facebook.svg" />
+                <img class="ins" alt="" src="instagram.svg" />
+                <img class="git" alt="" src="image.svg" />
+            </div>
+        </div>
+    </div>
+    <div class="con2">
+        <div class="y1">
+            <div class="y2">
+                <img class="icon" alt="" src="person.svg" />
+                <div class="corner-line"></div>
+                <div class="corner-line1"></div>
+                <div class="name">MAGNUS</div>
+                <div class="name1">CEO of some company</div>
+                <img class="face" alt="" src="facebook.svg" />
+                <img class="ins" alt="" src="instagram.svg" />
+                <img class="git" alt="" src="image.svg" />
+            </div>
+        </div>
+    </div>
+    <div class="con3">
+        <div class="y1">
+            <div class="y2">
+                <img class="icon" alt="" src="person.svg" />
+                <div class="corner-line"></div>
+                <div class="corner-line1"></div>
+                <div class="name">MAGNUS</div>
+                <div class="name1">CEO of some company</div>
+                <img class="face" alt="" src="facebook.svg" />
+                <img class="ins" alt="" src="instagram.svg" />
+                <img class="git" alt="" src="image.svg" />
+            </div>
+        </div>
+    </div>
+    <div class="con4">
+        <div class="y1">
+            <div class="y2">
+                <img class="icon" alt="" src="person.svg" />
+                <div class="corner-line"></div>
+                <div class="corner-line1"></div>
+                <div class="name">MAGNUS</div>
+                <div class="name1">CEO of some company</div>
+                <img class="face" alt="" src="facebook.svg" />
+                <img class="ins" alt="" src="instagram.svg" />
+                <img class="git" alt="" src="image.svg" />
+            </div>
+        </div>
     </div>
     </>
   )

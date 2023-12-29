@@ -1,265 +1,113 @@
-body {
-    margin: 0;
-    line-height: normal;
+body{
+  background-color: rgb(7, 9, 9);
+}
+.y1,.y2{
+width: 400px;
+height: 180px;
+background-color: #16b9ff;
+box-shadow: 10px 10px 20px rgba(22, 185, 255, 0.5);
+clip-path: polygon(10% 0%, 100% 0%, 100% 79%, 90% 100%, 0% 100%,0% 21%);
+background-color: white;
+display: inline-block;
+}
+.y2{
+ width:99%;
+ height:98.5%;
+ background-color:rgb(70, 68, 68);
+ display: inline-block;
+ position: relative;
+ top:0.75%;
+ left:0.5%;
+ color: white;
+}
+.icon{
+  width: 136px;
+  clip-path: polygon(10% 0, 100% 0%, 100% 90%, 90% 100%, 0% 100%,0% 10%);
+  position: absolute;
+  top:10%;
+  left:2%;
+}
+.name{
+  display: inline-block;
+  position:absolute;
+  color:white;
+  top:27%;
+  left:40%;
+  font-size:28px;
+}
+.name1{
+  display: inline-block;
+  position:absolute;
+  color:white;
+  top:44%;
+  left:40%;
+  font-size:16px;
+}
+.git{
+  position:absolute;
+  top:70%;
+  left:40%;
+}
+.face{
+  position:absolute;
+  top:70%;
+  left:60%;  
+}
+.ins{
+  position:absolute;
+  top:70%;
+  left:50%; 
+}
+.corner-line,
+.corner-line1 {
+position: absolute;
+border-bottom: 1px dashed #fff;
+border-left: 6px dashed #fff;
+box-sizing: border-box;
+width: 45.3px;
+height: 39.7px;
+top:70%;
+left:2%;
+}
+.corner-line1 {
+top:29%;
+left:98%;
+transform: rotate(180deg);
+transform-origin: 0 0;
+}
+.con2{
+  margin-top: 1%;
+  padding-left: 60%;
+}
+.con3{
+  margin-top: 1%;
+  padding-left: 15%;
+}
+.con1{
+  padding-left: 15%;
+}
+.con4{
+  margin-top: 1%;
+  padding-left: 60%;
+}
+.speaker{
+  font-size: 7vw;
+  letter-spacing: 0.2em;
+  line-height: 131.4%;
+  font-family: Michroma;
+  color:white;
+  text-align: center;
+}
+.line1{
+  padding-left: 25%;
+}
+.line{
+  width:80%;
+}
+@media (max-width:580px){
+  .con1,.con2,.con3,.con4{
+      padding-left: 2%;
   }
-  .card-container-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 457.3px;
-    height: 183.1px;
-    object-fit: cover;
-  }
-  .corner-line,
-  .corner-line1 {
-    position: absolute;
-    top: 120.1px;
-    left: 21.1px;
-    border-bottom: 1px dashed #fff;
-    border-left: 6px dashed #fff;
-    box-sizing: border-box;
-    width: 45.3px;
-    height: 39.7px;
-  }
-  .corner-line1 {
-    top: 46.7px;
-    left: 439.6px;
-    transform: rotate(180deg);
-    transform-origin: 0 0;
-  }
-  .name,
-  .name1 {
-    position: absolute;
-    top: 27px;
-    left: calc(50% - 42.85px);
-    line-height: 36px;
-    display: inline-block;
-    width: 118.4px;
-    height: 31px;
-  }
-  .name1 {
-    top: 67px;
-    font-size: 20px;
-    width: 198px;
-  }
-  .image-29-icon,
-  .image-icon {
-    position: absolute;
-    object-fit: cover;
-  }
-  .image-icon {
-    top: calc(50% - 72.55px);
-    left: 25.5px;
-    width: 131.7px;
-    height: 145.1px;
-  }
-  .image-29-icon {
-    top: 0;
-    left: 0;
-    width: 34px;
-    height: 33.4px;
-  }
-  .group-child,
-  .group-item {
-    position: absolute;
-    top: 5.3px;
-    left: 7.2px;
-    background-color: #f8f8f8;
-    width: 19.3px;
-    height: 23px;
-    mix-blend-mode: color-dodge;
-  }
-  .group-item {
-    filter: blur(0);
-  }
-  .image-29-parent {
-    position: absolute;
-    top: 0;
-    left: 86.1px;
-    width: 34px;
-    height: 33.4px;
-  }
-  .group-inner,
-  .rectangle-div {
-    position: absolute;
-    top: 4.9px;
-    left: 7.1px;
-    background-color: #f8f8f8;
-    width: 19.3px;
-    height: 23px;
-    mix-blend-mode: color-dodge;
-  }
-  .rectangle-div {
-    filter: blur(0);
-  }
-  .group-parent,
-  .image-30-parent,
-  .image-31-parent {
-    position: absolute;
-    top: 1px;
-    left: 43px;
-    width: 34px;
-    height: 33.4px;
-  }
-  .group-parent,
-  .image-31-parent {
-    left: 0;
-  }
-  .group-parent {
-    top: 131.1px;
-    left: 185.8px;
-    width: 237.1px;
-    height: 34.4px;
-  }
-  .card-container-group,
-  .card-container-parent {
-    position: absolute;
-    top: 55%;
-    left: 15%;
-    width: 457.3px;
-    height: 183.1px;
-  }
-  .card-container-group {
-    top: 18%;
-    left: 15%;
-  }
-  .card-container-container,
-  .card-container-parent1,
-  .group-parent2 {
-    position: absolute;
-    top: 75%;
-    left: 49%;
-    width: 457.3px;
-    height: 183.1px;
-  }
-  .card-container-parent1,
-  .group-parent2 {
-    top: 37%;
-  }
-  .group-parent2 {
-    top: 90%;
-    left: 20%;
-    width: 237.1px;
-    height: 34.4px;
-  }
-  .desktop-16-child,
-  .speakers {
-    position: absolute;
-    top: 3%;
-    left: calc(50% - 31%);
-    font-size: 7vw;
-    letter-spacing: 0.2em;
-    line-height: 131.4%;
-    font-family: Michroma;
-    /* color: #4d9ca1; */
-    display: flex;
-    align-items: center;
-    width: 60%;
-    height: 10%;
-  }
-  .desktop-16-child388 {
-    position: absolute;
-    top: 15.5%;
-    left: 20%;
-    width: 40%;
-    height: 24px;
-    object-fit: cover;
-  }
-  .ellipse-div {
-    position: absolute;
-    top: 17.5%;
-    left: 60%;
-    border-radius: 50%;
-    background-color: #a0eff3;
-    width: 10px;
-    height: 10px;
-  }
-  .desktop-16 {
-    position: relative;
+}
 
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    text-align: left;
-    font-size: 36px;
-    color: #fff;
-    font-family: Ligconsolata;
-  }
-  @media (max-width: 768px) and (min-width:460px) {
-    .card-container-container,
-  .card-container-parent1,
-  .group-parent2,
-  .card-container-group,
-  .card-container-parent {
-    left:5%;
-  }
-  .desktop-16-child388{
-    top:10%;
-  }
-  .ellipse-div {
-    display:none;
-  }
-  }
-  @media (max-width:459px){
-    .card-container-container,
-  .card-container-parent1,
-  .group-parent2,
-  .card-container-group,
-  .card-container-parent {
-    width:90%;
-    left:3%;
-  }
-  .desktop-16 {
-    position: relative;
-    background-color: #111115;
-    width: 100vw;
-    height: 140vh;
-    overflow: hidden;
-    text-align: left;
-    font-size: 36px;
-    color: #fff;
-    font-family: Ligconsolata;
-  }
-  .group-parent2{
-    top:101%;
-  }
-  .card-container-icon{
-    width:90%;
-  }
-  .name{
-    width:40%;
-    font-size: 54%;
-    left:31%;
-  }
-  .name1{
-    width:64%;
-    font-size: 52%;
-  }
-  .image-icon{
-    width:79px;
-    top:12%;
-    left:5%;
-  }
-  .corner-line{
-    left:2%;
-    position: absolute;
-    top: 120.1px;
-    border-bottom: 1px dashed #fff;
-    border-left: 6px dashed #fff;
-    box-sizing: border-box;
-    width: 45.3px;
-    height: 39.7px;
-  }
-  .corner-line1{
-    display:none;
-  }
-  .ellipse-div {
-    display:none;
-  }
-  .desktop-16-child388{
-    top:10%;
-  }
-  }
-  
-  
-  
+
