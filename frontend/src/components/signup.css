@@ -21,7 +21,7 @@
 
 
 .SignUp-card-whiteDiv {
-  background-image: url("../../public/Vector 91.svg");
+  background-image: url("/public/Vector 91.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -85,9 +85,7 @@
   letter-spacing: 5.775px;
 }
 
-.submit-button-signup {
-  background-image: url("");
-}
+
 
 .signup-button-blackDivAlreadyHaveAnAccount {
   color: #fff;
@@ -125,4 +123,11 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.2px;
+}
+
+
+.SignUpPage{
+
+  background-image: url("/public/image 36.svg");
+  background-size: cover;
 }

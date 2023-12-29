@@ -1,34 +1,32 @@
-// Signup.js
-
 import React from "react";
-import "../components/signup.css"; // Adjust the path accordingly
+import "../components/signup.css"; 
 import Navhome from "./navhome";
 
 const Signup = () => {
   return (
-    <div className="flex flex-col w-full h-full text-white justify-center items-center gap-10">
+    <div className="flex SignUpPage flex-col  bg-contain w-full h-full text-white justify-center items-center gap-10">
       <Navhome />
       <div className="SignUp-card bg-contain w-[75vw] h-[75vh]">
-        <div className="SignUp-card-whiteDiv w-[100%] h-[35%] bg-contain flex  gap-x-24">
+        <div className="SignUp-card-whiteDiv bg-contain w-full h-[35%]  flex gap-x-6 md:gap-x-24">
           <div
-            className="EES-logo mt-12 mx-12 px-4 w-[15%]"
+            className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%]"
             style={{ borderRight: "5px dashed black" }}
           ></div>
-          <div className="SignUp-card-heading w-full mt-4 md:mt-20 h-[60%] text-center md:w-[50%] text-lg md:text-2xl lg:text-3xl">
+        <div className="SignUp-card-heading  w-fit max-h-fit overflow-hidden mt-4 md:mt-20 h-[60%] text-center md:w-[50%] text-md md:text-2xl lg:text-3xl" style={{ whiteSpace: 'nowrap' }}>
             SIGN UP
           </div>
         </div>
-        <div className="SignUp-card-blackDiv w-[100%] h-[60%] text-white flex relative">
-          <div className="h-[100%] w-[30%]   relative ">
-            <div className="SignUp-card-blackDiv-whiteEESpattern w-[100%] h-[50%] mt-[70%] flex justify-center items-center absolute">
+        <div className="SignUp-card-blackDiv w-full h-[60%] text-white flex relative">
+          <div className="h-[100%] w-[30%] relative">
+            <div className="SignUp-card-blackDiv-whiteEESpattern w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
               <div className="SignUp-card-blackDiv-eesdesign w-[50%] translate-x-[-1.5rem] translate-y-[0.5rem] h-[50%] "></div>
             </div>
           </div>
-          <div className="h-[100%] w-[30%]    overflow-hidden  justify-evenly  text-white">
-            <form className="w-full h-[90%]  m-2   ">
+          <div className="h-[100%] w-[30%] overflow-hidden justify-evenly text-white">
+            <form className="w-full h-[90%] m-2">
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-fit h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder"
+                  className="w-full h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder"
                   type="text"
                   placeholder="NAME"
                   style={{
@@ -45,7 +43,7 @@ const Signup = () => {
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-fit text-white h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="text"
                   placeholder="EMAIL"
                   style={{
@@ -62,7 +60,7 @@ const Signup = () => {
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-fit text-white h-[20%]  px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="text"
                   placeholder="COLLEGE NAME"
                   style={{
@@ -79,7 +77,7 @@ const Signup = () => {
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-fit text-white h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="text"
                   placeholder="YEAR"
                   style={{
@@ -96,7 +94,7 @@ const Signup = () => {
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-fit text-white h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="password"
                   placeholder="PASSWORD"
                   style={{
@@ -113,7 +111,7 @@ const Signup = () => {
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-fit text-white h-[20%]  px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="password"
                   placeholder="CONFIRM PASSWORD"
                   style={{
@@ -130,8 +128,7 @@ const Signup = () => {
             </form>
           </div>
 
-          {/* zig zag pattern */}
-          <div className="h-[80%] w-[10%] flex items-center   ml-[2rem]">
+          <div className="h-[80%] w-[10%] flex items-center ml-[2rem]">
             <svg
               width="100%"
               height="90%"
@@ -277,16 +274,16 @@ const Signup = () => {
             </svg>
           </div>
 
-          <div className=" h-[100%] w-[30%] flex flex-col items-center justify-between  ">
+          <div className="h-[100%] w-[30%] flex flex-col items-center justify-between">
             <div></div>
-            <button className="signup-button-blackDiv cursor-pointer w-[100%] bg-transparent h-[10%] flex items-center justify-center  ">
+            <button className="signup-button-blackDiv cursor-pointer w-full bg-transparent h-[10%] flex items-center justify-center">
               SIGN UP
             </button>
-            <div className=" h-[20%] w-[100%] ">
-              <div className="w-[100%] signup-button-blackDivAlreadyHaveAnAccount">
+            <div className="h-[20%] w-full">
+              <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">
                 Already have an account?
               </div>
-              <button className=" w-[100%] h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center  signup-button-blackDivAlreadyHaveAnAccountButton">
+              <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
                 Log in
               </button>
             </div>
