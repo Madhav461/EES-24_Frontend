@@ -4,69 +4,69 @@ import "./Speaker.css"
 function Speaker() {
   return (
     <>
-    <div class="speaker">
+    <div className="speaker">
         SPEAKERS
     </div>
-    <div class="line1">
+    <div className="line1">
         <img
-        class="line"
+        className="line"
         alt=""
-        src="line.svg"
+        src="/line.svg"
       />
     </div>
-    <div class="con1">
-        <div class="y1">
-            <div class="y2">
-                <img class="icon" alt="" src="person.svg" />
-                <div class="corner-line"></div>
-                <div class="corner-line1"></div>
-                <div class="name">MAGNUS</div>
-                <div class="name1">CEO of some company</div>
-                <img class="face" alt="" src="facebook.svg" />
-                <img class="ins" alt="" src="instagram.svg" />
-                <img class="git" alt="" src="image.svg" />
+    <div className="con1">
+        <div className="y1">
+            <div className="y2">
+                <img className="icon" alt="" src="/person.svg" />
+                <div className="corner-line"></div>
+                <div className="corner-line1"></div>
+                <div className="name">MAGNUS</div>
+                <div className="name1">CEO of some company</div>
+                <img className="face" alt="" src="/facebook.svg" />
+                <img className="ins" alt="" src="/instagram.svg" />
+                <img className="git" alt="" src="/image.svg" />
             </div>
         </div>
     </div>
-    <div class="con2">
-        <div class="y1">
-            <div class="y2">
-                <img class="icon" alt="" src="person.svg" />
-                <div class="corner-line"></div>
-                <div class="corner-line1"></div>
-                <div class="name">MAGNUS</div>
-                <div class="name1">CEO of some company</div>
-                <img class="face" alt="" src="facebook.svg" />
-                <img class="ins" alt="" src="instagram.svg" />
-                <img class="git" alt="" src="image.svg" />
+    <div className="con2">
+        <div className="y1">
+            <div className="y2">
+                <img className="icon" alt="" src="/person.svg" />
+                <div className="corner-line"></div>
+                <div className="corner-line1"></div>
+                <div className="name">MAGNUS</div>
+                <div className="name1">CEO of some company</div>
+                <img className="face" alt="" src="/facebook.svg" />
+                <img className="ins" alt="" src="/instagram.svg" />
+                <img className="git" alt="" src="/image.svg" />
             </div>
         </div>
     </div>
-    <div class="con3">
-        <div class="y1">
-            <div class="y2">
-                <img class="icon" alt="" src="person.svg" />
-                <div class="corner-line"></div>
-                <div class="corner-line1"></div>
-                <div class="name">MAGNUS</div>
-                <div class="name1">CEO of some company</div>
-                <img class="face" alt="" src="facebook.svg" />
-                <img class="ins" alt="" src="instagram.svg" />
-                <img class="git" alt="" src="image.svg" />
+    <div className="con3">
+        <div className="y1">
+            <div className="y2">
+                <img className="icon" alt="" src="/person.svg" />
+                <div className="corner-line"></div>
+                <div className="corner-line1"></div>
+                <div className="name">MAGNUS</div>
+                <div className="name1">CEO of some company</div>
+                <img className="face" alt="" src="/facebook.svg" />
+                <img className="ins" alt="" src="/instagram.svg" />
+                <img className="git" alt="" src="/image.svg" />
             </div>
         </div>
     </div>
-    <div class="con4">
-        <div class="y1">
-            <div class="y2">
-                <img class="icon" alt="" src="person.svg" />
-                <div class="corner-line"></div>
-                <div class="corner-line1"></div>
-                <div class="name">MAGNUS</div>
-                <div class="name1">CEO of some company</div>
-                <img class="face" alt="" src="facebook.svg" />
-                <img class="ins" alt="" src="instagram.svg" />
-                <img class="git" alt="" src="image.svg" />
+    <div className="con4">
+        <div className="y1">
+            <div className="y2">
+                <img className="icon" alt="" src="/person.svg" />
+                <div className="corner-line"></div>
+                <div className="corner-line1"></div>
+                <div className="name">MAGNUS</div>
+                <div className="name1">CEO of some company</div>
+                <img className="face" alt="" src="/facebook.svg" />
+                <img className="ins" alt="" src="/instagram.svg" />
+                <img className="git" alt="" src="/image.svg" />
             </div>
         </div>
     </div>
