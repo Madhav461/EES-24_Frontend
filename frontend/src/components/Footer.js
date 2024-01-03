@@ -39,7 +39,11 @@ const Footer = () => {
             </div>
 
             {/* icons and form separating line ka div */}
-            <div className="h-[97%] w-0.5 bg-pitchdeck-slide-background overflow-hidden line2" />
+            <div className="lin">
+            <svg  width="2" height="437" viewBox="0 0 2 437" fill="none" xmlns="http://www.w3.org/2000/svg" style={{padding:'.1rem'}}>
+<line x1="1" y1="4.37114e-08" x2="0.999981" y2="437" stroke="white" stroke-width="2"/>
+</svg></div>
+
 
             <div className="h-full w-[35%] overflow-hidden flex items-center overflow-hidden input">
               <Footerlinks></Footerlinks>
