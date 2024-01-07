@@ -9,10 +9,12 @@ import HamburgerMenu from "./components/hamburger";
 import Login from "./components/login";
 import Signup from "./components/signup";
 
+import Dashboard from "./components/dashboard.js";
+
 function App() {
   return (
     <Router>
-     <div className="flex flex-col w-[100vw]  max-h-fit  ">
+     {/* <div className="flex flex-col w-[100vw]  max-h-fit  ">
      <div className="absolute top-[-20px] left-[15px] lag:hidden">
      <HamburgerMenu/>
       </div> 
@@ -28,7 +30,12 @@ function App() {
           </Routes>
        </div>
 
-    </div>
+    </div> */}
+
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+      </Routes>
+
       </Router>
   
   );
