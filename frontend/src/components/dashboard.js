@@ -3,10 +3,11 @@ import Navhome from "./navhome";
 const dashboard=()=>{
     return(
         <div className="relative">
-            <div className="absolute top-[0] "><Navhome /></div>
+
+        {/* <div className="absolute top-[0] "><Navhome /></div> */}
         
        <div className="h-[100vh] overflow-hidden">
-        <img className="mix-blend-overlay width-[100vw] mt-[-1330px] object-cover" src="/image 50.svg" style={{mixBlendMode: 'overlay'}}/>
+        <img className=" width-[100vw] mt-[-1330px] object-cover" src="/image 50.svg" style={{mixBlendMode: 'overlay'}}/>
        </div>
 
        <div className="absolute w-[83.3%] h-[46%] top-[39%] " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
