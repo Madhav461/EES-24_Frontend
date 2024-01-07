@@ -1,5 +1,20 @@
-.SignUp-card-heading {
-    font-size: 1rem; /* Base font size */
+.SignUp{
+    
+     /* font-size: 1rem;  */
+
+     color: #000;
+    text-align: center;
+     font-family: Goldman;
+    font-size: 3.5rem;
+     margin-top: 8% ;
+   padding: 3%;
+  font-style: normal;
+font-weight: 200;
+line-height: normal;
+letter-spacing: 5.775px;
+margin-left: 1%;
+
+
  
   }
   
@@ -128,6 +143,6 @@
 
 .SignUpPage{
 
-  background-image: url("/public/image 36.svg");
+  /* background-image: url("/public/image 36.svg"); */
   background-size: cover;
 }
