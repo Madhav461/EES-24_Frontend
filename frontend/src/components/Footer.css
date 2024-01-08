@@ -1,30 +1,30 @@
 /* Your existing styles */
 
 .footer-container {
-   background-repeat: no-repeat;
-   background-image: url("/public/footerBackground.svg");
-   background-size: contain;
-   background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/public/footerBackground.svg");
+  background-size: contain;
+  background-position: center;
 background-size:contain ;
-   display: flex;
-   flex-direction: column;
-   height: fit-content;
-   padding: 10px;
-   box-sizing: border-box;
-  
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 10px;
+  box-sizing: border-box;
+ 
 }
 @media (min-width: 1360px) {
- .angle-rectangle {
-  position: absolute;
-  top: -2.3%;
-  left: -2%;
-  
-  width: 50px; /* Set your desired width */
-  height: 50px; /* Set your desired height */
-  background-color: white;
-   /* Set your desired background color */
-  transform: rotate(-45deg) ; 
- /* Rotate the rectangle by 45 degrees */
+.angle-rectangle {
+ position: absolute;
+ top: -2.3%;
+ left: -2%;
+ 
+ width: 50px; /* Set your desired width */
+ height: 50px; /* Set your desired height */
+ background-color: white;
+  /* Set your desired background color */
+ transform: rotate(-45deg) ; 
+/* Rotate the rectangle by 45 degrees */
 
 }}
 
@@ -32,34 +32,34 @@ background-size:contain ;
 
 /* New media query for smaller screens */
 @media (max-width: 1220px) {
-  .footer-container {
-   background-image: url("/public/footerBackground.svg");
-    background-size: cover; /* Adjust as needed */
+ .footer-container {
+  background-image: url("/public/footerBackground.svg");
+   background-size: cover; /* Adjust as needed */
 
-  }
-  
+ }
  
+
 }
 
 
 .footer-line{
 
-   background-image: url("/public/vector-75@2x.png");
-   background-size: cover;
+  background-image: url("/public/vector-75@2x.png");
+  background-size: cover;
 
 }
 
 .text::placeholder{
-   color: white;
+  color: white;
 }
 
 
 
 
 .touch{
-  
-  color: #FFF;
-  margin-left:1%;
+ 
+ color: #FFF;
+ margin-left:1%;
 font-family: Goldman;
 padding: auto;
 margin-top: 3%;
@@ -67,76 +67,76 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 letter-spacing: 3.6px; 
- }.submit-button {
-  transform: rotate(90deg);
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.0);
-  width: 100%;
-  height: 20%;
-  overflow: hidden;
-  font-family: 'Bruno Ace SC';
-  color: white;
-  padding: 1rem;
-  margin-bottom: 3rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 130%;
-  transition: background-color 0.3s;
+}.submit-button {
+ transform: rotate(90deg);
+ position: relative;
+ background-color: rgba(0, 0, 0, 0.0);
+ width: 100%;
+ height: 20%;
+ overflow: hidden;
+ font-family: 'Bruno Ace SC';
+ color: white;
+ padding: 1rem;
+ margin-bottom: 3rem;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 130%;
+ transition: background-color 0.3s;
 }
 
 .submit-button::before {
-  content: '';
-  position: absolute;
-  top: 0%;
-  left: -15%;
-  width: 150%; /* Adjust the width to a percentage value */
-  height: 100%;
-  border: 15px dashed white;
-  transform: skewX(20deg); /* Initial skewness */
-  box-sizing: border-box;
-  z-index: -1;
-  transition: transform 0.3s; /* Add transition for a smooth effect */
+ content: '';
+ position: absolute;
+ top: 0%;
+ left: -15%;
+ width: 150%; /* Adjust the width to a percentage value */
+ height: 100%;
+ border: 15px dashed white;
+ transform: skewX(20deg); /* Initial skewness */
+ box-sizing: border-box;
+ z-index: -1;
+ transition: transform 0.3s; /* Add transition for a smooth effect */
 }
 
 
 .submit-button:hover::before {
-  transform: skewX(0deg);
-   /* Skewness on hover */
+ transform: skewX(0deg);
+  /* Skewness on hover */
 }
 
- @media only screen and (max-width: 900px) {
-  .submit-button {
-    width: 80%; /* Adjust the width for mobile view */
-    font-size: 110%; /* Adjust the font size for mobile view */
+@media only screen and (max-width: 900px) {
+ .submit-button {
+   width: 80%; /* Adjust the width for mobile view */
+   font-size: 110%; /* Adjust the font size for mobile view */
 
+ }
+ .lin{
+   display: none;
   }
-  .line2{
-    display: none;
-   }
-  
-   .input{
-    display: none;
-   }
-  
-   .forminput{
-    width: 100%;
-   }
-  
-   .triangle{
-    display: none;
-   }
+ 
+  .input{
+   display: none;
+  }
+ 
+  .forminput{
+   width: 100%;
+  }
+ 
+  .triangle{
+   display: none;
+  }
 
-   .angle-rectangle {
-    position: absolute;
-    top: -4.5%;
-    left: -5%;
-    
-    width: 50px; /* Set your desired width */
-    height: 50px; /* Set your desired height */
-    background-color: white;
-     /* Set your desired background color */
-    transform: rotate(-45deg) ; 
-   /* Rotate the rectangle by 45 degrees */
-  
-  }
+  .angle-rectangle {
+   position: absolute;
+   top: -4.5%;
+   left: -5%;
+   
+   width: 50px; /* Set your desired width */
+   height: 50px; /* Set your desired height */
+   background-color: white;
+    /* Set your desired background color */
+   transform: rotate(-45deg) ; 
+  /* Rotate the rectangle by 45 degrees */
+ 
+ }
 }
