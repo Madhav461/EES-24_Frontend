@@ -18,7 +18,7 @@ function Speaker() {
         <div className="y1">
             <div className="y2">
                 <img className="icon_speaker" alt="" src="/person.svg" />
-                <div className="corner-line"></div>
+                <div className="corner-border"></div>
                 <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
