@@ -3,6 +3,7 @@
 import React from "react";
 import "../components/signup.css"; // Adjust the path accordingly
 import Navhome from "./navhome";
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   return (
@@ -286,9 +287,11 @@ const Signup = () => {
               <div className="w-[100%] signup-button-blackDivAlreadyHaveAnAccount">
                 Already have an account?
               </div>
-              <button className=" w-[100%] h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center  signup-button-blackDivAlreadyHaveAnAccountButton">
-                Log in
-              </button>
+              <Link to="/login">
+                <button className=" w-[100%] h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center  signup-button-blackDivAlreadyHaveAnAccountButton">
+                  Log in
+                </button>
+              </Link>
             </div>
           </div>
         </div>
