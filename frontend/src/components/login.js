@@ -5,7 +5,7 @@ import "../components/login.css"; // Adjust the path accordingly
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   return (
     <div className="flex login-page flex-col w-full h-full text-white justify-center items-center gap-10">
       <Navhome />
@@ -245,4 +245,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
