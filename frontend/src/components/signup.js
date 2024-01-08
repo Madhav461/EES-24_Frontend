@@ -8,19 +8,16 @@ const Signup = () => {
       <Navhome />
       <div className="SignUp-card bg-contain w-[75vw] h-[75vh]">
         <div
-          className="SignUp-card-whiteDiv bg-contain w-full h-[35%]  flex gap-x-6 md:gap-x-24"
+          className="SignUp-card-whiteDiv bg-contain  w-full h-[35%] flex   gap-x-6 md:gap-x-24"
           style={{
-            backgroundImage: "unset",
-            background: "rgba(255,255,255)",
-            height: "20%",
-            marginBottom: "20%",
+            
           }}
         >
           <div
-            className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%]"
-            style={{ borderRight: "5px dashed black", display: "none" }}
+            className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%] none"
+            style={{ borderRight: "5px dashed black" }}
           ></div>
-          <div className="SignUp" style={{ whiteSpace: "nowrap" }}>
+          <div className="SignUp flex  my-auto  justify-center mb-[20%]   items-center" style={{ whiteSpace: "nowrap" }}>
             SIGN UP
           </div>
         </div>
@@ -28,14 +25,12 @@ const Signup = () => {
         <div
           className="SignUp-card-blackDiv  w-full h-[60%] text-white flex relative"
           style={{
-            backgroundImage: "unset",
-            background: "rgba(0,0,0,0.7)",
-            height: "80%",
+      
           }}
         >
           <div
-            className="h-[100%] w-[30%]  relative  bg-teal-700"
-            style={{ display: "none" }}
+            className="h-[100%] w-[30%]  relative   none"
+            style={{ }}
           >
             <div className="SignUp-card-blackDiv-whiteEESpattern w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
               <div className="SignUp-card-blackDiv-eesdesign w-[50%] translate-x-[-1.5rem] translate-y-[0.5rem] h-[50%]  "></div>
@@ -43,12 +38,8 @@ const Signup = () => {
           </div>
 
           <div
-            className="h-[100%] w-[30%]  overflow-hidden justify-evenly text-white "
+            className="h-[100%] w-[30%]  overflow-hidden justify-evenly text-white amaan"
             style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              height: "auto",
             }}
           >
             <form className="w-full h-[90%] m-2">
@@ -57,7 +48,7 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
                   placeholder="NAME"
                   style={{
@@ -68,7 +59,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
+                
                   }}
                 />
               </div>
@@ -86,7 +77,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
+                   
                   }}
                 />
               </div>
@@ -104,7 +95,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
+                    
                   }}
                 />
               </div>
@@ -122,8 +113,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
-                  }}
+                   }}
                 />
               </div>
 
@@ -140,14 +130,14 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
+  
                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
                   type="password"
                   placeholder="CONFIRM PASSWORD"
                   style={{
@@ -158,41 +148,39 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    marginBottom:'8%',
                   }}
                 />
               </div>
             </form>
 
             {/* new code for signUp button and already have an account button mobile view */}
-            <div className=" button-container  h-[40%] w-[100%]">
+            <div className=" button-container " >
               <button
                 type="button"
-                class="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 me-2 mb-2" style={{width:'100%'}}
+                class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
+                style={{ width: "100%" , fontFamily:"Goldman" ,}}
               >
-                {/* <svg
-                  class="w-4 h-4 me-2 -ms-1 text-[#00000]"
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fab"
-                  data-icon="ethereum"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 320 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"
-                  ></path>
-                </svg> */}
                 Sign Up
+              </button>
+              <p style={{ alignItems: "center", font: "Goldman", textAlign:"center"  }}>
+                Already have an account?
+              </p>
+
+              <button
+                type="button"
+                class="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center "
+                style={{ width: "100%", fontFamily:"Goldman" ,textAlign:'center'}}
+              >
+                LOG IN
               </button>
             </div>
           </div>
 
           {/*  white pattern  border  */}
           <div
-            className="h-[80%] w-[10%] bg-green-600 flex items-center ml-[2rem]"
-            style={{ display: "none" }}
+            className="h-[80%] w-[10%]  flex items-center ml-[2rem] zigzagPattern "
+            style={{}}
           >
             <svg
               width="100%"
@@ -341,8 +329,8 @@ const Signup = () => {
 
           {/* sign up button and already have an account  */}
           <div
-            className="h-[100%] bg-red-600  w-[30%] flex flex-col items-center justify-between "
-            style={{ display: "none" }}
+            className="h-[100%]   mb-[20%]  w-[30%] flex flex-col items-center justify-evenly ButtonContainerRightMostDiv "
+            style={{  }}
           >
             <div></div>
             <button className="signup-button-blackDiv cursor-pointer w-full bg-transparent h-[10%] flex items-center justify-center">
