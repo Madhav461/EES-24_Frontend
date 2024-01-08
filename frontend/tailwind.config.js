@@ -5,6 +5,8 @@ module.exports = {
     screens:{
       'lag': '1224px',
       'md' : '768px',
+      'sm': '640px',
+      'ab': '500px'
 
     },
     extend: {

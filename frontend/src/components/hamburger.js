@@ -43,7 +43,7 @@ const Icon = styled.span`
   position: relative;
   background-color: ${(props) => (props.clicked ? "transparent" : "white")};
 
-  width: 3rem;
+  width: 2rem;
   height: 2px;
   display: inline-block;
   margin-top: 3.5rem;
@@ -55,7 +55,7 @@ const Icon = styled.span`
     content: "";
     background-color: white;
    
-    width: 3rem;
+    width: 2rem;
     height: 2px;
     display: inline-block;
 
@@ -86,6 +86,7 @@ const Icon = styled.span`
 const Navigation = styled.nav`
   height: 100vh;
   position: fixed;
+  background-color: black;
   top: 0;
   right: 0;
   z-index: 600;
@@ -135,9 +136,9 @@ function HamburgerMenu() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   return (
-    <div id="ham_txt" className="z-10 ">
+    <div id="ham_txt" className="z-20 ">
       <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
-        <Icon clicked={click}>&nbsp;</Icon>
+        <Icon className="" clicked={click}>&nbsp;</Icon>
       </MenuLabel>
       {/* <img src="bg_user_reg.svg"></img> */}
       <NavBackground className="h-auto  overflow-hidden" clicked={click}>&nbsp;</NavBackground>

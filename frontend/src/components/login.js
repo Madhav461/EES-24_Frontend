@@ -5,7 +5,9 @@ import Navhome from "./navhome";
 const Login = () => {
   return (
     <>
+    <div className="z-20">
       <Navhome />
+      </div>
       <div className="flex items-center justify-center relative">
         <img
           className="w-[1200px] h-[350px] object-center  mt-40 ml-8"
