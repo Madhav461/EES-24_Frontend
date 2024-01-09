@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/signup.css"; 
+import "../components/signup.css";
 import Navhome from "./navhome";
 
 const Signup = () => {
@@ -7,26 +7,43 @@ const Signup = () => {
     <div className="flex SignUpPage flex-col  bg-contain w-full h-full text-white justify-center items-center gap-10">
       <Navhome />
       <div className="SignUp-card bg-contain w-[75vw] h-[75vh]">
-        <div className="SignUp-card-whiteDiv bg-contain w-full h-[35%]  flex gap-x-6 md:gap-x-24">
+        <div
+          className="SignUp-card-whiteDiv bg-contain  w-full h-[35%] flex   gap-x-6 md:gap-x-24"
+          style={{}}
+        >
           <div
-            className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%]"
+            className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%] none"
             style={{ borderRight: "5px dashed black" }}
           ></div>
-        <div className="SignUp-card-heading  w-fit max-h-fit overflow-hidden mt-4 md:mt-20 h-[60%] text-center md:w-[50%] text-md md:text-2xl lg:text-3xl" style={{ whiteSpace: 'nowrap' }}>
+          <div
+            className="SignUp flex  my-auto  justify-center mb-[20%]   items-center"
+            style={{ whiteSpace: "nowrap" }}
+          >
             SIGN UP
           </div>
         </div>
-        <div className="SignUp-card-blackDiv w-full h-[60%] text-white flex relative">
-          <div className="h-[100%] w-[30%] relative">
+
+        <div
+          className="SignUp-card-blackDiv  w-full h-[60%] text-white flex relative"
+          style={{}}
+        >
+          <div className="h-[100%] w-[30%]  relative   none" style={{}}>
             <div className="SignUp-card-blackDiv-whiteEESpattern w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
-              <div className="SignUp-card-blackDiv-eesdesign w-[50%] translate-x-[-1.5rem] translate-y-[0.5rem] h-[50%] "></div>
+              <div className="SignUp-card-blackDiv-eesdesign w-[50%] translate-x-[-1.5rem] translate-y-[0.5rem] h-[50%]  "></div>
             </div>
           </div>
-          <div className="h-[100%] w-[30%] overflow-hidden justify-evenly text-white">
+
+          <div
+            className="h-[100%] w-[30%]  overflow-hidden justify-evenly text-white amaan"
+            style={{}}
+          >
             <form className="w-full h-[90%] m-2">
-              <div style={{ position: "relative" }}>
+              <div
+                className="relative"
+                style={{ width: "contain", gap: "2rem" }}
+              >
                 <input
-                  className="w-full h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
                   placeholder="NAME"
                   style={{
@@ -37,13 +54,14 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    color: "white",
                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="text"
                   placeholder="EMAIL"
                   style={{
@@ -54,13 +72,14 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    color: "white",
                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="text"
                   placeholder="COLLEGE NAME"
                   style={{
@@ -71,13 +90,14 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    color: "white",
                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="text"
                   placeholder="YEAR"
                   style={{
@@ -88,13 +108,14 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    color: "white",
                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
-                <input
-                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+              <input
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
                   type="password"
                   placeholder="PASSWORD"
                   style={{
@@ -105,13 +126,14 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    color: "white",
                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-full h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
                   type="password"
                   placeholder="CONFIRM PASSWORD"
                   style={{
@@ -122,13 +144,52 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    marginBottom: "8%",
+                    color: "white",
                   }}
                 />
               </div>
+
             </form>
+
+            {/* new code for signUp button and already have an account button mobile view */}
+            <div className=" button-container ">
+              <button
+                type="button"
+                class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
+                style={{ width: "100%", fontFamily: "Goldman" }}
+              >
+                Sign Up
+              </button>
+              <p
+                style={{
+                  alignItems: "center",
+                  font: "Goldman",
+                  textAlign: "center",
+                }}
+              >
+                Already have an account?
+              </p>
+
+              <button
+                type="button"
+                class="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center "
+                style={{
+                  width: "100%",
+                  fontFamily: "Goldman",
+                  textAlign: "center",
+                }}
+              >
+                LOG IN
+              </button>
+            </div>
           </div>
 
-          <div className="h-[80%] w-[10%] flex items-center ml-[2rem]">
+          {/*  white pattern  border  */}
+          <div
+            className="h-[80%] w-[10%]  flex items-center ml-[2rem] zigzagPattern "
+            style={{}}
+          >
             <svg
               width="100%"
               height="90%"
@@ -274,7 +335,11 @@ const Signup = () => {
             </svg>
           </div>
 
-          <div className="h-[100%] w-[30%] flex flex-col items-center justify-between">
+          {/* sign up button and already have an account  */}
+          <div
+            className="h-[100%]   mb-[20%]  w-[30%] flex flex-col items-center justify-evenly ButtonContainerRightMostDiv "
+            style={{}}
+          >
             <div></div>
             <button className="signup-button-blackDiv cursor-pointer w-full bg-transparent h-[10%] flex items-center justify-center">
               SIGN UP
