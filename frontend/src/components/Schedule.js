@@ -5,24 +5,45 @@ const title_word="SCHEDULE";
 function Schedule() {
     const [sample, setSample] = React.useState(title_word);
 
-  const params = {
-    overdrive: false,
-    speed: 0.2,
-    tick: 1,
-    step: 1,
-    scramble: 14,
-    seed: 2,
-    chance: 0.81,
-    overflow: false,
-  };
+    const params = {
+        overdrive: false,
+        speed: 0.9,
+        tick: 1,
+        step: 1,
+        scramble: 14,
+        seed: 2,
+        chance: 0.81,
+        overflow: false,
+      };
+    
+      const { ref, replay } = useScramble({
+        text: sample,
+        ...params,
+      });
+//   function HandleHover(){
+//     replay();
+//   }
 
-  const { ref, replay } = useScramble({
-    text: sample,
-    ...params,
-  });
-  function HandleHover(){
-    replay();
-  }
+
+
+//   const params = {
+//     overdrive: false,
+//     speed: 1,
+//     tick: 1,
+//     step: 4,
+//     scramble: 14,
+//     seed: 2,
+//     chance: 0,
+//     overflow: true,
+//   };
+
+//   const { ref, replay } = useScramble({
+//     text: sample,
+//     ...params,
+//   });
+//   function HandleHover(){
+//     replay();
+//   }
 
 
 
@@ -43,8 +64,11 @@ function Schedule() {
             <div className='max-h-fit w-screen    border-t-[0.5px] border-b-[0.5px] border-solid  border-[#FFF] '>
                 <div className='w-screen h-[1088px] border-solid border-[#FFF] border-y-[0.5px] my-[50px]'>
                     <div className='  h-[1088px] '>
-                        <div className=' h-[210px] flex border-solid border-[#FFF] border-b-[0.5px] '>
-                            <div id="schedule_title" onMouseOver={HandleHover} className=' text-white ml-3 text-center text-[100px]   tracking-[19.2px] font-bold leading-[131px] mt-[23px]  md:ml-[24px] '>
+                        <div className=' h-[210px] flex border-solid border-[#FFF] border-b-[0.5px] items-center'>
+                        {/* leading-[131px] */}
+                        {/* mt-[23px] */}
+                        {/* onMouseOver={HandleHover} */}
+                            <div id="schedule_title" className=' text-white ml-3 text-center text-[100px] tracking-[1rem] font-bold leading-[0px] items-center  md:ml-[24px] '>
                                 {/* underline  */}
                                 <p ref={ref}></p>
                             </div>
