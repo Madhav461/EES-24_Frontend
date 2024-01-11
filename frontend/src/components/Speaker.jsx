@@ -7,9 +7,9 @@ function Speaker() {
     <div className="speaker">
         SPEAKERS
     </div>
-    <div className="line1">
+    <div className="border1">
         <img
-        className="line"
+        className="border"
         alt=""
         src="/line.svg"
       />
@@ -17,9 +17,9 @@ function Speaker() {
     <div className="con1">
         <div className="y1">
             <div className="y2">
-                <img className="icon" alt="" src="/person.svg" />
-                <div className="corner-line"></div>
-                <div className="corner-line1"></div>
+                <img className="icon_speaker" alt="" src="/person.svg" />
+                <div className="corner-border"></div>
+                <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
                 <img className="face" alt="" src="/facebook.svg" />
@@ -31,9 +31,9 @@ function Speaker() {
     <div className="con2">
         <div className="y1">
             <div className="y2">
-                <img className="icon" alt="" src="/person.svg" />
-                <div className="corner-line"></div>
-                <div className="corner-line1"></div>
+                <img className="icon_speaker" alt="" src="/person.svg" />
+                <div className="corner-border"></div>
+                <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
                 <img className="face" alt="" src="/facebook.svg" />
@@ -45,9 +45,9 @@ function Speaker() {
     <div className="con3">
         <div className="y1">
             <div className="y2">
-                <img className="icon" alt="" src="/person.svg" />
-                <div className="corner-line"></div>
-                <div className="corner-line1"></div>
+                <img className="icon_speaker" alt="" src="/person.svg" />
+                <div className="corner-border"></div>
+                <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
                 <img className="face" alt="" src="/facebook.svg" />
@@ -59,9 +59,9 @@ function Speaker() {
     <div className="con4">
         <div className="y1">
             <div className="y2">
-                <img className="icon" alt="" src="/person.svg" />
-                <div className="corner-line"></div>
-                <div className="corner-line1"></div>
+                <img className="icon_speaker" alt="" src="/person.svg" />
+                <div className="corner-border"></div>
+                <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
                 <img className="face" alt="" src="/facebook.svg" />

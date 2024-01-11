@@ -93,7 +93,7 @@ const SponsorsFull = () => {
     }
 
     return (
-        <>
+        <div className='border-y border-solid border-slate-600 pt-[8%] pb-[8%] mb-[5%]'>
             <div>
                 <Fade {...properties}>
                     {fadeImages}
@@ -131,7 +131,8 @@ const SponsorsFull = () => {
                     {fadeImages}
                 </Fade>
             </div>
-        </>
+            {/* <hr className='bg-slate-100'></hr> */}
+        </div>
     );
 };
 
