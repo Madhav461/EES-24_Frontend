@@ -200,3 +200,16 @@
 	}
 }
   */
+  .justice{
+ justify-content:space-between;
+ align-items: center;
+
+
+  }
+  .justice1{
+	justify-content:flex-start;
+	
+	align-items:center;
+
+   
+	 }
