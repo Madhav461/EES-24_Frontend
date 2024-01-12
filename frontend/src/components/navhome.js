@@ -11,7 +11,7 @@ const Navhome2 =() =>{
   return (
     <div>
       <div className="relative bg-gray w-[100vw]  h-[73px]  flex  justice  overflow-hidden text-center text-base  text-white font-audiowide pb-3">
-      <div className="pb-8 z-20 left-[15px] md:hidden">
+      <div className="pb-8 z-50 left-[15px] md:hidden">
      <HamburgerMenu />
       </div>
       <div className=' ' >

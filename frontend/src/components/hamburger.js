@@ -18,7 +18,7 @@ const MenuLabel = styled.label`
   height: 7rem;
   width: 7rem;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 100;
 //   box-shadow: 0 1rem 3rem ;
   text-align: center;
 `;
@@ -27,28 +27,28 @@ const NavBackground = styled.div`
   position: absolute;
   top: 6.5rem;
   right: 6.5rem;
-//   background-image:
-    // ${COLORS.primaryLight}
-//   ;
+   background-image:
+     ${COLORS.primaryDark}
+   ;
   background-color:black;
   height: 100vh;
   width:100vh;
   border-radius: 50%;
-  z-index: 600;
+  z-index: 60;
   transform: ${(props) => (props.clicked ? "scale(80)" : "scale(0)")};
   transition: transform 0.8s;
 `;
 
 const Icon = styled.span`
   position: relative;
-  background-color: ${(props) => (props.clicked ? "transparent" : "white")};
+  background-color: ${(props) => (props.clicked ? "black" : "white")};
 
   width: 3rem;
   height: 2px;
   display: inline-block;
   margin-top: 3.5rem;
   transition: all 0.3s;
-  z-index:1000;
+  z-index:100;
 
   &::before,
   &::after {
@@ -86,9 +86,10 @@ const Icon = styled.span`
 const Navigation = styled.nav`
   height: 100vh;
   position: fixed;
+  background-color: ${COLORS.primaryDark};
   top: 0;
   right: 0;
-  z-index: 600;
+  z-index: 60;
   width: ${(props) => (props.clicked ? "100%" : "0")};
   opacity: ${(props) => (props.clicked ? "1" : "0")};
 
