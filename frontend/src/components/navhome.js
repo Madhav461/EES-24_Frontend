@@ -43,7 +43,7 @@ const Navhome2 =() =>{
 
         </ul>
        <div className='flex justice1 mr-2 pr-4'>
-        <div className="relative pr-3 flex grow">
+        <div className="relative pr-5 flex grow">
        <Link to="/login">
           <button className="cursor-pointer  [border:none] p-0 bg-[transparent] ">
          
@@ -59,7 +59,7 @@ const Navhome2 =() =>{
         </div>
        <div className='relative flex grow '>
        <Link to="/signup">
-       <button className="cursor-pointer [border:none] p-0 bg-[transparent] ">
+       <button className="cursor-pointer [border:none] ml-2 pl-1 bg-[transparent] ">
              
                 <div className="absolute flex top-[11px] left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
                 <div className="absolute  flex  top-[11px] left-[95px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]" />
