@@ -21,7 +21,7 @@ const LandingPage = () => {
       <About />
       <Schedule />
       <SponsorsFull></SponsorsFull>
-      <Speaker></Speaker>
+      {<Speaker></Speaker>}
       <Faq/>
 
       

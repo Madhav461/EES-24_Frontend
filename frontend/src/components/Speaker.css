@@ -45,18 +45,21 @@ display: inline-block;
 }
 .git{
   position:absolute;
-  top:70%;
+  top:68%;
   left:40%;
+  width:13%;
 }
 .face{
   position:absolute;
-  top:70%;
-  left:60%;  
+  top:68%;
+  left:70%; 
+  width:13%; 
 }
 .ins{
   position:absolute;
-  top:70%;
-  left:50%; 
+  top:68%;
+  left:55%; 
+  width:13%;
 }
 .corner-border,
 .corner-border1 {
@@ -104,17 +107,35 @@ transform-origin: 0 0;
 .border{
   width:80%;
 }
-@media (max-width:580px){
+@media (max-width:1000px){
+  .con2{
+    margin-top: 12%;
+    padding-left: 45%;
+  }
+  .con3{
+    margin-top: 12%;
+    padding-left: 5%;
+  }
+  .con1{
+    padding-left: 5%;
+    margin-top:12%;
+  }
+  .con4{
+    margin-top: 12%;
+    padding-left: 45%;
+  }
+}
+@media (max-width:600px){
   .con1,.con2,.con3,.con4{
-      padding-left: 2%;
+      padding-left: 15%;
   }
 }
 @media (max-width:500px){
   .con1,.con2,.con3,.con4{
-      padding-left:0;
+      padding-left:5%;
   }
   .y1,.y2{
-      width: 100%;
+      width: 90%;
       height: 180px;
       background-color: #16b9ff;
       box-shadow: 10px 10px 20px rgba(22, 185, 255, 0.5);
@@ -132,13 +153,44 @@ transform-origin: 0 0;
        left:0.5%;
        color: white;
     }
+    .name{
+      display: inline-block;
+      position:absolute;
+      color:white;
+      top:27%;
+      left:52%;
+      font-size:23px;
+  }
+  .name1{
+      display: inline-block;
+      position:absolute;
+      color:white;
+      top:44%;
+      left:52%;
+      font-size:13px;
+  }
+  .git{
+    position:absolute;
+    top:70%;
+    left:50%;
+}
+.face{
+    position:absolute;
+    top:70%;
+    left:80%;  
+}
+.ins{
+    position:absolute;
+    top:70%;
+    left:65%; 
+}
 }
 @media (max-width:281px){
   .con1,.con2,.con3,.con4{
-      padding-left: 0%;
+      padding-left: 2.5%;
   }
   .y1,.y2{
-      width: 100%;
+      width: 95%;
       height: 180px;
       background-color: #16b9ff;
       box-shadow: 10px 10px 20px rgba(22, 185, 255, 0.5);
