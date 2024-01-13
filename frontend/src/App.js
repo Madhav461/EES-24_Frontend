@@ -9,6 +9,8 @@ import HamburgerMenu from "./components/hamburger";
 import Login from "./components/login";
 import Signup from "./components/signup";
 
+import Dashboard from "./components/dashboard.js";
+
 function App() {
   return (
     <Router>
@@ -29,6 +31,12 @@ function App() {
        </div>
 
     </div>
+
+      <Routes>
+        
+        <Route exact path="/dashboard" element={<Dashboard />} />
+      </Routes>
+
       </Router>
   
   );

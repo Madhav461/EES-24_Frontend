@@ -12,7 +12,7 @@ const[ClickedQuesNum,setClickedQuesNum]=useState(0);
 const clicked=(num)=>{
   setClickedQuesNum(num);
 }
-// 16 19 30 
+
 return (
     <div className="relative flex flex-col mt-[30px] mb-[50px]" style={{width:'100vw' ,height:'min-content', justifyContent:'center', alignItems:'center'}}>
 
