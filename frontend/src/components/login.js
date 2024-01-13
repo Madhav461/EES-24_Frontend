@@ -207,7 +207,7 @@ const Login = () => {
               </g>
               <defs>
                 <clipPath id="clip0_1692_2">
-                  <rect width="50.951" height="271" fill="white" />
+                  <rect width="50.951" height="272" fill="white" />
                 </clipPath>
               </defs>
             </svg>
