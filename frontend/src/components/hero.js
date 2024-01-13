@@ -13,7 +13,7 @@ const Hero = () => {
 
   const params = {
     overdrive: false,
-    speed: 0.25,
+    speed: 0.4,
     tick: 1,
     step: 1,
     scramble: 14,
