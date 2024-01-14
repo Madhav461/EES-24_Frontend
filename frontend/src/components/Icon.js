@@ -10,7 +10,7 @@ function Icon() {
       fill="none"
       viewBox="0 0 2358 2039"
     >
-      <motion.g  animate={{scale:[0.9,1,0.9],opacity:[0.8,1,0.8],x:[0,55,-55,0],y:[-55,55,55,-55]}}
+      <motion.g  animate={{scale:[0.9,1.1,0.9],opacity:[0.6,0.85,0.6],x:[0,55,-55,0],y:[-55,55,55,-55]}}
           transition={{
             times:[0,1],
             duration:5,
