@@ -9,21 +9,32 @@ import HamburgerMenu from './hamburger.js';
 
 const Navhome2 =() =>{
   return (
-    <div>
-      <div className="relative bg-gray w-[100vw]  h-[73px]  flex  justice  overflow-hidden text-center text-base  text-white font-audiowide pb-3">
-      <div className="pb-8 z-50 left-[15px] md:hidden">
+    <div className='font-audiowide'>
+       <div className=' lg:flex bg-gray 2k:hidden  hidden  items-center justify-center  '>
+           <img
+            className="flex items-center justify-center"
+            alt=""
+            src="/vector-line.svg" //uper white
+          />
+           </div>
+        
+      
+      <div className="relative bg-gray w-screen  h-[42px] 2k:h-[60px] flex  justice  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
+     
+      <div className="pb-8 z-50 pl-2 left-[15px] lg:hidden 2k:block">
      <HamburgerMenu />
       </div>
-      <div className=' ' >
+      <div className='  mb-5 pt-1 ab:mr-[410px] bc:mr-[100px] md:mr-[300px] md:pr-[270px] 4k:pr-[500px] 2k:pr-[1870px] ' >
           <a href='/'><img
-            className=" cursor-pointer pt-5  md:w-[98px]  md:h-[70px] w-[60px] h-[50px] ab:w-[72px] ab:h-[60px]"
+            className=" cursor-pointer pt-7  md:w-[98px]  md:h-[70px] w-[60px] h-[50px] ab:w-[72px] ab:h-[60px]"
             alt=""
             src="/ees-logo-fcfbfc-1.svg"
           />
           </a>
         </div>
-      <ul
-          className=" ml-2 my-4 hidden md:flex xl:text-3xl   justify-evenly space-x-8 items-stretch    "
+      
+      {/* <ul
+          className=" ml-2 my-4 hidden md:flex xl:text-3xl  lg:absolute lg:top-[50px] lg:left-[453px] justify-evenly space-x-8 items-stretch 2k:static  "
           id="list"
           list="none"
         >
@@ -41,30 +52,33 @@ const Navhome2 =() =>{
             Schedule
           </div>
 
-        </ul>
+        </ul> */}
        <div className='flex justice1 mr-2 pr-4'>
-        <div className="relative pr-5 flex grow">
+        <div className="relative pr-5 pl-1 ml-2 flex grow">
        <Link to="/login">
           <button className="cursor-pointer  [border:none] p-0 bg-[transparent] ">
          
          <div className="flex absolute top-[11px] left-[84px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]"/>
          <div className="absolute top-[13px] left-[0px]  box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]"/>
-         <button className="cursor-pointer mx-3 flex  glow-animation [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
+         <button className="cursor-pointer hidden sm:flex  mx-3   glow-animation [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
                 Login
+              </button>
+              <button className="cursor-pointer sm:hidden  mx-3   glow-animation [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
+                Sign in
               </button>
          
           </button>
           </Link>
           
         </div>
-       <div className='relative flex grow '>
+       <div className='relative   hidden sm:flex  grow '>
        <Link to="/signup">
-       <button className="cursor-pointer [border:none] ml-2 pl-1 bg-[transparent] ">
+       <button className="cursor-pointer [border:none] ml-2 mr-3 pl-0 pr-0 bg-[transparent] ">
              
                 <div className="absolute flex top-[11px] left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
                 <div className="absolute  flex  top-[11px] left-[95px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]" />
             
-              <button className=" glow-animation flex mx-3 cursor-pointer [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center items-center justify-center ">
+              <button className="  glow-animation flex mx cursor-pointer [border:none] p-0  bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center items-center justify-center ">
                 SignUp
               </button>
             </button>
@@ -75,7 +89,7 @@ const Navhome2 =() =>{
       
        </div>
 
-       <div className='bg-white w-full h-0.5 rounded-full'/>
+       {/* <div className=' bg-white block lg:hidden 2k:block w-full h-0.5 rounded-full'/> */}
       
       
       {/* <div className=" w-full">
@@ -84,7 +98,35 @@ const Navhome2 =() =>{
             alt=""
             src="/whiteline.svg" //dark bottom
           /> </div> */}
-
+       <div className="absolute bg-gray  hidden lg:block 2k:hidden top-[64px] h-[26px]">
+        <div className='flex items-center w-screen justify-center space-x-6'>
+          <div className="flex  tracking-[0.08em] items-center justify-center  glow-text cursor-pointer">
+            Workshops
+          </div>
+          <div className="flex  tracking-[0.08em] items-center justify-centre glow-text cursor-pointer">
+            Sponsors
+          </div>
+          <div className="tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
+            Gallery
+          </div>
+          <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
+            Schedule
+          </div>
+        </div>
+          <img
+            className="absolute top-[0px]  w-screen overflow-hidden h-[26px]"
+            alt=""
+            src="/vector-line2.svg" //dark bottom
+          />
+          
+          {/* <div className="absolute  top-[0px] left-[calc(50%_-_1015px)]  w-[2030px] h-[26px]  items-center justify-center">
+            <img
+              className="w-[100%] h-[100%] object-contain absolute left-[0px] top-[0px] [transform:scale(1.7)]"
+              alt=""
+              src="/vector-line3.svg"
+            />
+          </div> */}
+        </div>
 
     </div>
   )

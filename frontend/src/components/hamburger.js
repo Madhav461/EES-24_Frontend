@@ -9,7 +9,7 @@ const COLORS = {
 };
 
 const MenuLabel = styled.label`
-//   background-color: ${COLORS.primaryLight};
+ background-color: ${COLORS.primaryDark};
 //   position: ;
 //   top: -1rem;
 //   right:100vw;
@@ -24,13 +24,14 @@ const MenuLabel = styled.label`
 `;
 
 const NavBackground = styled.div`
+background-color: ${COLORS.primaryDark};
   position: absolute;
   top: 6.5rem;
   right: 6.5rem;
    background-image:
      ${COLORS.primaryDark}
    ;
-  background-color:black;
+  background-color:${COLORS.primaryDark};
   height: 100vh;
   width:100vh;
   border-radius: 50%;
@@ -42,8 +43,7 @@ const NavBackground = styled.div`
 const Icon = styled.span`
   position: relative;
   background-color: ${(props) => (props.clicked ? "black" : "white")};
-
-  width: 3rem;
+  width: 2rem;
   height: 2px;
   display: inline-block;
   margin-top: 3.5rem;
@@ -55,7 +55,7 @@ const Icon = styled.span`
     content: "";
     background-color: white;
    
-    width: 3rem;
+    width: 2rem;
     height: 2px;
     display: inline-block;
 
@@ -138,7 +138,7 @@ function HamburgerMenu() {
   return (
     <div id="ham_txt" className="z-10 ">
       <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
-        <Icon clicked={click}>&nbsp;</Icon>
+        <div><Icon clicked={click}>&nbsp;</Icon></div>
       </MenuLabel>
       {/* <img src="bg_user_reg.svg"></img> */}
       <NavBackground className="h-auto  overflow-hidden" clicked={click}>&nbsp;</NavBackground>
