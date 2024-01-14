@@ -22,9 +22,9 @@ function Speaker() {
                 <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
-                <img className="face" alt="" src="/facebook.svg" />
-                <img className="ins" alt="" src="/instagram.svg" />
-                <img className="git" alt="" src="/image.svg" />
+                <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
+                <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
+                <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
             </div>
         </div>
     </div>
@@ -36,9 +36,9 @@ function Speaker() {
                 <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
-                <img className="face" alt="" src="/facebook.svg" />
-                <img className="ins" alt="" src="/instagram.svg" />
-                <img className="git" alt="" src="/image.svg" />
+                <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
+                <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
+                <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
             </div>
         </div>
     </div>
@@ -50,9 +50,9 @@ function Speaker() {
                 <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
-                <img className="face" alt="" src="/facebook.svg" />
-                <img className="ins" alt="" src="/instagram.svg" />
-                <img className="git" alt="" src="/image.svg" />
+              <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
+              <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
+              <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
             </div>
         </div>
     </div>
@@ -64,9 +64,9 @@ function Speaker() {
                 <div className="corner-border1"></div>
                 <div className="name">MAGNUS</div>
                 <div className="name1">CEO of some company</div>
-                <img className="face" alt="" src="/facebook.svg" />
-                <img className="ins" alt="" src="/instagram.svg" />
-                <img className="git" alt="" src="/image.svg" />
+                <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
+                <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
+                <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
             </div>
         </div>
     </div>
