@@ -293,18 +293,28 @@ const Login = () => {
               </defs>
             </svg>
           </div>
+          <img className="w-[45px] h-[30px] mt-[1%]" src="/Vector_97.svg" alt="" />
           <div
-            className="h-[100%] w-[30%] flex flex-col items-center justify-between ButtonContainerRightMostDiv "
+            className="h-[100%] w-[30%] flex flex-col items-center justify-center ButtonContainerRightMostDiv "
             style={{}}
           >
             <img className="w-[80px] h-[69px] flex" src="/OR.svg" alt="" />
             <img
-              className=" w-[150px] h-[100px]"
+              className=" w-[150px] h-[10px]"
               alt=""
               src="/SIGN UP with google.svg"
             />
+            <Link
+              to="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 mb-10 flex flex-col items-center justify-between"
+            >
+              <i className="uil uil-google"></i>
+            </Link>
+
             <div className="h-[20%] w-full">
-              <div className="w-full mb-1 signup-button-blackDivAlreadyHaveAnAccount">
+              <div className="w-full mt-[16%] signup-button-blackDivAlreadyHaveAnAccount">
                 Create an account?
               </div>
               <Link to="/signup">
