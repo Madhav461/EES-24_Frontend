@@ -4,9 +4,13 @@ import "./nav.css";
 import Hamburger from "./hamburger.js"
 import { Link } from 'react-router-dom';
 
-
+import WorkshopsTxt from './NavbarComps/WorkshopsTxt';
+import SponsorsTxt from './NavbarComps/SponsorsTxt';
+import GalleryTxt from './NavbarComps/Gallery';
+import ScheduleTxt from './NavbarComps/ScheduleTxt';
 
 const Navhome = () => {
+
   
   
   return (
@@ -17,18 +21,22 @@ const Navhome = () => {
           id="list"
           list="none"
         >
-          <div className="flex tracking-[0.08em] items-center justify-center w-[137px] h-[38px] glow-text cursor-pointer">
+          {/* <div className="flex tracking-[0.08em] items-center justify-center w-[137px] h-[38px] glow-text cursor-pointer">
             Workshops
-          </div>
-          <div className="flex  tracking-[0.08em] items-center justify-center w-[116px] h-[38px] glow-text cursor-pointer">
+          </div> */}
+          <WorkshopsTxt></WorkshopsTxt>
+          {/* <div className="flex  tracking-[0.08em] items-center justify-center w-[116px] h-[38px] glow-text cursor-pointer">
             Sponsors
-          </div>
-          <div className="tracking-[0.08em] flex items-center justify-center w-[94px] h-[38px] glow-text cursor-pointer">
+          </div> */}
+          <SponsorsTxt></SponsorsTxt>
+          {/* <div className="tracking-[0.08em] flex items-center justify-center w-[94px] h-[38px] glow-text cursor-pointer">
             Gallery
           </div>
           <div className=" tracking-[0.08em] flex items-center justify-center w-[129px] h-[38px] glow-text cursor-pointer">
             Schedule
-          </div>
+          </div> */}
+          <GalleryTxt></GalleryTxt>
+          <ScheduleTxt></ScheduleTxt>
         
         </ul>
         <div className=" lag:flex hidden lag:absolute   lag:top-[-9px] left-[calc(50%_-_336.45px)] w-[669.37px] h-[26px]">
