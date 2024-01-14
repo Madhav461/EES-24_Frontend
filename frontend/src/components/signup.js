@@ -1,6 +1,7 @@
 import React from "react";
 import "../components/signup.css";
 import Navhome from "./navhome";
+// import { Link } from 'react-router-dom';
 
 const Signup = () => {
   return (

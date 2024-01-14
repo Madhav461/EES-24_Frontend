@@ -1,14 +1,15 @@
 import React from "react";
-import "../components/signup.css";
+import "../components/login.css";
 import Navhome from "./navhome";
+import { Link } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   return (
     <div className="flex SignUpPage flex-col  bg-contain w-full h-full text-white justify-center items-center gap-10">
       <Navhome />
       <div className="SignUp-card bg-contain w-[75vw] h-[75vh]">
         <div
-          className="SignUp-card-whiteDiv bg-contain  w-full h-[35%] flex   gap-x-6 md:gap-x-24"
+          className="SignUp-card-whiteDiv   bg-contain  w-full h-[35%] flex   gap-x-6 md:gap-x-24"
           style={{}}
         >
           <div
@@ -16,10 +17,10 @@ const Signup = () => {
             style={{ borderRight: "5px dashed black" }}
           ></div>
           <div
-            className="SignUp flex  my-auto  justify-center mb-[20%]   items-center"
+            className="SignUp  flex  my-auto  justify-center mb-[20%]   items-center"
             style={{ whiteSpace: "nowrap" }}
           >
-            LOG IN
+            LOGIN
           </div>
         </div>
 
@@ -28,22 +29,34 @@ const Signup = () => {
           style={{}}
         >
           <div className="h-[100%] w-[30%]  relative   none" style={{}}>
-            <div className="SignUp-card-blackDiv-whiteEESpattern w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
+            <div className=" flex  laptopDesign  translate-x-[-15%] translate-y-[35%] justify-end">
+              <svg
+                width="10%"
+                height="10%"
+                viewBox="0 0 21 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M20 0V20H0" stroke="white" stroke-width="2" />
+              </svg>
+            </div>
+
+            <div className="SignUp-card-blackDiv-whiteEESpattern  w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
               <div className="SignUp-card-blackDiv-eesdesign w-[50%] translate-x-[-1.5rem] translate-y-[0.5rem] h-[50%]  "></div>
             </div>
           </div>
 
           <div
-            className="h-[100%] w-[30%]  overflow-hidden justify-evenly text-white amaan"
+            className="h-[100%] w-[30%]   overflow-hidden justify-evenly text-white amaan"
             style={{}}
           >
             <form className="w-full h-[90%] m-2">
-              {/* <div
+              <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                  className="w-[85%] h-[20%] px-4 py-2 mt-12 text-white bg-transparent white-placeholder "
                   type="text"
                   placeholder="NAME"
                   style={{
@@ -57,70 +70,15 @@ const Signup = () => {
                     color: "white",
                   }}
                 />
-              </div> */}
-
-              <div style={{ position: "relative" }}>
-                <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-[10%] mt-[10%] bg-transparent white-placeholder"
-                  type="text"
-                  placeholder="EMAIL"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "20px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                    color: "white",
-                  }}
-                />
               </div>
-
-              {/* <div style={{ position: "relative" }}>
-                <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
-                  type="text"
-                  placeholder="COLLEGE NAME"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                    color: "white",
-                  }}
-                />
-              </div> */}
-
-              {/* <div style={{ position: "relative" }}>
-                <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
-                  type="text"
-                  placeholder="YEAR"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                    color: "white",
-                  }}
-                />
-              </div> */}
-
               <div style={{ position: "relative" }}>
-              <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
+                <input
+                  className="w-[85%] h-[20%] px-4 py-2 mt-12 bg-transparent white-placeholder "
                   type="password"
                   placeholder="PASSWORD"
                   style={{
                     fontFamily: "Goldman",
-                    fontSize: "20px",
+                    fontSize: "18px",
                     fontStyle: "normal",
                     fontWeight: 400,
                     lineHeight: "normal",
@@ -130,37 +88,38 @@ const Signup = () => {
                   }}
                 />
               </div>
-
-              {/* <div style={{ position: "relative" }}>
-                <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
-                  type="password"
-                  placeholder="CONFIRM PASSWORD"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
-                    color: "white",
-                  }}
-                />
-              </div> */}
-
+              <button
+                type="button"
+                class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-large rounded-lg text-sm px-4 mt-8 mb-4 py-2.5 text-center"
+                style={{
+                  width: "95%",
+                  fontFamily: "Goldman",
+                  justifycontent: "center",
+                }}
+              >
+                Login
+              </button>
+              <div className="  laptopDesign flex justify-center">
+                <svg
+                  width="45"
+                  height="48"
+                  viewBox="0 0 45 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M20 0V20H0" stroke="white" stroke-width="2" />
+                  <path d="M0 28H20V48" stroke="white" stroke-width="2" />
+                  <path
+                    d="M25 48L25 28L45 28"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
             </form>
 
             {/* new code for signUp button and already have an account button mobile view */}
             <div className=" button-container ">
-              <button
-                type="button"
-                class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
-                style={{ width: "100%", fontFamily: "Goldman" }}
-              >
-                LOG IN
-              </button>
               <p
                 style={{
                   alignItems: "center",
@@ -180,7 +139,7 @@ const Signup = () => {
                   textAlign: "center",
                 }}
               >
-                SIGN UP
+                Sign Up
               </button>
             </div>
           </div>
@@ -334,23 +293,35 @@ const Signup = () => {
               </defs>
             </svg>
           </div>
-
-          {/* sign up button and already have an account  */}
+          <img className="w-[45px] h-[30px] mt-[1%]" src="/Vector_97.svg" alt="" />
           <div
-            className="h-[100%]   mb-[20%]  w-[30%] flex flex-col items-center justify-evenly ButtonContainerRightMostDiv "
+            className="h-[100%] w-[30%] flex flex-col items-center justify-center ButtonContainerRightMostDiv "
             style={{}}
           >
-            <div></div>
-            <button className="signup-button-blackDiv cursor-pointer w-full bg-transparent h-[10%] flex items-center justify-center">
-              LOG IN
-            </button>
+            <img className="w-[80px] h-[69px] flex" src="/OR.svg" alt="" />
+            <img
+              className=" w-[150px] h-[10px]"
+              alt=""
+              src="/SIGN UP with google.svg"
+            />
+            <Link
+              to="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 mb-10 flex flex-col items-center justify-between"
+            >
+              <i className="uil uil-google"></i>
+            </Link>
+
             <div className="h-[20%] w-full">
-              <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">
-                Create  an account?
+              <div className="w-full mt-[16%] signup-button-blackDivAlreadyHaveAnAccount">
+                Create an account?
               </div>
-              <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
-                SIGN UP
-              </button>
+              <Link to="/signup">
+                <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
+                  Sign Up
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -359,4 +330,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
