@@ -1,5 +1,4 @@
-dashboard.css
-<<<<<<< main
+
 /* Switching between desktop/mobile views*/
 
 @media screen and (max-width: 1445px){
@@ -153,7 +152,7 @@ dashboard.css
     } 
     }
 
-=======
+
 .dashboard-background {
     /* background-image: url("dashboarblack.svg"); */
     /* background-size: contain; */
@@ -401,4 +400,4 @@ dashboard.css
         height: 21.2px;
     }
 }
->>>>>>> main
+

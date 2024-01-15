@@ -1,13 +1,4 @@
-login.css
-<<<<<<< main
-/* this css is arising issue with dashboard , by applying the bg image a kind of universal bg image */
 
-/* body {
-  background-image: url("../../public/image 36.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-=======
 .SignUp {
   /* font-size: 1rem;  */
 
@@ -228,4 +219,4 @@ button:hover {
     display: none;
   }
 }
->>>>>>> main
+
