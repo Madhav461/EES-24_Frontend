@@ -193,8 +193,8 @@
 .container-dashboard {
     padding: 0%;
     /* min-width: 100%; */
-    width: 80%;
-    margin: 10% auto 10% auto;
+    width: 100%;
+    margin: 2% auto 0% auto;
     display: grid;
     grid-template-columns: repeat(2, 3fr) repeat(1, 2fr);
     grid-template-rows: repeat(1, 2fr) repeat(1, 3fr) repeat(1, 1fr);
@@ -326,18 +326,28 @@
         z-index: 1; */
 
     position: absolute;
-    top: 10%;
-    margin-left: 4%;
-    height: 50%;
-    z-index: 1;
+    top: 0%;
+    /* margin-left: 4%; */
+    height: 100%;
+    z-index: -1;
 }
 
 .dhi {
     margin-left: -0.75%;
 }
 
+.dhi-5 {
+    display: none;
+    visibility: hidden;
+}
+
 @media screen and (max-width: 1250px) {
-    .dhi-5 {
+    /* .dhi-5 {
+        display: none;
+        visibility: hidden;
+    } */
+
+    .dhi-4 {
         display: none;
         visibility: hidden;
     }
@@ -374,10 +384,10 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .dhi-4 {
+    /* .dhi-4 {
         display: none;
         visibility: hidden;
-    }
+    } */
 
     .dhi {
         width: 80.5px;
