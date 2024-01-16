@@ -19,18 +19,20 @@ const Navhome2 =() =>{
            </div>
         
       
-      <div className="relative bg-gray w-screen  h-[42px] 2k:h-[60px] flex  justice  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
+      <div className="relative bg-gray w-screen  h-[42px] 2k:h-[50px] flex  justice justify-between items-center  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
      
-      <div className="pb-8 z-50 pl-2 left-[15px] lg:hidden 2k:block">
+     <div className='flex items-center justify-center'>
+      <div className="pb-8 z-50 pl-2 left-[15px] pt-4 lg:hidden 2k:block">
      <HamburgerMenu />
       </div>
-      <div className='  mb-5 pt-1 ab:mr-[410px] bc:mr-[100px] md:mr-[300px] md:pr-[270px] 4k:pr-[500px] 2k:pr-[1870px] ' >
+      <div className=' flex items-start justify-start 2k:justify-end 2k:items-start 2k:absolute 2k:left-12 2k:pt-6  bc:mr-[80px] lg:pb-4 ' >
           <a href='/'><img
-            className=" cursor-pointer pt-7  md:w-[98px]  md:h-[70px] w-[60px] h-[50px] ab:w-[72px] ab:h-[60px]"
+            className=" 2k:flex-shrink-0 2k:mr-80 2k:pr-80 cursor-pointer pt-7 md:w-[98px]  md:h-[70px] w-[60px] h-[50px] ab:w-[72px] ab:h-[60px]"
             alt=""
             src="/ees-logo-fcfbfc-1.svg"
           />
           </a>
+        </div>
         </div>
       
       {/* <ul
@@ -53,18 +55,18 @@ const Navhome2 =() =>{
           </div>
 
         </ul> */}
-       <div className='flex justice1 mr-2 pr-4'>
+       <div className='flex justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8'>
         <div className="relative pr-5 pl-1 ml-2 flex grow">
        <Link to="/login">
-          <button className="cursor-pointer  [border:none] p-0 bg-[transparent] ">
+          <button className="cursor-pointer  test [border:none] md:p-0 bg-[transparent] ">
          
-         <div className="flex absolute top-[11px] left-[84px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]"/>
+         <div className="flex absolute top-[11px] md:left-[89px] bc:left-[100px]  box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]"/>
          <div className="absolute top-[13px] left-[0px]  box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]"/>
-         <button className="cursor-pointer hidden sm:flex  mx-3   glow-animation [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
+         <button className="cursor-pointer hidden glow-animation sm:flex  mx-3    [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
                 Login
               </button>
-              <button className="cursor-pointer sm:hidden  mx-3   glow-animation [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
-                Sign in
+              <button className="cursor-pointer sm:hidden glow-animation [border:none] pr-9 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]" >
+              Sign-in
               </button>
          
           </button>
@@ -73,12 +75,12 @@ const Navhome2 =() =>{
         </div>
        <div className='relative   hidden sm:flex  grow '>
        <Link to="/signup">
-       <button className="cursor-pointer [border:none] ml-2 mr-3 pl-0 pr-0 bg-[transparent] ">
+       <button className="cursor-pointer [border:none] ml-2 mr-5 pl-0 pr-0 bg-[transparent] ">
              
                 <div className="absolute flex top-[11px] left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
                 <div className="absolute  flex  top-[11px] left-[95px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]" />
             
-              <button className="  glow-animation flex mx cursor-pointer [border:none] p-0  bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center items-center justify-center ">
+              <button className="  glow-animation flex cursor-pointer [border:none] p-0  bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center items-center justify-center ">
                 SignUp
               </button>
             </button>

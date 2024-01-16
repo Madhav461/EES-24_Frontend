@@ -200,12 +200,7 @@
 	}
 }
   */
-  .justice{
- justify-content:space-between;
- align-items: center;
 
-
-  }
   .justice1{
 	justify-content:flex-start;
 	
@@ -213,6 +208,17 @@
 
    
 	 }
+	.test{
+		
+			display: block;
+			width:100px;
+			height:30px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			
+		
+		  }
 	
 	  
 	 
