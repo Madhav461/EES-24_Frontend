@@ -33,7 +33,6 @@
     margin-top: 10%;
     transform: scale(1.2);
     margin-bottom:2% ;
-    z-index: 1;
   }
   
   .SignUp-card{
@@ -42,17 +41,9 @@
   }
 
   .SignUp-card-blackDiv{
-    width: 80%;
-  }
-
-  .amaan{
     width: 100%;
   }
 }
-
-
-
-
 
 .SignUp-card-whiteDiv {
   background-image: url("/public/Vector 91.svg");
