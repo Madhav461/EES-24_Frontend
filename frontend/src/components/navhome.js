@@ -1,15 +1,20 @@
 import React from 'react'
+import WorkshopsTxt from "./NavbarComps/WorkshopsTxt.jsx";
 // import "./nav.css";
 // import { Link } from 'react-router-dom';
 // import React, { useState } from 'react';
 import "./nav.css";
 import { Link } from 'react-router-dom';
 import HamburgerMenu from './hamburger.js';
-
+import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
+// import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
+import ScheduleTxt from "./NavbarComps/ScheduleTxt.jsx";
+import SponsorsTxt from './NavbarComps/SponsorsTxt.jsx';
+// imoprt SponsorsTxt
 
 const Navhome2 =() =>{
   return (
-    <div className='font-audiowide'>
+    <div className=''>
        <div className=' lg:flex bg-gray 2k:hidden  hidden  items-center justify-center  '>
            <img
             className="flex items-center justify-center"
@@ -102,21 +107,28 @@ const Navhome2 =() =>{
           /> </div> */}
        <div className="absolute bg-gray  hidden lg:block 2k:hidden top-[64px] h-[26px]">
         <div className='flex items-center w-screen justify-center space-x-6'>
-          <div className="flex  tracking-[0.08em] items-center justify-center  glow-text cursor-pointer">
+          {/* <div><p>hello</p></div> */}
+          {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
             Workshops
-          </div>
-          <div className="flex  tracking-[0.08em] items-center justify-centre glow-text cursor-pointer">
+          </div> */}
+          <WorkshopsTxt></WorkshopsTxt>
+
+          {/* <WorkshopsTxt className="mb-[5px]"></WorkshopsTxt> */}
+          {/* <div className="flex  tracking-[0.08em] items-center justify-centre  cursor-pointer">
             Sponsors
-          </div>
-          <div className="tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
+          </div> */}
+          <SponsorsTxt></SponsorsTxt>
+          {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
-          </div>
-          <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
+          </div> */}
+          <GalleryTxt></GalleryTxt>
+          {/* <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
             Schedule
-          </div>
+          </div> */}
+          <ScheduleTxt></ScheduleTxt>
         </div>
           <img
-            className="absolute top-[0px]  w-screen overflow-hidden h-[26px]"
+            className="absolute top-[16px]  w-screen overflow-hidden h-[26px]"
             alt=""
             src="/vector-line2.svg" //dark bottom
           />
