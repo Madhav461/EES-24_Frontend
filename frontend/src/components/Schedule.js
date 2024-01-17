@@ -20,9 +20,9 @@ function Schedule() {
         text: sample,
         ...params,
       });
-//   function HandleHover(){
-//     replay();
-//   }
+  function HandleHover(){
+    replay();
+  }
 
 
 
@@ -70,7 +70,8 @@ function Schedule() {
                         {/* onMouseOver={HandleHover} */}
                             <div id="schedule_title" className=' text-white ml-3 text-center text-[100px] tracking-[1rem] font-bold leading-[0px] items-center  md:ml-[24px] '>
                                 {/* underline  */}
-                                <p ref={ref}></p>
+                                {/* <p ref={ref}></p> */}
+                                SCHEDULE
                             </div>
                         </div>
                         <div className="flex w-full">
