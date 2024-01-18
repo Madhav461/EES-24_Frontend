@@ -24,13 +24,13 @@ const Navhome2 =() =>{
            </div>
         
       
-      <div className="relative bg-gray w-screen  h-[800px] 2k:h-[50px] flex  justice justify-between items-center  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
+      <div className="relative bg-gray w-screen  h-[42px] 2k:h-[50px] flex  justice justify-between items-center  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
      
      <div className='flex items-center justify-center'>
       <div className="pb-8 z-50 pl-2 left-[15px] pt-4 lg:hidden 2k:block">
      <HamburgerMenu />
       </div>
-      <div className=' flex items-start justify-start 2k:justify-end 2k:items-start 2k:absolute 2k:left-12 2k:pt-6  bc:mr-[80px] lg:pb-4 ' >
+      <div className='z-10 flex items-start justify-start 2k:justify-end 2k:items-start 2k:absolute 2k:left-12 2k:pt-6  bc:mr-[80px] lg:pb-4 ' >
           <a href='/'><img
             className=" 2k:flex-shrink-0 2k:mr-80 2k:pr-80 cursor-pointer pt-7 md:w-[98px]  md:h-[70px] w-[60px] h-[50px] ab:w-[72px] ab:h-[60px]"
             alt=""
@@ -60,7 +60,7 @@ const Navhome2 =() =>{
           </div>
 
         </ul> */}
-       <div className='flex justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8'>
+       <div className='flex z-10 justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8'>
         <div className="relative pr-5 pl-1 ml-2 flex grow">
        <Link to="/login">
           <button className="cursor-pointer  test [border:none] md:p-0 bg-[transparent] ">
@@ -105,7 +105,7 @@ const Navhome2 =() =>{
             alt=""
             src="/whiteline.svg" //dark bottom
           /> </div> */}
-       <div className="absolute bg-gray  hidden lg:block 2k:hidden top-[64px] h-[26px]">
+       <div className="absolute bg-gray  hidden lg:block 2k:hidden  top-[40px] h-[26px]">
         <div className='flex items-center w-screen justify-center space-x-6'>
           {/* <div><p>hello</p></div> */}
           {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
@@ -128,7 +128,7 @@ const Navhome2 =() =>{
           <ScheduleTxt></ScheduleTxt>
         </div>
           <img
-            className="absolute top-[16px]  w-screen overflow-hidden h-[26px]"
+            className="absolute top-[16px] mt-[10px]  w-screen overflow-hidden h-[26px]"
             alt=""
             src="/vector-line2.svg" //dark bottom
           />

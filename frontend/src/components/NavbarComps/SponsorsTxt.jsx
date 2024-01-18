@@ -23,8 +23,8 @@ function SponsorsTxt(){
     replay();
   }
     return(
-         <div className=" font-audiowide flex tracking-[0.08em] items-center justify-center w-[90px] h-[38px] glow-text cursor-pointer">
-        <p onMouseEnter={HandleHover} ref={ref}></p>
+         <div className=" font-audiowide flex tracking-[0.08em] items-center justify-center  md:w-[110px] w-[95px] h-[38px] glow-text cursor-pointer">
+        <p onMouseLeave={HandleHover} ref={ref}></p>
         </div>
     )
 }
