@@ -22,7 +22,7 @@ const Dashboard = () => {
             <div className="desktopview relative">
 
             <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
-                    <img className="object-cover w-[100%]" src="/image 50.svg" style={{ mixBlendMode: 'difference', filter: 'blur(3.0px)' }} />
+                    <img className="object-cover w-[100%] " src="/image 50.svg" style={{ mixBlendMode: 'difference', filter: 'blur(3.0px)' }} />
                 </div>
 
                 {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
@@ -80,7 +80,7 @@ const Dashboard = () => {
                     </div>
 
                     <img
-                        src="dashboardblack.svg"
+                        src=""
                         className="dashboard-background-image"
                     />
 
