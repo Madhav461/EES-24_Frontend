@@ -24,7 +24,7 @@ function ScheduleTxt(){
   }
     return(
          <div className=" font-audiowide flex tracking-[0.08em] items-center justify-center ls:w-[100px] w-[95px] h-[38px] glow-text cursor-pointer">
-        <p onMouseEnter={HandleHover} ref={ref}></p>
+        <p onMouseLeave={HandleHover} ref={ref}></p>
         </div>
     )
 }
