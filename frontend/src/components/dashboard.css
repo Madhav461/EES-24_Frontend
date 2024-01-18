@@ -1,6 +1,18 @@
 /* Switching between desktop/mobile views*/
 
-@media screen and (max-width: 1445px) {
+@media screen and (min-width: 1920px) {
+    .mobileview {
+        display: none;
+        /* visibility:hidden; */
+    }
+
+    .desktopview {
+        display: none;
+        /* visibility:hidden; */
+    }
+}
+
+@media screen and (max-width: 1925px) {
     .mobileview {
         display: none;
         /* visibility:hidden; */
@@ -12,7 +24,7 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
     .desktopview {
         display: none;
         /* visibility:hidden; */
@@ -26,6 +38,25 @@
 
 
 /* Responsiveness for desktop view */
+
+@media screen and (max-width:1920px) {
+    .card {
+        height: 46%;
+        width: 83.3%;
+        top: 39%;
+    }
+
+    .title_container {
+        height: 18%;
+        width: 80%;
+        top: 15.5%;
+    }
+
+    .title_container div {
+        font-size: 45px;
+    }
+}
+
 @media screen and (max-width:1445px) {
     .card {
         height: 46%;
@@ -44,7 +75,7 @@
     }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1025px) {
     .card {
         height: 50%;
         width: 80%;
@@ -97,7 +128,7 @@
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:680px) {
     .card {
         height: 55%;
         width: 80%;
@@ -106,6 +137,24 @@
 
     .title_container {
         height: 10%;
+        width: 80%;
+        top: 17%;
+    }
+
+    .title_container div {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .card {
+        height: 55%;
+        width: 80%;
+        top: 35%;
+    }
+
+    .title_container {
+        height: 9%;
         width: 80%;
         top: 17%;
     }
