@@ -340,6 +340,63 @@ const Dashboard = () => {
             {/* Mobile view */}
             <div className=" mobileview relative flex flex-col  overflow-hidden" style={{ height: '100vh' }}>
 
+
+                {/* Added by Santosh */}
+                <div className="dashboard-background-mb">
+
+                    <div className="upper-dashboard-mb">
+                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+                        <img className="dmb-upper dmb-upper2" src="dmbupper2.svg" />
+                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+                    </div>
+
+                    <div className="container-dashboard-mb">
+                        <div className="name-dashboard-mb">{name}</div>
+                        <div className="p1-dashboard-mb">
+                            <div>{college}</div>
+                            <div>{branch}</div>
+                            <div>{email}</div>
+                            <div>{mobile}</div>
+                        </div>
+
+                        <div className="radinite-dashboard-mb">
+                            <div>{radiniteScore}</div>  
+                            Radinite  
+                        </div>
+
+                        <img
+                        className="radinite-logo-dashboard-mb"
+                            src="radinite.svg"
+                            alt="radinite"
+                        />
+                        {/* <div className="score-logo-dashboard">
+                            <img
+                                src="dashboardeclipse.svg"
+                                className="eclipse-dashboard"
+                                alt=""
+                            />
+                        </div> */}
+                    </div>
+
+                    <div className="lower-dashboard-mb">
+                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                        <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
+                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+
+                    </div>
+
+                </div>
+                {/* Added by Santosh */}
+
+
                 {/* background image */}
                 <div className="bgimage absolute overflow-hidden dashboard-custom-background">
                     <img className="" src="/Android Large - 5.svg" style={{ mixBlendMode: 'difference', filter: 'blur(3.0px)' }} />
