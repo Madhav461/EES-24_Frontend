@@ -1,6 +1,6 @@
 .SignUp {
-  /* font-size: 1rem;  */
 
+  /*  font-size: 1rem; */
   color: #000;
   text-align: center;
   font-family: Goldman;
@@ -12,6 +12,7 @@
   line-height: normal;
   letter-spacing: 5.775px;
   margin-left: 1%;
+
 }
 
 /* Medium screens and above */
@@ -96,7 +97,6 @@
 
 .signup-button-blackDivAlreadyHaveAnAccount {
   color: #fff;
-
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Goldman;
@@ -169,6 +169,7 @@ button:hover {
 }
 
 @media only screen and (max-width: 1100px) {
+
   .SignUp-card-whiteDiv {
     background-image: unset;
     background: white;
@@ -218,3 +219,52 @@ button:hover {
     display: none;
   }
 }
+
+
+@media only screen and (max-width: 1000px)
+{
+    *{
+    font-size: large;
+  }
+
+}
+@media only screen and (max-width: 400px) and (min-width:300px)
+{
+  *{
+     font-size: medium;
+  }
+}
+
+@media only screen and (max-width:300px)
+{
+  *{
+    font-size: small;
+  }
+}
+
+
+@media only screen and (width:912px)
+{
+  *{
+    font-size: 1.5rem;
+  }
+}
+
+
+@media only screen and (width: 1024px){
+
+  .SignUp-card-whiteDiv{
+    width: auto;
+    height: fit-content;
+  } 
+  .SignUp-card{
+    height: fit-content;
+   
+  }
+  .SignUp{
+    font-size: 5rem;
+  }
+}
+
+
+

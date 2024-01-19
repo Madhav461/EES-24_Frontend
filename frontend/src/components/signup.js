@@ -7,9 +7,9 @@ const Signup = () => {
   return (
     <div className="flex SignUpPage flex-col  bg-contain w-full h-full text-white justify-center items-center gap-10">
       <Navhome />
-      <div className="SignUp-card bg-contain w-[75vw] h-[75vh]">
+      <div className="SignUp-card bg-contain  h-[75vh] w-[75vw] ">
         <div
-          className="SignUp-card-whiteDiv   bg-contain  w-full h-[35%] flex   gap-x-6 md:gap-x-24"
+          className="SignUp-card-whiteDiv   bg-contain  w-full h-[35%] flex   gap-x-6  md:gap-x-24"
           style={{}}
         >
           <div
@@ -17,7 +17,7 @@ const Signup = () => {
             style={{ borderRight: "5px dashed black" }}
           ></div>
           <div
-            className="SignUp  flex  my-auto  justify-center mb-[20%]   items-center"
+            className="SignUp  flex  my-auto  justify-center   items-center"
             style={{ whiteSpace: "nowrap" }}
           >
             SIGN UP
@@ -28,7 +28,7 @@ const Signup = () => {
           className="SignUp-card-blackDiv  w-full h-[60%] text-white flex relative"
           style={{}}
         >
-          <div className="h-[100%] w-[30%]  relative   none" style={{}}>
+          <div className="extraspace  h-[100%] w-[30%]  relative   none" style={{}}>
             <div className=" flex  laptopDesign  translate-x-[-15%] translate-y-[35%] justify-end">
               <svg
                 width="10%"
@@ -47,10 +47,10 @@ const Signup = () => {
           </div>
 
           <div
-            className="h-[100%] w-[30%]   overflow-hidden justify-evenly text-white amaan"
+            className="h-[100%] w-[30%] justify-evenly text-white amaan"
             style={{}}
           >
-            <form className="w-full h-[90%] m-2">
+            <form className="w-full h-fit m-2  ">
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
@@ -162,7 +162,7 @@ const Signup = () => {
                   }}
                 />
               </div>
-              <div className="  laptopDesign flex justify-center">
+              <div className="laptopDesign flex justify-center">
                 <svg
                   width="45"
                   height="48"
