@@ -23,8 +23,8 @@ function GalleryTxt(){
     replay();
   }
     return(
-         <div className="flex tracking-[0.08em] items-center justify-center w-[137px] h-[38px] glow-text cursor-pointer">
-        <p onMouseEnter={HandleHover} ref={ref}></p>
+         <div className="font-audiowide flex tracking-[0.08em] items-center justify-center ls:w-[70px] w-[60px] h-[38px] glow-text cursor-pointer">
+        <p onMouseLeave={HandleHover}  ref={ref}></p>
         </div>
     )
 }

@@ -14,19 +14,35 @@
   margin-left: 1%;
 
 }
-
-/* Medium screens and above */
-@media (min-width: 700px) {
-  .SignUp-card-heading {
-    font-size: 0.5%;
-  }
+.amaan{width: 40%;}
+.ees-logo-mob{
+  display: none;
 }
+.ees-logo-tab{
+  display: none;
+}
+@media only screen and (max-width: 1100px) and (min-width:900px) {
+  .ees-logo-tab{
+    display: block;
+  }
+  .svg-tab{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 120%;
+    height: 200%;
+    margin-top: 10%;
+    transform: scale(1.2);
+    margin-bottom:2% ;
+  }
+  
+  .SignUp-card{
+    width: 50%;
+    height: 100%;
+  }
 
-/* Large screens and above */
-@media (min-width: 1024px) {
-  .SignUp-card-heading {
-    font-size: 1rem;
-    padding-bottom: 1.5rem;
+  .SignUp-card-blackDiv{
+    width: 100%;
   }
 }
 
@@ -149,7 +165,9 @@
   opacity: 1; /* Adjust the opacity for transparency */
   z-index: -1;
 }
-
+.svg-sign{
+  display: none;
+}
 button:hover {
   cursor: pointer;
 }
@@ -177,6 +195,8 @@ button:hover {
     margin-bottom: 20%;
   }
 
+  
+  
   .none {
     display: none;
   }
@@ -184,16 +204,18 @@ button:hover {
   .SignUp-card-blackDiv {
     background-image: unset;
     background: rgba(0, 0, 0, 0.7);
-    height: 80%;
+    height: 80%; padding: 1%;
   }
-
+  
   .amaan {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: auto;
   }
-
+  .ees-logo-mob{
+    display: block;
+  }
   input {
     margin-bottom: 8%;
   }
@@ -218,6 +240,39 @@ button:hover {
   .laptopDesign {
     display: none;
   }
+
+  .SignUp-card-whiteDiv{
+    display: none;
+  }
+
+  .svg-sign{
+    display:block ;
+    padding:none;
+    margin-left:-30%;
+    margin-top:-20%;
+  }
+  .SignUp{
+    display: none;
+  }
+.SignUp-card-blackDiv{
+  margin-top:-55%;
+  margin-left: -50px;
+  padding:3%;
+  width: 120%;;
+}
+
+.SignUp-card-whiteDiv{
+  width: 100%;
+}
+
+.svg-tab{
+  width: 119%;
+  margin-left: -1%;
+}
+
+.ees-logo-mob{
+  display: block;
+}
 }
 
 
