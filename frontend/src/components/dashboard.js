@@ -111,63 +111,6 @@ const Dashboard = () => {
             {/* Mobile view */}
             <div className=" mobileview relative flex flex-col  overflow-hidden" style={{ height: '100vh' }}>
 
-
-                {/* Added by Santosh */}
-                <div className="dashboard-background-mb">
-
-                    <div className="upper-dashboard-mb">
-                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
-                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
-                        <img className="dmb-upper dmb-upper2" src="dmbupper2.svg" />
-                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
-                        <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
-                    </div>
-
-                    <div className="container-dashboard-mb">
-                        <div className="name-dashboard-mb">{name}</div>
-                        <div className="p1-dashboard-mb">
-                            <div>{college}</div>
-                            <div>{branch}</div>
-                            <div>{email}</div>
-                            <div>{mobile}</div>
-                        </div>
-
-                        <div className="radinite-dashboard-mb">
-                            <div>{radiniteScore}</div>  
-                            Radinite  
-                        </div>
-
-                        <img
-                        className="radinite-logo-dashboard-mb"
-                            src="radinite.svg"
-                            alt="radinite"
-                        />
-                        {/* <div className="score-logo-dashboard">
-                            <img
-                                src="dashboardeclipse.svg"
-                                className="eclipse-dashboard"
-                                alt=""
-                            />
-                        </div> */}
-                    </div>
-
-                    <div className="lower-dashboard-mb">
-                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                        <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                        <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
-                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-                        <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-
-                    </div>
-
-                </div>
-                {/* Added by Santosh */}
-
-
                 {/* background image */}
                 <div className="bgimage absolute w-[100vw] overflow-hidden dashboard-custom-background">
                     <img className="w-[100%]" src="/Android Large - 5.svg" style={{ mixBlendMode: 'difference', filter: 'blur(1.0px)' }} />
@@ -198,10 +141,62 @@ const Dashboard = () => {
                 </div>
 
                 <div className="main_card relative" style={{ height: '60vh', display: 'flex', justifyContent: 'center', alignItems: 'center', top: '50%', transform: 'translateY(-50%)' }}>
-                    {/* <div style={{width: '80vw', height: '100%', background: 'rgba(255, 255, 255, 0.08)', borderRadius: 30, border: '5px white solid', backdropFilter: 'blur(43.50px)',}}> 
-        </div>*/}
-                    <div className=" h-[100%] overflow-hidden dashboard-custom-background">
+                    <div className=" h-[100%] overflow-hidden dashboard-custom-background " >
                         <img className="card_image absolute w-[90%]" src="/Vector 401.svg" style={{ mixBlendMode: 'difference', left: '50%', transform: 'translateX(-50%)' }} />
+{/* Added by Santosh */}
+<div className="dashboard-background-mb absolute" style={{left: '50%', transform: 'translateX(-50%) translateY(-30%)',top: '50%'}}>
+<div className="upper-dashboard-mb">
+    <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+    <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+    <img className="dmb-upper dmb-upper2" src="dmbupper2.svg" />
+    <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+    <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
+</div>
+
+<div className="container-dashboard-mb">
+    <div className="name-dashboard-mb">{name}</div>
+    <div className="p1-dashboard-mb">
+        <div>{college}</div>
+        <div>{branch}</div>
+        <div>{email}</div>
+        <div>{mobile}</div>
+    </div>
+
+    <div className="radinite-dashboard-mb">
+        <div>{radiniteScore}</div>  
+        Radinite  
+    </div>
+
+    <img
+    className="radinite-logo-dashboard-mb"
+        src="radinite.svg"
+        alt="radinite"
+    />
+    {/* <div className="score-logo-dashboard">
+        <img
+            src="dashboardeclipse.svg"
+            className="eclipse-dashboard"
+            alt=""
+        />
+    </div> */}
+</div>
+
+<div className="lower-dashboard-mb">
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+
+</div>
+
+</div>
+{/* Added by Santosh */}
+
                     </div>
                 </div>
 
