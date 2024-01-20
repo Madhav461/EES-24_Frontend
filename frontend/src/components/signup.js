@@ -5,19 +5,20 @@ import Navhome from "./navhome";
 
 const Signup = () => {
   return (
-    <div className="flex SignUpPage flex-col  bg-contain w-full h-full text-white justify-center items-center gap-10">
+    <div className=" SignUpPage flex flex-col   bg-contain w-full h-[100vh] text-white justify-center items-center gap-10">
       <Navhome />
-      <div className="SignUp-card bg-contain  h-[75vh] w-[75vw] ">
+      <div className="SignUp-card flex flex-col justify-center items-center bg-contain  h-auto w-[75vw] ">
+      
         <div
           className="SignUp-card-whiteDiv   bg-contain  w-full h-[35%] flex   gap-x-6  md:gap-x-24"
-          style={{}}
+          style={{  }}
         >
           <div
             className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%] none"
             style={{ borderRight: "5px dashed black" }}
           ></div>
           <div
-            className="SignUp  flex  my-auto  justify-center   items-center"
+            className="SignUp SignUpHeadingMobileView flex  my-auto  justify-center   items-center"
             style={{ whiteSpace: "nowrap" }}
           >
             SIGN UP
@@ -28,6 +29,7 @@ const Signup = () => {
           className="SignUp-card-blackDiv  w-full h-[60%] text-white flex relative"
           style={{}}
         >
+          <div className="SignUpHeadingMobileView " style={{ }} ></div>
           <div className="extraspace  h-[100%] w-[30%]  relative   none" style={{}}>
             <div className=" flex  laptopDesign  translate-x-[-15%] translate-y-[35%] justify-end">
               <svg
@@ -47,7 +49,7 @@ const Signup = () => {
           </div>
 
           <div
-            className="h-[100%] w-[30%] justify-evenly text-white amaan"
+            className="h-auto w-[30%] justify-evenly text-white amaan"
             style={{}}
           >
             <form className="w-full h-fit m-2  ">
@@ -182,7 +184,7 @@ const Signup = () => {
             </form>
 
             {/* new code for signUp button and already have an account button mobile view */}
-            <div className=" button-container ">
+            <div className=" button-container h-fit ">
               <button
                 type="button"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
