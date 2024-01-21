@@ -460,3 +460,261 @@
         height: 21.2px;
     }
 }
+
+
+
+
+/* Mobile view */
+
+.container-dashboard-mb {
+    padding: 0%;
+    /* min-width: 100%; */
+    width: 80%;
+    margin: 0% auto 2.5% auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    column-gap: 0;
+    row-gap: 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.name-dashboard-mb {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4.35px;
+    border: 2px solid #FFF;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 0.25rem 1rem 1rem; 
+    margin-bottom: -1.25rem;
+}
+
+.p1-dashboard-mb {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.875px;
+    border: 2px solid #FFF;
+    border-radius: 0 0 1rem 1rem;
+    padding: 2.5rem 0.25rem 1rem 1rem;   
+}
+
+.radinite-logo-dashboard-mb {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    margin: auto;
+    width: 210px;
+    height: 592px;
+}
+
+.radinite-dashboard-mb {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Michroma;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.425px;
+}
+
+.score-logo-dashboard-mb {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    margin: auto;
+    width: 81px;
+    height: 81px;
+    position: relative;
+    bottom: 30%;
+    left: 30%;
+    /* background-image: url("dashboardeclipse.svg"); */
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.lower-dashboard-mb {
+    display: flex;
+    justify-content: center;
+}
+
+.upper-dashboard-mb {
+    display: flex;
+    justify-content: center;
+}
+
+
+.p1-dashboard-mb{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.9px;
+    line-height: 1.5rem;
+}
+
+.name-dashboard-mb {
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 2.325px;
+}
+
+.radinite-logo-dashboard-mb {
+    width: 70px;
+    height: 180.5px;
+}
+
+.radinite-dashboard-mb {
+    font-size: 14px;
+}
+
+.dmb-upper {
+    width: 62.7px;
+    height: 44.1px;
+}
+
+.dmb-lower {
+    width: 31.1px;
+    height: 23.6px;
+}
+
+.dmb-lower3 {
+    width: 60.1px;
+    height: 25.6px;
+}
+
+@media screen and (max-width: 479px) {
+    .p1-dashboard-mb{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.9px;
+        line-height: 1.5rem;
+    }
+
+    .name-dashboard-mb {
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: 2.325px;
+    }
+
+    /* .radinite-dashboard-mb {
+        font-size: 16px;
+    } */
+
+    .radinite-logo-dashboard-mb {
+        width: 70px;
+        height: 180.5px;
+    }
+
+    .radinite-dashboard-mb {
+        font-size: 14px;
+    }
+
+    .dmb-upper {
+        width: 62.7px;
+        height: 44.1px;
+    }
+
+    /* .dmb-upper {
+        width: 58.25px;
+        height: 41.16px;
+    } */
+
+    .dmb-lower {
+        width: 31.1px;
+        height: 23.6px;
+    }
+
+    .dmb-lower3 {
+        width: 60.1px;
+        height: 25.6px;
+    }
+}
+
+@media screen and (min-width: 428px) and (max-width: 479px) {
+    .name-dashboard-mb { 
+        margin-bottom: -3rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .dmb-upper {
+        width: 56.25px;
+        height: 39px;
+    }
+
+    .dmb-lower {
+        width: 27.9px;
+        height: 21.2px;
+    }
+
+    .dmb-lower3 {
+        width: 54.1px;
+        height: 23px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .p1-dashboard-mb {
+        padding: 2.5rem 0.25rem 1rem 0.75rem;
+    }
+
+    .p1-dashboard-mb{
+        font-size: 11px;
+    }
+    
+    .name-dashboard-mb {
+        font-size: 22px;
+        margin-bottom: -1.5rem
+    }
+
+    .radinite-dashboard-mb {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .dmb-upper {
+        width: 50.16px;
+        height: 35.28px;
+    }
+
+    .dmb-lower {
+        width: 24.9px;
+        height: 18.9px;
+    }
+
+    .dmb-lower3 {
+        width: 48.08px;
+        height: 20.5px;
+    }
+
+    /* .p1-dashboard-mb{
+        font-size: 11px;
+    }
+    
+    .name-dashboard-mb {
+        font-size: 22px;
+    }
+
+    .radinite-dashboard-mb {
+        font-size: 12px;
+    } */
+}
