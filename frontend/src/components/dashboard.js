@@ -27,7 +27,7 @@ const Dashboard = () => {
 
                 {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
        </div> */}
-
+            
                 {/* <santosh> */}
                 <div className="dashboard-background card absolute" style={{ left: '50%', transform: 'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(20.50px)' }}>
                     <div className="container-dashboard">
@@ -93,13 +93,24 @@ const Dashboard = () => {
                         <img src="/Vector 347.svg" alt="img" className="h-[100%]" />
                     </div>
                     <div style={{ height: '100%', textAlign: 'center', color: 'white', fontSize: '150%', fontFamily: 'Michroma', fontWeight: '400', letterSpacing: 3.0, wordWrap: 'break-word', display: 'flex', alignItems: 'end', justifyContent: 'center', height: "min-content" }}>
-                        <div className="relative">
+                        <div className="absolute left-[40%]">
                             <img src="/Vector_347.svg" alt="img" className="absolute left-[-14%] top-[-27%] " />
                             <img src="/Vector 349.svg" alt="img" className="absolute right-[-14%] top-[-27%] " />
                             <img src="/Vector 348.svg" alt="img" className="absolute right-[-14%] bottom-[-27%] " />
                             <img src="/Vector 350.svg" alt="img" className="absolute left-[-14%] bottom-[-27%] " />
                             PROFILE
                         </div>
+                    </div>
+                    <div>
+                       <img src="/Vector 375.svg" alt="img" className="absolute left-[12%] bottom-[-45%]" />
+                       <img src="/Vector 376.svg" alt="img"  className="absolute left-[6%] bottom-[-45%]"/>
+                       <img src="/Vector 377.svg" alt="img"  className="absolute left-[0%] bottom-[-45%]"/>
+                       <img src="/Vector 374.svg" alt="img"  className="absolute left-[18%] bottom-[-45%]"/>
+                    </div> 
+                    <div>
+                        <img src="/Group 329.svg" alt="img" className="absolute right-[0%] bottom-[-45%]"/>
+                        <img src="/Group 186.svg" alt="img" className="absolute right-[1.5%] bottom-[-43%]" />
+                        <img src="/Group 332.svg" alt="img" className="absolute right-[13%] bottom-[-43%]" />
                     </div>
                     <div className="h-[100%]  ">
                         <img src="/Vector 346.svg" alt="img" className="h-[100%]" />
