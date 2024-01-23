@@ -298,27 +298,28 @@ const Login = () => {
             className="h-[100%] w-[30%] flex flex-col items-center justify-center ButtonContainerRightMostDiv "
             style={{}}
           >
-            <img className="w-[80px] h-[69px] flex" src="/OR.svg" alt="" />
+            <div className="rohit74"><img className="w-[80px] h-[69px] flex" style={{"marginLeft":"-76px"}}src="/OR.svg" alt="" />
             <img
               className=" w-[150px] h-[10px]"
               alt=""
+              style={{"marginLeft":"-106px"}}
               src="/SIGN UP with google.svg"
-            />
+            /></div>
             <Link
               to="/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 mb-10 flex flex-col items-center justify-between"
             >
-              <i className="uil uil-google"></i>
+              <i className="uil uil-google"style={{"fontSize":"34px","marginTop":"8px","marginLeft":"-100px"}}></i>
             </Link>
 
             <div className="h-[20%] w-full">
-              <div className="w-full mt-[16%] signup-button-blackDivAlreadyHaveAnAccount">
+              <div className="w-full mt-[20%] signup-button-blackDivAlreadyHaveAnAccount" style={{"marginTop":"40px","fontSize":"13px"}}>
                 Create an account?
               </div>
               <Link to="/signup">
-                <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
+                <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton" style={{"paddingTop":"9px","fontSize":"17px","marginTop":"22px"}}>
                   Sign Up
                 </button>
               </Link>
