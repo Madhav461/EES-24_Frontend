@@ -265,6 +265,31 @@
     }
 }
 
+/* for galaxy s8+ */
+@media screen and (max-height: 750px) and (max-width:375px) {
+    .card_image {
+        top: 16.5%;
+        width: 95vw;
+    }
+    .center_group {
+        top: 35vw;
+    }
+}
+/* for iphone se */
+@media screen and (max-height: 680px) and (max-width:380px) {
+    .card_image {
+        top: 13.5%;
+        width: 90.5vw;
+    }
+    .leftsvgs {
+        left: 3.5%;
+    }
+
+    .rightsvgs {
+        right: 3.5%;
+    }
+}
+
 .dashboard-background {
     /* background-image: url("dashboarblack.svg"); */
     /* background-size: contain; */
@@ -551,7 +576,7 @@
 .container-dashboard-mb {
     padding: 0%;
     /* min-width: 100%; */
-    width: 80%;
+    /* width: 80%; */
     margin: 0% auto 2.5% auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -616,6 +641,7 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1.425px;
+    padding-left: 10%;
 }
 
 .score-logo-dashboard-mb {
@@ -730,12 +756,6 @@
     }
 }
 
-@media screen and (min-width: 428px) and (max-width: 479px) {
-    .name-dashboard-mb { 
-        margin-bottom: -3rem;
-    }
-}
-
 @media screen and (max-width: 400px) {
     .dmb-upper {
         width: 56.25px;
@@ -751,6 +771,18 @@
         width: 54.1px;
         height: 23px;
     }
+
+    .name-dashboard-mb {
+        margin-bottom: -1.25rem;
+    }
+
+    .upper-dashboard-mb {
+        margin-bottom: -0.5rem;
+    }
+
+    .p1-dashboard-mb{
+        font-size: 11px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -764,7 +796,7 @@
     
     .name-dashboard-mb {
         font-size: 22px;
-        margin-bottom: -1.5rem
+        margin-bottom: -1.5rem;
     }
 
     .radinite-dashboard-mb {
@@ -788,15 +820,30 @@
         height: 20.5px;
     }
 
-    /* .p1-dashboard-mb{
-        font-size: 11px;
+    .p1-dashboard-mb{
+        font-size: 9px;
+        padding: 1.5rem 0.25rem 0.5rem 0.5rem;
     }
     
     .name-dashboard-mb {
-        font-size: 22px;
+        font-size: 18px;
+        margin-bottom: -3.5rem;
     }
 
     .radinite-dashboard-mb {
-        font-size: 12px;
-    } */
+        font-size: 10px;
+    }
+
+    .upper-dashboard-mb {
+        margin-bottom: -1.5rem;
+    }
+    
+    .container-dashboard-mb {
+        padding: 0%;
+        margin: 0% auto 0.5% auto;
+    }
+
+    .radinite-dashboard-mb {
+        padding-top: 10%;
+    }
 }
