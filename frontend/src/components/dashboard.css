@@ -1,6 +1,18 @@
 /* Switching between desktop/mobile views*/
 
-@media screen and (max-width: 1445px) {
+@media screen and (min-width: 1920px) {
+    .mobileview {
+        display: none;
+        /* visibility:hidden; */
+    }
+
+    .desktopview {
+        display: none;
+        /* visibility:hidden; */
+    }
+}
+
+@media screen and (max-width: 1921px) {
     .mobileview {
         display: none;
         /* visibility:hidden; */
@@ -12,7 +24,7 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
     .desktopview {
         display: none;
         /* visibility:hidden; */
@@ -26,6 +38,25 @@
 
 
 /* Responsiveness for desktop view */
+
+@media screen and (max-width:1920px) {
+    .card {
+        height: 46%;
+        width: 83.3%;
+        top: 39%;
+    }
+
+    .title_container {
+        height: 18%;
+        width: 80%;
+        top: 15.5%;
+    }
+
+    .title_container div {
+        font-size: 45px;
+    }
+}
+
 @media screen and (max-width:1445px) {
     .card {
         height: 46%;
@@ -44,7 +75,7 @@
     }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1025px) {
     .card {
         height: 50%;
         width: 80%;
@@ -97,7 +128,7 @@
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:680px) {
     .card {
         height: 55%;
         width: 80%;
@@ -113,6 +144,46 @@
     .title_container div {
         font-size: 18px;
     }
+}
+
+@media screen and (max-width:600px) {
+    .card {
+        height: 55%;
+        width: 80%;
+        top: 35%;
+    }
+
+    .title_container {
+        height: 9%;
+        width: 80%;
+        top: 17%;
+    }
+
+    .title_container div {
+        font-size: 18px;
+    }}
+
+
+    /* tablet views' responsiveness of bgimage */
+@media screen and (min-height:400px) {
+    .bgimg img{
+        transform: translateY(-30vw);
+    }
+}
+@media screen and (min-height:1024px) {
+    .bgimg img{
+        transform: translateY(-15vw);
+    }
+}
+@media screen and (min-height:1180px) {
+    .bgimg img{
+        transform: translateY(-10vw);
+    }
+}
+@media screen and (min-height:1330px) {
+    .bgimg img{
+        transform: translateY(-5vw);
+}
 }
 
 /* Responsiveness for mobile view */
@@ -149,15 +220,16 @@
     }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 750px) {
+    
     .card_image {
-        top: 14%;
-        width: 80vw;
-        ;
+        top: 15%;
+        width: 95vw;
     }
 
     .buttons {
-        bottom: 5%;
+        bottom: 2.5%;
+        height: 6vh;
     }
 
     .side_svgs {
@@ -182,7 +254,16 @@
     }
 }
 
-
+@media screen and (max-height: 700px) {
+    .card_image {
+        top: 15%;
+        width: 90vw;
+    }
+    .buttons {
+        bottom: 2.5%;
+        height: 5vh;
+    }
+}
 
 .dashboard-background {
     /* background-image: url("dashboarblack.svg"); */
@@ -194,6 +275,7 @@
     padding: 0%;
     /* min-width: 100%; */
     width: 100%;
+    height: 100%;
     margin: 2% auto 0% auto;
     display: grid;
     grid-template-columns: repeat(2, 3fr) repeat(1, 2fr);
