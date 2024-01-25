@@ -1,58 +1,48 @@
 import React from "react";
 import "../components/signup.css";
 import Navhome from "./navhome";
-// import { Link } from 'react-router-dom';
 
 const Signup = () => {
   return (
-    <div className=" SignUpPage flex flex-col   bg-contain w-full h-[100vh] text-white justify-center items-center gap-10">
+    <div className="flex SignUpPage flex-col  bg-contain w-full h-full text-white justify-center items-center gap-10">
       <Navhome />
-      <div className="SignUp-card flex flex-col justify-center items-center bg-contain  h-auto w-[75vw] ">
-      
+      <div className="SignUp-card bg-contain w-[75vw] h-[75vh]">
         <div
-          className="SignUp-card-whiteDiv   bg-contain  w-full h-[35%] flex   gap-x-6  md:gap-x-24"
-          style={{  }}
+          className="SignUp-card-whiteDiv bg-contain  w-full h-[35%] flex   gap-x-6 md:gap-x-24"
+          style={{
+            
+          }}
         >
           <div
             className="EES-logo mt-12 mx-2 md:mx-12 px-4 w-[15%] none"
             style={{ borderRight: "5px dashed black" }}
           ></div>
-          <div
-            className="SignUp SignUpHeadingMobileView flex  my-auto  justify-center   items-center"
-            style={{ whiteSpace: "nowrap" }}
-          >
+          <div className="SignUp flex  my-auto  justify-center mb-[20%]   items-center" style={{ whiteSpace: "nowrap" }}>
             SIGN UP
           </div>
         </div>
 
         <div
           className="SignUp-card-blackDiv  w-full h-[60%] text-white flex relative"
-          style={{}}
+          style={{
+      
+          }}
         >
-          <div className="SignUpHeadingMobileView " style={{ }} ></div>
-          <div className="extraspace  h-[100%] w-[30%]  relative   none" style={{}}>
-            <div className=" flex  laptopDesign  translate-x-[-15%] translate-y-[35%] justify-end">
-              <svg
-                width="10%"
-                height="10%"
-                viewBox="0 0 21 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M20 0V20H0" stroke="white" stroke-width="2" />
-              </svg>
-            </div>
-
-              <div className="SignUp-card-blackDiv-whiteEESpattern  w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
+          <div
+            className="h-[100%] w-[30%]  relative   none"
+            style={{ }}
+          >
+            <div className="SignUp-card-blackDiv-whiteEESpattern w-full h-[50%] mt-[70%] flex justify-center items-center absolute">
               <div className="SignUp-card-blackDiv-eesdesign w-[50%] translate-x-[-1.5rem] translate-y-[0.5rem] h-[50%]  "></div>
             </div>
           </div>
 
           <div
-            className="h-auto w-[30%] justify-evenly text-white amaan"
-            style={{}}
+            className="h-[100%] w-[30%]  overflow-hidden justify-evenly text-white amaan"
+            style={{
+            }}
           >
-            <form className="w-full h-fit m-2  ">
+            <form className="w-full h-[90%] m-2">
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
@@ -69,7 +59,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    color: "white",
+                
                   }}
                 />
               </div>
@@ -87,7 +77,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    color: "white",
+                   
                   }}
                 />
               </div>
@@ -105,7 +95,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    color: "white",
+                    
                   }}
                 />
               </div>
@@ -123,14 +113,13 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    color: "white",
-                  }}
+                   }}
                 />
               </div>
 
               <div style={{ position: "relative" }}>
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
                   type="password"
                   placeholder="PASSWORD"
                   style={{
@@ -141,7 +130,7 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    color: "white",
+  
                   }}
                 />
               </div>
@@ -159,57 +148,29 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
-                    color: "white",
+                    marginBottom:'8%',
                   }}
                 />
-              </div>
-              <div className="laptopDesign flex justify-center">
-                <svg
-                  width="45"
-                  height="48"
-                  viewBox="0 0 45 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M20 0V20H0" stroke="white" stroke-width="2" />
-                  <path d="M0 28H20V48" stroke="white" stroke-width="2" />
-                  <path
-                    d="M25 48L25 28L45 28"
-                    stroke="white"
-                    stroke-width="2"
-                  />
-                </svg>
               </div>
             </form>
 
             {/* new code for signUp button and already have an account button mobile view */}
-            <div className=" button-container h-fit ">
+            <div className=" button-container " >
               <button
                 type="button"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
-                style={{ width: "100%", fontFamily: "Goldman" }}
+                style={{ width: "100%" , fontFamily:"Goldman" ,}}
               >
                 Sign Up
               </button>
-              <p
-                style={{
-                  alignItems: "center",
-                  font: "Goldman",
-                  textAlign: "center",
-                }}
-              >
+              <p style={{ alignItems: "center", font: "Goldman", textAlign:"center"  }}>
                 Already have an account?
               </p>
 
               <button
                 type="button"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center "
-                style={{
-                  width: "100%",
-                  fontFamily: "Goldman",
-                  textAlign: "center",
-                }}
+                style={{ width: "100%", fontFamily:"Goldman" ,textAlign:'center'}}
               >
                 LOG IN
               </button>
@@ -368,20 +329,10 @@ const Signup = () => {
 
           {/* sign up button and already have an account  */}
           <div
-            className="h-[100%]    mb-[20%]  w-[30%] flex flex-col items-center justify-between ButtonContainerRightMostDiv "
-            style={{}}
+            className="h-[100%]   mb-[20%]  w-[30%] flex flex-col items-center justify-evenly ButtonContainerRightMostDiv "
+            style={{  }}
           >
-            <div className=" laptopDesign  w-full ">
-            <svg
-                width="30%"
-                height="30%"
-                viewBox="0 0 21 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M20 0V20H0" stroke="white" stroke-width="2" />
-              </svg>
-            </div>
+            <div></div>
             <button className="signup-button-blackDiv cursor-pointer w-full bg-transparent h-[10%] flex items-center justify-center">
               SIGN UP
             </button>
@@ -401,4 +352,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
