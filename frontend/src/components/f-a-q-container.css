@@ -6,8 +6,11 @@
   .Answer_heading{
     font-size: 17px;
   }
-  .answer_content{
+  /* .answer_content{
     font-size: 10px;
+  } */
+  .answer_content{
+    font-size: 15px;
   }
 .QUESTION-CONTAINER{
   min-height: 56px ;
@@ -28,8 +31,11 @@
   .Answer_heading{
     font-size: 13px;
   }
-  .answer_content{
+  /* .answer_content{
     font-size: 7.5px;
+  } */
+  .answer_content{
+    font-size: 11px;
   }
   .QUESTION-CONTAINER{
     min-height: 42px ;
@@ -50,8 +56,11 @@
   .Answer_heading{
     font-size: 8px;
   }
-  .answer_content{
+  /* .answer_content{
     font-size: 4.5px;
+  } */
+  .answer_content{
+    font-size: 7px;
   }
   .QUESTION-CONTAINER{
     min-height: 26px ;
@@ -72,8 +81,11 @@
   .Answer_heading{
     font-size: 6.25px;
   }
-  .answer_content{
+  /* .answer_content{
     font-size: 3.5px;
+  } */
+  .answer_content{
+    font-size: 5px;
   }
   .QUESTION-CONTAINER{
     min-height: 20px ;

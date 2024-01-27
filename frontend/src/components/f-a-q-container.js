@@ -63,13 +63,13 @@ return (
 
 
       <div className="container-shape absolute top-[0px] left-[0px] w-[100%] h-[100%] text-5xl ">
-        <div className="Answer_heading absolute top-[19.59%] text-[24px] leading-[150%] inline-block w-[83.98%] h-[30%]" style={{left:'50%', transform:'translateX(-50%)'}}>
+        {/* <div className="Answer_heading absolute top-[19.59%] text-[24px] leading-[150%] inline-block w-[83.98%] h-[30%]" style={{left:'50%', transform:'translateX(-50%)'}}>
 
-          {/* {props.Ans_h} */}
+         //  {props.Ans_h} 
           Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
-        </div>
+        </div> */}
 
-        <div className="font-goldman answer_content absolute top-[56.6%] text-[14px] leading-[150%] inline-block w-[83.98%] h-[26.2%]" style={{left:'50%', transform:'translateX(-50%)'}}>
+        <div className="font-goldman answer_content absolute top-[20%] text-[18px] leading-[150%] inline-block w-[83.98%] h-[30%]" style={{left:'50%', transform:'translateX(-50%)'}}>
 
          {/* {props.ans} */}
          Navigate Through Frequently Asked Questions to Enhance Your
