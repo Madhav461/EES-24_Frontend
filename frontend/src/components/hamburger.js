@@ -11,7 +11,7 @@ const COLORS = {
 
 const MenuLabel = styled.label`
  background-color: ${COLORS.primaryDark};
-//   position: ;
+   position: ;
 //   top: -1rem;
 //   right:100vw;
   left:-1rem;
@@ -139,13 +139,13 @@ function HamburgerMenu() {
   const handleClick = () => setClick(!click);
   return (
     <div id="ham_txt" className="z-10 ">
-      <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
-        <div><Icon clicked={click}>&nbsp;</Icon></div>
+      <MenuLabel htmlFor="navi-toggle" onClick={handleClick} className="">
+        <div className=""><Icon clicked={click}>&nbsp;</Icon></div>
       </MenuLabel>
       
-      <NavBackground className="h-auto  overflow-hidden " clicked={click}>&nbsp;</NavBackground>
+      <NavBackground className=" overflow-hidden " clicked={click}>&nbsp;</NavBackground>
 
-      <Navigation className="h-auto  overflow-hidden bg-[url('/public/hambg3.svg')] bg-opacity-0 bg-repeat" clicked={click}>
+      <Navigation className=" overflow-hidden bg-[url('/public/hambg3.svg')] bg-opacity-0 " clicked={click}>
         <List  className="font-goldman glow-text flex flex-col items-center" >
           <li class="list_point">
             <ItemLink onClick={handleClick} to="/">
