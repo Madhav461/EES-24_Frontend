@@ -1,7 +1,7 @@
 /* Responsiveness */
 @media (max-width:1024px){
   .QUESTION-CONTAINER{
-    font-size: 15px;
+    font-size: 18px;
   }
   .Answer_heading{
     font-size: 17px;
@@ -10,7 +10,7 @@
     font-size: 10px;
   } */
   .answer_content{
-    font-size: 15px;
+    font-size: 17px;
   }
 .QUESTION-CONTAINER{
   min-height: 56px ;
@@ -24,9 +24,34 @@
 }
 }
 
+@media (max-width:850px){
+  .QUESTION-CONTAINER{
+    font-size: 15px;
+  }
+  .Answer_heading{
+    font-size: 13px;
+  }
+  /* .answer_content{
+    font-size: 7.5px;
+  } */
+  .answer_content{
+    font-size: 14px;
+  }
+  .QUESTION-CONTAINER{
+    min-height: 48px ;
+  }
+  .ANSWER-CONTAINER{
+    min-height: 225px ;
+  }
+  .ANSWER-CONTAINER button{
+    height: 22px;
+    width: 22px;
+  }
+}
+
 @media (max-width:768px){
   .QUESTION-CONTAINER{
-    font-size: 11px;
+    font-size: 12px;
   }
   .Answer_heading{
     font-size: 13px;
@@ -51,7 +76,7 @@
 
 @media (max-width:480px){
   .QUESTION-CONTAINER{
-    font-size: 7px;
+    font-size: 15px;
   }
   .Answer_heading{
     font-size: 8px;
@@ -60,23 +85,23 @@
     font-size: 4.5px;
   } */
   .answer_content{
-    font-size: 7px;
+    font-size: 13px;
   }
   .QUESTION-CONTAINER{
-    min-height: 26px ;
+    min-height: 35px ;
   }
   .ANSWER-CONTAINER{
-    min-height: 116px ;
+    min-height: 250px ;
   }
   .ANSWER-CONTAINER button{
-    height: 12px;
-    width: 12px;
+    height: 15px;
+    width: 15px;
   }
 }
 
 @media (max-width:375px){
   .QUESTION-CONTAINER{
-    font-size: 5.5px;
+    font-size: 10.5px;
   }
   .Answer_heading{
     font-size: 6.25px;
@@ -85,17 +110,17 @@
     font-size: 3.5px;
   } */
   .answer_content{
-    font-size: 5px;
+    font-size: 10px;
   }
   .QUESTION-CONTAINER{
-    min-height: 20px ;
+    min-height: 30px ;
   }
   .ANSWER-CONTAINER{
-    min-height: 90px ;
+    min-height: 170px ;
   }
   .ANSWER-CONTAINER button{
-    height: 9px;
-    width: 9px;
+    height: 15px;
+    width: 15px;
   }
 }
 
@@ -140,8 +165,8 @@
   }
 
  .ANSWER-CONTAINER  {
-    animation: slidein 0.5s ease-in-out; /* Keyframe animation */
-    transition: background-color 0.3s ease; /* Transition on background-color */
+    animation: slidein 0.8s ease-in-out; /* Keyframe animation */
+    transition: background-color 0.5s ease; /* Transition on background-color */
   }
 
   
