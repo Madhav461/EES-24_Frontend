@@ -164,7 +164,7 @@ function HamburgerMenu() {
           </li>
           <li class="list_point">
             <ItemLink onClick={handleClick} to="/">
-              Sponsers
+              Events
             </ItemLink>
           </li>
          
