@@ -1,3 +1,43 @@
+/* <Switching between desktop/mobile views> */
+@media screen and (min-width: 1920px) {
+  .mobileview {
+      /* display: none; */
+      visibility:hidden;
+  }
+
+  .desktopview {
+      /* display: none; */
+      visibility:hidden;
+  }
+}
+
+@media screen and (max-width: 1921px) {
+  .mobileview {
+      /* display: none; */
+      visibility:visible;
+  }
+
+  .desktopview {
+      /* display: flex; */
+      visibility:hidden;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .desktopview {
+      /* display: none; */
+      visibility:hidden;
+  }
+
+  .mobileview {
+      /* display: flex; */
+      visibility:visible;
+  }
+}
+/* </Switching between desktop/mobile views> */
+
+
+
 .center {
   display: flex;
   align-items: center;
