@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 // import bg_user_reg from ".../"
 
+
 const COLORS = {
   primaryDark: "black",
   primaryLight: "white",
@@ -25,6 +26,7 @@ const MenuLabel = styled.label`
 
 const NavBackground = styled.div`
 background-color: ${COLORS.primaryDark};
+
   position: absolute;
   top: 6.5rem;
   right: 6.5rem;
@@ -140,28 +142,28 @@ function HamburgerMenu() {
       <MenuLabel htmlFor="navi-toggle" onClick={handleClick}>
         <div><Icon clicked={click}>&nbsp;</Icon></div>
       </MenuLabel>
-      {/* <img src="bg_user_reg.svg"></img> */}
-      <NavBackground className="h-auto  overflow-hidden" clicked={click}>&nbsp;</NavBackground>
+      
+      <NavBackground className="h-auto  overflow-hidden " clicked={click}>&nbsp;</NavBackground>
 
-      <Navigation className="h-auto  overflow-hidden" clicked={click}>
-        <List  className="font-goldman glow-text" >
+      <Navigation className="h-auto  overflow-hidden bg-[url('/public/hambg3.svg')] bg-opacity-0 bg-repeat" clicked={click}>
+        <List  className="font-goldman glow-text flex flex-col items-center" >
           <li class="list_point">
             <ItemLink onClick={handleClick} to="/">
               Workshops
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/about">
+            <ItemLink onClick={handleClick} to="/">
               Schedule
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/portfolio">
+            <ItemLink onClick={handleClick} to="/">
               Gallery
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/blog">
+            <ItemLink onClick={handleClick} to="/">
               Sponsers
             </ItemLink>
           </li>
