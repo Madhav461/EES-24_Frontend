@@ -200,8 +200,6 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                {/* my general doubt : transform in X&Y direc , same div mein kaam kyu nhi kr rhe like placing that content of 76 into 72 ,anyways let it go*/}
-
                 <div className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                     <div className="h-[100%]">
                         <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
