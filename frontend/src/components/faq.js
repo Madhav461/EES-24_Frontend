@@ -18,7 +18,7 @@ return (
 
 
       <div className="glow-text w-[100%]"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={35} className="marquee_container border-solid border-teal-300 border-y"><p class="marquee" className="marquee-font font-michroma text-turquoise text-[33px]"><AnimatedTextCharacter text="Your Questions Answered   ||  Your Questions Answered   ||  Your Questions Answered   ||  "></AnimatedTextCharacter></p></Marquee></div>
-      <div className="faqs mt-[0px] text-[94px] center tracking-[0.01em] leading-[150%] font-michroma text-turquoise text-center inline-block w-[28%]">
+      <div className="faqs mt-[1.5vw] text-[94px] center tracking-[0.01em] leading-[150%] font-michroma text-turquoise text-center inline-block w-[28%]">
         FAQ’s
       </div>
 
