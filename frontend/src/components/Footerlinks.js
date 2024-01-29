@@ -238,7 +238,7 @@ const Footerlinks = () => {
 
         <svg
           width="75%"
-          height="63"
+          height="63%"
           viewBox="0 0 397 63"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

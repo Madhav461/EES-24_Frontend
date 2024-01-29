@@ -3,9 +3,8 @@
 .footer-container {
   background-repeat: no-repeat;
   background-image: url("/public/footerBackground.svg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-background-size:contain ;
   display: flex;
   flex-direction: column;
   height: fit-content;
