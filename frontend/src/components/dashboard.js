@@ -284,23 +284,24 @@ const Dashboard = () => {
     </div> */}
               </div>
 
-              <div className="lower-dashboard-mb">
-                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-                <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
-                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-              </div>
-            </div>
-            {/* Added by Santosh */}
-          </div>
-        </div>
+<div className="lower-dashboard-mb">
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+    <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
 
-        {/* my general doubt : transform in X&Y direc , same div mein kaam kyu nhi kr rhe like placing that content of 76 into 72 ,anyways let it go*/}
+</div>
+
+</div>
+{/* Added by Santosh */}
+
+                    </div>
+                </div>
 
         <div
           className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
