@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import HamburgerMenu from "./components/hamburger";
 import Login from "./components/login";
 import Signup from "./components/signup";
+import Carousel from "./components/about_mobile.js";
 
 import Dashboard from "./components/dashboard.js";
 
@@ -31,8 +32,11 @@ function App() {
     </div>
 
       <Routes>
-        
         <Route exact path="/dashboard" element={<Dashboard />} />
+      </Routes>
+
+      <Routes>   
+        <Route exact path="/about" element={<Carousel />} />
       </Routes>
 
       </Router>
