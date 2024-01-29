@@ -76,11 +76,14 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ position: "relative" }}>
+              <div
+                className="relative"
+                style={{ width: "contain", gap: "2rem" }}
+              >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="EMAIL"
+                  placeholder="Email"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -93,11 +96,14 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ position: "relative" }}>
+              <div
+                className="relative"
+                style={{ width: "contain", gap: "2rem" }}
+              >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="COLLEGE NAME"
+                  placeholder="College Name"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -110,11 +116,14 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ position: "relative" }}>
+              <div
+                className="relative"
+                style={{ width: "contain", gap: "2rem" }}
+              >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="YEAR"
+                  placeholder="Year"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -127,11 +136,14 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ position: "relative" }}>
+              <div
+                className="relative"
+                style={{ width: "contain", gap: "2rem" }}
+              >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder"
-                  type="password"
-                  placeholder="PASSWORD"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                  type="text"
+                  placeholder="Password"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -144,11 +156,14 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ position: "relative" }}>
+              <div
+                className="relative"
+                style={{ width: "contain", gap: "2rem" }}
+              >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 bg-transparent white-placeholder "
-                  type="password"
-                  placeholder="CONFIRM PASSWORD"
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                  type="text"
+                  placeholder="Confirm Password"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -157,7 +172,6 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
-                    marginBottom: "8%",
                   }}
                 />
               </div>
