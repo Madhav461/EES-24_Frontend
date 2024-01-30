@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/signup.css";
+// import "../components/signup.css";
 import Navhome from "./navhome";
 
 const Signup = () => {
