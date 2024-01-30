@@ -83,7 +83,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Email"
+                  placeholder="EMAIL"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
