@@ -13,6 +13,10 @@ background-size:contain ;
   box-sizing: border-box;
  
 }
+.flayout{
+  width: 50%;
+  height: 60%;
+}
 @media (min-width: 1360px) {
 .angle-rectangle {
  position: absolute;
@@ -98,18 +102,56 @@ letter-spacing: 3.6px;
  transition: transform 0.3s; /* Add transition for a smooth effect */
 }
 
+.submit-button-mob{
+display: flex;
+background-color: rgba(0, 0, 0, 0.0);
+overflow: hidden;
+width: 60.666%;
+height: 18.214%;
+justify-content: center;
+flex-shrink: 0;
+margin-left: 20%;
+border: 5px dashed white;
+color: #FFF;
+border-radius: 10px;
+text-align: center;
+font-family: Michroma;
+font-size: 100%;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.375px;
 
+}
+
+.submit-button-mob{
+  display: none;
+}
 .submit-button:hover::before {
  transform: skewX(0deg);
   /* Skewness on hover */
 }
 
+@media only screen and (max-width: 600px){
+  .submit-button{
+    display: none;
+  }
+  .submit-button-mob{
+    display: block;
+  }
+} 
 @media only screen and (max-width: 900px) {
  .submit-button {
    width: 80%; /* Adjust the width for mobile view */
    font-size: 110%; /* Adjust the font size for mobile view */
 
  }
+
+.flayout{
+  width: auto;
+  height: auto;
+}
+
  .lin{
    display: none;
   }

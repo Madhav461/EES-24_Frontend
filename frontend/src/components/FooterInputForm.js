@@ -7,8 +7,6 @@ const FooterInputForm = () => {
         className="flayout"
         style={{
           display: "flex",
-          width: "60%",
-          height: "60%",
           gap: "1rem",
           flexDirection: "column",
           justifyContent: "center",
@@ -18,8 +16,8 @@ const FooterInputForm = () => {
         }}
       >
         <svg
-          width="95%"
-          height="100"
+          width="auto"
+          height="auto"
           viewBox="0 0 425 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -109,8 +107,8 @@ const FooterInputForm = () => {
         </svg>
 
         <svg
-          width="95%"
-          height="100"
+          width="auto"
+          height="auto"
           viewBox="0 0 425 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -200,8 +198,8 @@ const FooterInputForm = () => {
         </svg>
 
         <svg
-          width="95%"
-          height="100"
+          width="auto"
+          height="auto"
           viewBox="0 0 425 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -289,10 +287,12 @@ const FooterInputForm = () => {
             </filter>
           </defs>
         </svg>
-
+        <button type="submit" class="submit-button-mob" style={{}}>
+        Submit
+      </button>
         <svg
-          width="295"
-          height="77"
+          width="auto"
+          height="auto"
           viewBox="0 0 505 57"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -306,10 +306,11 @@ const FooterInputForm = () => {
           />
         </svg>
       </div>
-      <button type="submit" class="submit-button">
+      <button type="submit" class="submit-button" >
         Submit
       </button>
-    </>
+     
+    </> 
   );
 };
 
