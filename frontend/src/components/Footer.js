@@ -4,11 +4,9 @@ import "./Footer.css";
 import Footerlinks from "./Footerlinks";
 import FooterInputForm from "./FooterInputForm";
 
-
 const Footer = () => {
   return (
     <div className="relative  footer-container w-full bottom-0  text-left text-77xl text-pitchdeck-slide-background font-goldman ">
-      
       <div class="angle-rectangle"></div>
       <div className="relative  max-w-full max-h-fit  flex flex-col items-end justify-center text-mini font-bruno-ace-sc  ">
         <div
@@ -24,8 +22,6 @@ const Footer = () => {
             <div className="footer-line w-[60%] h-[30%]  "></div>
           </div>
 
-         
-
           <div className="footer-content-container  gap-2  flex relative w-full h-[75%]  justify-between">
             <div className=" h-full w-[15%] flex items-center overflow-hidden">
               <Icons />
@@ -40,19 +36,31 @@ const Footer = () => {
 
             {/* icons and form separating line ka div */}
             <div className="lin">
-            <svg  width="2" height="437" viewBox="0 0 2 437" fill="none" xmlns="http://www.w3.org/2000/svg" style={{padding:'.1rem'}}>
-<line x1="1" y1="4.37114e-08" x2="0.999981" y2="437" stroke="white" stroke-width="2"/>
-</svg></div>
+              <svg
+                width="2"
+                height="437"
+                viewBox="0 0 2 437"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ padding: ".1rem" }}
+              >
+                <line
+                  x1="1"
+                  y1="4.37114e-08"
+                  x2="0.999981"
+                  y2="437"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
 
-
-            <div className="h-full w-[35%] overflow-hidden flex items-center overflow-hidden input">
+            <div className="h-full w-[35%]   flex items-center input">
               <Footerlinks></Footerlinks>
             </div>
           </div>
-
         </div>
       </div>
-      
     </div>
   );
 };
