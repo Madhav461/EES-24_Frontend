@@ -103,7 +103,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="College Name"
+                  placeholder="COLLEGE NAME"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -123,7 +123,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Year"
+                  placeholder="YEAR"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -143,7 +143,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Password"
+                  placeholder="PASSWORD"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -163,7 +163,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Confirm Password"
+                  placeholder="CONFIRM PASSWORD"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
