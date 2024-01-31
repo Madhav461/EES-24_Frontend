@@ -339,24 +339,45 @@ body {
         letter-spacing: 6.4px;
     }
 
-    .sponsor-img {
+    /* .sponsor-img {
         height: 45px;
         width: 15px;
-    }
+    } */
 
-    .marquee-horizontal-large {
+    /* .marquee-horizontal-large {
         height: 80px;
-    }
+    } */
 
-    .icon-container-alt {
+    /* .icon-container-alt {
         width: 75px;
         height: 50px;
         padding-left: 5px;
         padding-right: 5px;
+    } */
+
+    .icon-container-alt {
+        width: 125px;
+        height: 85px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sponsor-img {
+        height: 75px;
+        width: 25px;
+    }
+
+    .marquee-horizontal-large {
+        height: 130px;
     }
 
     .flex-horizontal {
         margin: 0.25rem 0;
+    }
+
+    .sponsors-slideshow {
+        display: none;
+        visibility: hidden;
     }
 }
 
