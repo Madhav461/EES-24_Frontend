@@ -16,7 +16,7 @@ i {
   /* Media query for smaller screens */
   @media (max-width: 768px) {
     .object-contain i {
-      font-size: 20px; /* Adjust the size for smaller screens as needed */
+      font-size: 22px; /* Adjust the size for smaller screens as needed */
     }
   }
   
