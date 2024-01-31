@@ -55,7 +55,7 @@ const Footer = () => {
               </svg>
             </div>
 
-            <div className="h-full w-[35%]   flex items-center input">
+            <div className="h-full w-[35%]  flex items-center input">
               <Footerlinks></Footerlinks>
             </div>
           </div>
