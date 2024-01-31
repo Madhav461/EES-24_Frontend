@@ -61,27 +61,27 @@ function Schedule() {
         <div>
             {/* md defind as 768 px in tailwindcofig in screens */}
 
-            <div className='max-h-fit w-screen    border-t-[0.5px] border-b-[0.5px] border-solid  border-[#FFF] '>
+            <div className='max-h-fit w-screen    border-t-[0.5px] border-b-[0.5px]  border-solid  border-[#FFF] '>
                 <div className='w-screen h-[1088px] border-solid border-[#FFF] border-y-[0.5px] my-[50px]'>
                     <div className='  h-[1088px] '>
-                        <div className=' h-[210px] flex border-solid border-[#FFF] border-b-[0.5px] items-center'>
+                        <div className=' h-[150px] flex border-solid border-[#FFF] border-b-[0.5px] items-center'>
                         {/* leading-[131px] */}
                         {/* mt-[23px] */}
                         {/* onMouseOver={HandleHover} */}
-                            <div id="schedule_title" className=' text-white ml-3 text-center text-[100px] tracking-[1rem] font-bold leading-[0px] items-center  md:ml-[24px] '>
+                            <div id="schedule_title" className=' text-white  font-audiowide text-s ml-3 text-center text-[100px] tracking-[1rem] font-bold leading-[0px] items-center  md:ml-[24px] '>
                                 {/* underline  */}
                                 {/* <p ref={ref}></p> */}
                                 SCHEDULE
                             </div>
                         </div>
-                        <div className="flex w-full">
+                        <div className="flex w-full  ">
                             {/* 70 percent colmn */}
-                            <div className="w-[100%] md:w-[70%] relative">
+                            <div className="md:w-[70%] w-[90%] mx-10 md:mx-0 relative">
                                 {/* can change mx to ml-100px */}
                                 <div className=' h-[878px] grid grid-rows-8 md:mx-[100px]  border-solid border-[#FFF] border-x-[0.5px] '>
                                     {Array.from({ length: 8 }, (_, index) => index + 1).map((item) => (
-                                        <div className=' group cursor-pointer border-t-[0.5px] border-solid border-[#FFF] hover:bg-[#D9D9D9]/20 hover:border-l-[10px]  hover:border-[#FFF]  pl-[25px] hover:pl-[15.5px] '>
-                                            <div className=' font-goldman text-white h-[100%] items-center  flex   text-[22.664px] font-normal tracking-[4.5px]    ' onClick={(e) => handleDivClick(e.target.textContent)} >
+                                        <div className=' group cursor-pointer border-t-[0.5px] mr-5 border-solid border-[#FFF] hover:bg-[#D9D9D9]/20 hover:border-l-[10px]  hover:border-[#FFF]  pl-[25px] hover:pl-[15.5px] '>
+                                            <div className='  text-white h-[100%] items-center  flex   text-[22.664px] font-audiowide tracking-[4.5px]    ' onClick={(e) => handleDivClick(e.target.textContent)} >
                                                 write some updates here!(On Hover)
                                             </div>
                                         </div>
