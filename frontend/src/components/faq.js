@@ -16,9 +16,11 @@ const clicked=(num)=>{
 return (
     <div className="relative flex flex-col mt-[30px] mb-[50px]" style={{width:'100vw' ,height:'min-content', justifyContent:'center', alignItems:'center'}}>
 
-
+      {/* marquee */}
       <div className="glow-text w-[100%]"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={35} className="marquee_container border-solid border-teal-300 border-y"><div class="marquee" className="marquee-font font-michroma text-turquoise text-[33px]"><AnimatedTextCharacter text="Your Questions Answered   ||  Your Questions Answered   ||  Your Questions Answered   ||  "></AnimatedTextCharacter></div></Marquee></div>
+
       <div className="faqs mt-[0px] text-[94px] center tracking-[0.01em] leading-[150%] font-michroma text-turquoise text-center inline-block w-[28%]">
+
         FAQ’s
       </div>
 

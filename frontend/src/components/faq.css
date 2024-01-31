@@ -2,13 +2,13 @@
 /* Responsiveness */
 @media (max-width:1024px){
 .STILL-HAVE-QUES{
-    font-size: 22.75px;
+    font-size: 32.75px;
 }
 .still-ques{
-    margin-bottom: 22.75px;
+    margin-bottom: 32.75px;
 }
 #last-para{
-    font-size: 15px;
+    font-size: 20px;
 }
 .faqs{
     font-size: 67px;
@@ -20,16 +20,16 @@
 
 @media (max-width:768px){
 .STILL-HAVE-QUES{
-    font-size: 17px;
+    font-size: 25px;
 }
 .still-ques{
-    margin-bottom: 17px;
+    margin-bottom: 25px;
 }
 #last-para{
-    font-size: 11px;
+    font-size: 17px;
 }
 .faqs{
-    font-size: 50px;
+    font-size: 55px;
 }
 .marquee-font{
     font-size: 17px;
@@ -38,34 +38,34 @@
 
 @media (max-width:480px){
 .STILL-HAVE-QUES{
-    font-size: 11px;
+    font-size: 18px;
 }
 .still-ques{
-    margin-bottom: 11px;
+    margin-bottom: 18px;
 }
 #last-para{
-    font-size: 7px;
+    font-size: 13px;
 }
 .faqs{
-    font-size: 31px;
+    font-size: 35px;
 }
 .marquee-font{
     font-size: 11px;
 }
 }
 
-@media (max-width:375px){
+@media (max-width:380px){
 .STILL-HAVE-QUES{
-    font-size: 8px;
+    font-size: 13.5px;
 }
 .still-ques{
-    margin-bottom: 8px;
+    margin-bottom: 13.5px;
 }
 #last-para{
-    font-size: 5px;
+    font-size: 10px;
 }
 .faqs{
-    font-size: 24px;
+    font-size: 30px;
 }
 .marquee-font{
     font-size: 8px;

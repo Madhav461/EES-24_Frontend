@@ -15,10 +15,8 @@ import Dashboard from "./components/dashboard.js";
 function App() {
   return (
     <Router>
-     <div className="flex flex-col w-[100vw]  max-h-fit  ">
-    
 
-
+    <div className="flex flex-col w-[100vw] max-h-fit">
      <Routes>
         <Route exact path="/" element={<LandingPage />} />
       </Routes>
@@ -26,20 +24,12 @@ function App() {
           <Routes>
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/dashboard" element={<Dashboard />} />
           </Routes>
-       </div>
-
+      </div>
     </div>
 
-      <Routes>
-        <Route exact path="/dashboard" element={<Dashboard />} />
-      </Routes>
-
-      <Routes>   
-        <Route exact path="/about" element={<Carousel />} />
-      </Routes>
-
-      </Router>
+    </Router>
   
   );
 }
