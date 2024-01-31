@@ -94,7 +94,7 @@ const SponsorsFull = () => {
 
     return (
         <div className='border-y border-solid border-slate-600 pt-[8%] pb-[8%] mb-[5%]'>
-            <div>
+            <div className="sponsors-slideshow">
                 <Fade {...properties}>
                     {fadeImages}
                 </Fade>
@@ -126,7 +126,7 @@ const SponsorsFull = () => {
                 </div>
             </div>
             <div className="spacer-50"></div>
-            <div>
+            <div className="sponsors-slideshow">
                 <Fade {...properties}>
                     {fadeImages}
                 </Fade>
