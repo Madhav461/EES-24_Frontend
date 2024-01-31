@@ -16,7 +16,8 @@ function App() {
   return (
     <Router>
 
-    <div className="flex flex-col w-[100vw] max-h-fit">
+     <div className="flex flex-col w-[100vw]  max-h-fit  ">
+
      <Routes>
         <Route exact path="/" element={<LandingPage />} />
       </Routes>
