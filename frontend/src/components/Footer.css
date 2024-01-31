@@ -12,6 +12,10 @@
   box-sizing: border-box;
  
 }
+.get_in_touch{
+size: auto;
+}
+
 .flayout{
   width: 50%;
   height: 60%;
@@ -37,7 +41,8 @@
 @media (max-width: 1220px) {
  .footer-container {
   background-image: url("/public/footerBackground.svg");
-   background-size: cover; /* Adjust as needed */
+   height: auto;
+   width: auto;/* Adjust as needed */
 
  }
  
@@ -109,7 +114,7 @@ width: 60.666%;
 height: 18.214%;
 justify-content: center;
 flex-shrink: 0;
-margin-left: 20%;
+
 border: 5px dashed white;
 color: #FFF;
 border-radius: 10px;
@@ -130,7 +135,11 @@ letter-spacing: 0.375px;
  transform: skewX(0deg);
   /* Skewness on hover */
 }
-
+@media only screen and (max-width: 600px){
+  .flayout{
+    margin: none;
+  }
+}
 @media only screen and (max-width: 600px){
   .submit-button{
     display: none;
@@ -138,6 +147,7 @@ letter-spacing: 0.375px;
   .submit-button-mob{
     display: block;
   }
+  
 } 
 @media only screen and (max-width: 900px) {
  .submit-button {
