@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 import {useScramble} from "use-scramble";
-function SponsorsTxt(){
-    const title_word="Sponsors";
+function EventsTxt(){
+    const title_word="Events";
     const [sample, setSample] = React.useState(title_word);
 
     const params = {
@@ -29,4 +29,4 @@ function SponsorsTxt(){
     )
 }
 
-export default SponsorsTxt;
+export default EventsTxt;
