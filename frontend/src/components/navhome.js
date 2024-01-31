@@ -9,7 +9,7 @@ import HamburgerMenu from './hamburger.js';
 import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
 // import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
 import ScheduleTxt from "./NavbarComps/ScheduleTxt.jsx";
-import SponsorsTxt from './NavbarComps/SponsorsTxt.jsx';
+import EventsTxt from './NavbarComps/EventsTxt.jsx';
 // imoprt SponsorsTxt
 
 const Navhome2 =() =>{
@@ -27,7 +27,7 @@ const Navhome2 =() =>{
       <div className="relative bg-gray w-screen  h-[42px] 2k:h-[50px] flex  justice justify-between items-center  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
      
      <div className='flex items-center justify-center'>
-      <div className="pb-8 z-50 pl-2 left-[15px] pt-4 lg:hidden 2k:block">
+      <div className="pb-8 z-50 pl-2  h-full left-[15px] pt-4 lg:hidden 2k:block">
      <HamburgerMenu />
       </div>
       <div className='z-10 flex items-start justify-start 2k:justify-end 2k:items-start 2k:absolute 2k:left-12 2k:pt-6  bc:mr-[80px] lg:pb-4 ' >
@@ -60,6 +60,7 @@ const Navhome2 =() =>{
           </div>
 
         </ul> */}
+       
        <div className='flex z-10 justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8'>
         <div className="relative pr-5 pl-1 ml-2 flex grow">
        <Link to="/login">
@@ -95,7 +96,6 @@ const Navhome2 =() =>{
        
       
        </div>
-
        {/* <div className=' bg-white block lg:hidden 2k:block w-full h-0.5 rounded-full'/> */}
       
       
@@ -111,21 +111,23 @@ const Navhome2 =() =>{
           {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
             Workshops
           </div> */}
+          <a href={'/'} className='text-white no-underline'>
           <WorkshopsTxt></WorkshopsTxt>
+          </a>
 
           {/* <WorkshopsTxt className="mb-[5px]"></WorkshopsTxt> */}
           {/* <div className="flex  tracking-[0.08em] items-center justify-centre  cursor-pointer">
             Sponsors
           </div> */}
-          <SponsorsTxt></SponsorsTxt>
+         <a href={'/'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
           {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
           </div> */}
-          <GalleryTxt></GalleryTxt>
+         <a href={'/'} className='text-white no-underline'>  <GalleryTxt></GalleryTxt> </a>
           {/* <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
             Schedule
           </div> */}
-          <ScheduleTxt></ScheduleTxt>
+          <a href={'/'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
         </div>
           <img
             className="absolute top-[16px] mt-[10px]  w-screen overflow-hidden h-[26px]"
