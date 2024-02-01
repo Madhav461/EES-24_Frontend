@@ -6,7 +6,7 @@ import FooterInputForm from "./FooterInputForm";
 
 const Footer = () => {
   return (
-    <div className="relative  footer-container w-full bottom-0  text-left text-77xl text-pitchdeck-slide-background font-goldman ">
+    <div className="relative  footer-container w-[auto] h-[auto] bottom-0  text-left text-77xl text-pitchdeck-slide-background font-goldman ">
       <div class="angle-rectangle"></div>
       <div className="relative  max-w-full max-h-fit  flex flex-col items-end justify-center text-mini font-bruno-ace-sc  ">
         <div
@@ -15,7 +15,7 @@ const Footer = () => {
         >
           {/* get in touch heading */}
           <div className=" footer-top-section flex items-center justify-center relative w-full h-fit">
-            <div className="bg-transparent font-goldman text-[350%] outline-none mt-[3rem] border-solid border-2  border-white tracking-[.2rem] text-pitchdeck-slide-background text-left flex items-center p-[0.5rem]">
+            <div className="get_in_touch bg-transparent font-goldman text-[350%] outline-none mt-[3rem] border-solid border-2  border-white tracking-[.2rem] text-pitchdeck-slide-background text-left flex items-center p-[0.5rem]">
               GET IN TOUCH
             </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
               </svg>
             </div>
 
-            <div className="h-full w-[35%]   flex items-center input">
+            <div className="h-full w-[35%]  flex items-center input">
               <Footerlinks></Footerlinks>
             </div>
           </div>
