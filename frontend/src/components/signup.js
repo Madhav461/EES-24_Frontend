@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/signup.css";
+// import "../components/signup.css";
 import Navhome from "./navhome";
 
 const Signup = () => {
@@ -83,7 +83,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Email"
+                  placeholder="EMAIL"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -103,7 +103,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="College Name"
+                  placeholder="COLLEGE NAME"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -123,7 +123,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Year"
+                  placeholder="YEAR"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -143,7 +143,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Password"
+                  placeholder="PASSWORD"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -163,7 +163,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
-                  placeholder="Confirm Password"
+                  placeholder="CONFIRM PASSWORD"
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -176,7 +176,7 @@ const Signup = () => {
                 />
               </div>
             </form>
-            <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
+            <div className="w-[100%] h-[20%] flex   justify-center items-center laptopDesignElement ">
               <svg
                 width="75%"
                 height="75%"
@@ -548,7 +548,10 @@ const Signup = () => {
                 <path d="M20 0V20H0" stroke="white" stroke-width="2" />
               </svg>
             </div>
-            <div className="SignUpBtn cursor-pointer">
+              {/* this svg is the sign up button in laptop view  */}
+            <div className="SignUpBtn  cursor-pointer">
+             
+           
               <svg
                 width="286"
                 height="72"
@@ -582,6 +585,7 @@ const Signup = () => {
                   fill="#020202"
                 />
               </svg>
+
             </div>
 
             <div className="h-[20%] w-full">
