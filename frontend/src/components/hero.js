@@ -2,12 +2,13 @@
 import "./hero.css";
 import React from "react";
 import Icon from "./Icon";
+import IconMb from "./IconMb";
 import { useScramble } from "use-scramble";
 import Marquee from "react-fast-marquee";
 import AnimatedTextCharacter from "./AnimatedTextCharacter";
 import AnimatedTextWord from "./AnimatedTextWord";
 // const title_word="Currents of Creativity, Voltage of Vision: Electrify the Future!";
-const title_word = "Innovate. Inspire . Ignite . Greetings , Electronics Engineers. To the fest beyond imagination! ! ! ";
+const title_word = "Innovate. Inspire. Ignite. Greetings, Electronics Engineers. To the fest beyond imagination !!!";
 const Hero = () => {
   const [sample, setSample] = React.useState(title_word);
 
@@ -67,10 +68,41 @@ const Hero = () => {
 
         </div>
 
+      </div>
 
+      {/* MOBILE VIEW */}
+      <div id="hero_container-mb" className=" border-solid mt-[26px] border-white">
+        <div className="glow-text-mb "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container-mb border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
 
+        <div className="container-hero-mb">
+
+          <div className="logo-hero-mb z-100 hover:scale-110 duration-300"><IconMb></IconMb></div>-
+          {/* <Icon></Icon> */}
+          {/* <div className="logo-hero-mb"><Icon></Icon></div> */}
+          <div className="ees-hero-mb"><img className="" src="ees-hero-mb.svg" alt="ees"></img></div>
+
+          <div className="p1-hero-mb">
+            Currents of Creativity, Voltage of Vision: Electrify the Future!
+          </div>
+
+          <div className="p2-hero-mb">
+            <div>
+              <p ref={ref}></p>
+            </div>
+          </div>
+
+          <div class="tatvaa_container-mb hover:scale-110 duration-300">
+            <img className="tatva_card w-[100%]" src="tatvaa.svg" alt="tatva-card"></img>
+          </div>
+
+          <div class="hero-mb-cardDesign hover:scale-110 duration-300">
+            <img className="hero-mb-cardDesign-img" src="hero-mb-cardDesign-img.svg" alt=""></img>
+          </div>
+
+        </div>
 
       </div>
+
 
     </div>
   );
