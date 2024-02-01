@@ -281,6 +281,19 @@
         width: 25%;
     } */
 }
+@media screen and (max-width: 600px) {
+
+    hero-mb-cardDesign-img {
+        /* margin-top: 6%; */
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        margin-left: 5%;
+        margin-right: 3.5%;
+        /* height: 60px; */
+    }
+
+}
+
 
 @media screen and (max-width: 480px) {
     .p1 {
@@ -332,4 +345,205 @@
         width:80px;
     }
     
+}
+
+
+/* MOBILE VIEW */
+
+@media screen and (min-width: 431px) {
+    .container-hero-mb {
+        display: none;
+        /* visibility: hidden; */
+    }
+    .hero_container-mb {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .marquee_container-mb {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .glow-text-mb {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .container {
+        display: grid;
+        /* visibility: hidden; */
+    }
+
+    .hero_container {
+        display: grid;
+        /* visibility: hidden; */
+    }
+
+    .marquee_container {
+        display: grid;
+        /* visibility: hidden; */
+    }
+
+    .glow-text {
+        display: grid;
+        /* visibility: hidden; */
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .hero_container {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .marquee_container {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .glow-text {
+        display: none;
+        /* visibility: hidden; */
+    }
+
+    .container-hero-mb {
+        display: grid;
+        /* visibility: hidden; */
+    }
+    .hero_container-mb {
+        display: grid;
+        /* visibility: hidden; */
+    }
+
+    .marquee_container-mb {
+        display: grid;
+        /* visibility: hidden; */
+    }
+
+    .glow-text-mb {
+        display: grid;
+        /* visibility: hidden; */
+    }
+}
+
+.container-hero-mb {
+    padding: 0%;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 2fr) repeat(2, 1fr);
+    align-items: center;
+    column-gap: 0;
+    row-gap: 0;
+    /* height: 100vh; */
+    /* height: 80vh; */
+    /* width: 80vw; */
+}
+
+.logo-hero-mb {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    /* margin: auto; */
+    /* width: 545px;
+    height: 390px; */
+}
+
+.ees-hero-mb {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: auto;
+    margin-left: 10%;
+}
+
+.p1-hero-mb {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Michroma;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131.4%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 10%;
+    margin: 5% 0% 5% 10%;
+    border-left: 4px solid #fff;
+    border-radius: 2%;
+}
+
+.p2-hero-mb {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    text-align: center;
+    font-family: Michroma;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-align: center;
+    margin: 0;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    /* margin-top: auto; */
+    /* letter-spacing: widest; */
+    margin-bottom: 5%;
+    /* min-height: 3rem; */
+    min-height: 6rem;
+}
+
+.tatvaa_container-mb {
+    /* margin-top: 6%; */
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    /* margin-left: 2%;
+    margin-bottom: 2%; */
+    /* width:260px; */
+    /* width:150px; */
+    margin-left: 3.5%;
+    margin-right: 5%;
+}
+
+.hero-mb-cardDesign-img {
+    /* margin-top: 6%; */
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin-left: 5%;
+    margin-right: 3.5%;
+    /* height: 60px; */
+}
+
+.hero-mb-cardDesign {
+    /* margin-top: 6%; */
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin-left: 5%;
+    margin-right: 3.5%;
+    /* height: 60px; */
+}
+
+.marquee_container-mb {
+    height: 24px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 425px) {
+    .marquee_container-mb {
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .p2-hero-mb {
+        min-height: 7rem;
+    }
 }
