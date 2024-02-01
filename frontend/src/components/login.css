@@ -13,6 +13,18 @@
   margin-left: 1%;
 }
 
+.SignUpWithGoogleBtnMobileView{
+  color: #000;
+  text-align: center;
+  font-family: Goldman;
+  font-size: 100%;
+  font-weight: 400;
+  padding: 3%;
+  font-style: normal;
+  line-height: normal;
+  margin-left: 1%;
+}
+
 /* Medium screens and above */
 @media (min-width: 768px) {
   .SignUp-card-heading {
