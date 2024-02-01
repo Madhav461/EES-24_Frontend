@@ -68,19 +68,19 @@ function Schedule() {
                         {/* leading-[131px] */}
                         {/* mt-[23px] */}
                         {/* onMouseOver={HandleHover} */}
-                            <div id="schedule_title" className=' text-white  font-audiowide text-s ml-3 text-center text-[100px] tracking-[1rem] font-bold leading-[0px] items-center  md:ml-[24px] '>
+                            <div id="schedule_title" className=' text-white  font-audiowide text-s ml-3 text-center ab:text-[100px] tracking-[1rem] font-bold leading-[0px] items-center  md:ml-[24px]  '>
                                 {/* underline  */}
                                 {/* <p ref={ref}></p> */}
                                 SCHEDULE
                             </div>
                         </div>
-                        <div className="flex w-full  ">
+                        <div className="flex w-full   ">
                             {/* 70 percent colmn */}
                             <div className="md:w-[70%] w-[90%] mx-10 md:mx-0 relative">
                                 {/* can change mx to ml-100px */}
-                                <div className=' h-[878px] grid grid-rows-8 md:mx-[100px]  border-solid border-[#FFF] border-x-[0.5px] '>
+                                <div className=' h-[938px] grid    grid-rows-8 md:mx-[100px] overflow-hidden  border-solid border-[#FFF] '>
                                     {Array.from({ length: 8 }, (_, index) => index + 1).map((item) => (
-                                        <div className=' group cursor-pointer border-t-[0.5px] mr-5 border-solid border-[#FFF] hover:bg-[#D9D9D9]/20 hover:border-l-[10px]  hover:border-[#FFF]  pl-[25px] hover:pl-[15.5px] '>
+                                        <div className=' group cursor-pointer border-[0.5px] mr-5 border-solid border-[#FFF] hover:bg-[#D9D9D9]/20 hover:border-l-[10px]  hover:border-[#FFF]  pl-[25px] hover:pl-[15.5px] '>
                                             <div className='  text-white h-[100%] items-center  flex   text-[22.664px] font-audiowide tracking-[4.5px]    ' onClick={(e) => handleDivClick(e.target.textContent)} >
                                                 write some updates here!(On Hover)
                                             </div>
