@@ -1083,7 +1083,7 @@
         font-size: 13px;
     }
 }
-@media (max-width:1140px) and (min-width:1001px){
+@media (max-width:1200px) and (min-width:1001px){
     #Name{
         border:none;
         display: inline-block;
