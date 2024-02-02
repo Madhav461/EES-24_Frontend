@@ -4,6 +4,7 @@ import React from "react";
 import Icon from "./Icon";
 import MbEesAnimation from "./MbEesAnimation";
 import { useScramble } from "use-scramble";
+import {motion} from 'framer-motion';
 import Marquee from "react-fast-marquee";
 import AnimatedTextCharacter from "./AnimatedTextCharacter";
 import AnimatedTextWord from "./AnimatedTextWord";
@@ -81,12 +82,31 @@ const Hero = () => {
       </div>
 
       {/* MOBILE VIEW */}
-      <div id="hero_container-mb" className=" border-solid mt-[26px] border-white">
+      <div id="hero_container-mb" className="mb_hero_container border-solid mt-[26px] border-white">
         <div className="glow-text-mb "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container-mb border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
 
         <div className="container-hero-mb">
 
-          <div className="mb_ees_animation z-100 hover:scale-110 duration-300"><MbEesAnimation></MbEesAnimation></div>
+          {/* <div className="mb_ees_animation z-100 hover:scale-110 duration-300"><MbEesAnimation></MbEesAnimation></div> */}
+
+
+
+          {/* MOBILE VIEW EES LOGO ANIMATION */}
+
+
+          <motion.div animate={{scale:[0.95,1.1,0.95],opacity:[0.95,1,0.95],x:[0,15,-15,0],y:[-15,15,15,-15]}}
+          transition={{
+            times:[0,1],
+            duration:5,
+            repeat:Infinity,
+            type:"keyframes",
+            ease:"easeInOut",
+          }}>
+            <img src="ees_logo_2.svg"></img>
+          </motion.div>
+
+
+
           {/* <Icon></Icon> */}
           {/* <div className="logo-hero-mb"><Icon></Icon></div> */}
           <div className="ees-hero-mb"><img className="" src="ees-hero-mb.svg" alt="ees"></img></div>

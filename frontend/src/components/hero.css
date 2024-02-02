@@ -392,11 +392,18 @@
 }
 
 @media screen and (max-width: 430px) {
-    .p1 {
-        display: none;
-        /* visibility: hidden; */
+    .hero_container1123{
+        display:none;
     }
-   
+
+    
+    
+}
+
+@media screen and (min-width: 430px) {
+    .container-hero-mb{
+        display:none;
+    }
 
     
     
