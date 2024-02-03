@@ -13,9 +13,11 @@ const Footer = () => {
           className="relative overflow-hidden flex flex-col w-[95vw]  h-[33.25rem]   shrink-0 "
           style={{ padding: "" }}
         >
+    
+
           {/* get in touch heading */}
           <div className=" footer-top-section flex items-center justify-center relative w-full h-fit">
-            <div className="get_in_touch bg-transparent font-goldman text-[350%] outline-none mt-[3rem] border-solid border-2  border-white tracking-[.2rem] text-pitchdeck-slide-background text-left flex items-center p-[0.5rem]">
+            <div className="getintouch bg-transparent font-goldman text-[350%] outline-none mt-[3rem] border-solid border-2  border-white tracking-[.2rem] text-pitchdeck-slide-background text-left flex items-center p-[0.5rem]">
               GET IN TOUCH
             </div>
 
@@ -28,7 +30,7 @@ const Footer = () => {
             </div>
 
             {/* icons and form separating line ka div */}
-            <div className="h-[97%] w-0.5  bg-pitchdeck-slide-background overflow-hidden" />
+            <div className="h-[97%] w-0.5  bg-pitchdeck-slide-background overflow-hidden gojosaturro" />
 
             <div className="h-full w-[45%] overflow-hidden  object-contain  flex items-center forminput">
               <FooterInputForm />
