@@ -2,12 +2,16 @@
 import "./hero.css";
 import React from "react";
 import Icon from "./Icon";
+import MbEesAnimation from "./MbEesAnimation";
 import { useScramble } from "use-scramble";
+import {motion} from 'framer-motion';
 import Marquee from "react-fast-marquee";
 import AnimatedTextCharacter from "./AnimatedTextCharacter";
 import AnimatedTextWord from "./AnimatedTextWord";
+import SubTitleTxt from "./Hero_txt/SubTitleTxt";
+import SubTitleTxtMB from "./Hero_txt/SubTitleTxtMB";
 // const title_word="Currents of Creativity, Voltage of Vision: Electrify the Future!";
-const title_word = "Innovate. Inspire . Ignite . Greetings , Electronics Engineers. To the fest beyond imagination! ! ! ";
+const title_word = "Innovate. Inspire. Ignite. Greetings, Electronics Engineers. To the fest beyond imagination !!!";
 const Hero = () => {
   const [sample, setSample] = React.useState(title_word);
 
@@ -22,10 +26,15 @@ const Hero = () => {
     overflow: false,
   };
 
-  const { ref, replay } = useScramble({
+  const { ref1, replay } = useScramble({
     text: sample,
     ...params,
   });
+
+  // const {ref2}=useScramble({
+  //   text:sample,
+  //   ...params,
+  // })
   // const { ref, replay } = useScramble({ text: 'your_text' });
 
   // return <p ref={ref} onclick={replay} />;
@@ -41,7 +50,7 @@ const Hero = () => {
   return (
 
     <div className="h-auto w-screen ">
-      <div id="hero_container" className=" border-solid mt-[26px] border-white">
+      <div id="hero_container" className="hero_container1123 border-solid mt-[26px] border-white">
         {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
         <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
       {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-solid border-white border-y-2"><p class="marquee" className="marquee-font font-michroma text-white "><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
@@ -55,10 +64,13 @@ const Hero = () => {
 
           <div className="logo hover:scale-110 duration-300"><a href='/' > <Icon></Icon> </a></div>
           
-          <div className="p2">
+          {/* <div className="p2">
             <div>
-              <p ref={ref}></p>
+              <p ref={ref1}></p>
             </div>
+          </div> */}
+          <div className="p2">
+            <SubTitleTxt></SubTitleTxt>
           </div>
 
           <div class="tatvaa_container hover:scale-110 duration-300">
@@ -67,10 +79,59 @@ const Hero = () => {
 
         </div>
 
+      </div>
+
+      {/* MOBILE VIEW */}
+      <div id="hero_container-mb" className="mb_hero_container border-solid mt-[26px] border-white">
+        <div className="glow-text-mb "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container-mb border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
+
+        <div className="container-hero-mb">
+
+          {/* <div className="mb_ees_animation z-100 hover:scale-110 duration-300"><MbEesAnimation></MbEesAnimation></div> */}
 
 
+
+          {/* MOBILE VIEW EES LOGO ANIMATION */}
+
+
+          <motion.div animate={{scale:[0.95,1.1,0.95],opacity:[0.95,1,0.95],x:[0,15,-15,0],y:[-15,15,15,-15]}}
+          transition={{
+            times:[0,1],
+            duration:5,
+            repeat:Infinity,
+            type:"keyframes",
+            ease:"easeInOut",
+          }}>
+            <img src="ees_logo_2.svg"></img>
+          </motion.div>
+
+
+
+          {/* <Icon></Icon> */}
+          {/* <div className="logo-hero-mb"><Icon></Icon></div> */}
+          <div className="ees-hero-mb"><img className="" src="ees-hero-mb.svg" alt="ees"></img></div>
+
+          <div className="p1-hero-mb">
+            Currents of Creativity, Voltage of Vision: Electrify the Future!
+          </div>
+
+          <div className="p2-hero-mb">
+            <SubTitleTxtMB></SubTitleTxtMB>
+          </div>
+
+
+          <div class="tatvaa_container-mb hover:scale-110 duration-300">
+            <img className="tatva_card w-[100%]" src="tatvaa.svg" alt="tatva-card"></img>
+          </div>
+
+          <div class="hero-mb-cardDesign hover:scale-110 duration-300">
+            <img className="hero-mb-cardDesign-img" src="hero-mb-cardDesign-img.svg" alt=""></img>
+          </div>
+
+        </div>
 
       </div>
+
 
     </div>
   );

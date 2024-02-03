@@ -53,7 +53,7 @@ export const About = () => {
       <div className="mobileview">
         <div id="controls-carousel" className="relative w-full" data-carousel="static">
           {/* Carousel wrapper */}
-          <div className="relative overflow-hidden rounded-lg md:h-96" style={{height:'100vh'}}>
+          <div className="carousel_container h-[100vh] relative overflow-hidden rounded-lg md:h-96">
             {Array.from({ length: 4 }).map((_, index) => (
               <div
                 key={index}
@@ -62,7 +62,7 @@ export const About = () => {
               >
                 <img
                   src={`about_us_mobile_${index}.svg`} 
-                  className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 block w-full"
+                  className="mobile_aboutus_card absolute w-[100%] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 block w-full"
                   alt={`Slide ${index + 1}`}
                 />
               </div>
