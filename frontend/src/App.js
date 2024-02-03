@@ -11,6 +11,7 @@ import Signup from "./components/signup";
 import Carousel from "./components/about_mobile.js";
 
 import Dashboard from "./components/dashboard.js";
+import Events from "./components/events.js";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
+            <Route exact path="/events" element={<Events />} />
           </Routes>
       </div>
     </div>
