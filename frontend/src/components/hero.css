@@ -435,7 +435,11 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin: auto;
-    margin-left: 10%;
+    /* margin-left: 10%; */
+}
+
+.ees-hero-mb-text {
+    margin-left: 9.25%;
 }
 
 .p1-hero-mb {
