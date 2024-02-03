@@ -1,5 +1,4 @@
 /* Your existing styles */
-
 .footer-container {
   background-repeat: no-repeat;
   background-image: url("/public/footerBackground.svg");
@@ -31,6 +30,7 @@
 /* Rotate the rectangle by 45 degrees */
 
 }}
+
 
 
 
@@ -144,7 +144,32 @@ letter-spacing: 0.375px;
   .submit-button-mob{
     display: block;
   }
-  
+  .gojosaturro{
+    transform: translateY(30px);
+    height: 86%;
+   }
+   .footer-line
+{
+  transform: translateY(30px);
+}
+.getintouch{
+  font-size: 250%;
+  margin-top: 10%;
+  transform: translateY(30px);
+}
+.angle-rectangle{
+  position: absolute;
+  top: -4.5%;
+  left: -5%;
+  width: 50px; /* Set your desired width */
+  height: 50px; /* Set your desired height */
+  background-color: white;
+   /* Set your desired background color */
+  transform: rotate(-45deg) ; 
+}
+.flayout{
+  margin-left: 0%;
+}
 } 
 @media only screen and (max-width: 900px) {
  .submit-button {
@@ -173,12 +198,12 @@ letter-spacing: 0.375px;
   .triangle{
    display: none;
   }
+ 
 
   .angle-rectangle {
    position: absolute;
    top: -4.5%;
    left: -5%;
-   
    width: 50px; /* Set your desired width */
    height: 50px; /* Set your desired height */
    background-color: white;
