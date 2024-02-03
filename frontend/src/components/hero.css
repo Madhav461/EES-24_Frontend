@@ -524,3 +524,36 @@
         min-height: 7rem;
     }
 }
+
+/* <Switching between desktop/mobile views> */
+@media screen and (min-width: 1920px) {
+    .mb_hero_container {
+        visibility:hidden;
+    }
+  
+    .hero_container1123 {
+        visibility:hidden;
+    }
+  }
+  @media screen and (max-width: 1921px) {
+    .mb_hero_container {
+        visibility:hidden;
+        display: none;
+    }
+  
+    .hero_container1123 {
+        visibility:visible;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    .mb_hero_container {
+        visibility:visible;
+        display: block;
+    }
+    .hero_container1123 {
+        visibility:hidden;
+        display: none;
+    }
+  }
+  /* </Switching between desktop/mobile views> */
+  
