@@ -43,6 +43,12 @@ const Dashboard = () => {
               src="dashboardblack.svg"
               className="dashboard-background-image  object-cover w-full h-full p-0"
             />
+           <div className="y19"><img src="/dash.svg" alt="" className="y56"/>
+                <p className="y39"><input type="text" name="Name" id="Name" placeholder="NAME" /> <input type="email" name="Email" id="Email" placeholder="email@itbhu.ac.in" /><input type="number" name="PhoneNumber" id="PhoneNumber" placeholder="0009473899" /></p>
+                <p className="y49"><input type="text" name="Electronics" id="Electronics" placeholder="Electronics Engineering" /><input type="text" name="College" id="College" placeholder="IIT BHU Varanasi" /> <input type="text" name="Year" id="Year" placeholder="Ist Year" /></p>
+                <p className="yashtheman">GRADE 1</p>
+                <img src="/motiline.svg" alt="" class="y29" /></div>
+
           </div>
           <div className="container-dashboard absolute">
             <div className="heading-dashboard">

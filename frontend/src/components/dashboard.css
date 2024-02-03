@@ -951,6 +951,206 @@
         padding-top: 10%;
     }
 }
-
-
-
+.y19{
+    padding-left:0%;
+    position: absolute;
+    top:63%;
+    font-family: Michroma;
+}
+.y29{
+    left:1%;
+    position:absolute;
+    top:11%;
+    height:75%;
+}
+.y39{
+    display: inline-block;
+    position:absolute;
+    left:10%;
+    top:26%;
+    width:900px;
+    border-bottom: 1.8px solid black;
+    margin-bottom: 0px;
+    font-family: Michroma;
+}
+.y49{
+    display: inline-block;
+    position:absolute;
+    left:10%;
+    top:40%;
+    width:900px;
+    border-bottom: 1.8px solid black;
+    margin-bottom: 0px;
+    font-family: Michroma;
+}
+.y56{
+    width:76.5vw;
+}
+#Name{
+    border:none;
+    display: inline-block;
+    padding-right: 18%;
+    font-family: Michroma;
+    font-size: 10px;
+}
+#Email{
+    border:none;
+    display:inline-block;
+    padding-right: 18%;
+    font-family: Michroma;
+    font-size: 10px;
+}
+#Electronics{
+    border:none;
+    display: inline-block;
+    padding-right: 18%;
+    font-family: Michroma;
+    font-size: 10px;
+}
+#PhoneNumber{
+    border:none;
+    display: inline-block;
+    font-family: Michroma;
+    font-size: 10px;
+}
+#Year{
+    border:none;
+    display: inline-block;
+    font-family: Michroma;
+    font-size: 10px;
+}
+#College{
+    border:none;
+    display: inline-block;
+    padding-right: 18%;
+    font-family: Michroma;
+    font-size: 10px;
+}
+.yashtheman{
+    position: absolute;
+    top:65%;
+    left:9%;
+}
+::placeholder{
+    color:black;
+}
+@media (max-width:1000px){
+    #Name{
+        border:none;
+        display: inline-block;
+        padding-right: 0%;
+        font-family: Michroma;
+        font-size: 9px;
+    }
+    #Email{
+        border:none;
+        display:inline-block;
+        padding-right: 0%;
+        font-family: Michroma;
+        font-size: 7px;
+    }
+    #Electronics{
+        border:none;
+        display: inline-block;
+        padding-right: 0%;
+        font-family: Michroma;
+        font-size: 7px;
+    }
+    #PhoneNumber{
+        border:none;
+        display: inline-block;
+        font-family: Michroma;
+        font-size: 7px;
+    }
+    #Year{
+        border:none;
+        display: inline-block;
+        font-family: Michroma;
+        font-size: 7px;
+    }
+    #College{
+        border:none;
+        display: inline-block;
+        padding-right: 0%;
+        font-family: Michroma;
+        font-size:7px;
+    }
+    .yashtheman{
+        position: absolute;
+        top:55%;
+        left:9%;
+        font-family: Michroma;
+        font-size: 13px;
+    }
+}
+@media (max-width:1200px) and (min-width:1001px){
+    #Name{
+        border:none;
+        display: inline-block;
+        padding-right: 8%;
+    }
+    #Email{
+        border:none;
+        display:inline-block;
+        padding-right: 8%;
+    }
+    #Electronics{
+        border:none;
+        display: inline-block;
+        padding-right:8%;
+    }
+    #PhoneNumber{
+        border:none;
+        display: inline-block;
+    }
+    #Year{
+        border:none;
+        display: inline-block;
+    }
+    #College{
+        border:none;
+        display: inline-block;
+        padding-right: 8%;
+    }
+    .yashtheman{
+        position: absolute;
+        top:53%;
+        left:9%;
+    }
+}
+@media (min-height:1024px){
+    .y29{
+        left:1%;
+        position:absolute;
+        top:10%;
+        height:75%;
+    }
+    .y39{
+        display: inline-block;
+        position:absolute;
+        left:10%;
+        top:20%;
+        width:70vw;
+        border-bottom: 1.5px dotted black;
+        margin-bottom: 0px;
+    }
+    .y49{
+        display: inline-block;
+        position:absolute;
+        left:10%;
+        top:35%;
+        width:70vw;
+        border-bottom: 1.5px dotted black;
+        margin-bottom: 0px;
+    }
+}
+@media (min-width:1600px){
+    .y56{
+        width:68.5vw;
+    }
+}
+@media (min-width:1900px){
+    .y56{
+        width:61.5vw;
+    }
+}
