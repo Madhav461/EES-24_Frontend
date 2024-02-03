@@ -176,7 +176,7 @@ const Signup = () => {
                 />
               </div>
             </form>
-            <div className="w-[100%] h-[20%] flex   justify-center items-center laptopDesignElement ">
+            <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
               <svg
                 width="75%"
                 height="75%"
