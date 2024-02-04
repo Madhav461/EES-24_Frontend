@@ -4,7 +4,19 @@
     background-color: black;
     z-index: 0;
     position: relative;
-    margin: 5%;
+    /* margin: 5%; */
+    /* margin: 2.5%; */
+    margin: 5% 2.5% 5% 2.5%;
+}
+
+.event-pop {
+    height: 493px;
+    width: 329px;
+    background-color: #E0115F;
+    /* z-index: 0;
+    position: relative;
+    margin: 5%; */
+    display: flex;
 }
 
 .event-title {
@@ -70,7 +82,7 @@
     height: 36px;
 
     /* margin: 100px auto; */
-    margin: -11% auto;
+    margin: -10% auto;
     font: 16px/50px Arial, sans-serif;
     text-transform: uppercase;
     text-align: center;
@@ -100,4 +112,11 @@
     transform: skew(-25deg);
     right: 25px;
     left: auto;
+}
+
+.event-info-pop {
+    text-align: center;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
