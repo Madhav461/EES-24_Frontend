@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage";
 import About from "./components/About";
 import navhome from "./components/navhome";
+import TEAMS_EXTERNAL from "./components/teams_external.js";
 import Schedule from "./components/Schedule";
 import Footer from "./components/Footer";
 import HamburgerMenu from "./components/hamburger";
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<Events />} />
+            <Route exact path="/teams_external" element={<TEAMS_EXTERNAL />} />
           </Routes>
       </div>
     </div>
