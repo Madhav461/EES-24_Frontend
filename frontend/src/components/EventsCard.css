@@ -1,7 +1,7 @@
 .events-card-container {
     height: 493px;
     width: 329px;
-    background-color: black;
+    /* background-color: black; */
     z-index: 0;
     position: relative;
     /* margin: 5%; */
@@ -119,4 +119,46 @@
     margin: auto;
     align-items: center;
     justify-content: center;
+}
+
+.event-info-details {
+    z-index: 3;
+    position: relative;
+    top: 35%;
+    /* bottom: 0px;
+    left: 0px; */
+    height: 110.2px;
+    height: 100.2px;
+    width: 329px;
+    width: 300px;
+    margin: auto;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.event-title-name {
+    z-index: 3;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 383px;
+    width: 94px;
+}
+
+.events-card-background {
+    height: 493px;
+    width: 329px;
+    z-index: -1;
+}
+
+.event-register-title {
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 38.83px;
+    width: 124.5px;
+    text-align: center;
+    height: 50px;
+    line-height: 35px;
 }
