@@ -23,7 +23,7 @@ function ScheduleTxt(){
     replay();
   }
     return(
-         <div className=" font-audiowide flex tracking-[0.08em] items-center justify-center ls:w-[100px] w-[95px] h-[38px] glow-text cursor-pointer">
+         <div className=" font-audiowide flex tracking-[0.08em] items-center justify-center ls:w-[100px] w-[135px] h-[38px] glow-text cursor-pointer">
         <p onMouseLeave={HandleHover} ref={ref}></p>
         </div>
     )

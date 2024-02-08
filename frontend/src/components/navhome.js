@@ -106,7 +106,7 @@ const Navhome2 =() =>{
             src="/whiteline.svg" //dark bottom
           /> </div> */}
        <div className="absolute bg-gray  hidden lg:block 2k:hidden  top-[40px] h-[26px]">
-        <div className='flex items-center w-screen justify-center space-x-6'>
+        <div className='flex  items-center w-screen justify-center space-x-6'>
           {/* <div><p>hello</p></div> */}
           {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
             Workshops
@@ -119,7 +119,7 @@ const Navhome2 =() =>{
           {/* <div className="flex  tracking-[0.08em] items-center justify-centre  cursor-pointer">
             Sponsors
           </div> */}
-         <a href={'/'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
+         <a href={'/teams'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
           {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
           </div> */}
@@ -127,10 +127,10 @@ const Navhome2 =() =>{
           {/* <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
             Schedule
           </div> */}
-          <a href={'/'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
+          <a href={'#schedule'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
         </div>
           <img
-            className="absolute top-[16px] mt-[10px]  w-screen overflow-hidden h-[26px]"
+            className="absolute top-[16px] mt-[16px]  w-screen overflow-hidden h-[26px]"
             alt=""
             src="/vector-line2.svg" //dark bottom
           />
