@@ -109,7 +109,29 @@ const Hero = () => {
 
           {/* <Icon></Icon> */}
           {/* <div className="logo-hero-mb"><Icon></Icon></div> */}
-          <div className="ees-hero-mb"><img className="" src="ees-hero-mb.svg" alt="ees"></img></div>
+          <div className="ees-hero-mb">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}>
+              <img className="" src="ees-hero-mb-upper.svg" alt="ees"></img>
+            </motion.div>
+            <img className="ees-hero-mb-text" src="ees-hero-mb.svg" alt="ees"></img>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}>
+              <img className="" src="ees-hero-mb-lower.svg" alt="ees"></img>
+            </motion.div>
+          </div>
 
           <div className="p1-hero-mb">
             Currents of Creativity, Voltage of Vision: Electrify the Future!
