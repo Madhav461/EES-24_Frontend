@@ -58,7 +58,7 @@ function Schedule() {
     };
 
     return (
-        <div>
+        <div id="schedule">
             {/* md defind as 768 px in tailwindcofig in screens */}
 
             <div className='max-h-fit w-screen    border-t-[0.5px] border-b-[0.5px]  border-solid  border-[#FFF] '>

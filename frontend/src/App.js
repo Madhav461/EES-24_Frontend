@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<Events />} />
-            <Route exact path="/teams_external" element={<TEAMS_EXTERNAL />} />
+            <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
           </Routes>
       </div>
     </div>
