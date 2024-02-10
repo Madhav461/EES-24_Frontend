@@ -1,17 +1,27 @@
-import React from 'react'
+import "./Events.css";
+import EventsCard from "./EventsCard";
+import React, { useState } from "react";
 
-const Events=()=>{
-return(
-<div className='relative width-[100vw]'>
+const Events = () => {
 
-<div className='absolute w-[50vw] top-[10vh] left-[50%] translate-x-[-50%]'>
-    <img src='Group 2020.svg' alt='EVENTS' className='absolute w-[100%] left-[50%] translate-x-[-50%]'/>
-</div>
+  const [ClickedEvent, setClickedEvent] = useState(0);
+  const clicked = (num) => {
+    setClickedEvent(num);
+  }
 
-<div className='absolute w-[35vw] top-[40vh] left-[20%] translate-x-[-50%]'>
-    <img src='Group 2021.svg' alt='UDYAM' className='absolute w-[100%] left-[50%] translate-x-[-50%]'/>
-</div>
-</div>
-);
-}
+
+  return (
+    <div className="events-container">
+        <EventsCard name="1" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="2" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="3" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="4" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="5" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="6" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="7" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+        <EventsCard name="8" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/>
+    </div>
+  );
+};
+
 export default Events;
