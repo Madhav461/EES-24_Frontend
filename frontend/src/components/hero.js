@@ -50,7 +50,7 @@ const Hero = () => {
   return (
 
     <div className="main_hero h-auto w-screen ">
-      <div id="hero_container" className="hero_container1123 border-solid mt-[26px] border-white">
+      <div id="hero_container" className="hero_container1123 border-solid mt-[30px] border-white">
         {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
         <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
       {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-solid border-white border-y-2"><p class="marquee" className="marquee-font font-michroma text-white "><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
@@ -109,7 +109,29 @@ const Hero = () => {
 
           {/* <Icon></Icon> */}
           {/* <div className="logo-hero-mb"><Icon></Icon></div> */}
-          <div className="ees-hero-mb"><img className="" src="ees-hero-mb.svg" alt="ees"></img></div>
+          <div className="ees-hero-mb">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}>
+              <img className="" src="ees-hero-mb-upper.svg" alt="ees"></img>
+            </motion.div>
+            <img className="ees-hero-mb-text" src="ees-hero-mb.svg" alt="ees"></img>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}>
+              <img className="" src="ees-hero-mb-lower.svg" alt="ees"></img>
+            </motion.div>
+          </div>
 
           <div className="p1-hero-mb">
             Currents of Creativity, Voltage of Vision: Electrify the Future!
