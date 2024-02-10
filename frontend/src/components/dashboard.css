@@ -11,7 +11,9 @@
         /* visibility:hidden; */
     }
 }
-
+.bgimg img{
+    opacity: 0.6;
+}
 @media screen and (max-width: 1921px) {
     .mobileview {
         display: none;
@@ -36,7 +38,14 @@
     }
 }
 
-
+.y69{
+    /* margin-top: 3%; */
+    font-size: 23px;
+    color: #FFF;
+    padding-left: 22%;
+    margin-top: 2%;
+    font-family: Michroma;
+}
 /* Responsiveness for desktop view */
 
 @media screen and (max-width:1920px) {
@@ -326,6 +335,7 @@
     /* align-items: center; */
     padding-left: 7.5%;
     padding-right: 15%;
+    padding-top: 7%;
 }
 
 .radinite-logo-dashboard {
@@ -334,6 +344,8 @@
     margin: auto;
     width: 105px;
     height: 200.5px;
+    margin-left: 10%;
+    margin-top: 5%;
 }
 
 .radinite-dashboard {
@@ -341,14 +353,18 @@
     grid-row: 3 / 3;
     text-align: center;
     color: #FFF;
-    text-align: center;
+    /* text-align: center; */
     font-family: Michroma;
     font-size: 19px;
     font-style: normal;
-    font-weight: 400;
+    /* font-weight: 400; */
     line-height: normal;
     letter-spacing: 1.425px;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
+    /* margin-right: 20%; */
+    padding-left: 220%;
+    /* margin-top: 5%; */
+    /* padding-top: 5%; */
 }
 
 .score-logo-dashboard {
@@ -371,7 +387,7 @@
     justify-content: space-between;
     color: #FFF;
     font-family: Michroma;
-    font-size: 12px;
+    font-size: 13.3px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -401,6 +417,7 @@
     text-align: center;
     font-family: Michroma;
     font-size: 45px;
+    margin-top: 2%;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -440,8 +457,14 @@
     /* max-height: 300px; */
     max-height: 70%; 
 }
+.radinite-dashboard {
+    font-size: 16px;
+    /* margin-bottom: 5%; */
 
-@media screen and (max-width: 1250px) {
+    padding-left: 250%;
+}
+
+@media screen and (max-width: 1280px) {
     /* .dhi-5 {
         display: none;
         visibility: hidden;
@@ -481,6 +504,8 @@
 
     .radinite-dashboard {
         font-size: 16px;
+        margin-bottom: 5%;
+        padding-left: 225%;
     }
 
     .container-dashboard {
@@ -517,6 +542,19 @@
     .radinite-logo-dashboard {
         width: 90px;
         height: 150.5px;
+        /* margin-: 2%; */
+    }
+    .radinite-dashboard {
+        font-size: 16px;
+        margin-bottom: 5%;
+        padding-left: 175%;
+    }
+    .y69{
+        /* margin-top: 3%; */
+        font-size: 20px;
+        color: #FFF;
+        padding-left: 17%;
+        margin-top: 2%;
     }
     
 
@@ -548,6 +586,8 @@
 
     .radinite-dashboard {
         font-size: 14px;
+        padding-left: 157%;
+        margin-bottom: 20%;
     }
     .heading-text-dashboard {
         padding: 0.2rem;
@@ -577,6 +617,13 @@
         /* margin-bottom: 10%; */
         /* padding-right:% ; */
     }
+    .y69{
+        /* margin-top: 3%; */
+        font-size: 20px;
+        color: #FFF;
+        padding-left: 10%;
+        margin-top: 2%;
+    }
 
     .p1-dashboard,
     .p2-dashboard {
@@ -590,6 +637,11 @@
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 2.325px;
+    }
+    .radinite-dashboard {
+        font-size: 14px;
+        margin-bottom: 5%;
+        padding-left: 163%;
     }
 }
 
@@ -617,11 +669,19 @@
 
     .radinite-dashboard {
         font-size: 14px;
+        padding-left: 152%;
     }
     
     .container-dashboard {
         /* max-height: 300px; */
         max-height: 60%; 
+    }
+    .y69{
+        /* margin-top: 3%; */
+        font-size: 20px;
+        color: #FFF;
+        padding-left: 25%;
+        margin-top: 2%;
     }
 }
 @media screen and (max-width: 660px) {
@@ -984,7 +1044,7 @@
     font-family: Michroma;
 }
 .y56{
-    width:76.5vw;
+    width:79.5vw;
 }
 #Name{
     border:none;
@@ -1154,3 +1214,5 @@
         width:61.5vw;
     }
 }
+
+
