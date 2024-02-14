@@ -1,0 +1,164 @@
+.events-card-container {
+    height: 493px;
+    width: 329px;
+    /* background-color: black; */
+    z-index: 0;
+    position: relative;
+    /* margin: 5%; */
+    /* margin: 2.5%; */
+    margin: 5% 2.5% 5% 2.5%;
+}
+
+.event-pop {
+    height: 493px;
+    width: 329px;
+    background-color: #E0115F;
+    /* z-index: 0;
+    position: relative;
+    margin: 5%; */
+    display: flex;
+}
+
+.event-title {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 493px;
+    width: 94px;
+    background-color: white;
+    background-color: aqua;
+}
+
+.event-details {
+    z-index: 2;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 110.2px;
+    width: 329px;
+    background-color: black;
+    background-color: #E0115F;
+}
+
+.event-register {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 38.83px;
+    width: 124.5px;
+    background-color: black;
+    /* background-color: aqua; */
+}
+
+.event-lower-polygon {
+    z-index: 3;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 33px;
+    width: 33px;
+    /* background-color: white; */
+    /* background-color: #E0115F; */
+
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(to top right, aqua 50%, transparent 0);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: left, right;
+    bottom: -25px;
+}
+
+.events-trapezium {
+    display: block;
+    z-index: 1;
+    position: relative;
+    
+    /* width: 300px;
+    height: 50px; */
+    width: 200px;
+    height: 36px;
+
+    /* margin: 100px auto; */
+    margin: -10% auto;
+    font: 16px/50px Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    
+    background-color: orange;
+}
+
+.events-trapezium .before,
+.events-trapezium .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+    
+/* 		border-radius: 12px; */
+    background-color: orange;
+}
+
+.events-trapezium .before {
+    transform: skew(25deg);
+    left: 25px;
+}
+
+.events-trapezium .after {
+    transform: skew(-25deg);
+    right: 25px;
+    left: auto;
+}
+
+.event-info-pop {
+    text-align: center;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-info-details {
+    z-index: 3;
+    position: relative;
+    top: 35%;
+    /* bottom: 0px;
+    left: 0px; */
+    height: 110.2px;
+    height: 100.2px;
+    width: 329px;
+    width: 300px;
+    margin: auto;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.event-title-name {
+    z-index: 3;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 383px;
+    width: 94px;
+}
+
+.events-card-background {
+    height: 493px;
+    width: 329px;
+    z-index: -1;
+}
+
+.event-register-title {
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 38.83px;
+    width: 124.5px;
+    text-align: center;
+    height: 50px;
+    line-height: 35px;
+}

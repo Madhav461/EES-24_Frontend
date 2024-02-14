@@ -1,21 +1,21 @@
 /* <Switching between desktop/mobile views> */
 @media screen and (min-width: 1920px) {
-    .desktopview {
+  .mobileview {
       visibility:hidden;
   }
-  
-  .mobileview {
+
+  .desktopview {
       visibility:hidden;
   }
 }
 @media screen and (max-width: 1921px) {
-  .desktopview {
-    visibility:visible;
-}
+  .mobileview {
+      visibility:visible;
+  }
 
-.mobileview {
-    visibility:hidden;
-}
+  .desktopview {
+      visibility:hidden;
+  }
 }
 @media screen and (max-width: 575px) {
   .desktopview {
@@ -200,5 +200,143 @@
 
   .h {
     font-size: 40px;
+  }
+} */
+
+/* .AboutUs{ */
+  /* background: rgba(255, 255, 255, 0.10); */
+/* backdrop-filter: blur(10px); */
+/* } */
+
+.rect{
+  /* Rectangle 115 */
+
+width: 100%;
+height: 100%;
+
+background: #C3CBD6;
+box-shadow: -3px 4px 20px rgba(0, 0, 0, 0.95);
+border-radius: 10px 0px 0px 10px;
+
+}
+.about_us_title{
+  color: #FFF;
+  font-family: Michroma;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 7.5px;
+  
+}
+
+.textarea{
+color: #FFF;
+font-family: Michroma;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 36px;
+}
+.xyz1{
+  box-shadow: 0 0 20px #26bf47;
+}
+.xyz2{
+  box-shadow: 0 0 20px #2fabe0;
+}
+.xyz3{
+  box-shadow: 0 0 20px #a1c12e;
+}
+.xyz4{
+  box-shadow: 0 0 20px #a230e5;
+}
+
+@media screen and (max-width: 1440px) {
+  .about_us_title{
+    color: #FFF;
+    align-items: center;
+    font-family: Michroma;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 7.5px;
+  }
+  .textarea{
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    }
+}
+@media screen and (max-width: 1290px) {
+  .about_us_title{
+    color: #FFF;
+    align-items: center;
+    font-family: Michroma;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    letter-spacing: 5.5px;
+    
+  }
+}
+@media screen and (max-width: 996px) {
+  .about_us_title{
+    color: #FFF;
+    align-items: center;
+    font-family: Michroma;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    letter-spacing: 1.5px; 
+  }
+  .textarea{
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 1921px) {
+  .mobileview {
+      visibility:hidden;
+  }
+
+  .desktopview {
+      visibility:visible;
+  }
+}
+@media screen and (max-width: 575px) {
+  .desktopview {
+      visibility:hidden;
+  }
+  .mobileview {
+      visibility:visible;
+  }
+}
+/* </Switching between desktop/mobile views> */
+
+
+/* Modifications for mobile view card on Iphone SE */
+@media screen and (max-width:380px) {
+  .mobile_aboutus_card{
+    transform: translate(-50%,-54%);
+    margin-top: 25px;
+  }
+  .carousel_container{
+    height: 118vh;
   }
 }

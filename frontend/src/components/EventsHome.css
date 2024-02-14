@@ -1,0 +1,55 @@
+.events-home-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.events-home-card {
+    /* height: 100px;
+    width: 100px; */
+    margin: 2.5%;
+    position: relative;
+}
+
+
+
+.events-home-udyam {
+    position: absolute;
+    left: 12%;
+    top: 35%;
+    /* margin: auto; */
+}
+.events-home-udgam {
+    position: absolute;
+    left: 29%;
+    top: 12%;
+    /* margin: auto; */
+}
+.events-home-udyam {
+    position: absolute;
+    left: 11%;
+    top: 15%;
+    /* margin: auto; */
+}
+
+.events-home-card-udyam {
+    /* height: 100px;
+    width: 100px; */
+    margin: 2.5%;
+    position: relative;
+}
+.events-home-card-udgam {
+    /* height: 100px;
+    width: 100px; */
+    margin: 2.5%;
+    position: relative;
+}
+.events-home-card-mashal {
+    /* height: 100px;
+    width: 100px; */
+    margin: 2.5%;
+    position: relative;
+}
