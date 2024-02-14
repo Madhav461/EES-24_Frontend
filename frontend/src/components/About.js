@@ -296,7 +296,8 @@ export const About = () => {
               {/* also decrease font size */}
               {/* border-solid border-[0.5px] */}
               <div className=' flex text-white w-[60vw] h-[315px] ml-[44px]    textarea mt-[40px]'>
-              Over the course of more than a decade, UDYAM, the Annual Techno-Management Festival hosted by the Department of Electronics Engineering at IIT (BHU) Varanasi, has been a cornerstone event, offering a diverse array of competitions in Digital and Analog Electronics, Data Science, Machine Learning, and beyond. Now, poised for its latest edition in 2024, UDYAM’24 continues its tradition of fostering technical prowess among Indian technocrats.
+              The Electronics Engineering Society (EES) was established with a holistic vision to create awareness among students about the core technologies based upon Electronics and Communication Engineering. Now, gearing up for the 15th edition of India's premier solo Electronics Engineering-focused festivals. Beyond the realm of Core Engineering, EES has excelled in educating a vast number of students in the transformative technologies shaping our world today, including Artificial Intelligence, Data Science, Web Development, and Algorithmic Coding.
+
               </div>
               <div className="  ml-[15%] mt-[0px]  ">
               <svg width="46vw" height="49" viewBox="0 0 792 59" fill="none" xmlns="http://www.w3.org/2000/svg">

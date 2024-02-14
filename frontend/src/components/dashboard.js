@@ -1,22 +1,31 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Navhome from "./navhome";
+import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
 
 const Dashboard = () => {
-  const [name, setName] = useState("Name");
+  const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
   const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
-  const [radiniteScore, setRadiniteScore] = useState("95");
+  const [radiniteScore, setRadiniteScore] = useState(95);
+  const { number } = useSpring({
+    from: { number: 0 },
+    number: radiniteScore,
+    delay: 200,
+    config: { mass: 1, tension: 20, friction: 10 },
+  });
 
   return (
     <div className="relative">
-      {/* <div className="absolute "><Navhome /></div>  */}
+      <div className="absolute ">
+        <Navhome />
+      </div>
 
       {/* desktop view */}
-      <div className="desktopview relative">
+      <div className="desktopview relative overflow-hidden">
         <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -35,20 +44,70 @@ const Dashboard = () => {
             left: "50%",
             transform: "translateX(-50%)",
             background: "rgba(255, 255, 255, 0.05)",
-            
+            top:'35%',
           }}
         >
-          <div className="ans absolute">
+          <div className="abhinav absolute">
             <img
               src="dashboardblack.svg"
               className="dashboard-background-image  object-cover w-full h-full p-0"
             />
-           <div className="y19"><img src="/dash.svg" alt="" className="y56"/>
-                <p className="y39"><input type="text" name="Name" id="Name" placeholder="NAME" /> <input type="email" name="Email" id="Email" placeholder="email@itbhu.ac.in" /><input type="number" name="PhoneNumber" id="PhoneNumber" placeholder="0009473899" /></p>
-                <p className="y49"><input type="text" name="Electronics" id="Electronics" placeholder="Electronics Engineering" /><input type="text" name="College" id="College" placeholder="IIT BHU Varanasi" /> <input type="text" name="Year" id="Year" placeholder="Ist Year" /></p>
-                <p className="yashtheman">GRADE 1</p>
-                <img src="/motiline.svg" alt="" class="y29" /></div>
-
+            <div className="y19">
+              {" "}
+              <img src="/dash.svg" alt="" className="y56" />
+              <p className="y39">
+                <input
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  placeholder="NAME"
+                  value={name}
+                  disabled="true"
+                />{" "}
+                <input
+                  type="email"
+                  name="Email"
+                  id="Email"
+                  placeholder="email@itbhu.ac.in"
+                  value={email}
+                  disabled="true"
+                />
+                <input
+                  type="number"
+                  name="PhoneNumber"
+                  id="PhoneNumber"
+                  placeholder="0009473899"
+                  value={mobile}
+                  disabled="true"
+                />
+              </p>
+              <p className="y49">
+                <input
+                  type="text"
+                  name="Electronics"
+                  id="Electronics"
+                  placeholder="Electronics Engineering"
+                  value={branch}
+                  disabled="true"
+                />
+                <input
+                  type="text"
+                  name="College"
+                  id="College"
+                  placeholder="IIT BHU Varanasi"
+                  value={college}
+                  disabled="true"
+                />{" "}
+                <input
+                  type="text"
+                  name="Year"
+                  id="Year"
+                  placeholder="Ist Year"
+                />
+              </p>
+              <p className="yashtheman">GRADE 1</p>
+              <img src="/motiline.svg" alt="" class="y29" />
+            </div>
           </div>
           <div className="container-dashboard absolute">
             <div className="heading-dashboard">
@@ -61,6 +120,10 @@ const Dashboard = () => {
               <div className="heading-text-dashboard">GRADE 1</div>
               <img className="dhi dhi-11" src="dashboardheading.svg" />
               <img className="dhi dhi-12" src="dashboardheading.svg" />
+              {/* {<span className="y69 ">{radiniteScore}</span>} */}
+              <animated.span className="y69">
+                {number.to((radiniteScore) => radiniteScore.toFixed(0))}
+              </animated.span>
             </div>
 
             <div className="details-dashboard">
@@ -73,8 +136,9 @@ const Dashboard = () => {
                 <div>{branch}</div>
                 <div>{email}</div>
               </div>
+              {/* {<span className="y69 ">{radiniteScore}</span>} */}
+              <div className="radinite-dashboard">Radinite</div>
             </div>
-
             <img
               className="radinite-logo-dashboard"
               src="radinite.svg"
@@ -87,10 +151,6 @@ const Dashboard = () => {
                                 alt=""
                             />
                         </div> */}
-            <div className="radinite-dashboard">
-              {/* <div>{radiniteScore}</div> */}
-              Radinite
-            </div>
           </div>
 
           {/* <img src="" className="dashboard-background-image" /> */}
@@ -107,7 +167,7 @@ const Dashboard = () => {
             transform: "translateX(-50%)",
           }}
         >
-          <div className=" h-[100%]">
+          <div className=" h-[80%] ">
             <img src="/Vector 347.svg" alt="img" className="h-[100%]" />
           </div>
           <div
@@ -126,31 +186,31 @@ const Dashboard = () => {
               height: "min-content",
             }}
           >
-            <div className="relative">
+            <div className="relative "style={{ fontSize: '30px', marginTop: '8%'}}>
               <img
                 src="/Vector_347.svg"
                 alt="img"
-                className="absolute left-[-14%] top-[-27%] "
+                className="absolute left-[-14%] top-[-24%] "
               />
               <img
                 src="/Vector 349.svg"
                 alt="img"
-                className="absolute right-[-14%] top-[-27%] "
+                className="absolute right-[-14%] top-[-24%] "
               />
               <img
                 src="/Vector 348.svg"
                 alt="img"
-                className="absolute right-[-14%] bottom-[-27%] "
+                className="absolute right-[-14%] bottom-[-24%] "
               />
               <img
                 src="/Vector 350.svg"
                 alt="img"
-                className="absolute left-[-14%] bottom-[-27%] "
+                className="absolute left-[-14%] bottom-[-24%] "
               />
               PROFILE
             </div>
           </div>
-          <div className="h-[100%]  ">
+          <div className="h-[80%] ">
             <img src="/Vector 346.svg" alt="img" className="h-[100%]" />
           </div>
         </div>
@@ -290,24 +350,21 @@ const Dashboard = () => {
     </div> */}
               </div>
 
-<div className="lower-dashboard-mb">
-    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-    <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
-    <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
-    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-    <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
-
-</div>
-
-</div>
-{/* Added by Santosh */}
-
-                    </div>
-                </div>
+              <div className="lower-dashboard-mb">
+                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
+                <img className="dmb-lower dmb-lower3" src="dmblower3.svg" />
+                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+              </div>
+            </div>
+            {/* Added by Santosh */}
+          </div>
+        </div>
 
         <div
           className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
