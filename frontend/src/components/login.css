@@ -12,7 +12,16 @@
   letter-spacing: 5.775px;
   margin-left: 1%;
 }
-
+.forgotbutton{
+  color: #FFF;
+  text-align: center;
+  font-family: Goldman;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
 .SignUpWithGoogleBtnMobileView{
   color: #000;
   text-align: center;
