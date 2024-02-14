@@ -80,18 +80,26 @@ transform-origin: 0 0;
 }
 .con2{
   margin-top: 1%;
-  padding-left: 60%;
+  padding-left:50%;
+  padding-right:5%;
 }
 .con3{
   margin-top: 1%;
-  padding-left: 15%;
+  padding-left: 10%;
+  padding-right: 45%;
 }
 .con1{
-  padding-left: 15%;
+  padding-left: 10%;
+  padding-right: 45%;
 }
 .con4{
   margin-top: 1%;
-  padding-left: 60%;
+  padding-left: 50%;
+  padding-right: 5%;
+}
+.surendra{
+  position: relative;
+  margin-top: 20%;
 }
 .speaker{
   font-size: 7vw;
@@ -106,6 +114,23 @@ transform-origin: 0 0;
 }
 .border{
   width:80%;
+}
+.surendramob{
+  display: none;
+}
+.subhmob{
+  display:none;
+}
+.mathangimob{
+  display:none;
+}
+.ronitmob{
+  display:none;
+}
+.Linkedin2{
+  position: absolute;
+  top:72%;
+  left:5%;
 }
 @media (max-width:1000px){
   .con2{
@@ -133,6 +158,7 @@ transform-origin: 0 0;
 @media (max-width:500px){
   .con1,.con2,.con3,.con4{
       padding-left:5%;
+      padding-right: 5%;
   }
   .y1,.y2{
       width: 90%;
@@ -184,10 +210,17 @@ transform-origin: 0 0;
     top:70%;
     left:65%; 
 }
+.surendramob,.mathangimob,.ronitmob,.subhmob{
+  display:inline-block;
+}
+.surendradesk,.mathangidesk,.ronitdesk,.subhdesk{
+  display: none;
+}
 }
 @media (max-width:281px){
   .con1,.con2,.con3,.con4{
       padding-left: 2.5%;
+      padding-right: 5%;
   }
   .y1,.y2{
       width: 95%;
@@ -238,6 +271,12 @@ transform-origin: 0 0;
       top:44%;
       left:52%;
       font-size:13px;
+  }
+  .surendramob,.mathangimob,.ronitmob,.subhmob{
+    display:inline-block;
+  }
+  .surendradesk,.mathangidesk,.ronitdesk,.subhdesk{
+    display: none;
   }
 }
 
