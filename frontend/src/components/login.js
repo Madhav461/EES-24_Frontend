@@ -4,7 +4,7 @@ import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 
-const Signup = () => {
+const Login = () => {
   return (
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
@@ -195,7 +195,11 @@ const Signup = () => {
                     fill="#020202"
                   />
                 </svg>
+            
               </div>
+              <Link to="/otp">
+                  <p className="forgotbutton">Forgot Password?</p>
+              </Link>
             </form>
             <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
               <div className=" w-[100%] LogInButtonForLaptop h-[100%] ">
@@ -238,9 +242,6 @@ const Signup = () => {
             </div>
 
             <div className="    flex items-center justify-evenly">
-             
-       
-
               <div className="w-[40%]  h-[10%] ">
                 <div className=" ">
                   <p
@@ -452,7 +453,6 @@ const Signup = () => {
               </div>
 
               <div className="w-[40%] h-[100%]  flex flex-col items-center justify-center ">
-               
                 <div className="w-[100%] h-[30%]  ">
                   <svg
                     width="45%"
@@ -523,17 +523,13 @@ const Signup = () => {
                     />
                   </svg> */}
                 </div>
-               
 
                 {/* <FaGoogle /> */}
 
                 <button className="SignUpWithGoogleBtnMobileView   w-[100%] h-[100%] flex  items-center justify-evenly bg-white rounded-md">
-                           <p > Signup with Google</p>
-                            <FaGoogle />
+                  <p> Signup with Google</p>
+                  <FaGoogle />
                 </button>
-                
-              
-
               </div>
             </div>
           </div>
@@ -736,9 +732,11 @@ const Signup = () => {
               <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">
                 Create an account?
               </div>
-              <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
-                Sign Up
-              </button>
+              <Link to="/signup">
+                <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
+                  Sign Up
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -747,4 +745,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

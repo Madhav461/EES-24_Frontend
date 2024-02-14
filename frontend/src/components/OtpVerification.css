@@ -1,0 +1,32 @@
+.otp-verification-container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.email-otp {
+    font-size: large;
+    color: #FFF;
+    margin-top: 10%;
+}
+
+.otp-label {
+    font-size: medium;
+    color: #FFF;
+    text-align: center;
+}
+
+.search-bar {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.search-bar form {
+    display: flex;
+    flex-direction: column;
+}
