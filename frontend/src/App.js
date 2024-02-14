@@ -13,7 +13,7 @@ import Signup from "./components/signup";
 import Dashboard from "./components/dashboard.js";
 import Gallery from "./components/gallery.js";
 
-import Events from "./components/events.js";
+// import Events from "./components/events.js";
 import EventsHome from "./components/EventsHome.js";
 import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
@@ -44,7 +44,7 @@ function App() {
             <Route exact path="/events/udgam" element={<EventsUdgam />} />
             <Route exact path="/events/mashal" element={<EventsMashal />} />
             
-            <Route exact path="/events" element={<Events />} /> 
+            {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
 
           </Routes>
