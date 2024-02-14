@@ -11,15 +11,14 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 
 import Dashboard from "./components/dashboard.js";
+import Gallery from "./components/gallery.js";
 
-// import Events from "./components/Events.js";
+import Events from "./components/events.js";
 import EventsHome from "./components/EventsHome.js";
 import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
 import OtpVerification from "./components/OtpVerification.jsx";
-
-// import Events from "./components/events.js";
 
 
 function App() {
@@ -38,14 +37,14 @@ function App() {
             <Route exact path="/otp" element={<OtpVerification />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<EventsHome />} />
-            {/* <Route exact path="/events" element={<Events />} /> */}
+            <Route exact path="/gallery" element={<Gallery />} />
+            
             
             <Route exact path="/events/udyam" element={<EventsUdyam />} />
             <Route exact path="/events/udgam" element={<EventsUdgam />} />
             <Route exact path="/events/mashal" element={<EventsMashal />} />
             
-{/* 
-//             <Route exact path="/events" element={<Events />} /> */}
+            <Route exact path="/events" element={<Events />} /> 
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
 
           </Routes>
