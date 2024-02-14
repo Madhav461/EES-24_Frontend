@@ -1,6 +1,7 @@
 import React from "react";
 // import "../components/signup.css";
 import Navhome from "./navhome";
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   return (
@@ -592,9 +593,11 @@ const Signup = () => {
               <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">
                 Already have an account?
               </div>
-              <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
-                Log in
-              </button>
+              <Link to="/login">
+                <button className="w-full h-[70%] cursor-pointer bg-transparent pb-[1.5rem] flex items-center justify-center signup-button-blackDivAlreadyHaveAnAccountButton">
+                  Log in
+                </button>
+              </Link>
             </div>
           </div>
         </div>

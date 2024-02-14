@@ -17,6 +17,7 @@ import EventsHome from "./components/EventsHome.js";
 import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
+import OtpVerification from "./components/OtpVerification.jsx";
 
 // import Events from "./components/events.js";
 
@@ -34,6 +35,7 @@ function App() {
           <Routes>
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/otp" element={<OtpVerification />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
 
             {/* <Route exact path="/events" element={<Events />} /> */}
