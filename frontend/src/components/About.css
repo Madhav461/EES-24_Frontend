@@ -1,21 +1,21 @@
 /* <Switching between desktop/mobile views> */
 @media screen and (min-width: 1920px) {
-  .mobileview {
+    .desktopview {
       visibility:hidden;
   }
-
-  .desktopview {
+  
+  .mobileview {
       visibility:hidden;
   }
 }
 @media screen and (max-width: 1921px) {
-  .mobileview {
-      visibility:visible;
-  }
-
   .desktopview {
-      visibility:hidden;
-  }
+    visibility:visible;
+}
+
+.mobileview {
+    visibility:hidden;
+}
 }
 @media screen and (max-width: 575px) {
   .desktopview {
