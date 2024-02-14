@@ -30,6 +30,10 @@ const Hero = () => {
     text: sample,
     ...params,
   });
+  const { ref2 } = useScramble({
+    text: sample,
+    ...params,
+  });
 
   // const {ref2}=useScramble({
   //   text:sample,
@@ -138,7 +142,9 @@ const Hero = () => {
           </div>
 
           <div className="p2-hero-mb">
-            <SubTitleTxtMB></SubTitleTxtMB>
+            <div>
+              <p ref={ref2}></p>
+            </div>
           </div>
 
 
