@@ -350,6 +350,7 @@
 
 /* MOBILE VIEW */
 
+<<<<<<< Updated upstream
 @media screen and (min-width: 431px) {
     .container-hero-mb {
         display: none;
@@ -565,6 +566,8 @@
 
 /* MOBILE VIEW */
 
+=======
+>>>>>>> Stashed changes
 @media screen and (max-width: 430px) {
     .container {
         display: none;
