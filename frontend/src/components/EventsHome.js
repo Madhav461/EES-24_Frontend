@@ -1,46 +1,56 @@
 import "./EventsHome.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Marquee from "react-fast-marquee";
+import AnimatedTextCharacter from "./AnimatedTextCharacter";
+
+import Background from "./background";
+import Navhome2 from "./navhome";
+import Footer from "./Footer";
 
 const EventsHome = () => {
 
-  const [ClickedEvent, setClickedEvent] = useState(0);
-  const clicked = (num) => {
-    setClickedEvent(num);
+  let navigate = useNavigate();
+  const routeChange = (route) => {
+    let path = `/events/${route}`;
+    navigate(path);
   }
 
-
   return (
-    <div className="events-home-container">
-        {/* <EventsCard name="1" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/> */}
-        <div class="events-home-card">
-          <img className="" src="udyam-events-full.svg" alt=""></img>
+    <>
+      <Background />
+      <Navhome2 />
+      <div className="events-home-main">
+        <img className="events-home-heading-svg" src="/events-home-heading.svg" alt=""></img>
+      </div>
+      <div className="glow-text events-home-marquee"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee> </div>
+      <div className="events-home-container">
+        <div class="events-home-card" onClick={() => routeChange("udyam")}>
+          <img className="events-home-svg" src="events-udyam.svg" alt=""></img>
         </div>
-        <div class="events-home-card">
-          <img className="" src="udgam-events-full.svg" alt=""></img>
+        <div class="events-home-card" onClick={() => routeChange("udgam")}>
+          <img className="events-home-svg" src="events-udgam.svg" alt=""></img>
         </div>
-        <div class="events-home-card">
-          <img className="" src="event-home-card.svg" alt=""></img>
+        <div class="events-home-card" onClick={() => routeChange("mashal")}>
+          <img className="events-home-svg" src="events-mashal.svg" alt=""></img>
         </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
+  // return (
+  //   <div className="events-home-container">
+  //       <div class="events-home-card" onClick={() => routeChange("udyam")}>
+  //         <img className="events-home-svg" src="events-udyam.svg" alt=""></img>
+  //       </div>
+  //       <div class="events-home-card" onClick={() => routeChange("udgam")}>
+  //         <img className="events-home-svg" src="events-udgam.svg" alt=""></img>
+  //       </div>
+  //       <div class="events-home-card" onClick={() => routeChange("mashal")}>
+  //         <img className="events-home-svg" src="events-mashal.svg" alt=""></img>
+  //       </div>
+  //   </div>
+  // );
 };
-//   return (
-//     <div className="events-home-container">
-//         {/* <EventsCard name="1" eventNum={ClickedEvent} clicked={clicked} eventName="" eventInfo="" eventImg=""/> */}
-//         <div class="events-home-card-udyam">
-//           <img className="" src="event-home-card.svg" alt=""></img>
-//           <img className="events-home-udyam" src="udyam-events.svg" alt=""></img>
-//         </div>
-//         <div class="events-home-card-udgam">
-//           <img className="" src="event-home-card.svg" alt=""></img>
-//           <img className="events-home-udgam" src="udgam-events.svg" alt=""></img>
-//         </div>
-//         <div class="events-home-card-mashal">
-//           <img className="" src="event-home-card.svg" alt=""></img>
-//           <img className="events-home-mashal" src="mashal-events.svg" alt=""></img>
-//         </div>
-//     </div>
-//   );
-// };
 
 export default EventsHome;

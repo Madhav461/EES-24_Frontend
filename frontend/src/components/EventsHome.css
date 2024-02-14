@@ -5,51 +5,57 @@
     /* justify-content: space-around; */
     justify-content: space-evenly;
     align-content: space-around;
+    margin-bottom: 5%;
 }
 
 .events-home-card {
-    /* height: 100px;
-    width: 100px; */
     margin: 2.5%;
     position: relative;
 }
 
+.events-home-card:hover {
+    transform: scaleY(1.125) scaleX(1.125);
+    transition: ease-in-out;
+    cursor: pointer;
+}
 
+.events-home-svg {
+    height: 379.2px;
+    width: 274.4px;
+}
 
-.events-home-udyam {
+.events-home-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.events-home-heading-svg {
+    align-items: center;
+    margin: 5% 10% 2.5% 10%;
+}
+
+@media screen and (max-width: 768px) {
+    .events-home-svg {
+        height: 331.8px;
+        width: 240.1px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .events-home-svg {
+        height: 284.4px;
+        width: 205.8px;
+    }
+}
+
+.event-pop::after {
+    content: "";
+    background: url("../../public/event-info-background.svg");
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     position: absolute;
-    left: 12%;
-    top: 35%;
-    /* margin: auto; */
-}
-.events-home-udgam {
-    position: absolute;
-    left: 29%;
-    top: 12%;
-    /* margin: auto; */
-}
-.events-home-udyam {
-    position: absolute;
-    left: 11%;
-    top: 15%;
-    /* margin: auto; */
-}
-
-.events-home-card-udyam {
-    /* height: 100px;
-    width: 100px; */
-    margin: 2.5%;
-    position: relative;
-}
-.events-home-card-udgam {
-    /* height: 100px;
-    width: 100px; */
-    margin: 2.5%;
-    position: relative;
-}
-.events-home-card-mashal {
-    /* height: 100px;
-    width: 100px; */
-    margin: 2.5%;
-    position: relative;
+    z-index: -1;   
 }

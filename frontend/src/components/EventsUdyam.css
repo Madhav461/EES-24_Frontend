@@ -1,0 +1,48 @@
+.events-udyam-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.events-udyam-heading-svg {
+    align-items: center;
+    margin: 5% 10% 2.5% 10%;
+}
+
+
+.events-udyam-subcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2.5% 5% 0% 5%;
+    align-items: center;
+}
+
+.events-udyam-heading-sub {
+    width: 60%;
+}
+
+.events-udyam-back-button {
+    width: 10%;
+    padding-top: 1.5%;
+}
+
+.events-udyam-back-button:hover {
+    transform: scaleY(1.25) scaleX(1.25);
+    transition: ease-in-out;
+}
+
+.back-button {
+    margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .events-udyam-heading-sub {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .events-udyam-heading-sub {
+        width: 80%;
+    }
+}

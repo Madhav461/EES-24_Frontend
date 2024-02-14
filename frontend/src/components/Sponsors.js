@@ -28,12 +28,23 @@ const SponsorsFull = () => {
 //   }
 
     const urlsInit = [
-        "https://assets-global.website-files.com/5eee4eb84206dd808f65453b/5f03382db8b6e43bad99fc80_Lyft_logo.svg.png",
-        "https://assets-global.website-files.com/5eee4eb84206dd808f65453b/5f03382ebcb09a5bf60b60bb_cropped-play-octopus-logo-white-edge.png",
-        "https://assets-global.website-files.com/5eee4eb84206dd808f65453b/5f03382dda40c71bc0fe8d44_1600px-Uber_logo_2018.svg.png",
+        "/sponsors-1.svg",
+        "/sponsors-2.svg",
+        "/sponsors-3.svg",
+        "/sponsors-4.svg",
+        "/sponsors-5.svg",
+        "/sponsors-6.svg",
+        "/sponsors-7.svg",
+        "/sponsors-8.svg",
+        "/sponsors-9.svg",
+        "/sponsors-10.svg",
+        "/sponsors-11.svg",
+        "/sponsors-12.svg",
+        "/sponsors-13.svg",
+        "/sponsors-14.svg",
     ];
 
-    const urlsFin = [...urlsInit, ...urlsInit, ...urlsInit];
+    const urlsFin = [...urlsInit];
 
     const images = urlsFin.map((url, ind) => {
         return (
@@ -77,7 +88,8 @@ const SponsorsFull = () => {
                     <div className="icon-container-alt">
                         <div className="line1"></div>
                         <img
-                            src={url}
+                            // src={url}
+                            src={"/sponsors-" + (14-ind)+ ".svg"}
                             alt=""
                             className="icon"
                         />
@@ -113,7 +125,7 @@ const SponsorsFull = () => {
                                 </div>
                             </div>
                         </div>
-                        <div  className="sponsors_title">PATRONS</div>
+                        <div  className="sponsors_title">PAST  PATRONS</div>
                         <div className="marquee-horizontal-large">
                             <div className="marquee-cover-horizontal"></div>
                             <div className="track-horizontal-alt">
