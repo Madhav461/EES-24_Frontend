@@ -8,7 +8,7 @@ import "./gallery.css";
 
 const Gallery = () => {
     return (
-        <div className='w-[100vw] text-red-50'>
+        <div className='w-[100vw] overflow-hidden text-red-50'>
             <Background />
             <div className='gal_head bg-black fixed top-0 '>
                 <Navhome2 />
