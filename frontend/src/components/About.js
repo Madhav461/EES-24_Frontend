@@ -260,6 +260,7 @@ export const About = () => {
   return (
   
     <div>
+      
     <div className=" w-sceen  h-[635px]  pt-[117px] flex desktopview    " >
       <div className="w-[5.7%]   ">
       {/* <img src="about_us_desktopview_Lines - Wave.svg"  style={{ width:'40px', height: '100%' }}    /> */}
@@ -295,11 +296,10 @@ export const About = () => {
 
               {/* also decrease font size */}
               {/* border-solid border-[0.5px] */}
-              <div className=' flex text-white w-[60vw] h-[315px] ml-[44px]    textarea mt-[40px]'>
+              <div className=' flex text-white w-[60vw] h-[300px] ml-[40px]    textarea mt-[10px]'>
               The Electronics Engineering Society (EES) was established with a holistic vision to create awareness among students about the core technologies based upon Electronics and Communication Engineering. Now, gearing up for the 15th edition of India's premier solo Electronics Engineering-focused festivals. Beyond the realm of Core Engineering, EES has excelled in educating a vast number of students in the transformative technologies shaping our world today, including Artificial Intelligence, Data Science, Web Development, and Algorithmic Coding.
-
               </div>
-              <div className="  ml-[15%] mt-[0px]  ">
+              <div className="  ml-[15%] mt-[50px]  ">
               <svg width="46vw" height="49" viewBox="0 0 792 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="396.58" height="59" fill="white" />
                   <rect x="399.08" y="0" width="390.42" height="59" fill="black" stroke="white" stroke-width="0.5" />
@@ -628,6 +628,7 @@ export const About = () => {
 
     </div>
     <div className="mobileview">
+    <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, soluta alias in aliquid, est facere excepturi porro perferendis tenetur neque blanditiis iste quo placeat enim eius maxime esse eveniet dolores.</p>
         <div id="controls-carousel" className="relative w-full" data-carousel="static">
           {/* Carousel wrapper */}
           <div className="carousel_container h-[100vh] relative overflow-hidden rounded-lg md:h-96">
