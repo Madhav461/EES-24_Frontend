@@ -1,7 +1,18 @@
 import React from 'react'
 import "./Speaker.css"
+import { useState } from 'react';
 
 function Speaker() {
+  const [linkedin,uselinkedin]=useState('/linkedin2.svg')
+  const shaktiman=()=>{
+    uselinkedin('/linkedin3.svg');
+  }
+  const pantman=()=>{
+    uselinkedin('/linkedin2.svg');
+  }
+  const [linkedin2,uselinkedin2]=useState('/linkedin2.svg')
+  const [linkedin3,uselinkedin3]=useState('/linkedin2.svg')
+  const [linkedin4,uselinkedin4]=useState('/linkedin2.svg')
   return (
     <>
     <div className="speaker">
@@ -15,60 +26,32 @@ function Speaker() {
       />
     </div>
     <div className="con1">
-        <div className="y1">
-            <div className="y2">
-                <img className="icon_speaker" alt="" src="/person.svg" />
-                <div className="corner-border"></div>
-                <div className="corner-border1"></div>
-                <div className="name">MAGNUS</div>
-                <div className="name1">CEO of some company</div>
-                <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
-                <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
-                <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
-            </div>
-        </div>
+    <div style={{"position":"relative"}}>
+    <img className="surendradesk" alt="" src="/surendra.svg" />  
+    <img className="surendramob" alt="" src="/surendra.svg" />
+    <img className="Linkedin2" alt="" src={linkedin4} onMouseOver={()=>uselinkedin4('/linkedin3.svg')} onMouseLeave={()=>uselinkedin4('/linkedin2.svg')} onClick={()=>{window.location.href='https://linkedin.com/in/vikash-mishra-67a71911/%20'}}></img> 
+    </div>
     </div>
     <div className="con2">
-        <div className="y1">
-            <div className="y2">
-                <img className="icon_speaker" alt="" src="/person.svg" />
-                <div className="corner-border"></div>
-                <div className="corner-border1"></div>
-                <div className="name">MAGNUS</div>
-                <div className="name1">CEO of some company</div>
-                <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
-                <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
-                <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
-            </div>
-        </div>
+    <div style={{"position":"relative"}}>
+    <img className="mathangidesk" alt="" src="/mathangi.svg" /> 
+    <img className="mathangimob" alt="" src="/mathangi.svg" /> 
+    <img className="Linkedin2" alt="" src={linkedin2} onMouseOver={()=>uselinkedin2('/linkedin3.svg')} onMouseLeave={()=>uselinkedin2('/linkedin2.svg')} onClick={()=>{window.location.href='https://www.linkedin.com/in/mathangisri/?originalSubdomain=in%20'}}></img> 
+    </div>
     </div>
     <div className="con3">
-        <div className="y1">
-            <div className="y2">
-                <img className="icon_speaker" alt="" src="/person.svg" />
-                <div className="corner-border"></div>
-                <div className="corner-border1"></div>
-                <div className="name">MAGNUS</div>
-                <div className="name1">CEO of some company</div>
-              <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
-              <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
-              <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
-            </div>
-        </div>
+    <div style={{"position":"relative"}}>
+    <img className="subhdesk" alt="" src="/subh.svg" /> 
+    <img className="subhmob" alt="" src="/subh.svg" /> 
+    <img className="Linkedin2" alt="" src={linkedin3} onMouseOver={()=>uselinkedin3('/linkedin3.svg')} onMouseLeave={()=>uselinkedin3('/linkedin2.svg')} onClick={()=>{window.location.href='https://www.linkedin.com/in/surendranathreddy/%20%20'}}></img> 
+    </div>
     </div>
     <div className="con4">
-        <div className="y1">
-            <div className="y2">
-                <img className="icon_speaker" alt="" src="/person.svg" />
-                <div className="corner-border"></div>
-                <div className="corner-border1"></div>
-                <div className="name">MAGNUS</div>
-                <div className="name1">CEO of some company</div>
-                <a href="www.facebook.in"><img className="face" alt="" src="/facebook.svg" /></a>
-                <a href="www.instagram.in"><img className="ins" alt="" src="/instagram.svg" /></a>
-                <a href="www.linkedin.in"><img className="git" alt="" src="/image.svg" /></a>
-            </div>
-        </div>
+    <div style={{"position":"relative"}}>
+    <img className="ronitdesk" alt="" src="/ronit.svg" />   
+    <img className="ronitmob" alt="" src="/ronit.svg" />
+    <img className="Linkedin2" alt="" src={linkedin} onMouseOver={shaktiman} onMouseLeave={pantman} onClick={()=>{window.location.href='https://www.linkedin.com/in/raj-ronit/?originalSubdomain=ie'}}></img> 
+    </div> 
     </div>
     </>
   )
