@@ -7,16 +7,20 @@
     /* margin: 5%; */
     /* margin: 2.5%; */
     margin: 5% 2.5% 5% 2.5%;
+    border: 2.5px solid white;
 }
 
 .event-pop {
     height: 493px;
     width: 329px;
     background-color: #E0115F;
+    background-color: black;
+    color: white;
     /* z-index: 0;
     position: relative;
     margin: 5%; */
     display: flex;
+    background: rgb(0 0 0 / 10%);
 }
 
 .event-title {
@@ -26,8 +30,8 @@
     left: 0px;
     height: 493px;
     width: 94px;
-    background-color: white;
     background-color: aqua;
+    background-color: white;
 }
 
 .event-details {
@@ -37,18 +41,20 @@
     right: 0px;
     height: 110.2px;
     width: 329px;
-    background-color: black;
     background-color: #E0115F;
+    background-color: black;
+    color: white;
 }
 
 .event-register {
-    z-index: 1;
+    z-index: -2;
     position: absolute;
     top: 0px;
     right: 0px;
     height: 38.83px;
     width: 124.5px;
     background-color: black;
+    color: white;
     /* background-color: aqua; */
 }
 
@@ -65,6 +71,7 @@
     width: 100px;
     height: 100px;
     background-image: linear-gradient(to top right, aqua 50%, transparent 0);
+    background-image: linear-gradient(to top right, white 50%, transparent 0);
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: left, right;
@@ -88,6 +95,9 @@
     text-align: center;
     
     background-color: orange;
+    font-size: large;
+    background-color: black;
+    color: white;
 }
 
 .events-trapezium .before,
@@ -99,8 +109,10 @@
     bottom: 0;
     z-index: -1;
     
-/* 		border-radius: 12px; */
+/* 	border-radius: 12px; */
     background-color: orange;
+    background-color: black;
+    color: white;
 }
 
 .events-trapezium .before {
@@ -119,6 +131,10 @@
     margin: auto;
     align-items: center;
     justify-content: center;
+
+    margin: auto 5% auto 5%;
+    font-size: large;
+    background: rgb(0 0 0 / 10%);
 }
 
 .event-info-details {
@@ -127,13 +143,27 @@
     top: 35%;
     /* bottom: 0px;
     left: 0px; */
-    height: 110.2px;
+    /* height: 110.2px; */
     height: 100.2px;
-    width: 329px;
+    height: 80.2px;
+    /* width: 329px; */
     width: 300px;
     margin: auto;
     background-color: aquamarine;
+    background-color: black;
+    color: white;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-info-details-content {
+    /* align-self: center; */
+    margin: auto;
+    font-size: medium;
+    font-size: small;
 }
 
 .event-title-name {
@@ -142,6 +172,7 @@
     top: 0px;
     left: 0px;
     height: 383px;
+    height: 350px;
     width: 94px;
 }
 
@@ -149,16 +180,80 @@
     height: 493px;
     width: 329px;
     z-index: -1;
+    /* position: absolute;
+    top: 0px;
+    right: 0px; */
+    height: 466px;
+    width: 334px;
 }
 
 .event-register-title {
+    z-index: 2;
+    position: absolute;
+    /* top: 0px; */
+    top: -3px;
+    /* right: 0px; */
+    right: -8px;
+    height: 38.83px;
+    width: 124.5px;
+    text-align: center;
+    /* height: 50px; */
+    /* line-height: 35px; */
+    height: 60px;
+    line-height: 25px;
+    padding-left: 5%;
+    padding-left: 8%;
+}
+
+.event-register-svg {
     z-index: 2;
     position: absolute;
     top: 0px;
     right: 0px;
     height: 38.83px;
     width: 124.5px;
-    text-align: center;
-    height: 50px;
-    line-height: 35px;
+}
+
+.event-register-svg:hover {
+    transform: scaleY(1.125) scaleX(1.125);
+    transition: ease-in-out;
+}
+.event-register-title:hover {
+    transform: scaleY(1.125) scaleX(1.125);
+    transition: ease-in-out;
+    cursor: pointer;
+}
+
+.events-trapezium,
+.event-info-details-content,
+.event-register-title,
+.event-info-pop {
+    font-family: 'Afacad', sans-serif;
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-family: 'Michroma', sans-serif;
+}
+
+
+.event-pop:hover,
+.event-title-name:hover,
+.event-title:hover,
+.event-details:hover,
+.event-lower-polygon:hover,
+.events-trapezium:hover,
+.event-info-details-content:hover,
+.event-title-name:hover,
+.events-card-background:hover {
+    cursor: pointer;
+}
+
+.event-info-pop::after {
+    content: "";
+    background: url("../../public/event-info-background.svg");
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
 }
