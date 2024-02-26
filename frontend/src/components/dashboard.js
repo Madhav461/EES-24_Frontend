@@ -20,13 +20,13 @@ const Dashboard = () => {
 
   return (
     <div className="relative">
-      <div className="absolute ">
+      {/* <div className="absolute "> */}
         <Navhome />
-      </div>
+      {/* </div> */}
 
       {/* desktop view */}
       <div className="desktopview relative overflow-hidden">
-        <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
+        <div className="bgimg h-[100vh] w-[100vw] z-[-4] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
             src="/image 50.svg"

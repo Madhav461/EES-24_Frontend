@@ -111,7 +111,7 @@ const Navhome2 =() =>{
           {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
             Workshops
           </div> */}
-          <a href={'/'} className='text-white no-underline'>
+          <a href={'/teams'} className='text-white no-underline'>
           <WorkshopsTxt></WorkshopsTxt>
           </a>
 

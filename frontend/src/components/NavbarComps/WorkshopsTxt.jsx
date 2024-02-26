@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 import {useScramble} from "use-scramble";
 function WorkshopsTxt(){
-    const title_word="Workshops";
+    const title_word="Teams";
     const [sample, setSample] = React.useState(title_word);
 
     const params = {
