@@ -119,7 +119,7 @@ const Navhome2 =() =>{
           {/* <div className="flex  tracking-[0.08em] items-center justify-centre  cursor-pointer">
             Sponsors
           </div> */}
-         <a href={'/teams'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
+         <a href={'/events'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
           {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
           </div> */}
