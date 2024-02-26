@@ -163,7 +163,7 @@ function HamburgerMenu() {
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/">
+            <ItemLink onClick={handleClick} to="/events">
               Events
             </ItemLink>
           </li>
