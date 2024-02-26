@@ -123,11 +123,11 @@ const Navhome2 =() =>{
           {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
           </div> */}
-         <a href={'/'} className='text-white no-underline'>  <GalleryTxt></GalleryTxt> </a>
+         <a href={'/gallery'} className='text-white no-underline'>  <GalleryTxt></GalleryTxt> </a>
           {/* <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
             Schedule
           </div> */}
-          <a href={'#schedule'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
+          <a href={'/#schedule'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
         </div>
           <img
             className="absolute top-[16px] mt-[16px]  w-screen overflow-hidden h-[26px]"
