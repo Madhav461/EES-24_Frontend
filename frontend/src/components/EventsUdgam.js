@@ -1,7 +1,7 @@
 import "./Events.css";
 import "./EventsUpcoming.css";
-import EventsCard from "./EventsCard";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Background from "./background";
 import Navhome2 from "./navhome";
@@ -9,10 +9,20 @@ import Footer from "./Footer";
 
 const EventsUdgam = () => {
 
+  let navigate = useNavigate();
+  const routeChange = (route) => {
+    let path = `/events`;
+    navigate(path);
+  }
+  
+
   return (
     <>
       <Background />
       <Navhome2 />
+      <div className="events-upcoming-back-button" onClick={routeChange}>
+        <img src="/events-udyam-back-button.svg" alt=""></img>
+      </div>
         <div className="events-upcoming-container">
           <img className="events-upcoming-background" src="/events-coming-soon.svg" alt=""></img>
         </div>
