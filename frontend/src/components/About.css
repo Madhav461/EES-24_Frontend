@@ -1,163 +1,3 @@
-/* .center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.upper {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-bottom: 7%;
-}
-.img1,
-.svg1 {
-  height: 70px;
-}
-.img2,
-.svg2 {
-  flex: 1;
-  margin-left: 5%;
-  width: 57px;
-}
-.svg3 {
-  position: relative;
-  top: -50px;
-}
-.svg4 {
-  position: relative;
-  left: 200px;
-  top: 100px;
-  width: fit-content;
-}
-.column1 {
-  padding: 5%;
-}
-.div {
-  flex: 20;
-  width: 100px;
-  height: 500px;
-  background-color: #16b9ff;
-  box-shadow: 10px 10px 20px rgba(22, 185, 255, 0.5);
-  padding: 5% 2%;
-  margin: 10% 5% 10% 0%;
-  clip-path: polygon(0 0, 95% 0%, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
-  position: relative;
-}
-.div::after {
-  content: "";
-  background-color: rgb(44, 43, 43);
-  clip-path: polygon(0 0, 95% 0%, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
-  position: absolute;
-  width: 99%;
-  height: 98.5%;
-  top: 0.75%;
-  left: 0.5%;
-  z-index: -1;
-  box-shadow: 10px 10px 20px rgba(22, 185, 255, 0.5);
-}
-.div:hover .h {
-  animation: blinkGlow 1.5s;
-  text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff;
-  text-decoration: underline;
-}
-
-@keyframes blinkGlow {
-  0%,
-  100% {
-    text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff;
-    text-decoration: none;
-  }
-  0%,
-  10% {
-    text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff;
-    text-decoration: none;
-  }
-  10%,
-  20% {
-    text-shadow: none;
-    text-decoration: none;
-  }
-  20%,
-  30% {
-    text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff;
-    text-decoration: none;
-  }
-  30%,
-  40% {
-    text-shadow: none;
-    text-decoration: none;
-  }
-  40%,
-  70% {
-    text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff;
-    text-decoration: none;
-  }
-
-  70%,
-  100% {
-    text-shadow: none;
-    text-decoration: none;
-  }
-}
-
-.content {
-  color: #ffffff;
-  font-family: "Ligconsolata-Bold";
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: 2.875;
-  line-height: 46px;
-  padding: 0 15% 0 5%;
-}
-
-.text-wrapper {
-  font-weight: 700;
-}
-
-.h {
-  color: #16b9ff;
-  font-family: "Bruno Ace SC";
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 9px;
-  line-height: normal;
-}
-@media (max-width: 900px) {
-  .img1 {
-    height: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .div {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-    padding: 5% 2% 5% 2%;
-    margin: 5%;
-    border: 1% solid #16b9ff;
-  }
-
-  .div::after {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-    width: 98%;
-    height: 97.5%;
-    top: 1.5%;
-    left: 1%;
-  }
-
-  .content {
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  .h {
-    font-size: 40px;
-  }
-} */
-
-/* .AboutUs{ */
-  /* background: rgba(255, 255, 255, 0.10); */
-/* backdrop-filter: blur(10px); */
-/* } */
 
 .rect{
   /* Rectangle 115 */
@@ -258,24 +98,26 @@ line-height: 36px;
 
 
 
-
-
-
 @media screen and (max-width: 1921px) {
-  .mobileview {
-      visibility:hidden;
+  .mobileview_aboutus {
+      /* visibility:hidden; */
+      display: none;
   }
 
-  .desktopview {
-      visibility:visible;
+  .desktopview_aboutus {
+      /* visibility:visible; */
+      display:block;
   }
 }
 @media screen and (max-width: 575px) {
-  .desktopview {
-      visibility:hidden;
+  .desktopview_aboutus {
+      /* visibility:hidden; */
+      display:none;
   }
-  .mobileview {
-      visibility:visible;
+  .mobileview_aboutus {
+      /* visibility:visible;
+       */
+       display: block;
   }
 }
 /* </Switching between desktop/mobile views> */
