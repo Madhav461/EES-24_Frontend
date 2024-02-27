@@ -25,7 +25,7 @@ const Dashboard = () => {
       </div>
 
       {/* desktop view */}
-      <div className="desktopview relative overflow-hidden">
+      <div className="dash_desktopview relative overflow-hidden">
         <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -218,7 +218,7 @@ const Dashboard = () => {
 
       {/* Mobile view */}
       <div
-        className=" mobileview relative flex flex-col  overflow-hidden"
+        className=" dash_mobileview relative flex flex-col  overflow-hidden"
         style={{ height: "100vh" }}
       >
         {/* background image */}
