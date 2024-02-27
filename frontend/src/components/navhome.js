@@ -14,7 +14,7 @@ import EventsTxt from './NavbarComps/EventsTxt.jsx';
 
 const Navhome2 =() =>{
   return (
-    <div className=''>
+    <div className='bg-gray '>
        <div className=' lg:flex bg-gray 2k:hidden  hidden  items-center justify-center  '>
            <img
             className="flex items-center justify-center"
@@ -105,13 +105,13 @@ const Navhome2 =() =>{
             alt=""
             src="/whiteline.svg" //dark bottom
           /> </div> */}
-       <div className="absolute bg-gray  hidden lg:block 2k:hidden  top-[40px] h-[26px]">
+       <div className="absolute bg-gray   hidden lg:block 2k:hidden  top-[40px] h-[26px]">
         <div className='flex  items-center w-screen justify-center space-x-6'>
           {/* <div><p>hello</p></div> */}
           {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
             Workshops
           </div> */}
-          <a href={'/'} className='text-white no-underline'>
+          <a href={'/'} className='text-white no-underline z-50 bg-gray rounded-2xl'>
           <WorkshopsTxt></WorkshopsTxt>
           </a>
 
@@ -119,18 +119,18 @@ const Navhome2 =() =>{
           {/* <div className="flex  tracking-[0.08em] items-center justify-centre  cursor-pointer">
             Sponsors
           </div> */}
-         <a href={'/teams'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
+         <a href={'/teams'} className='text-white z-50 bg-gray no-underline rounded-2xl'> <EventsTxt></EventsTxt></a>
           {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
           </div> */}
-         <a href={'/'} className='text-white no-underline'>  <GalleryTxt></GalleryTxt> </a>
+         <a href={'/'} className='text-white z-50 bg-gray no-underline rounded-2xl'>  <GalleryTxt></GalleryTxt> </a>
           {/* <div className=" tracking-[0.08em] flex items-center justify-center  glow-text cursor-pointer">
             Schedule
           </div> */}
-          <a href={'#schedule'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
+          <a href={'#schedule'} className='text-white z-50 bg-gray no-underline rounded-2xl'> <ScheduleTxt></ScheduleTxt> </a>
         </div>
           <img
-            className="absolute top-[16px] mt-[16px]  w-screen overflow-hidden h-[26px]"
+            className="absolute top-[16px] bg-gray  mt-[13px]  w-screen overflow-hidden h-[26px]"
             alt=""
             src="/vector-line2.svg" //dark bottom
           />
