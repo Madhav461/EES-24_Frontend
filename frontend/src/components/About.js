@@ -261,7 +261,7 @@ export const About = () => {
   
     <div>
       
-    <div className=" w-sceen  h-[635px]  pt-[117px] flex desktopview    " >
+    <div className=" w-sceen  h-[635px]  pt-[117px] flex desktopview_aboutus    " >
       <div className="w-[5.7%]   ">
       {/* <img src="about_us_desktopview_Lines - Wave.svg"  style={{ width:'40px', height: '100%' }}    /> */}
       
@@ -627,8 +627,8 @@ export const About = () => {
       </div>
 
     </div>
-    <div className="mobileview">
-    <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, soluta alias in aliquid, est facere excepturi porro perferendis tenetur neque blanditiis iste quo placeat enim eius maxime esse eveniet dolores.</p>
+    <div className="mobileview_aboutus">
+   
         <div id="controls-carousel" className="relative w-full" data-carousel="static">
           {/* Carousel wrapper */}
           <div className="carousel_container h-[100vh] relative overflow-hidden rounded-lg md:h-96">
@@ -667,6 +667,8 @@ export const About = () => {
           </button>
         </div>
       </div>
+   
+    
     </div>
 
 

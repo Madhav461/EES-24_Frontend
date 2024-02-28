@@ -26,9 +26,9 @@
 <g mask="url(#mask0_3213_41)">
 <rect x="406" y="63" width="30" height="421" transform="rotate(90 406 63)" fill="white" fill-opacity="0.26"/>
 </g>
-<circle cx="177.5" cy="77.5" r="8" fill="black" stroke="white" stroke-width="3"/>
-<circle cx="201.023" cy="77.5" r="8" fill="black" stroke="white" stroke-width="3"/>
-<circle cx="224.548" cy="77.5" r="8" fill="black" stroke="white" stroke-width="3"/>
+<circle cx="171.5" cy="77.5" r="8" fill="black" stroke="white" stroke-width="3"/>
+<circle cx="195.023" cy="77.5" r="8" fill="black" stroke="white" stroke-width="3"/>
+<circle cx="218.548" cy="77.5" r="8" fill="black" stroke="white" stroke-width="3"/>
 <path d="M5 168.5L5 160.27C5 158.574 6.97772 157.648 8.28037 158.734L18.1563 166.964C19.1158 167.763 19.1158 169.237 18.1563 170.036L8.28037 178.266C6.97771 179.352 5 178.426 5 176.73L5 168.5Z" fill="#FEFEFE"/>
 <rect x="350.653" y="258.751" width="467.09" height="312.851" transform="rotate(90 350.653 258.751)" fill="url(#pattern2)"/>
 <path d="M135.446 248H31V284.644" stroke="white" stroke-width="4"/>
