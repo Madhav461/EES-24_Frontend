@@ -1,5 +1,4 @@
 /* Switching between desktop/mobile views*/
-
 @media screen and (min-width: 1920px) {
     .dash_mobileview {
         display: none;
