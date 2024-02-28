@@ -11,6 +11,7 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 
 import Dashboard from "./components/dashboard.js";
+import DashboardTeam from "./components/DashboardTeam.jsx";
 import Gallery from "./components/gallery.js";
 
 // import Events from "./components/events.js";
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/otp" element={<OtpVerification />} />
+            <Route exact path="/dashboard/team" element={<DashboardTeam />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<EventsHome />} />
             <Route exact path="/gallery" element={<Gallery />} />

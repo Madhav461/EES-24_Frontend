@@ -1,0 +1,109 @@
+.team-dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    text-align: center;
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 19px;
+    font-style: normal;
+
+    width: 80vw;
+    margin: auto;
+}
+
+.team-dashboard-name {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.team-dashboard-members {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #FFF;
+    /* padding: 2%; */
+    width: 40%;
+}
+
+.team-dashboard-radinite {
+    width: 30%;
+}
+
+.team-dashboard-members-names {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.5% 4% 2.5% 4%;
+}
+
+.team-dashboard-icons {
+    width: 30px;
+}
+
+.team-dashboard-teamName-display {
+    background-color: #FFF;
+    color: black;
+    padding: 2.5% 4% 2.5% 4%;
+}
+
+.team-dashboard-eventName-display {
+    padding: 2.5% 4% 2.5% 4%;
+}
+
+.spacer-tmp {
+    width: 100vw;
+    height: 100px;
+}
+
+.p1-dashboard-team-mb {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.9px;
+    line-height: 1.5rem;
+    border: 2px solid #FFF;
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 0.25rem 1rem 0.25rem;   
+}
+
+@media screen and (max-width: 479px) {
+    .p1-dashboard-team-mb{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.9px;
+        line-height: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .p1-dashboard-team-mb{
+        font-size: 11px;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+    .p1-dashboard-team-mb {
+        padding: 2.5rem 0.25rem 1rem 0.75rem;
+        padding: 2rem 0.25rem 1rem 0.25rem;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .p1-dashboard-team-mb{
+        font-size: 9px;
+        padding: 1.5rem 0.25rem 0.5rem 0.25rem;
+    }
+}

@@ -15,7 +15,6 @@ const EventsUdgam = () => {
     navigate(path);
   }
   
-
   return (
     <>
       <Background />
