@@ -5,6 +5,7 @@
 
     width: 100vw;
     height: 90vh;
+    height: 65vh;
     justify-content: center;
     align-items: center;
 }
@@ -27,4 +28,17 @@
     right: 0;
     position: absolute;
     z-index: -1;   
+}
+
+.events-upcoming-back-button {
+    width: 10%;
+    /* background-color: aqua; */
+    margin: auto;
+    padding-top: 4%;
+    margin-right: 5%;
+}
+
+.events-upcoming-back-button:hover {
+    transform: scaleY(1.25) scaleX(1.25);
+    transition: ease-in-out;
 }
