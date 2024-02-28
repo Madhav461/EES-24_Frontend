@@ -24,7 +24,7 @@ const Navhome2 =() =>{
            </div>
         
       
-      <div className="relative bg-gray w-screen  h-[42px] 2k:h-[50px] flex  justice justify-between items-center  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
+      <div className="relative bg-gray w-screen  h-[50px] 2k:h-[50px] flex  justice justify-between items-center  overflow-hidden text-center text-base  text-white font-audiowide pb-3 overflow-x-hidden">
      
      <div className='flex items-center justify-center'>
       <div className="pb-8 z-50 pl-2  h-full left-[15px] pt-4 lg:hidden 2k:block">
@@ -142,6 +142,13 @@ const Navhome2 =() =>{
               src="/vector-line3.svg"
             />
           </div> */}
+          {/* <div className=' lg:flex 2k:hidden  hidden  items-center justify-center  '>
+           <img
+            className="flex items-center justify-center"
+            alt=""
+            src="/vector-line.svg" //uper white
+          />
+           </div> */}
         </div>
 
     </div>

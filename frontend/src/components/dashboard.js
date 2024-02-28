@@ -20,12 +20,13 @@ const Dashboard = () => {
 
   return (
     <div className="relative">
-      <div className="absolute ">
-        <Navhome />
-      </div>
-
+      {/* <div className="absolute "> */}
+       
+      {/* </div> */}
+      <Navhome className="z-10"/>
       {/* desktop view */}
-      <div className="dash_desktopview relative overflow-hidden">
+      <div className="dash_desktopview relative overflow-hidden z-[-1]">
+      
         <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -39,7 +40,7 @@ const Dashboard = () => {
 
         {/* <santosh> */}
         <div
-          className="dashboard-background card absolute"
+          className="dashboard-background  card absolute"
           style={{
             left: "50%",
             transform: "translateX(-50%)",
