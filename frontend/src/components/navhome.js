@@ -1,5 +1,6 @@
 import React from 'react'
-import WorkshopsTxt from "./NavbarComps/WorkshopsTxt.jsx";
+// import WorkshopsTxt from "./NavbarComps/WorkshopsTxt.jsx";
+import TeamsTxt from "./NavbarComps/TeamsTxt.jsx"
 // import "./nav.css";
 // import { Link } from 'react-router-dom';
 // import React, { useState } from 'react';
@@ -111,15 +112,14 @@ const Navhome2 =() =>{
           {/* <div className="flex  tracking-[0.08em] items-center  justify-center   cursor-pointer">
             Workshops
           </div> */}
-          <a href={'/'} className='text-white no-underline'>
-          <WorkshopsTxt></WorkshopsTxt>
-          </a>
+          
 
           {/* <WorkshopsTxt className="mb-[5px]"></WorkshopsTxt> */}
           {/* <div className="flex  tracking-[0.08em] items-center justify-centre  cursor-pointer">
             Sponsors
           </div> */}
          <a href={'/events'} className='text-white no-underline'> <EventsTxt></EventsTxt></a>
+         
           {/* <div className="tracking-[0.08em] flex items-center justify-center  glow cursor-pointer">
             Gallery
           </div> */}
@@ -128,6 +128,9 @@ const Navhome2 =() =>{
             Schedule
           </div> */}
           <a href={'/#schedule'} className='text-white no-underline'> <ScheduleTxt></ScheduleTxt> </a>
+          <a href={'/teams'} className='text-white no-underline'>
+          <TeamsTxt></TeamsTxt>
+          </a>
         </div>
           <img
             className="absolute top-[16px] mt-[16px]  w-screen overflow-hidden h-[26px]"

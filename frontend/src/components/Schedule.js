@@ -61,8 +61,8 @@ function Schedule() {
         <div id="schedule">
             {/* md defind as 768 px in tailwindcofig in screens */}
 
-            <div className='max-h-fit w-screen    border-t-[0.5px] border-b-[0.5px]  border-solid  border-[#FFF] '>
-                <div className='w-screen h-[1088px] border-solid border-[#FFF] border-y-[0.5px] my-[50px]'>
+            <div className='max-h-fit w-screen mt-[5%]   border-t-[0.5px] border-b-[0.5px]  border-solid  border-[#FFF] '>
+                <div className='w-screen h-[1088px] border-solid border-[#FFF] border-y-[0.5px] my-[50px] '>
                     <div className='  h-[1088px] '>
                         <div className=' h-[150px] flex border-solid border-[#FFF] border-b-[0.5px] items-center'>
                         {/* leading-[131px] */}

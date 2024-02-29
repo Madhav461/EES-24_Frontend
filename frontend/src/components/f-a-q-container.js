@@ -26,8 +26,8 @@ return (
   className="QUESTION-CONTAINER w-[100%] min-h-[79px] text-[22px] text-pitchdeck-slide-background font-goldman" style={{display:"flex", position:"relative", justifyContent:'center',alignItems:"center",margin:'7px 0 7px 0' , cursor:'pointer'}}
     >
       <div className="Question text-center leading-[150%] inline-block w-[84%]">
-       {/* {props.ques} */}
-      Navigate Through Frequently Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
+       {props.ques}
+       {/* Will there be any participation fees for any event? */}
       </div>
 
       <div className="bottom_left_border absolute bottom-[0px] left-[0px] w-[3.5%] h-[59%]">
@@ -72,13 +72,13 @@ return (
         <div className="absolute w-[83.98%] flex flex-col justify-center align-center" style={{left:'50%',top:'50%', transform:'translate(-50%,-50%)'}}>
         <div className="font-goldman answer_content text-[20px] leading-[150%] w-[100%]" >
 
-         {/* {props.ans} */}
-         Navigate Through Frequently Asked Questions to Enhance Your
+         {props.ans}
+         {/* Navigate Through Frequently Asked Questions to Enhance Your
           Understanding of Shadowfall Chronicles Navigate Through Frequently
           Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
           Navigate Through Frequently Asked Questions to Enhance Your
           Understanding of Shadowfall Chronicles Navigate Through Frequently
-          Asked Questions to Enhance Your Understanding of Shadowfall Chronicles
+          Asked Questions to Enhance Your Understanding of Shadowfall Chronicles */}
           
         </div>
         </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage";
+// import teams_individual from "./components/teams_individual.jsx";
+import TeamsIndividual from "./components/TeamsIndividual.jsx";
 import About from "./components/About";
 import navhome from "./components/navhome";
 import TEAMS_EXTERNAL from "./components/teams_external.js";
@@ -48,6 +50,15 @@ function App() {
             
             {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
+            <Route exact path="/teams/tech_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/web_team" element={<TeamsIndividual />}/>
+            <Route exact path="/teams/cultural_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/marketing_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/content_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/design_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/publicity_team" element={<TeamsIndividual />} />
+
+
 
           </Routes>
       </div>
