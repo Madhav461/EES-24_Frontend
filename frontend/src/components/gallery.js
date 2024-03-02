@@ -16,7 +16,7 @@ const Gallery = () => {
                     <BackButton/>
                     <img className='h-[5vw] ' src="/GALLERY.svg" alt="GALLERY_heading" />
                 </div>
-                <div className="glow-text w-[100vw]"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={35} className="marquee_container border-solid border-teal-300 border-y"><div class="marquee" className="marquee-font font-michroma text-turquoise text-[33px]"><AnimatedTextCharacter text="UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  -  "></AnimatedTextCharacter></div></Marquee></div>
+                <div className="glow-text w-[100vw]"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={35} className="marquee_container border-solid border-teal-300 border-y"><div class="marquee" className="marquee-font font-michroma text-turquoise text-[26px]"><AnimatedTextCharacter text="UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  - UDYAM  -  UDGAM  -  MASHAL  - "></AnimatedTextCharacter></div></Marquee></div>
             </div>
 
             <div className='heading_placeholder'></div>
