@@ -650,7 +650,7 @@ const Signup = () => {
             <div className="SignUpBtn  cursor-pointer">
              
            
-              <svg
+              <svg form="myForm" id="myForm" onClick={showFormData}
                 width="286"
                 height="72"
                 viewBox="0 0 286 72"
