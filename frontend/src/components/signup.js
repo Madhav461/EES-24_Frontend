@@ -13,6 +13,38 @@ const onSubmit = async (values, actions) => {
   actions.resetForm();
 };
 
+function showFormData() {
+  const formData = {
+    name: getElementValue('name'),
+    email: getElementValue('email'),
+    collegeName: getSelectValue('collegeName'),
+    year: getElementValue('year'),
+    password: getElementValue('password'),
+    confirmPassword: getElementValue('confirmPassword'),
+  };
+
+  console.log('Form Data:', formData);
+}
+
+function getElementValue(id) {
+  const element = document.getElementById(id);
+
+  // Check if the element exists before accessing its value
+  return element ? element.value : '';
+}
+
+function getSelectValue(id) {
+  const selectElement = document.getElementById(id);
+
+  // Check if the select element exists and has selected options
+  if (selectElement && selectElement.options) {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    return selectedOption ? selectedOption.value : '';
+  }
+
+  return '';
+}
+
 const Signup = () => {
   const {
     values,
@@ -87,7 +119,7 @@ const Signup = () => {
             className="h-[100%] w-[30%]   overflow-hidden justify-evenly items-center text-white amaan"
             style={{}}
           >
-            <form className="w-full h-[75%] m-2 formDiv" style={{}}>
+            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}}>
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
@@ -95,6 +127,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
+                  id="name"
                   placeholder="NAME"
                   style={{
                     fontFamily: "Goldman",
@@ -140,7 +173,7 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                            <div>
-  <select
+  <select id="collegeName"
     style={{
       fontFamily: "Goldman",
       fontSize: "18px",
@@ -259,7 +292,7 @@ const Signup = () => {
           {/* new code for signUp button and already have an account button mobile view */}
           <div className=" button-container  flex flex-col ">
             <div className="">
-              <button
+              <button form="myForm" id="myForm" onClick={showFormData}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
