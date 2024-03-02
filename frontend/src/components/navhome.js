@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, Fragment} from 'react'
 import WorkshopsTxt from "./NavbarComps/WorkshopsTxt.jsx";
 // import "./nav.css";
 // import { Link } from 'react-router-dom';
@@ -10,9 +10,17 @@ import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
 // import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
 import ScheduleTxt from "./NavbarComps/ScheduleTxt.jsx";
 import EventsTxt from './NavbarComps/EventsTxt.jsx';
+import { AuthContext } from './AuthProvider.js';
+import {Menu, Transition} from '@headlessui/react'
 // imoprt SponsorsTxt
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 const Navhome2 =() =>{
+  const { user } = useContext(AuthContext);
+
   return (
     <div className='bg-gray '>
        <div className=' lg:flex bg-gray 2k:hidden  hidden  items-center justify-center  '>
@@ -61,24 +69,26 @@ const Navhome2 =() =>{
 
         </ul> */}
        
-       <div className='flex z-10 justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8'>
+       <div className='flex z-10 justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8 space-x-5'>
+        {!user && 
         <div className="relative pr-5 pl-1 ml-2 flex grow">
-       <Link to="/login">
-          <button className="cursor-pointer  test [border:none] md:p-0 bg-[transparent] ">
-         
-         <div className="flex absolute top-[11px] md:left-[89px] bc:left-[100px]  box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]"/>
-         <div className="absolute top-[13px] left-[0px]  box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]"/>
-         <button className="cursor-pointer hidden glow-animation sm:flex  mx-3    [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
-                Login
-              </button>
-              <button className="cursor-pointer sm:hidden glow-animation [border:none] pr-9 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]" >
-              Sign-in
-              </button>
-         
-          </button>
-          </Link>
+        <Link to="/login">
+           <button className="cursor-pointer  test [border:none] md:p-0 bg-[transparent] ">
           
-        </div>
+          <div className="flex absolute top-[11px] md:left-[89px] bc:left-[100px]  box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]"/>
+          <div className="absolute top-[13px] left-[0px]  box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]"/>
+          <button className="cursor-pointer hidden glow-animation sm:flex  mx-3    [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
+                 Login
+               </button>
+               <button className="cursor-pointer sm:hidden glow-animation [border:none] pr-9 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]" >
+               Sign-in
+               </button>
+          
+           </button>
+           </Link>
+         </div>
+        }
+       {!user && 
        <div className='relative   hidden sm:flex  grow '>
        <Link to="/signup">
        <button className="cursor-pointer [border:none] ml-2 mr-5 pl-0 pr-0 bg-[transparent] ">
@@ -92,6 +102,84 @@ const Navhome2 =() =>{
             </button>
             </Link>
        </div>
+       }
+       {/* {user &&  */}
+       <Menu as="div" className="relative inline-block text-left">
+       <div>
+         <Menu.Button className="inline-flex w-full justify-center text-[#252B42] font-semibold hover:bg-gray-50 items-center">
+           Shop
+           <img
+             src={
+               "https://img.icons8.com/ios-glyphs/30/expand-arrow--v1.png"
+             }
+             alt="down-arrow"
+             width={16}
+             height={10}
+           />
+         </Menu.Button>
+       </div>
+
+       <Transition
+         as={Fragment}
+         enter="transition ease-out duration-100"
+         enterFrom="transform opacity-0 scale-95"
+         enterTo="transform opacity-100 scale-100"
+         leave="transition ease-in duration-75"
+         leaveFrom="transform opacity-100 scale-100"
+         leaveTo="transform opacity-0 scale-95"
+       >
+         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+           <div className="py-1">
+             <Menu.Item>
+               {({ active }) => (
+                 <a
+                   href="#"
+                   className={classNames(
+                     active
+                       ? "bg-gray-100 text-gray-900"
+                       : "text-gray-700",
+                       "block px-4 py-2 text-sm"
+                     )}
+                   >
+                     Hello there
+                   </a>
+                 )}
+               </Menu.Item>
+               <Menu.Item>
+                 {({ active }) => (
+                   <a
+                     href="#"
+                     className={classNames(
+                       active
+                         ? "bg-gray-100 text-gray-900"
+                         : "text-gray-700",
+                       "block px-4 py-2 text-sm"
+                     )}
+                   >
+                     Hello there
+                   </a>
+                 )}
+               </Menu.Item>
+               <Menu.Item>
+                 {({ active }) => (
+                   <a
+                     href="#"
+                     className={classNames(
+                       active
+                         ? "bg-gray-100 text-gray-900"
+                         : "text-gray-700",
+                       "block px-4 py-2 text-sm"
+                     )}
+                   >
+                     Hello there
+                   </a>
+                 )}
+                 </Menu.Item>
+                  </div>
+                </Menu.Items>
+              </Transition>
+              </Menu>
+       {/* } */}
      </div>
        
       
