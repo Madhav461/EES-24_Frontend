@@ -20,10 +20,9 @@ const Dashboard = () => {
 
   return (
     <div className="relative">
-      {/* <div className="absolute "> */}
-       
-      {/* </div> */}
+      <div className="absolute ">
       <Navhome className="z-10"/>
+      </div>
       {/* desktop view */}
       <div className="dash_desktopview relative overflow-hidden z-[-1]">
       
@@ -44,13 +43,14 @@ const Dashboard = () => {
           style={{
             left: "50%",
             transform: "translateX(-50%)",
-            background: "rgba(255, 255, 255, 0.05)",
+            // background: "rgba(255, 255, 255, 0.05)",
             top:'35%',
+            marginTop:"-1%",
           }}
         >
           <div className="abhinav absolute">
             <img
-              src="dashboardblack.svg"
+              src="/Vector 354 (2).svg"
               className="dashboard-background-image  object-cover w-full h-full p-0"
             />
             <div className="y19">
@@ -166,6 +166,7 @@ const Dashboard = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
+            marginTop: "-2%",
           }}
         >
           <div className=" h-[80%] ">
@@ -262,7 +263,7 @@ const Dashboard = () => {
             style={{
               textAlign: "center",
               color: "white",
-              fontSize: "3.5vw",
+              fontSize: "3.4vw",
               fontFamily: "Michroma",
               fontWeight: "400",
               letterSpacing: "1.5vw",
