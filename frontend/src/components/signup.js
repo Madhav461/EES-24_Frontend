@@ -1,9 +1,72 @@
 import React from "react";
-// import "../components/signup.css";
+import "../components/signup.css";
 import Navhome from "./navhome";
 import { Link } from 'react-router-dom';
+import { useFormik } from "formik";
+import { basicSchema } from "../schemas";
+import Collegelist from "./collegelist";
+
+const onSubmit = async (values, actions) => {
+  console.log(values);
+  console.log(actions);
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  actions.resetForm();
+};
+
+function showFormData() {
+  const formData = {
+    name: getElementValue('name'),
+    email: getElementValue('email'),
+    collegeName: getSelectValue('collegeName'),
+    year: getElementValue('year'),
+    password: getElementValue('password'),
+    confirmPassword: getElementValue('confirmPassword'),
+  };
+
+  console.log('Form Data:', formData);
+}
+
+function getElementValue(id) {
+  const element = document.getElementById(id);
+
+  // Check if the element exists before accessing its value
+  return element ? element.value : '';
+}
+
+function getSelectValue(id) {
+  const selectElement = document.getElementById(id);
+
+  // Check if the select element exists and has selected options
+  if (selectElement && selectElement.options) {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    return selectedOption ? selectedOption.value : '';
+  }
+
+  return '';
+}
 
 const Signup = () => {
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      email: "",
+      age: "",
+      password: "",
+      confirmPassword: "",
+    },
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+
+  console.log(errors);
+
   return (
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
@@ -56,7 +119,7 @@ const Signup = () => {
             className="h-[100%] w-[30%]   overflow-hidden justify-evenly items-center text-white amaan"
             style={{}}
           >
-            <form className="w-full h-[75%] m-2 formDiv" style={{}}>
+            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}}>
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
@@ -64,6 +127,7 @@ const Signup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
+                  id="name"
                   placeholder="NAME"
                   style={{
                     fontFamily: "Goldman",
@@ -81,49 +145,66 @@ const Signup = () => {
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
+                <label htmlFor="email"></label>
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
-                  placeholder="EMAIL"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                  }}
+                 value={values.email}
+                 onChange={handleChange}
+                 id="email"
+                 placeholder="EMAIL"
+                 type="email"
+                 className={errors.email && touched.email ? "input-error w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  " : "w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "}
+                 onBlur={handleBlur}
+                 style={{
+                   fontFamily: "Goldman",
+                   fontSize: "18px",
+                   fontStyle: "normal",
+                   fontWeight: 400,
+                   lineHeight: "normal",
+                   letterSpacing: "1.2px",
+                   borderBottom: "1px solid #FFF",
+                 }}
                 />
+                 {errors.email && touched.email && <p className="error">{errors.email}</p>}
+             
               </div>
 
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
-                <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
-                  placeholder="COLLEGE NAME"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                  }}
-                />
-              </div>
-
+                           <div>
+  <select id="collegeName"
+    style={{
+      fontFamily: "Goldman",
+      fontSize: "18px",
+      fontStyle: "normal",
+      fontWeight: 400,
+      lineHeight: "normal",
+      letterSpacing: "1.2px",
+      borderBottom: "1px solid #FFF",
+      width: "94%", // Set the width as needed
+      padding: "0.25rem 0.2rem",
+      color: "white",
+      background: "transparent",
+      borderRadius: "8px",
+      outline: "none",
+      
+    }}
+  >
+    <option style={{color:'black'}} value="" disabled selected>
+      COLLEGE NAME
+    </option>
+    <Collegelist/>
+  </select>
+</div>
+</div>
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
+                  type="number" id="year"  min="1" max="5"
                   placeholder="YEAR"
                   style={{
                     fontFamily: "Goldman",
@@ -142,19 +223,26 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
+                  id="password"
+                  type="password"
                   placeholder="PASSWORD"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.password && touched.password ? "input-error" : ""}
+                 style={{
+                   fontFamily: "Goldman",
+                   fontSize: "18px",
+                   fontStyle: "normal",
+                   fontWeight: 400,
+                   lineHeight: "normal",
+                   letterSpacing: "1.2px",
+                   borderBottom: "1px solid #FFF",
                   }}
                 />
+                           {errors.password && touched.password && (
+        <p className="error">{errors.password}</p>
+      )}
               </div>
 
               <div
@@ -162,19 +250,28 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
-                  placeholder="CONFIRM PASSWORD"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                  }}
-                />
+                  id="confirmPassword"
+                  type="password"
+                  placeholder="Confirm password"
+                  value={values.confirmPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.confirmPassword && touched.confirmPassword ? "input-error" : ""
+                  }
+                 style={{
+                   fontFamily: "Goldman",
+                   fontSize: "18px",
+                   fontStyle: "normal",
+                   fontWeight: 400,
+                   lineHeight: "normal",
+                   letterSpacing: "1.2px",
+                   borderBottom: "1px solid #FFF",
+                 }}
+               />
+               {errors.confirmPassword && touched.confirmPassword && (
+       <p className="error">{errors.confirmPassword}</p>
+     )}
               </div>
             </form>
             <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
@@ -195,7 +292,7 @@ const Signup = () => {
           {/* new code for signUp button and already have an account button mobile view */}
           <div className=" button-container  flex flex-col ">
             <div className="">
-              <button
+              <button form="myForm" id="myForm" onClick={showFormData}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
@@ -553,7 +650,7 @@ const Signup = () => {
             <div className="SignUpBtn  cursor-pointer">
              
            
-              <svg
+              <svg form="myForm" id="myForm" onClick={showFormData}
                 width="286"
                 height="72"
                 viewBox="0 0 286 72"

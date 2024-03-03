@@ -1,10 +1,57 @@
-import React from "react";
+import React, { useContext, useState} from "react";
 import "../components/login.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { useFormik } from "formik";
+import { basicSchema } from "../schemas";
+
+const onSubmit = async (values, actions) => {
+  console.log(values);
+  console.log(actions);
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  actions.resetForm();
+};
 
 const Login = () => {
+ 
+  function showFormData() {
+    const formData = {
+      email: getElementValue('email'),
+      password: getElementValue('password'),
+    };
+  
+    console.log('Form Data:', formData);
+  }
+  
+  function getElementValue(id) {
+    const element = document.getElementById(id);
+  
+    // Check if the element exists before accessing its value
+    return element ? element.value : '';
+  }
+
+  
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      email: "",
+      age: "",
+      password: "",
+      confirmPassword: "",
+    },
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+
+  console.log(errors);
   return (
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
@@ -65,20 +112,29 @@ const Login = () => {
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
+                <label htmlFor="email"></label>
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
-                  placeholder="EMAIL"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                  }}
+                 value={values.email}
+                 onChange={handleChange}
+                 id="email"
+                 placeholder="EMAIL"
+                 type="email"
+                 className={errors.email && touched.email ? "input-error w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  " : "w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "}
+                 onBlur={handleBlur}
+                 style={{
+                   fontFamily: "Goldman",
+                   fontSize: "18px",
+                   fontStyle: "normal",
+                   height:"auto",
+                   fontWeight: 400,
+                   lineHeight: "normal",
+                   letterSpacing: "1.2px",
+                   borderBottom: "1px solid #FFF",
+                 }}
                 />
+                 {errors.email && touched.email && <p className="error">{errors.email}</p>}
+             
+
               </div>
 
               {/* <div
@@ -145,20 +201,28 @@ const Login = () => {
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
-                <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="text"
+                 <input
+                  id="password"
+                  type="password"
                   placeholder="PASSWORD"
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.password && touched.password ? "input-error" : ""}
+                 style={{
+                   fontFamily: "Goldman",
+                   height:"auto",
+                   fontSize: "18px",
+                   fontStyle: "normal",
+                   fontWeight: 400,
+                   lineHeight: "normal",
+                   letterSpacing: "1.2px",
+                   borderBottom: "1px solid #FFF",
                   }}
                 />
+                           {errors.password && touched.password && (
+        <p className="error">{errors.password}</p>
+      )}
               </div>
 
               {/* <div
@@ -181,7 +245,7 @@ const Login = () => {
                 />
               </div> */}
 
-              <div className=" w-[100%] h-[20%] LogInButtonForLaptop ">
+              <div className=" w-[100%] h-[20%] LogInButtonForLaptop cursor-pointer " onClick={showFormData}>
                 <svg
                   width="100%"
                   height="100%"
@@ -202,7 +266,7 @@ const Login = () => {
               </Link>
             </form>
             <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
-              <div className=" w-[100%] LogInButtonForLaptop h-[100%] ">
+              <div className=" w-[100%] LogInButtonForLaptop h-[100%] " onClick={showFormData}>
                 <svg
                   width="75%"
                   height="75%"
@@ -225,7 +289,7 @@ const Login = () => {
           {/* new code for signUp button and already have an account button mobile view */}
           <div className=" button-container   flex flex-col ">
             <div className="">
-              <button
+              <button onClick={showFormData}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
@@ -254,7 +318,7 @@ const Login = () => {
                     Create an account?
                   </p>
                 </div>
-                <div className="loginBtn cursor-pointer relative w-[100%] h-[40%] ">
+                <div className="loginBtn cursor-pointer relative w-[100%] h-[40%] " onClick={showFormData}>
                   <svg
                     width="100%"
                     height="100%"

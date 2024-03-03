@@ -148,23 +148,23 @@ function HamburgerMenu() {
       <Navigation className=" overflow-hidden bg-[url('/public/hambg3.svg')] bg-opacity-0 " clicked={click}>
         <List  className="font-goldman glow-text flex flex-col items-center" >
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/events">
-              Events
+            <ItemLink onClick={handleClick} to="/">
+              Workshops
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/#schedule">
+            <ItemLink onClick={handleClick} to="/">
               Schedule
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/gallery">
+            <ItemLink onClick={handleClick} to="/">
               Gallery
             </ItemLink>
           </li>
           <li class="list_point">
-            <ItemLink onClick={handleClick} to="/teams">
-              Teams
+            <ItemLink onClick={handleClick} to="/events">
+              Events
             </ItemLink>
           </li>
          
