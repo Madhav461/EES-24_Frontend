@@ -121,7 +121,7 @@ const Footerlinks = () => {
               />
             </g>
             <svg width="340" height="50" xmlns="http://www.w3.org/2000/svg">
-              <a href="https://www.example.com" target="_blank">
+              <a href="https://www.iitbhu.ac.in/dept/ece" target="_blank">
                 <rect x="39" width="100%" height="80%" fill="black" />
                 <text x="43" y="25" fill="white">
                   Links
