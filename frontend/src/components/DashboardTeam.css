@@ -13,11 +13,12 @@
     margin: auto;
 }
 
-.team-dashboard-name {
-    width: 30%;
+.teams-registered-dashboard {
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-top: 10%;
 }
 
 .team-dashboard-members {
@@ -26,12 +27,12 @@
     justify-content: space-between;
     border: 2px solid #FFF;
     /* padding: 2%; */
-    width: 40%;
+    width: 60%;
 }
 
-.team-dashboard-radinite {
+/* .team-dashboard-radinite {
     width: 30%;
-}
+} */
 
 .team-dashboard-members-names {
     display: flex;
@@ -60,7 +61,7 @@
 }
 
 .p1-dashboard-team-mb {
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     grid-row: 2 / 4;
     display: flex;
     flex-direction: column;
@@ -76,6 +77,35 @@
     padding: 2rem 0.25rem 1rem 0.25rem;   
 }
 
+.name-dashboard-team-mb {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    color: #FFF;
+    font-family: Michroma;
+    /* font-size: 58px; */
+    font-style: normal;
+    /* font-weight: 400; */
+    line-height: normal;
+    /* letter-spacing: 4.35px; */
+    border: 2px solid #FFF;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 0.25rem 1rem 1rem; 
+    margin-bottom: -1.25rem;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 2.325px;
+}
+
+.teams-registered-dashboard {
+    width: 350px;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.team-name-dashboard {
+    padding: 10%;
+}
+
 @media screen and (max-width: 479px) {
     .p1-dashboard-team-mb{
         font-size: 12px;
@@ -84,11 +114,21 @@
         letter-spacing: 0.9px;
         line-height: 1.5rem;
     }
+
+    .name-dashboard-team-mb {
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: 2.325px;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .p1-dashboard-team-mb{
         font-size: 11px;
+    }
+
+    .name-dashboard-team-mb {
+        margin-bottom: -1.25rem;
     }
 }
 
@@ -99,11 +139,21 @@
         padding: 2rem 0.25rem 1rem 0.25rem;
         font-size: 11px;
     }
+
+    .name-dashboard-team-mb {
+        font-size: 22px;
+        margin-bottom: -1.5rem;
+    }
 }
 
 @media screen and (max-width: 350px) {
     .p1-dashboard-team-mb{
         font-size: 9px;
         padding: 1.5rem 0.25rem 0.5rem 0.25rem;
+    }
+
+    .name-dashboard-team-mb {
+        font-size: 18px;
+        margin-bottom: -3.5rem;
     }
 }
