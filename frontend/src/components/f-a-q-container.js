@@ -41,9 +41,9 @@ return (
     </div>
 
 {/* using conditional rendering of Answer-container if faq question-container is clicked */}
-     { IsOpen && <div className="ANSWER-CONTAINER min-h-[320px] (IsOpen ? 'slide-out' : '') relative flex flex-col w-[100%]" style={{transition:''}} >
+     { IsOpen && <div className="ANSWER-CONTAINER min-h-[150px] (IsOpen ? 'slide-out' : '') relative flex flex-col w-[100%]" style={{transition:''}} >
 
-      <button onClick={toggleAns} className="w-[35px] h-[35px] absolute top-[3.5%] right-[0.9%] cursor-pointer" style={{zIndex:'5', transition:''}}>
+      <button onClick={toggleAns} className="w-[21px] h-[21px] absolute top-[3.5%] right-[0.9%] cursor-pointer" style={{zIndex:'5', transition:''}}>
         <img src="https://img.icons8.com/?size=256&id=A4DsujzAX4rw&format=png" className="w-[100%] h-[100%] absolute top-[0px] left-[0px]"></img>
       </button>
 
@@ -70,7 +70,7 @@ return (
         </div> */}
         
         <div className="absolute w-[83.98%] flex flex-col justify-center align-center" style={{left:'50%',top:'50%', transform:'translate(-50%,-50%)'}}>
-        <div className="font-goldman answer_content text-[20px] leading-[150%] w-[100%]" >
+        <div className="font-goldman answer_content text-center text-[20px] leading-[150%] w-[100%]" >
 
          {props.ans}
          {/* Navigate Through Frequently Asked Questions to Enhance Your
