@@ -1,27 +1,28 @@
 import "./Events.css";
 import "./EventsUpcoming.css";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+// import { useNavigate } from "react-router-dom";
 
 import Background from "./background";
 import Navhome2 from "./navhome";
 import Footer from "./Footer";
 
-const EventsUdgam = () => {
+const TeamsIndividual = () => {
 
-  let navigate = useNavigate();
-  const routeChange = (route) => {
-    let path = `/events`;
-    navigate(path);
-  }
+//   let navigate = useNavigate();
+//   const routeChange = (route) => {
+//     let path = `/teams`;
+//     navigate(path);
+//   }
   
   return (
     <>
       <Background />
       <Navhome2 />
-      <div className="events-upcoming-back-button" onClick={routeChange}>
+      <a href="/teams"><div className="events-upcoming-back-button" >
         <img src="/events-udyam-back-button.svg" alt=""></img>
       </div>
+      </a>
         <div className="events-upcoming-container">
           <img className="events-upcoming-background" src="/events-coming-soon.svg" alt=""></img>
         </div>
@@ -53,4 +54,4 @@ const EventsUdgam = () => {
   // );
 };
 
-export default EventsUdgam;
+export default TeamsIndividual;

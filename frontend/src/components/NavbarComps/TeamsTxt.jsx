@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 import {useScramble} from "use-scramble";
-function WorkshopsTxt(){
-    const title_word="Workshops";
+function TeamsTxt(){
+    const title_word="Teams";
     const [sample, setSample] = React.useState(title_word);
 
     const params = {
@@ -23,10 +23,10 @@ function WorkshopsTxt(){
     replay();
   }
     return(
-         <div className="font-audiowide flex tracking-[0.08em] items-center justify-center ls:w-[110px] w-[95px] h-[38px] glow-text cursor-pointer">
+         <div className="font-audiowide flex tracking-[0.08em] items-center justify-center ls:w-[110px] w-[45px] h-[38px] glow-text cursor-pointer">
         <p onMouseLeave={HandleHover} ref={ref}></p>
         </div>
     )
 }
 
-export default WorkshopsTxt;
+export default TeamsTxt;

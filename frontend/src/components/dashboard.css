@@ -1,43 +1,43 @@
 /* Switching between desktop/mobile views*/
-
 @media screen and (min-width: 1920px) {
-    .mobileview {
+    .dash_mobileview {
         display: none;
         /* visibility:hidden; */
     }
 
-    .desktopview {
+    .dash_desktopview {
         display: none;
         /* visibility:hidden; */
     }
-}
-.bgimg img{
-    opacity: 0.6;
 }
 @media screen and (max-width: 1921px) {
-    .mobileview {
+    .dash_mobileview {
         display: none;
         /* visibility:hidden; */
     }
 
-    .desktopview {
-        visibility:visible;
+    .dash_desktopview {
+        /* visibility:visible; */
         display: flex;
     }
 }
 
 @media screen and (max-width: 575px) {
-    .desktopview {
+    .dash_desktopview {
         display: none;
         /* visibility:hidden; */
     }
 
-    .mobileview {
+    .dash_mobileview {
+        /* visibility:visible; */
         display: flex;
-        /* visibility:hidden; */
     }
 }
 
+
+.bgimg img{
+    opacity: 0.6;
+}
 .y69{
     /* margin-top: 3%; */
     font-size: 23px;
@@ -1032,6 +1032,7 @@
     border-bottom: 1.8px solid black;
     margin-bottom: 0px;
     font-family: Michroma;
+    height:22px;
 }
 .y49{
     display: inline-block;
@@ -1042,9 +1043,10 @@
     border-bottom: 1.8px solid black;
     margin-bottom: 0px;
     font-family: Michroma;
+    height:22px;
 }
 .y56{
-    width:79.5vw;
+    width:78vw;
 }
 #Name{
     border:none;
@@ -1142,8 +1144,30 @@
         font-family: Michroma;
         font-size: 13px;
     }
+    .y39{
+        display: inline-block;
+        position:absolute;
+        left:10%;
+        top:15%;
+        width:60vw;
+        border-bottom: 1.8px solid black;
+        margin-bottom: 0px;
+        font-family: Michroma;
+        height:22px;
+    }
+    .y49{
+        display: inline-block;
+        position:absolute;
+        left:10%;
+        top:28%;
+        width:60vw;
+        border-bottom: 1.8px solid black;
+        margin-bottom: 0px;
+        font-family: Michroma;
+        height:22px;
+    }
 }
-@media (max-width:1200px) and (min-width:1001px){
+@media (max-width:1100px) and (min-width:1001px){
     #Name{
         border:none;
         display: inline-block;
@@ -1177,8 +1201,68 @@
         top:53%;
         left:9%;
     }
+    .y39{
+        display: inline-block;
+        position:absolute;
+        left:10%;
+        top:19%;
+        width:64vw;
+        border-bottom: 1.8px solid black;
+        margin-bottom: 0px;
+        font-family: Michroma;
+        height:22px;
+    }
+    .y49{
+        display: inline-block;
+        position:absolute;
+        left:10%;
+        top:32%;
+        width:64vw;
+        border-bottom: 1.8px solid black;
+        margin-bottom: 0px;
+        font-family: Michroma;
+        height:22px;
+    }
 }
-@media (min-height:1024px){
+@media (max-width:1200px) and (min-width:1101px){
+    #Name{
+        border:none;
+        display: inline-block;
+        padding-right: 8%;
+    }
+    #Email{
+        border:none;
+        display:inline-block;
+        padding-right: 8%;
+    }
+    #Electronics{
+        border:none;
+        display: inline-block;
+        padding-right:8%;
+    }
+    #PhoneNumber{
+        border:none;
+        display: inline-block;
+    }
+    #Year{
+        border:none;
+        display: inline-block;
+    }
+    #College{
+        border:none;
+        display: inline-block;
+        padding-right: 8%;
+    }
+    .yashtheman{
+        position: absolute;
+        top:53%;
+        left:9%;
+    }
+    .y56{
+        width:82.5vw;
+    }
+}
+/*@media (min-height:1024px){
     .y29{
         left:1%;
         position:absolute;
@@ -1203,7 +1287,13 @@
         border-bottom: 1.5px dotted black;
         margin-bottom: 0px;
     }
+}*/
+@media (max-width:1440px) and (min-width:1201px){
+    .y56{
+        width:82vw;
+    }
 }
+
 @media (min-width:1600px){
     .y56{
         width:68.5vw;

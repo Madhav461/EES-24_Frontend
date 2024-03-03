@@ -51,9 +51,9 @@ const Hero = () => {
 
     <div className="main_hero h-auto w-screen ">
       <div id="hero_container" className="hero_container1123 border-solid mt-[30px] border-white">
-        {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
-        <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
-      {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-solid border-white border-y-2"><p class="marquee" className="marquee-font font-michroma text-white "><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
+        {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><p class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
+        <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white "><div class="marquee font-michroma text-white"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
+      {/* <div className="glow-text "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-solid border-white border-y-2"><p class="marquee" className="marquee-font font-michroma text-white "><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></p></Marquee></div> */}
 
         <div className="container">
           <div className="p1">
@@ -83,7 +83,7 @@ const Hero = () => {
 
       {/* MOBILE VIEW */}
       <div id="hero_container-mb" className="mb_hero_container border-solid mt-[26px] border-white">
-        <div className="glow-text-mb "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container-mb border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
+        <div className="glow-text-mb "><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container-mb border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETITIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee></div>
 
         <div className="container-hero-mb">
 

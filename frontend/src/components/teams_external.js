@@ -6,7 +6,7 @@ import Navhome2 from "./navhome";
 const TEAMS_EXTERNAL = () => {
 
    const handleClick1 = () => {
-      window.location.href = 'url'; 
+      window.location.href = '/teams/tech_team'; 
     };
 
     const handleClick2 = () => {
@@ -84,7 +84,7 @@ const TEAMS_EXTERNAL = () => {
       <div className="cards p-1">
       <div className="internal_matter" style={styles}>
       <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-      <a href="your-target-url" onClick={handleClick1}>
+      <a href="/teams/tech_team" onClick={handleClick1}>
         <img
           className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
           src="/teams_external_card.svg"
@@ -94,7 +94,7 @@ const TEAMS_EXTERNAL = () => {
     
 
     <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-    <a href="your-target-url" onClick={handleClick2}>
+    <a href="/teams/web_team" onClick={handleClick2}>
       <img
         className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
         src="/teams_external_web.svg"
@@ -102,7 +102,7 @@ const TEAMS_EXTERNAL = () => {
       /></a>
     </div>
     <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-    <a href="your-target-url" onClick={handleClick3}>
+    <a href="/teams/design_team" onClick={handleClick3}>
       <img
         className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
         src="/teams_external_design.svg"
@@ -110,7 +110,7 @@ const TEAMS_EXTERNAL = () => {
       /></a>
     </div>
     <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-    <a href="your-target-url" onClick={handleClick4}>
+    <a href="/teams/marketing_team" onClick={handleClick4}>
       <img
         className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
         src="/teams_external_marketing.svg"
@@ -118,7 +118,7 @@ const TEAMS_EXTERNAL = () => {
       /></a>
     </div>
     <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-    <a href="your-target-url" onClick={handleClick5}>
+    <a href="/teams/publicity_team" onClick={handleClick5}>
       <img
         className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
         src="/teams_external_publi.svg"
@@ -126,7 +126,7 @@ const TEAMS_EXTERNAL = () => {
       /></a>
     </div>
     <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-    <a href="your-target-url" onClick={handleClick6}>
+    <a href="/teams/content_team" onClick={handleClick6}>
       <img
         className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
         src="/teams_external_content.svg"
@@ -134,7 +134,7 @@ const TEAMS_EXTERNAL = () => {
       /></a>
     </div>
     <div className="card1_teams_ext h-auto w-auto relative inline-block transition-all duration-300 ease-in-out transform hover:scale-110">
-    <a href="your-target-url" onClick={handleClick7}>
+    <a href="/teams/cultural_team" onClick={handleClick7}>
       <img
         className="hover_effect card_teams_external filter brightness-110 cursor-pointer hover:shadow-lg"
         src="/teams_external_cultural.svg"

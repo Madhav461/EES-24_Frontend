@@ -23,7 +23,7 @@ const EventsHome = () => {
       <div className="events-home-main">
         <img className="events-home-heading-svg" src="/events-home-heading.svg" alt=""></img>
       </div>
-      <div className="glow-text events-home-marquee"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS * EVENTS * WORKSHOPS * COMPETETIONS * LECTURES * STALLS * SPORTS * PERFORMENCES * ARTS *"></AnimatedTextCharacter></div></Marquee> </div>
+      <div className="glow-text events-home-marquee"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="UDYAM | | UDGAM | | MASHAL | |  THE EPITOME OF TECHNICAL EXCELLENCE AT IIT BHU"></AnimatedTextCharacter></div></Marquee> </div>
       <div className="events-home-container">
         <div class="events-home-card" onClick={() => routeChange("udyam")}>
           <img className="events-home-svg" src="events-udyam.svg" alt=""></img>

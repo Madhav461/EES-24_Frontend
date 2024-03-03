@@ -261,7 +261,7 @@ export const About = () => {
   
     <div>
       
-    <div className=" w-sceen  h-[635px]  pt-[117px] flex desktopview_aboutus    " >
+    <div className=" w-sceen  h-[635px] mt-[5%] flex desktopview_aboutus   mr-0 " >
       <div className="w-[5.7%]   ">
       {/* <img src="about_us_desktopview_Lines - Wave.svg"  style={{ width:'40px', height: '100%' }}    /> */}
       

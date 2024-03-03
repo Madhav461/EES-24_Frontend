@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage";
+// import teams_individual from "./components/teams_individual.jsx";
+import TeamsIndividual from "./components/TeamsIndividual.jsx";
 import About from "./components/About";
 import navhome from "./components/navhome";
 import TEAMS_EXTERNAL from "./components/teams_external.js";
@@ -11,6 +13,7 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 
 import Dashboard from "./components/dashboard.js";
+import DashboardTeam from "./components/DashboardTeam.jsx";
 import Gallery from "./components/gallery.js";
 
 // import Events from "./components/events.js";
@@ -35,6 +38,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/otp" element={<OtpVerification />} />
+            <Route exact path="/dashboard/team" element={<DashboardTeam />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<EventsHome />} />
             <Route exact path="/gallery" element={<Gallery />} />
@@ -46,6 +50,15 @@ function App() {
             
             {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
+            <Route exact path="/teams/tech_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/web_team" element={<TeamsIndividual />}/>
+            <Route exact path="/teams/cultural_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/marketing_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/content_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/design_team" element={<TeamsIndividual />} />
+            <Route exact path="/teams/publicity_team" element={<TeamsIndividual />} />
+
+
 
           </Routes>
       </div>
