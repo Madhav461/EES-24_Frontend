@@ -22,6 +22,7 @@ import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
 import OtpVerification from "./components/OtpVerification.jsx";
+import EventRegistration from "./components/EventRegistration.jsx";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route exact path="/events/udyam" element={<EventsUdyam />} />
             <Route exact path="/events/udgam" element={<EventsUdgam />} />
             <Route exact path="/events/mashal" element={<EventsMashal />} />
+            <Route exact path="/events/invite" element={<EventRegistration />} />
             
             {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
