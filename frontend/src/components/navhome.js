@@ -94,8 +94,7 @@ const Navhome2 =() =>{
             </Link>
        </div>
      </div>
-      !samay shaswat hai , hamesha!
-      
+     
        </div>
        {/* <div className=' bg-white block lg:hidden 2k:block w-full h-0.5 rounded-full'/> */}
       
