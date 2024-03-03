@@ -29,28 +29,28 @@ function Speaker() {
     <div style={{"position":"relative"}}>
     <img className="surendradesk" alt="" src="/surendra.svg" />  
     <img className="surendramob" alt="" src="/surendra.svg" />
-    <img className="Linkedin2" alt="" src={linkedin4} onMouseOver={()=>uselinkedin4('/linkedin3.svg')} onMouseLeave={()=>uselinkedin4('/linkedin2.svg')} onClick={()=>{window.location.href='https://linkedin.com/in/vikash-mishra-67a71911/%20'}}></img> 
+    <img className="Linkedin2" alt="" src={linkedin4} onMouseOver={()=>uselinkedin4('/linkedin3.svg')} onMouseLeave={()=>uselinkedin4('/linkedin2.svg')} onClick={()=>{window.open('https://linkedin.com/in/vikash-mishra-67a71911/','_blank')}}></img> 
     </div>
     </div>
     <div className="con2">
     <div style={{"position":"relative"}}>
     <img className="mathangidesk" alt="" src="/mathangi.svg" /> 
     <img className="mathangimob" alt="" src="/mathangi.svg" /> 
-    <img className="Linkedin2" alt="" src={linkedin2} onMouseOver={()=>uselinkedin2('/linkedin3.svg')} onMouseLeave={()=>uselinkedin2('/linkedin2.svg')} onClick={()=>{window.location.href='https://www.linkedin.com/in/mathangisri/?originalSubdomain=in%20'}}></img> 
+    <img className="Linkedin2" alt="" src={linkedin2} onMouseOver={()=>uselinkedin2('/linkedin3.svg')} onMouseLeave={()=>uselinkedin2('/linkedin2.svg')} onClick={()=>{window.open('https://www.linkedin.com/in/mathangisri/?originalSubdomain=in%20','_blank')}}></img> 
     </div>
     </div>
     <div className="con3">
     <div style={{"position":"relative"}}>
     <img className="subhdesk" alt="" src="/subh.svg" /> 
     <img className="subhmob" alt="" src="/subh.svg" /> 
-    <img className="Linkedin2" alt="" src={linkedin3} onMouseOver={()=>uselinkedin3('/linkedin3.svg')} onMouseLeave={()=>uselinkedin3('/linkedin2.svg')} onClick={()=>{window.location.href='https://www.linkedin.com/in/surendranathreddy/%20%20'}}></img> 
+    <a href="https://www.linkedin.com/in/surendranathreddy/" target="_blank" rel="noopener noreferrer"><img className="Linkedin2" alt="" src={linkedin3} onMouseOver={()=>uselinkedin3('/linkedin3.svg')} onMouseLeave={()=>uselinkedin3('/linkedin2.svg')}></img></a>
     </div>
     </div>
     <div className="con4">
     <div style={{"position":"relative"}}>
     <img className="ronitdesk" alt="" src="/ronit.svg" />   
     <img className="ronitmob" alt="" src="/ronit.svg" />
-    <img className="Linkedin2" alt="" src={linkedin} onMouseOver={shaktiman} onMouseLeave={pantman} onClick={()=>{window.location.href='https://www.linkedin.com/in/raj-ronit/?originalSubdomain=ie'}}></img> 
+    <img className="Linkedin2" alt="" src={linkedin} onMouseOver={shaktiman} onMouseLeave={pantman} onClick={()=>{window.open('https://www.linkedin.com/in/raj-ronit/?originalSubdomain=ie','_blank')}}></img> 
     </div> 
     </div>
     </>
