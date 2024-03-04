@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -37,6 +39,7 @@
     background-image: url("/public/Vector 91.svg");
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 0;
   }
   
   .SignUp-card-blackDiv {
@@ -173,7 +176,7 @@
       background-image: unset;
       background: white;
       height: 20%;
-      margin-bottom: 20%;
+      margin-bottom: 0%;
     }
   
     .none {
@@ -368,6 +371,7 @@
       background-image: unset;
       background: white;
       height: 20%;
+      margin-bottom: 0;
       /* margin-bottom: 20%; */
     }
   
@@ -493,8 +497,8 @@
   }
  
   
-  input,
-  select {
+  input,select
+   {
     width: 92%;
     height: 20%;
     padding-left: 4px;

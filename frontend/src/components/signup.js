@@ -1,7 +1,7 @@
 import React from "react";
 import "../components/signup.css";
 import Navhome from "./navhome";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import Collegelist from "./collegelist";
@@ -15,22 +15,22 @@ const onSubmit = async (values, actions) => {
 
 function showFormData() {
   const formData = {
-    name: getElementValue('name'),
-    email: getElementValue('email'),
-    collegeName: getSelectValue('collegeName'),
-    year: getElementValue('year'),
-    password: getElementValue('password'),
-    confirmPassword: getElementValue('confirmPassword'),
+    name: getElementValue("name"),
+    email: getElementValue("email"),
+    collegeName: getSelectValue("collegeName"),
+    year: getElementValue("year"),
+    password: getElementValue("password"),
+    confirmPassword: getElementValue("confirmPassword"),
   };
 
-  console.log('Form Data:', formData);
+  console.log("Form Data:", formData);
 }
 
 function getElementValue(id) {
   const element = document.getElementById(id);
 
   // Check if the element exists before accessing its value
-  return element ? element.value : '';
+  return element ? element.value : "";
 }
 
 function getSelectValue(id) {
@@ -39,10 +39,10 @@ function getSelectValue(id) {
   // Check if the select element exists and has selected options
   if (selectElement && selectElement.options) {
     const selectedOption = selectElement.options[selectElement.selectedIndex];
-    return selectedOption ? selectedOption.value : '';
+    return selectedOption ? selectedOption.value : "";
   }
 
-  return '';
+  return "";
 }
 
 const Signup = () => {
@@ -90,10 +90,16 @@ const Signup = () => {
             SIGN UP
           </div>
         </div>
-
         <div
           className="SignUp-card-blackDiv w-[96%] h-[60%] text-white  relative"
-          style={{}}
+          style={{
+            
+    paddingTop: '10px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    marginTop: '0px',
+
+          }}
         >
           <div
             className="h-[100%] w-[30%]  flex flex-col relative     none"
@@ -125,7 +131,7 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                  className=""
                   type="text"
                   id="name"
                   placeholder="NAME"
@@ -147,64 +153,69 @@ const Signup = () => {
               >
                 <label htmlFor="email"></label>
                 <input
-                 value={values.email}
-                 onChange={handleChange}
-                 id="email"
-                 placeholder="EMAIL"
-                 type="email"
-                 className={errors.email && touched.email ? "input-error w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  " : "w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "}
-                 onBlur={handleBlur}
-                 style={{
-                   fontFamily: "Goldman",
-                   fontSize: "18px",
-                   fontStyle: "normal",
-                   fontWeight: 400,
-                   lineHeight: "normal",
-                   letterSpacing: "1.2px",
-                   borderBottom: "1px solid #FFF",
-                 }}
+                  value={values.email}
+                  onChange={handleChange}
+                  id="email"
+                  placeholder="EMAIL"
+                  type="email"
+                  className={errors.email && touched.email ? "input-error" : ""}
+                  onBlur={handleBlur}
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
                 />
-                 {errors.email && touched.email && <p className="error">{errors.email}</p>}
-             
+                {errors.email && touched.email && (
+                  <p className="error">{errors.email}</p>
+                )}
               </div>
 
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
-                           <div>
-  <select id="collegeName"
-    style={{
-      fontFamily: "Goldman",
-      fontSize: "18px",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "normal",
-      letterSpacing: "1.2px",
-      borderBottom: "1px solid #FFF",
-      width: "94%", // Set the width as needed
-      padding: "0.25rem 0.2rem",
-      color: "white",
-      background: "transparent",
-      borderRadius: "8px",
-      outline: "none",
-      
-    }}
-  >
-    <option style={{color:'black'}} value="" disabled selected>
-      COLLEGE NAME
-    </option>
-    <Collegelist/>
-  </select>
-</div>
-</div>
+                <div>
+                  <select
+                    id="collegeName"
+                    style={{
+                      padding:'0.4%',
+                      width:'93%',
+                      fontFamily: "Goldman",
+                      fontSize: "18px",
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                      letterSpacing: "1.2px",
+                      borderBottom: "1px solid #FFF",
+                    }}
+                  >
+                    <option
+                      style={{ color: "black" }}
+                      value=""
+                      disabled
+                      selected
+                    >
+                      COLLEGE NAME
+                    </option>
+                    <Collegelist />
+                  </select>
+                </div>
+              </div>
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                  type="number" id="year"  min="1" max="5"
+                  className=" "
+                  type="number"
+                  id="year"
+                  min="1"
+                  max="5"
                   placeholder="YEAR"
                   style={{
                     fontFamily: "Goldman",
@@ -229,20 +240,22 @@ const Signup = () => {
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={errors.password && touched.password ? "input-error" : ""}
-                 style={{
-                   fontFamily: "Goldman",
-                   fontSize: "18px",
-                   fontStyle: "normal",
-                   fontWeight: 400,
-                   lineHeight: "normal",
-                   letterSpacing: "1.2px",
-                   borderBottom: "1px solid #FFF",
+                  className={
+                    errors.password && touched.password ? "input-error" : ""
+                  }
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
                   }}
                 />
-                           {errors.password && touched.password && (
-        <p className="error">{errors.password}</p>
-      )}
+                {errors.password && touched.password && (
+                  <p className="error">{errors.password}</p>
+                )}
               </div>
 
               <div
@@ -257,42 +270,37 @@ const Signup = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    errors.confirmPassword && touched.confirmPassword ? "input-error" : ""
+                    errors.confirmPassword && touched.confirmPassword
+                      ? "input-error"
+                      : ""
                   }
-                 style={{
-                   fontFamily: "Goldman",
-                   fontSize: "18px",
-                   fontStyle: "normal",
-                   fontWeight: 400,
-                   lineHeight: "normal",
-                   letterSpacing: "1.2px",
-                   borderBottom: "1px solid #FFF",
-                 }}
-               />
-               {errors.confirmPassword && touched.confirmPassword && (
-       <p className="error">{errors.confirmPassword}</p>
-     )}
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
+                />
+                {errors.confirmPassword && touched.confirmPassword && (
+                  <p className="error">{errors.confirmPassword}</p>
+                )}
               </div>
             </form>
             <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
-              <svg
-                width="75%"
-                height="75%"
-                viewBox="0 0 45 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M20 0V20H0" stroke="white" stroke-width="2" />
-                <path d="M0 28H20V48" stroke="white" stroke-width="2" />
-                <path d="M25 48L25 28L45 28" stroke="white" stroke-width="2" />
-              </svg>
+              
             </div>
           </div>
 
           {/* new code for signUp button and already have an account button mobile view */}
           <div className=" button-container  flex flex-col ">
             <div className="">
-              <button form="myForm" id="myForm" onClick={showFormData}
+              <button
+                form="myForm"
+                id="myForm"
+                onClick={showFormData}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
@@ -646,11 +654,12 @@ const Signup = () => {
                 <path d="M20 0V20H0" stroke="white" stroke-width="2" />
               </svg>
             </div>
-              {/* this svg is the sign up button in laptop view  */}
+            {/* this svg is the sign up button in laptop view  */}
             <div className="SignUpBtn  cursor-pointer">
-             
-           
-              <svg form="myForm" id="myForm" onClick={showFormData}
+              <svg
+                form="myForm"
+                id="myForm"
+                onClick={showFormData}
                 width="286"
                 height="72"
                 viewBox="0 0 286 72"
@@ -683,7 +692,6 @@ const Signup = () => {
                   fill="#020202"
                 />
               </svg>
-
             </div>
 
             <div className="h-[20%] w-full">
