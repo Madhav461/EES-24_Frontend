@@ -1,4 +1,6 @@
-
+.googlesignup:hover {
+  cursor: pointer; /* Change cursor to pointer when hovering */
+}
 .SignUp {
   color: #000;
   text-align: center;

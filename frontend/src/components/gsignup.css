@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .SignUp {
+    color: #000;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 1.35rem;
+    margin-top: 8%;
+    padding: 3%;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 5.775px;
+    margin-left: 1%;
+  }
+  
+  /* Medium screens and above */
+  @media (min-width: 768px) {
+    .SignUp-card-heading {
+      font-size: 0.5rem;
+    }
+  }
+  
+  /* Large screens and above */
+  @media (min-width: 1024px) {
+    .SignUp-card-heading {
+      font-size: 1rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  
+  .SignUp-card-whiteDiv {
+    background-image: url("/public/Vector 91.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .SignUp-card-blackDiv {
+    background-image: url("../../public/Vector 92.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 100%;
+  }
+  
+  .EES-logo {
+    background-image: url("../../public/ees_logo_FCFBFC 1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .SignUp-card-heading {
+    color: #000;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 77px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5.775px;
+  }
+  
+  .SignUp-card-blackDiv-whiteEESpattern {
+    background-image: url("../../public/Vector 93.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .SignUp-card-blackDiv-eesdesign {
+    background-image: url("../../public/EES-design-signup page .svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* styles.css */
+  
+  .white-placeholder::placeholder {
+    color: white;
+    /* Add any other styles you want for the placeholder text */
+  }
+  
+  /* .signup-button-blackDiv {
+  
+      background-image: url("../../public/Vector 95.svg");
+      background-image: cover;
+      background-repeat: no-repeat;
+      color: #000;
+      text-align: center;
+      font-family: Goldman;
+      font-size: 1.75rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 5.775px;
+  
+    } */
+  
+  .signup-button-blackDivAlreadyHaveAnAccount {
+    color: #fff;
+  
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Goldman;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+  }
+  
+  .signupButton-text {
+    color: black;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+  }
+  
+  .signup-button-blackDivAlreadyHaveAnAccountButton {
+    background-image: url("../../public/Vector 94.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+  }
+  
+  .SignUpPage {
+    position: relative;
+  }
+  
+  .SignUpPage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("/public/image 36.svg");
+    background-size: cover;
+    filter: blur(8px);
+    opacity: 1; /* Adjust the opacity for transparency */
+    z-index: -1;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  .button-container {
+    text-align: center;
+    font-family: Goldman;
+    height: 40%;
+    width: 100%;
+    opacity: 0;
+    display: none; /* Hide by default */
+  }
+  
+  @media only screen and (max-width: 1100px) {
+    .SignUp-card-whiteDiv {
+      background-image: unset;
+      background: white;
+      height: 20%;
+      margin-bottom: 20%;
+    }
+  
+    .none {
+      display: none;
+    }
+  
+    .SignUp-card-blackDiv {
+      background-image: unset;
+      background: rgba(0, 0, 0, 0.7);
+      height: 80%;
+    }
+  
+    .amaan {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+  
+    input {
+      margin-bottom: 8%;
+    }
+    .nomargin {
+      margin-bottom: 0;
+    }
+  
+    .zigzagPattern {
+      display: none;
+    }
+  
+    .ButtonContainerRightMostDiv {
+      display: none;
+    }
+  
+    .button-container {
+      display: block; /* Make visible when screen size is 900px or below */
+      opacity: 1; /* You can adjust the opacity if needed */
+      height: 40%;
+      width: 100%;
+    }
+  }
+  
+  /* Medium screens and above */
+  @media (min-width: 768px) {
+    .SignUp-card-heading {
+      font-size: 0.5rem;
+    }
+    .SignUp {
+        color: #000;
+        text-align: center;
+        font-family: Goldman;
+        font-size: 5vw;
+        margin-top: 8%;
+        padding: 3%;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+        letter-spacing: 5.775px;
+        margin-left: 1%;
+      }
+  }
+  
+  /* Large screens and above */
+  @media (min-width: 1024px) {
+    .SignUp-card-heading {
+      /* font-size: 1rem; */
+      padding-bottom: 1.5rem;
+    }
+    .SignUp {
+        color: #000;
+        text-align: center;
+        font-family: Goldman;
+        font-size: 3vw;
+        margin-top: 8%;
+        padding: 3%;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+        letter-spacing: 5.775px;
+        margin-left: 1%;
+      }
+  }
+  
+  .SignUp-card-whiteDiv {
+    background-image: url("/public/Vector 91.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .SignUp-card-blackDiv {
+    background-image: url("../../public/Vector 92.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 100%;
+  }
+  
+  .EES-logo {
+    background-image: url("../../public/ees_logo_FCFBFC 1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .SignUp-card-heading {
+    color: #000;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 77px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5.775px;
+  }
+  
+  .SignUp-card-blackDiv-whiteEESpattern {
+    background-image: url("../../public/Vector 93.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .SignUp-card-blackDiv-eesdesign {
+    background-image: url("../../public/EES-design-signup page .svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* styles.css */
+  
+  .white-placeholder::placeholder {
+    color: white;
+    /* Add any other styles you want for the placeholder text */
+  }
+  
+  .signup-button-blackDiv {
+    background-image: url("../../public/Vector 95.svg");
+    background-image: contain;
+    background-repeat: no-repeat;
+    color: #000;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5.775px;
+  }
+  
+  .signup-button-blackDivAlreadyHaveAnAccount {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Goldman;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+  }
+  
+  .signupButton-text {
+    color: black;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+  }
+  
+  .signup-button-blackDivAlreadyHaveAnAccountButton {
+    background-image: url("../../public/Vector 94.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+    text-align: center;
+    font-family: Goldman;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+  }
+  
+  .SignUpPage {
+    position: relative;
+  }
+  
+  .SignUpPage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("/public/image 36.svg");
+    background-size: cover;
+    filter: blur(8px);
+    opacity: 1; /* Adjust the opacity for transparency */
+    z-index: -1;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  .button-container {
+    text-align: center;
+    font-family: Goldman;
+    height: 40%;
+    width: 100%;
+    opacity: 0;
+    display: none; /* Hide by default */
+  }
+  
+  @media only screen and (max-width: 1100px) {
+    .SignUp-card-whiteDiv {
+      background-image: unset;
+      background: white;
+      height: 20%;
+      /* margin-bottom: 20%; */
+    }
+  
+    .none {
+      display: none;
+    }
+  
+    .SignUp-card-blackDiv {
+      background-image: unset;
+      background: rgba(0, 0, 0, 0.7);
+      height: 80%;
+    }
+  
+    .amaan {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+  
+    input {
+      margin-bottom: 8%;
+    }
+    .nomargin {
+      margin-bottom: 0;
+    }
+  
+    .zigzagPattern {
+      display: none;
+    }
+  
+    .ButtonContainerRightMostDiv {
+      display: none;
+    }
+  
+    .button-container {
+      display: block; /* Make visible when screen size is 900px or below */
+      opacity: 1; /* You can adjust the opacity if needed */
+      height: 40%;
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 1100px) {
+    .SignUp-card-blackDiv {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 1030px) and (min-width: 900px) {
+    .SignUp-card {
+      height: 80vh;
+      width: 80vw;
+    }
+  
+    .SignUpbtn {
+      color: #000;
+      text-align: center;
+      font-family: Goldman;
+      font-size: 3rem;
+      margin-top: 8%;
+      padding: 3%;
+      font-style: normal;
+      font-weight: 200;
+      line-height: normal;
+      letter-spacing: 5.775px;
+      margin-left: 1%;
+    }
+  
+    .loginBtn {
+      /* background-image: url("/public/LoginBtn.svg"); */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  
+    .SignUp-card-blackDiv {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .formDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .laptopDesignElement {
+      display: none;
+    }
+    .SignUp-card-whiteDiv {
+      height: 20vh;
+    }
+    .SignUp-card-blackDiv {
+      height: auto;
+    }
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  
+  .App {
+    text-align: center;
+    padding: 5rem 1rem;
+  }
+  
+  .error {
+    color: #fc8181;
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;;
+  }
+  
+  .checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+  }
+ 
+  
+  input,
+  select {
+    width: 92%;
+    height: 20%;
+    padding-left: 4px;
+    padding-top: 2px;
+    margin-bottom: 3%;
+    background: transparent;
+    padding: 0.25rem 0.2rem;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  ::placeholder {
+    color: white;
+  }
+  input::placeholder,
+  select::placeholder {
+    color:white;
+  }
+  
+  input[type="checkbox"] {
+    width: fit-content;
+    margin-right: 0.5rem;
+    transform: scale(1.25);
+  }
+
+  
+ 

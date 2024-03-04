@@ -1051,21 +1051,21 @@
 #Name{
     border:none;
     display: inline-block;
-    padding-right: 18%;
+    padding-right: 25%;
     font-family: Michroma;
     font-size: 10px;
 }
 #Email{
     border:none;
     display:inline-block;
-    padding-right: 18%;
+    padding-right: 25%;
     font-family: Michroma;
     font-size: 10px;
 }
 #Electronics{
     border:none;
     display: inline-block;
-    padding-right: 18%;
+    padding-right: 25%;
     font-family: Michroma;
     font-size: 10px;
 }
@@ -1084,7 +1084,7 @@
 #College{
     border:none;
     display: inline-block;
-    padding-right: 18%;
+    padding-right: 25%;
     font-family: Michroma;
     font-size: 10px;
 }
@@ -1100,21 +1100,21 @@
     #Name{
         border:none;
         display: inline-block;
-        padding-right: 0%;
+        padding-right: 15%;
         font-family: Michroma;
         font-size: 9px;
     }
     #Email{
         border:none;
         display:inline-block;
-        padding-right: 0%;
+        padding-right: 15%;
         font-family: Michroma;
         font-size: 7px;
     }
     #Electronics{
         border:none;
         display: inline-block;
-        padding-right: 0%;
+        padding-right: 15%;
         font-family: Michroma;
         font-size: 7px;
     }
@@ -1133,7 +1133,7 @@
     #College{
         border:none;
         display: inline-block;
-        padding-right: 0%;
+        padding-right: 15%;
         font-family: Michroma;
         font-size:7px;
     }
@@ -1304,5 +1304,3 @@
         width:61.5vw;
     }
 }
-
-
