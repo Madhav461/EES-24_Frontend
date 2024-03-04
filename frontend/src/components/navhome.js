@@ -50,10 +50,10 @@ const Navhome2 = () => {
           {user &&
             <div className="relative pr-5 pl-1 ml-2 flex grow">
               <Link to="/login">
-                <button className="cursor-pointer  test [border:none] md:p-0 bg-[transparent]">
+              <button className="cursor-pointer  test [border:none] md:p-0 ml-2 mr-5 pl-0 pr-0 bg-[transparent] ">
 
-                  <div className="flex absolute top-[11px] md:left-[89px] bc:left-[100px]  box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]" />
-                  <div className="absolute top-[13px] left-[0px]  box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
+              <div className="absolute flex top-[11px] left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
+              <div className=" absolute flex top-[11px] md:left-[89px] bc:left-[100px]  box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]"/>
                   <button className="cursor-pointer hidden glow-animation sm:flex  mx-3    [border:none] p-0 bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center  items-center justify-center   [text-shadow:1px_0_0_#000,_0_1px_0_#000,_-1px_0_0_#000,_0_-1px_0_#000]">
                     Login
                   </button>
@@ -68,10 +68,10 @@ const Navhome2 = () => {
           {user &&
             <div className='relative   hidden sm:flex  grow '>
               <Link to="/signup">
-                <button className="cursor-pointer [border:none] ml-2 mr-5 pl-0 pr-0 bg-[transparent] ">
+                <button className="cursor-pointer [border:none] ml-5 mr-7 pl-0 pr-0 bg-[transparent] ">
 
                   <div className="absolute flex top-[11px] left-[0px] box-border w-3 h-[13px] border-b-[1px] border-solid border-white border-l-[1px]" />
-                  <div className="absolute  flex  top-[11px] left-[95px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]" />
+                  <div className="absolute  flex  top-[11px] left-[107px] box-border w-3 h-[13px] [transform:_rotate(180deg)] [transform-origin:0_0] border-b-[1px] border-solid border-white border-l-[1px]" />
 
                   <button className="  glow-animation flex cursor-pointer [border:none] p-0  bg-[transparent]  top-[0px] left-[0px] text-base tracking-[0.08em] font-audiowide text-white text-center items-center justify-center ">
                     SignUp

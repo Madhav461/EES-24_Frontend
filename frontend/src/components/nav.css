@@ -209,11 +209,11 @@
    
 	 }
 	.test{
-		
+/* 		
 			display: block;
 			width:100px;
 			height:30px;
-			overflow: hidden;
+			overflow: hidden; */
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			
