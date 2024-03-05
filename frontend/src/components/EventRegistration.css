@@ -1,0 +1,77 @@
+.event-registration-container {
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+    width: 40vw;
+    color: white;
+    border: 5px solid white;
+    border-radius: 5%;
+    padding-bottom: 2%;
+    font-family: Michroma;
+    /* height: 80vh; */
+}
+
+.btn-registration {
+    appearance: none;
+    -webkit-appearance: none;
+    /* font-family: sans-serif; */
+    font-family: Michroma;
+    cursor: pointer;
+    padding: 12px;
+    min-width: 100px;
+    border: 0px;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+.btn-registration:focus,
+.btn-registration.focus {
+    outline: 0;
+}
+
+.btn-round-1-registration {
+    border-radius: 8px;
+}
+
+.btn-round-2-registration {
+    border-radius: 20px;
+}
+
+
+.btn-success-registration {
+    background: #2ecc71;
+    color: #ffffff;
+}
+
+.btn-success-registration:hover {
+    background: #27ae60;
+    color: #ffffff;
+}
+
+.btn-danger-registration {
+    background: #e74c3c;
+    color: #ffffff;
+}
+
+.btn-danger-registration:hover {
+    background: #c0392b;
+    color: #ffffff;
+}
+
+.btn-container-registration {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.registration-bold-text {
+    font-weight: 1000;
+}
+
+@media screen and (max-width: 479px) {
+    .event-registration-container {
+        width: 70vw;
+        margin-top: 25%;
+    }
+}
