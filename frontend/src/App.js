@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import HamburgerMenu from "./components/hamburger";
 import Login from "./components/login";
 import Signup from "./components/signup";
+import Gsignup from "./components/gsignup";
 
 import Dashboard from "./components/dashboard.js";
 import DashboardTeam from "./components/DashboardTeam.jsx";
@@ -44,6 +45,7 @@ function App() {
           <Routes>
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/gsignup" element={<Gsignup />} />
             <Route exact path="/otp" element={<OtpVerification />} />
             <Route exact path="/forgotpassword" element={<ForgotPassword />} />
             <Route exact path="/resetpassword" element={<ResetPassword />} />
