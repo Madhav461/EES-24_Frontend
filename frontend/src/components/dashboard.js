@@ -55,54 +55,54 @@ const Dashboard = () => {
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
-                <input
+                <span
                   type="text"
                   name="Name"
                   id="Name"
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                />{" "}
-                <input
+                >{name}</span>{" "}
+                <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true"
-                />
-                <input
+                  disabled="true">
+                 {email}</span>
+                <span
                   type="number"
                   name="PhoneNumber"
                   id="PhoneNumber"
                   placeholder="0009473899"
                   value={mobile}
                   disabled="true"
-                />
+                >{mobile}</span>
               </p>
               <p className="y49">
-                <input
+                <span
                   type="text"
                   name="Electronics"
                   id="Electronics"
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                />
-                <input
+                >{branch}</span>
+                <span
                   type="text"
                   name="College"
                   id="College"
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                />{" "}
-                <input
+                >{college}</span>{" "}
+                <span
                   type="text"
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                />
+                >Ist Year</span>
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />
