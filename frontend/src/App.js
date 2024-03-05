@@ -22,9 +22,13 @@ import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
 import OtpVerification from "./components/OtpVerification.jsx";
+
+import DashboardRegistration from "./components/DashboardRegistration.jsx";
+
 import EventRegistration from "./components/EventRegistration.jsx";
 import ForgotPassword from "./components/ForgotPassword.jsx";
 import ResetPassword from "./components/ResetPassword.jsx";
+
 
 
 function App() {
@@ -63,7 +67,7 @@ function App() {
             <Route exact path="/teams/content_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/design_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/publicity_team" element={<TeamsIndividual />} />
-
+            <Route exact path="/dashboard/registration" element={<DashboardRegistration />} />
 
 
           </Routes>
