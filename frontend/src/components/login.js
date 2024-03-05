@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
+import GoogleButton from "react-google-button";
 // import GoogleIcon from "mui/icons-material/Google";
 
 const onSubmit = async (values, actions) => {
@@ -14,7 +15,7 @@ const onSubmit = async (values, actions) => {
   actions.resetForm();
 };
 const handleClick = () => {
-  console.log('hi');
+  console.log("hi");
 };
 
 const Login = () => {
@@ -783,12 +784,12 @@ const Login = () => {
               </svg>
             </div>
             <div className="w-[100%] h-[40%] flex justify-center  items-center flex-col ">
-
-              <div className="SignUpWithGoogleText pb-[4%]">SIGN UP with google</div>
-              <div className="googlesignup" onClick={handleClick}>
-              <FaGoogle style={{ color: 'white',fontSize: '2em'}}/>
-              </div>
-                
+              <Link to="/gsignup">
+                <div className="gsignup">
+                  <GoogleButton style={{ width: "105%" }} />
+                </div>
+              </Link>
+        
 
               {/* <div className="google-icon    h-[20%] w-auto ">
                 <Link

@@ -263,6 +263,7 @@ export const About = () => {
       
     <div className=" w-sceen  h-[635px] mt-[5%] flex desktopview_aboutus   mr-0 " >
       <div className="w-[5.7%]   ">
+        <img src="/AboutUsDktp.svg" className="h-[636px] ls:ml-[22px] ml-[10px]"></img>
       {/* <img src="about_us_desktopview_Lines - Wave.svg"  style={{ width:'40px', height: '100%' }}    /> */}
       
       </div>
