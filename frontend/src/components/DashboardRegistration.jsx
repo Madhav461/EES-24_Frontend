@@ -71,7 +71,7 @@ const DashboardRegistration = () => {
               src="/dashboardblack.svg"
               className="dashboard-background-image  object-cover w-full h-full p-0"
             />
-            <div className="y19   ">
+            <div className="y19    ">
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
@@ -1028,12 +1028,12 @@ const DashboardRegistration = () => {
               ) : (
                 <div className=" flex flex-col justify-around absolute w-[100%] h-[100%] ">
                   <input
-                    className="w-[85%] h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                    className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                     type="text"
                     placeholder="Enter team name "
                     style={{
                       fontFamily: "Goldman",
-                      fontSize: "25px",
+                      fontSize: "1vw",
                       fontStyle: "normal",
                       fontWeight: 400,
                       lineHeight: "normal",
@@ -1061,12 +1061,12 @@ const DashboardRegistration = () => {
 
 
                          <input
-                        className="w-[50%] h-[80%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                        className="w-[50%] h-[80%]   px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                         type="text"
                         placeholder="Enter email "
                         style={{
                           fontFamily: "Goldman",
-                          fontSize: "15px",
+                          fontSize: "1vw",
                           fontStyle: "normal",
                           fontWeight: 400,
                           lineHeight: "normal",
@@ -1076,20 +1076,15 @@ const DashboardRegistration = () => {
                       />
                       
                     </div>
-
-
-
-          
-
                  <div className=" w-[100%] h-[20%]  flex   translate-y-[50%] gap-2  justify-center" >
-                    <button className="w-[20%] buttontext   rounded-md h-[80%]" onClick={()=>{
+                    <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={()=>{
                       setCategory("");
                     }}>
                       Cancel
                     </button>
 
 
-                    <button className="w-[20%] buttontext rounded-md   h-[80%]">
+                    <button className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
                        Register
                     </button>
                     </div>

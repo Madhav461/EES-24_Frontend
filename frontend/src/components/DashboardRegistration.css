@@ -4,7 +4,7 @@
     color: white;
     font-family: Goldman;
     padding-left: 1%;
-    font-size: 2rem;
+    font-size: 1.5vw;
     font-style: normal;
     font-weight: 200;
     line-height: normal;
@@ -15,7 +15,7 @@
     color: white;
     font-family: Goldman;
     padding-left: 1%;
-    font-size: 1rem;
+    font-size: 1.5vw;
     font-style: normal;
     font-weight: 200;
     line-height: normal;
@@ -29,13 +29,10 @@
     color: black;
     font-family: Goldman;
     padding-left: 1%;
-    font-size: 1rem;
+    font-size: 1vw;
     font-style: normal;
     font-weight: 200;
     line-height: normal;
-
-
-
 }
 
 
@@ -1012,12 +1009,17 @@
 
 
 
-@media screen and (max-width: 1000px)
+
+
+
+
+
+/* @media screen and (max-width: 1000px)
 {
     .textSizefixing{
            
-        font-size:0.5rem ;
+        font-size:0.5vw ;
 
     }
-}
+} */
 
