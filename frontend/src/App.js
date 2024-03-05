@@ -29,6 +29,7 @@ import DashboardRegistration from "./components/DashboardRegistration.jsx";
 import EventRegistration from "./components/EventRegistration.jsx";
 import ForgotPassword from "./components/ForgotPassword.jsx";
 import ResetPassword from "./components/ResetPassword.jsx";
+import EventRegistrationMobile from "./components/EventRegistrationMobile.jsx";
 
 
 
@@ -70,6 +71,7 @@ function App() {
             <Route exact path="/teams/design_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/publicity_team" element={<TeamsIndividual />} />
             <Route exact path="/dashboard/registration" element={<DashboardRegistration />} />
+            <Route exact path="/dashboard/registration/mobile" element={<EventRegistrationMobile />} />
 
 
           </Routes>
