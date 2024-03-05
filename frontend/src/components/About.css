@@ -106,7 +106,7 @@ line-height: 36px;
 
   .desktopview_aboutus {
       /* visibility:visible; */
-      display:block;
+      display:flex;
   }
 }
 @media screen and (max-width: 575px) {
