@@ -10,10 +10,8 @@ const Dashboard = () => {
   const [email, setEmail] = useState("email@itbhu.ac.in");
   const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
-  const [radiniteScore, setRadiniteScore] = useState(95);
   const { number } = useSpring({
     from: { number: 0 },
-    number: radiniteScore,
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
@@ -122,9 +120,7 @@ const Dashboard = () => {
               <img className="dhi dhi-11" src="dashboardheading.svg" />
               <img className="dhi dhi-12" src="dashboardheading.svg" />
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
-              <animated.span className="y69">
-                {number.to((radiniteScore) => radiniteScore.toFixed(0))}
-              </animated.span>
+            
             </div>
 
             <div className="details-dashboard">
@@ -138,13 +134,9 @@ const Dashboard = () => {
                 <div>{email}</div>
               </div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
-              <div className="radinite-dashboard">Radinite</div>
+           
             </div>
-            <img
-              className="radinite-logo-dashboard"
-              src="radinite.svg"
-              alt="radinite"
-            />
+           
             {/* <div className="score-logo-dashboard">
                             <img
                                 src="dashboardeclipse.svg"
@@ -333,16 +325,9 @@ const Dashboard = () => {
                   <div>{mobile}</div>
                 </div>
 
-                <div className="radinite-dashboard-mb">
-                  <div>{radiniteScore}</div>
-                  Radinite
-                </div>
+                
 
-                <img
-                  className="radinite-logo-dashboard-mb"
-                  src="radinite.svg"
-                  alt="radinite"
-                />
+               
                 {/* <div className="score-logo-dashboard">
         <img
             src="dashboardeclipse.svg"
