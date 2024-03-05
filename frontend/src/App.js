@@ -23,6 +23,13 @@ import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
 import OtpVerification from "./components/OtpVerification.jsx";
 
+import DashboardRegistration from "./components/DashboardRegistration.jsx";
+
+import EventRegistration from "./components/EventRegistration.jsx";
+import ForgotPassword from "./components/ForgotPassword.jsx";
+import ResetPassword from "./components/ResetPassword.jsx";
+
+
 
 function App() {
   return (
@@ -38,6 +45,8 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/otp" element={<OtpVerification />} />
+            <Route exact path="/forgotpassword" element={<ForgotPassword />} />
+            <Route exact path="/resetpassword" element={<ResetPassword />} />
             <Route exact path="/dashboard/team" element={<DashboardTeam />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<EventsHome />} />
@@ -47,6 +56,7 @@ function App() {
             <Route exact path="/events/udyam" element={<EventsUdyam />} />
             <Route exact path="/events/udgam" element={<EventsUdgam />} />
             <Route exact path="/events/mashal" element={<EventsMashal />} />
+            <Route exact path="/events/invite" element={<EventRegistration />} />
             
             {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
@@ -57,7 +67,7 @@ function App() {
             <Route exact path="/teams/content_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/design_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/publicity_team" element={<TeamsIndividual />} />
-
+            <Route exact path="/dashboard/registration" element={<DashboardRegistration />} />
 
 
           </Routes>
