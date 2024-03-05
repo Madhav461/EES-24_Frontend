@@ -22,6 +22,9 @@ import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
 import OtpVerification from "./components/OtpVerification.jsx";
+import EventRegistration from "./components/EventRegistration.jsx";
+import ForgotPassword from "./components/ForgotPassword.jsx";
+import ResetPassword from "./components/ResetPassword.jsx";
 
 
 function App() {
@@ -38,6 +41,8 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/otp" element={<OtpVerification />} />
+            <Route exact path="/forgotpassword" element={<ForgotPassword />} />
+            <Route exact path="/resetpassword" element={<ResetPassword />} />
             <Route exact path="/dashboard/team" element={<DashboardTeam />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<EventsHome />} />
@@ -47,6 +52,7 @@ function App() {
             <Route exact path="/events/udyam" element={<EventsUdyam />} />
             <Route exact path="/events/udgam" element={<EventsUdgam />} />
             <Route exact path="/events/mashal" element={<EventsMashal />} />
+            <Route exact path="/events/invite" element={<EventRegistration />} />
             
             {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
