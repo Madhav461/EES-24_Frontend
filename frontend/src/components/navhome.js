@@ -89,14 +89,14 @@ const Navhome2 = () => {
       <div className="absolute bg-gray   hidden lg:block 2k:hidden  top-[40px] h-[30px]">
         <div className='flex  items-center w-screen justify-center space-x-8'>
 
-          <a href={'/'} className='text-white z-20 no-underline'>
+          <a href={'/teams'} className='text-white z-20 no-underline'>
             <TeamsTxt></TeamsTxt>
           </a>
 
 
           <a href={'/events'} className='text-white z-20 no-underline'> <EventsTxt></EventsTxt></a>
 
-          <a href={'/'} className='text-white z-50 bg-gray no-underline rounded-2xl'>  <GalleryTxt></GalleryTxt> </a>
+          <a href={'/gallery'} className='text-white z-50 bg-gray no-underline rounded-2xl'>  <GalleryTxt></GalleryTxt> </a>
 
           <a href={'/#schedule'} className='text-white z-20 no-underline'> <ScheduleTxt></ScheduleTxt> </a>
         </div>

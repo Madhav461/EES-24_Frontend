@@ -79,7 +79,7 @@ const Gallery = () => {
                     <BackButton/>
                     <img className='h-[5vw] ' src="/GALLERY.svg" alt="GALLERY_heading" />
                 </div>
-                <div className="glow-text w-[100vw] overflow-y-hidden"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={35} className="marquee_container border-solid overflow-y-hidden border-teal-300 border-y"><div class="marquee" className="marquee-font font-michroma text-turquoise text-[33px]"><AnimatedTextCharacter text="UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  -  "></AnimatedTextCharacter></div></Marquee></div>
+                <div className="glow-text w-[100vw] overflow-y-hidden"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={35} className="marquee_container border-solid overflow-y-hidden border-white border-y"><div class="marquee" className="marquee-font font-michroma text-white text-[27px]"><AnimatedTextCharacter text="UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  -  UDYAM  -  UDGAM  -  MASHAL  -"></AnimatedTextCharacter></div></Marquee></div>
             </div>
         <div className="h-screen w-screen overflow-x-hidden bc:mt-[25vh] tab:mt-[31vh] lg:pt-[6vh] laag:pt-[0px] laag:mt-[0px]">
             <ImageGallery images={images} />

@@ -259,7 +259,7 @@ export const About = () => {
 
   return (
   
-    <div>
+    <div >
       
     <div className=" w-sceen  h-[635px] mt-[5%] flex desktopview_aboutus   mr-0 " >
       <div className="w-[5.7%]   ">
@@ -625,6 +625,7 @@ export const About = () => {
         </div>
 
       </div>
+      {/* <img  src="/AboutUsDktp.svg"></img> */}
 
     </div>
     <div className="mobileview_aboutus">
