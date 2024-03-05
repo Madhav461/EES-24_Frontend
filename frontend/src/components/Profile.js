@@ -1,13 +1,12 @@
-import React, { useContext, Fragment } from 'react'
-import { AuthContext } from './AuthProvider'
 import { Menu, Transition } from '@headlessui/react';
+import React, { Fragment } from 'react';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
 
 function Profile() {
-    const { user } = useContext(AuthContext);
+    const user = true
   return (
     <div>
       {!user && 
