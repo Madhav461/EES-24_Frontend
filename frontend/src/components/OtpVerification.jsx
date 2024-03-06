@@ -1,57 +1,60 @@
 import "./OtpVerification.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Background from "./background";
 
 const OtpVerification = () => {
-   const navigate = useNavigate();
-    const [otp, setOtp] = useState('');
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
+  const handleOtpChange = (event) => {
+    setOtp(event.target.value);
+  };
 
-    const handleChange = (event) => {
-        setOtp(event.target.value);
-    };
+  const handleBtnClick = (id) => {
+    const targetDiv = document.getElementById(id);
+    targetDiv.style.display = "block";
+  };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
+  let navigate = useNavigate();
+  const routeChange = (route) => {
+    let path = `/dashboard`;
+    navigate(path);
+  };
 
-        try {
-            // Retrieve the access token from local storage
-            const authToken = localStorage.getItem('accessToken');
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
 
-            // Make a POST request to verify OTP
-            const otpVerificationResponse = await axios.post('http://localhost:8000/api/user/verify', { otp }, {
-                headers: {
-                    Authorization: `Bearer ${authToken}`,
-                },
-            });
-
-            console.log('OTP verification response:', otpVerificationResponse.data);
-
-            // Handle success or redirect the user as needed
-            navigate('/dashboard');
-
-        } catch (error) {
-            console.error('Error verifying OTP:', error);
-            // Handle failure, show an error message, etc.
-        }
-    };
-
-    return (
-        <div className="otp-verification-container z-0 m-auto">
-            <div className="email-otp">
-                An email has been sent .
-            </div>
-
-            <div className="search-bar">
-                <form onSubmit={handleFormSubmit}>
-                    <label className="otp-label">Enter OTP: </label>
-                    <input value={otp} onChange={handleChange} />
-                    <button type="submit">Verify OTP</button>
-                </form>
-            </div>
-
+  return (
+    <>
+      <Background />
+      <form onSubmit={handleFormSubmit} className="">
+        <div class="forgot-password-container">
+          <h1 style={{fontFamily: 'goldman'}}>OTP Verification</h1>
+          <h2 class="information-text-fp" style={{fontFamily: 'goldman'}}>OTP has been sent to your email</h2>
+          <div class="form-group-fp">
+            <input
+              type="otp"
+              name="user_otp"
+              id="user_otp"
+              className="input"
+              value={otp}
+              onChange={handleOtpChange}
+              style={{fontFamily: 'goldman'}}
+              required
+            />
+            <p>
+              <label for="username" style={{fontFamily: 'goldman'}}>OTP</label>
+            </p>
+            <button style={{fontFamily: 'goldman'}} onClick={() => handleBtnClick("fp-success")}>
+              Verify OTP
+            </button>
+          </div>
         </div>
-    );
+      </form>
+    </>
+  );
 };
 
 export default OtpVerification;
