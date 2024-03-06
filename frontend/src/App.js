@@ -12,7 +12,7 @@ import HamburgerMenu from "./components/hamburger";
 import Login from "./components/login";
 import Signup from "./components/signup";
 import Gsignup from "./components/gsignup";
-
+import EditDashboard from "./components/editdash.js";
 import Dashboard from "./components/dashboard.js";
 import DashboardTeam from "./components/DashboardTeam.jsx";
 import Gallery from "./components/gallery.js";
@@ -53,7 +53,7 @@ function App() {
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/events" element={<EventsHome />} />
             <Route exact path="/gallery" element={<Gallery />} />
-            
+            <Route exact path="/editdash" element={<EditDashboard />} />
             
             <Route exact path="/events/udyam" element={<EventsUdyam />} />
             <Route exact path="/events/udgam" element={<EventsUdgam />} />

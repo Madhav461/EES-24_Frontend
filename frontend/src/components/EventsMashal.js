@@ -21,7 +21,7 @@ const EventsMashal = () => {
     <>
       <Background />
       <Navhome2 />
-      <div className="events-upcoming-back-button" onClick={routeChange}>
+      <div className="events-upcoming-back-button hover:scale-110 duration-300" onClick={routeChange}>
         <img src="/events-udyam-back-button.svg" alt=""></img>
       </div>
         <div className="events-upcoming-container">

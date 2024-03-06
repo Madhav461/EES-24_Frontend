@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema4 } from "../schemas";
+import Background from "./background";
+
 const OtpVerification = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
@@ -85,10 +87,12 @@ const OtpVerification = () => {
         
           <button type="submit" style={{
             width:'100%',
+            justifyContent: 'center',
              fontFamily: "Goldman",
              fontSize: "15px",
              fontStyle: "normal",
              fontWeight: 400,
+             borderRadius: 2,
              lineHeight: "normal",
              letterSpacing: "1.2px",
              borderBottom: "1px solid #FFF",

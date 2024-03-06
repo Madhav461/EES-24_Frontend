@@ -26,13 +26,13 @@ const EventsHome = () => {
       <div className="glow-text events-home-marquee"><Marquee speed={100} gradient={true} gradientColor="black" gradientWidth={30} className="marquee_container border-y-2 border-solid border-white"><div class="marquee"><AnimatedTextCharacter text="UDYAM | | UDGAM | | MASHAL | |  THE EPITOME OF TECHNICAL EXCELLENCE AT IIT BHU"></AnimatedTextCharacter></div></Marquee> </div>
       <div className="events-home-container">
         <div class="events-home-card" onClick={() => routeChange("udyam")}>
-          <img className="events-home-svg" src="events-udyam.svg" alt=""></img>
+          <img className="events-home-svg transition-all duration-300 ease-in-out transform hover:scale-110" src="events-udyam.svg" alt=""></img>
         </div>
         <div class="events-home-card" onClick={() => routeChange("udgam")}>
-          <img className="events-home-svg" src="events-udgam.svg" alt=""></img>
+          <img className="events-home-svg transition-all duration-300 ease-in-out transform hover:scale-110" src="events-udgam.svg" alt=""></img>
         </div>
         <div class="events-home-card" onClick={() => routeChange("mashal")}>
-          <img className="events-home-svg" src="events-mashal.svg" alt=""></img>
+          <img className="events-home-svg transition-all duration-300 ease-in-out transform hover:scale-110" src="events-mashal.svg" alt=""></img>
         </div>
       </div>
       <Footer />
