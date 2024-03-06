@@ -1,7 +1,7 @@
 .team-dashboard-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     text-align: center;
     color: #FFF;
@@ -9,7 +9,7 @@
     font-size: 19px;
     font-style: normal;
 
-    width: 80vw;
+    width: 70vw;
     margin: auto;
 }
 
@@ -18,7 +18,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 10%;
+    padding-top: 7%;
+    margin-top: 1%;
 }
 
 .team-dashboard-members {
@@ -27,7 +28,9 @@
     justify-content: space-between;
     border: 2px solid #FFF;
     /* padding: 2%; */
-    width: 60%;
+    margin-top: 1%;
+    margin-bottom: 3.5%;
+    width: 50%;
 }
 
 /* .team-dashboard-radinite {
@@ -38,11 +41,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2.5% 4% 2.5% 4%;
+    padding: 2% 4% 2% 4%;
 }
 
 .team-dashboard-icons {
-    width: 30px;
+    width: 20px;
 }
 
 .team-dashboard-teamName-display {
@@ -55,10 +58,7 @@
     padding: 2.5% 4% 2.5% 4%;
 }
 
-.spacer-tmp {
-    width: 100vw;
-    height: 100px;
-}
+
 
 .p1-dashboard-team-mb {
     grid-column: 1 / 4;
@@ -103,7 +103,7 @@
 }
 
 .team-name-dashboard {
-    padding: 10%;
+    padding: 5%;
 }
 
 @media screen and (max-width: 479px) {
