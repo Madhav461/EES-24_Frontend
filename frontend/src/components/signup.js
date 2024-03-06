@@ -57,9 +57,9 @@ const Signup = () => {
   } = useFormik({
     initialValues: {
       email: "",
-      age: "",
       password: "",
       confirmPassword: "",
+      collegeName:"",
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -181,7 +181,10 @@ const Signup = () => {
               >
                 <div>
                   <select
-                    id="collegeName"
+                  value={values.CollegeName}
+                  onChange={handleChange} 
+                  onBlur={handleBlur}
+                   id="CollegeName"
                     style={{
                       padding:'0.4%',
                       width:'93%',
@@ -204,6 +207,9 @@ const Signup = () => {
                     </option>
                     <Collegelist />
                   </select>
+                  {errors.CollegeName && touched.CollegeName && (
+                  <p className="error">{errors.CollegeName}</p>
+                )}
                 </div>
               </div>
               <div

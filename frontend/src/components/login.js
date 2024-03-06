@@ -4,7 +4,7 @@ import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useFormik } from "formik";
-import { basicSchema } from "../schemas";
+import { advancedSchema3 } from "../schemas";
 // import GoogleIcon from "mui/icons-material/Google";
 
 const onSubmit = async (values, actions) => {
@@ -45,11 +45,9 @@ const Login = () => {
   } = useFormik({
     initialValues: {
       email: "",
-      age: "",
       password: "",
-      confirmPassword: "",
     },
-    validationSchema: basicSchema,
+    validationSchema: advancedSchema3,
     onSubmit,
   });
 

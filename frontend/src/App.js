@@ -27,7 +27,7 @@ import OtpVerification from "./components/OtpVerification.jsx";
 import DashboardRegistration from "./components/DashboardRegistration.jsx";
 
 import EventRegistration from "./components/EventRegistration.jsx";
-import ForgotPassword from "./components/ForgotPassword.jsx";
+import ForgotPassword from "./components/ForgotPassword.js";
 import ResetPassword from "./components/ResetPassword.jsx";
 
 

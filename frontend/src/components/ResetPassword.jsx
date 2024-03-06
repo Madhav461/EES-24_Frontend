@@ -3,64 +3,195 @@ import { useState, useEffect } from "react";
 import Background from "./background";
 import { useNavigate } from "react-router-dom";
 import "./ForgotPassword.css";
+import { useFormik } from "formik";
+import { basicSchema2 } from "../schemas";
+import './resetpassword.css';
+const onSubmit = async (values, actions) => {
+  console.log(values);
+  console.log(actions);
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  actions.resetForm();
+};
 
 const ResetPassword = () => {
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [cnfPassword, setCnfPassword] = useState("");
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleOtpChange = (event) => {
+    setOtp(event.target.value);
+  };
+  const handleCPswdChange = (event) => {
+    setCnfPassword(event.target.value);
+  };
+  const handleNPswdChange = (event) => {
+    setNewPassword(event.target.value);
+  };
 
-    const [email, setEmail] = useState("");
-    const [otp, setOtp] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const [cnfPassword, setCnfPassword] = useState("");
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-    const handleOtpChange = (event) => {
-        setOtp(event.target.value);
-    };
-    const handleCPswdChange = (event) => {
-        setCnfPassword(event.target.value);
-    };
-    const handleNPswdChange = (event) => {
-        setNewPassword(event.target.value);
-    };
+  const handleBtnClick = (id) => {
+    const targetDiv = document.getElementById(id);
+    targetDiv.style.display = "block";
+  };
 
-    const handleBtnClick = (id) => {
-        const targetDiv = document.getElementById(id);
-        targetDiv.style.display = "block";
-    };
+  let navigate = useNavigate();
+  const routeChange = (route) => {
+    let path = `/dashboard`;
+    navigate(path);
+  };
 
-    let navigate = useNavigate();
-    const routeChange = (route) => {
-        let path = `/dashboard`;
-        navigate(path);
-    };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-    };
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+      otpvarification: 0,
+    },
+    validationSchema:basicSchema2 ,
+    onSubmit,
+  });
 
-    return (
-        <>
-            {/* <Background /> */}
-        <form onSubmit={handleFormSubmit} className="">
-            <div class="forgot-password-container">
-                <h1>Password Reset</h1>
-                <h2 class="information-text-fp">Enter your new password.</h2>
-                <h3 class="information-text-fp-success" id="fp-success">Password has been updated successfully.</h3>
-                <div class="form-group-fp">
-                    <input type="email" name="user_email" id="user_email" className="input" value={email} onChange={handleEmailChange} />
-                    <p><label for="username">Email</label></p>
-                    <input type="text" name="otp" id="otp" className="input" value={otp} onChange={handleOtpChange} />
-                    <p><label for="otp">OTP</label></p>
-                    <input type="password" name="new_password" id="new_password" className="input" value={newPassword} onChange={handleNPswdChange} />
-                    <p><label for="new_password">Old Password</label></p>
-                    <input type="password" name="cnf_password" id="cnf_password" className="input" value={cnfPassword} onChange={handleCPswdChange} />
-                    <p><label for="cnf_password">New Password</label></p>
-                    <button onClick={() => handleBtnClick("fp-success")}>Update Password</button>
-                </div>
-            </div>
-        </form>
-    
-        </>
-    );
+  console.log(errors);
+
+  return (
+    <>
+      {/* <Background /> */}
+      <form onSubmit={handleFormSubmit} className="">
+        <div class="forgot-password-container">
+          <h1>Password Reset</h1>
+          <h2 class="information-text-fp">Enter your new password.</h2>
+          <h3 class="information-text-fp-success" id="fp-success">
+            Password has been updated successfully.
+          </h3>
+          <div class="form-group-fp">
+          <input
+                  value={values.email}
+                  onChange={handleChange}
+                  id="email"
+                  placeholder="EMAIL"
+                  type="email"
+                  className={errors.email && touched.email ? "input-error" : ""}
+                  onBlur={handleBlur}
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    color:'white',
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
+                />
+                {errors.email && touched.email && (
+                  <p className="error">{errors.email}</p>
+                )}
+            <p>
+              <label for="username">Email</label>
+            </p>
+            <input
+              type="number"
+              name="otpvarification"
+              id="otpvarification"
+              placeholder="OTP"
+              value={values.otpvarification}
+                onChange={handleChange}
+              className={errors.otpvarification && touched.otpvarification ? "input-error" : ""}
+                onBlur={handleBlur}
+                style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    color:'white',
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
+            />
+            {errors.otpvarification && touched.otpvarification && (
+                  <p className="error">{errors.otpvarification}</p>
+                )}
+            <p>
+              <label for="otp">OTP</label>
+            </p>
+            <input
+                  id="password"
+                  type="password"
+                  placeholder="PASSWORD"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.password && touched.password ? "input-error" : ""
+                  }
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    color:'white',
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
+                />
+                {errors.password && touched.password && (
+                  <p className="error">{errors.password}</p>
+                )}
+            <p>
+              <label for="new_password">New Password</label>
+            </p>
+            <input
+                  id="confirmPassword"
+                  type="password"
+                  placeholder="Confirm password"
+                  value={values.confirmPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.confirmPassword && touched.confirmPassword
+                      ? "input-error"
+                      : ""
+                  }
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    color:'white',
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
+                />
+                {errors.confirmPassword && touched.confirmPassword && (
+                  <p className="error">{errors.confirmPassword}</p>
+                )}
+            <p>
+              <label for="cnf_password">Confirm Password</label>
+            </p>
+            <button onClick={() => handleBtnClick("fp-success")}>
+              Update Password
+            </button>
+          </div>
+        </div>
+      </form>
+    </>
+  );
 };
 export default ResetPassword;
