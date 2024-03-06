@@ -95,14 +95,62 @@ const EventsUdyam = () => {
         </div>
       </div>
       <div className="events-container">
+        <div className="event-card-button-container">
         <EventsCard name="1" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="2" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="3" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="4" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="5" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="6" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="7" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
+        <div className="event-card-button-container">
         <EventsCard name="8" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
+          <div className="event-card-buttons">
+            <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button>
+          </div>
+        </div>
       </div>
       <Footer />
     </>

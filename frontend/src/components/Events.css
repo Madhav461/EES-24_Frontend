@@ -6,3 +6,70 @@
     justify-content: space-evenly;
     align-content: space-around;
 }
+
+.event-card-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: -10%;
+    margin-bottom: 0%;
+    padding-left: 5%;
+}
+
+.event-card-button-container {
+    margin: 1.5% 2.5% 2.5% 1.5%;
+}
+
+.event-card-button-container button {
+    display: block;
+    padding: 0.5em 0;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #eee;
+
+    margin: 5%;
+}
+
+.event-card-button-container button:focus {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 1em 0.5em;
+    animation: pulse 1s infinite ease;
+}
+
+.event-card-button-container button {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    outline: none;
+    -moz-user-select: none;
+    user-select: none;
+    color: #333;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 2em;
+    padding: 1em;
+    color: white;
+}
+
+.event-card-button-container  button:hover,
+.event-card-button-container button:focus {
+    background-color: #fff;
+    color: black;
+}
+
+.event-card-button-container button.is-loading::after {
+    animation: spinner 500ms infinite linear;
+    content: "";
+    position: absolute;
+    margin-left: 2em;
+    border: 2px solid #000;
+    border-radius: 100%;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    height: 1em;
+    width: 4%;
+}
