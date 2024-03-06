@@ -43,7 +43,8 @@ function getSelectValue(id) {
   return "";
 }
 
-const Gsignup = () => {
+const Gsignup = ({ name, email }) => {
+  
   const {
     values,
     errors,
@@ -55,7 +56,7 @@ const Gsignup = () => {
   } = useFormik({
     initialValues: {
       email: "",
-      age: "",
+      collegeName: "",
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -124,7 +125,7 @@ const Gsignup = () => {
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
                   id="name"
-                  placeholder="NAME"
+                  placeholder={name}
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -135,6 +136,7 @@ const Gsignup = () => {
                     borderBottom: "1px solid #FFF",
                     marginTop:"20px"
                   }}
+                  disabled
                 />
               </div>
 
@@ -147,7 +149,7 @@ const Gsignup = () => {
                   value={values.email}
                   onChange={handleChange}
                   id="email"
-                  placeholder="EMAIL"
+                  placeholder={email}
                   type="email"
                   className={
                     errors.email && touched.email
@@ -165,6 +167,7 @@ const Gsignup = () => {
                     borderBottom: "1px solid #FFF",
                     marginTop:"10px",
                   }}
+                  disabled
                 />
                 {errors.email && touched.email && (
                   <p className="error">{errors.email}</p>
@@ -177,7 +180,8 @@ const Gsignup = () => {
               >
                 <div>
                   <select
-                    id="collegeName"
+                    value={values.collegeName}
+
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -194,7 +198,9 @@ const Gsignup = () => {
                       outline: "none",
                       marginTop:"10px",
                     }}
+                    required
                   >
+                    
                     <option
                       style={{ color: "black" }}
                       value=""
@@ -205,6 +211,7 @@ const Gsignup = () => {
                     </option>
                     <Collegelist />
                   </select>
+                  {/* {touched && !collegeName && <p style={{ color: 'red' }}>College name is required</p>} */}
                 </div>
               </div>
               <div
@@ -228,6 +235,7 @@ const Gsignup = () => {
                     borderBottom: "1px solid #FFF",
                     marginTop:"10px",
                   }}
+                  required
                 />
               </div>
             </form>
