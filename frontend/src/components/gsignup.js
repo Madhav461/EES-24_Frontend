@@ -1,11 +1,10 @@
 import React from "react";
-import "../components/signup.css";
+import "../components/gsignup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import Collegelist from "./collegelist";
-import GoogleButton from "react-google-button";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -20,14 +19,6 @@ function showFormData() {
     email: getElementValue("email"),
     collegeName: getSelectValue("collegeName"),
     year: getElementValue("year"),
-    password: getElementValue("password"),
-    confirmPassword: getElementValue("confirmPassword"),
-    name: getElementValue("name"),
-    email: getElementValue("email"),
-    collegeName: getSelectValue("collegeName"),
-    year: getElementValue("year"),
-    password: getElementValue("password"),
-    confirmPassword: getElementValue("confirmPassword"),
   };
 
   console.log("Form Data:", formData);
@@ -52,7 +43,8 @@ function getSelectValue(id) {
   return "";
 }
 
-const Signup = () => {
+const Gsignup = ({ name, email }) => {
+  
   const {
     values,
     errors,
@@ -65,8 +57,6 @@ const Signup = () => {
     initialValues: {
       email: "",
       collegeName: "",
-      password: "",
-      confirmPassword: "",
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -92,21 +82,15 @@ const Signup = () => {
 
           <div
             className="SignUp flex my-auto  justify-center mb-[20%] items-center"
-            style={{ whiteSpace: "nowrap" }}
+            style={{ whiteSpace: "nowrap"}}
           >
-            SIGN UP
+            GOOGLE SIGNUP
           </div>
         </div>
+
         <div
           className="SignUp-card-blackDiv w-[96%] h-[60%] text-white  relative"
-          style={{
-            
-    paddingTop: '10px',
-    paddingLeft: '10px',
-    paddingRight: '10px',
-    marginTop: '0px',
-
-          }}
+          style={{}}
         >
           <div
             className="h-[100%] w-[30%]  flex flex-col relative     none"
@@ -138,10 +122,10 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className=""
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
                   id="name"
-                  placeholder="NAME"
+                  placeholder={name}
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -150,7 +134,9 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    marginTop:"20px"
                   }}
+                  disabled
                 />
               </div>
 
@@ -160,30 +146,29 @@ const Signup = () => {
               >
                 <label htmlFor="email"></label>
                 <input
-                   value={values.email}
-                   onChange={handleChange}
-                   id="email"
-                   placeholder="EMAIL"
-                   type="email"
-                   className={
+                  value={values.email}
+                  onChange={handleChange}
+                  id="email"
+                  placeholder={email}
+                  type="email"
+                  className={
                     errors.email && touched.email
-                      ? "input-error"
-                      : ""
+                      ? "input-error w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "
+                      : "w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "
                   }
-                   onBlur={handleBlur}
-                   style={{
-                     fontFamily: "Goldman",
-                     fontSize: "18px",
-                     fontStyle: "normal",
-                     fontWeight: 400,
-                     lineHeight: "normal",
-                     letterSpacing: "1.2px",
-                     borderBottom: "1px solid #FFF",
-                   }}
+                  onBlur={handleBlur}
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                    marginTop:"10px",
+                  }}
+                  disabled
                 />
-                {errors.email && touched.email && (
-                  <p className="error">{errors.email}</p>
-                )}
                 {errors.email && touched.email && (
                   <p className="error">{errors.email}</p>
                 )}
@@ -195,7 +180,8 @@ const Signup = () => {
               >
                 <div>
                   <select
-                    id="collegeName"
+                    value={values.collegeName}
+
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -210,8 +196,11 @@ const Signup = () => {
                       background: "transparent",
                       borderRadius: "8px",
                       outline: "none",
+                      marginTop:"10px",
                     }}
+                    required
                   >
+                    
                     <option
                       style={{ color: "black" }}
                       value=""
@@ -222,6 +211,7 @@ const Signup = () => {
                     </option>
                     <Collegelist />
                   </select>
+                  {/* {touched && !collegeName && <p style={{ color: 'red' }}>College name is required</p>} */}
                 </div>
               </div>
               <div
@@ -229,13 +219,10 @@ const Signup = () => {
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
-                  className=" "
+                  className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="number"
-                 
                   id="year"
-                
                   min="1"
-                 
                   max="5"
                   placeholder="YEAR"
                   style={{
@@ -246,101 +233,31 @@ const Signup = () => {
                     lineHeight: "normal",
                     letterSpacing: "1.2px",
                     borderBottom: "1px solid #FFF",
+                    marginTop:"10px",
                   }}
+                  required
                 />
-              </div>
-
-              <div
-                className="relative"
-                style={{ width: "contain", gap: "2rem" }}
-              >
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="PASSWORD"
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    
-                    errors.password && touched.password ? "input-error" : ""
-                  
-                  }
-                   style={{
-                     fontFamily: "Goldman",
-                     fontSize: "18px",
-                     fontStyle: "normal",
-                     fontWeight: 400,
-                     lineHeight: "normal",
-                     letterSpacing: "1.2px",
-                     borderBottom: "1px solid #FFF",
-                  }}
-                />
-                {errors.password && touched.password && (
-                  <p className="error">{errors.password}</p>
-                )}
-                {errors.password && touched.password && (
-                  <p className="error">{errors.password}</p>
-                )}
-              </div>
-
-              <div
-                className="relative"
-                style={{ width: "contain", gap: "2rem" }}
-              >
-                <input
-                  id="confirmPassword"
-                  type="password"
-                  placeholder="Confirm password"
-                  value={values.confirmPassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.confirmPassword && touched.confirmPassword
-                     
-                      ? "input-error"
-                     
-                      : ""
-                  }
-                  style={{
-                    fontFamily: "Goldman",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    letterSpacing: "1.2px",
-                    borderBottom: "1px solid #FFF",
-                  }}
-                />
-                {errors.confirmPassword && touched.confirmPassword && (
-                  <p className="error">{errors.confirmPassword}</p>
-                )}
               </div>
             </form>
-            <div className="w-[120%] h-[20%] flex  justify-center items-center laptopDesignElement ">
-              <button
-                form="myForm"
-                id="myForm"
-                onClick={showFormData}
-                type="button"
-                className="SignUpBtnForMobileView"
-                class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
-                style={{
-                  fontFamily: "Goldman",
-                  padding: "0.5rem 1rem", // Adjusted padding for smaller size
-                  width: "50%",
-                  fontSize: "1.5rem", // Adjusted font-size for smaller size
-                }}
+            <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
+              <svg
+                width="75%"
+                height="75%"
+                viewBox="0 0 45 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Sign Up
-              </button>
+                <path d="M20 0V20H0" stroke="white" stroke-width="2" />
+                <path d="M0 28H20V48" stroke="white" stroke-width="2" />
+                <path d="M25 48L25 28L45 28" stroke="white" stroke-width="2" />
+              </svg>
             </div>
           </div>
 
           {/* new code for signUp button and already have an account button mobile view */}
           <div className=" button-container  flex flex-col ">
             <div className="">
-              {/* <button
+              <button
                 form="myForm"
                 id="myForm"
                 onClick={showFormData}
@@ -355,8 +272,8 @@ const Signup = () => {
                   fontSize: "2rem",
                 }}
               >
-                Sign Up
-              </button> */}
+                SIGNUP
+              </button>
             </div>
 
             <div className="   flex items-center justify-evenly">
@@ -698,11 +615,44 @@ const Signup = () => {
               </svg>
             </div>
             {/* this svg is the sign up button in laptop view  */}
-            <Link to="/gsignup">
-              <div className="gsignup">
-                <GoogleButton text="Sign Up with Google" style={{ width: "105%" }} />
-              </div>
-            </Link>
+            <div className="SignUpBtn  cursor-pointer">
+              <svg
+                form="myForm"
+                id="myForm"
+                onClick={showFormData}
+                width="286"
+                height="72"
+                viewBox="0 0 286 72"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0H252.554L286 32.972V72H0V0Z" fill="white" />
+                <path
+                  d="M213.372 47.56V27.24L212.972 24H230.692C232.398 24 233.732 24.2267 234.692 24.68C235.678 25.1333 236.398 25.7333 236.852 26.48C237.332 27.2 237.638 27.9733 237.772 28.8C237.905 29.6267 237.972 30.4133 237.972 31.16V33.52C237.972 34.1333 237.878 34.8267 237.692 35.6C237.505 36.3467 237.158 37.08 236.652 37.8C236.145 38.4933 235.412 39.08 234.452 39.56C233.492 40.0133 232.238 40.24 230.692 40.24H226.612C224.932 40.24 223.358 40.2 221.892 40.12C220.452 40.04 219.372 39.9733 218.652 39.92V47.56H213.372ZM218.652 36.4H229.532C230.732 36.4 231.558 36.1067 232.012 35.52C232.465 34.9333 232.692 34.2267 232.692 33.4V30.88C232.692 30.0267 232.465 29.3067 232.012 28.72C231.558 28.1333 230.745 27.84 229.572 27.84H218.652V36.4Z"
+                  fill="#020202"
+                />
+                <path
+                  d="M185.267 47.96C182.84 47.96 181.147 47.3067 180.187 46C179.227 44.6934 178.747 42.96 178.747 40.8V24.04H184.027V40.96C184.027 42.2134 184.334 43.0534 184.947 43.48C185.56 43.9067 186.32 44.12 187.227 44.12H195.707C196.56 44.12 197.307 43.9067 197.947 43.48C198.587 43.0267 198.907 42.1867 198.907 40.96V24.04H204.187V40.8C204.187 42.24 203.987 43.4934 203.587 44.56C203.187 45.6267 202.52 46.4667 201.587 47.08C200.654 47.6667 199.36 47.96 197.707 47.96H185.267Z"
+                  fill="#020202"
+                />
+                <path
+                  d="M131.911 47.56V27.24L131.511 24.04H137.271L150.871 38.28L152.431 40.44H152.871V24.04H158.151V47.56H153.071L139.151 33.08L137.591 31.2H137.191V47.56H131.911Z"
+                  fill="#020202"
+                />
+                <path
+                  d="M103.634 47.56C101.741 47.56 100.261 47.2933 99.194 46.76C98.1273 46.2267 97.3806 45.4267 96.954 44.36C96.5273 43.2933 96.314 41.9733 96.314 40.4V31.48C96.314 28.92 96.8873 27.04 98.034 25.84C99.1806 24.6133 101.047 24 103.634 24H115.674C117.514 24 118.914 24.1067 119.874 24.32C120.861 24.5067 121.354 24.7067 121.354 24.92L120.554 28.24C120.101 28.16 118.754 28.08 116.514 28C114.301 27.8933 111.074 27.84 106.834 27.84H104.794C102.661 27.84 101.594 28.7867 101.594 30.68V40.88C101.594 41.7867 101.821 42.4933 102.274 43C102.754 43.48 103.594 43.72 104.794 43.72H106.434C108.994 43.72 111.154 43.7067 112.914 43.68C114.674 43.6267 116.127 43.5867 117.274 43.56V38.12L114.874 38.16L109.634 38.56V34.64H122.514V45.88L122.914 46.72C122.914 46.9333 122.354 47.1333 121.234 47.32C120.114 47.48 118.221 47.56 115.554 47.56H103.634Z"
+                  fill="#020202"
+                />
+                <path
+                  d="M82.0342 47.56V24.04H87.3142V47.56H82.0342Z"
+                  fill="#020202"
+                />
+                <path
+                  d="M53.28 47.56C51.4667 47.56 50.1333 47.48 49.28 47.32C48.4267 47.16 48 46.9734 48 46.76L49.6 43.28C50.2133 43.3867 51.7333 43.4934 54.16 43.6C56.6133 43.68 59.9733 43.72 64.24 43.72H65C66.1467 43.72 66.96 43.52 67.44 43.12C67.92 42.6934 68.16 41.9867 68.16 41V40.2C68.16 39.2667 67.96 38.6 67.56 38.2C67.1867 37.8 66.3333 37.6 65 37.6H55.72C53.0267 37.6 51.0667 37.1067 49.84 36.12C48.6133 35.1067 48 33.4667 48 31.2V30.56C48 29.3867 48.2133 28.3067 48.64 27.32C49.0933 26.3334 49.8533 25.5467 50.92 24.96C51.9867 24.3467 53.4533 24.04 55.32 24.04H66.2C68.0133 24.04 69.48 24.1334 70.6 24.32C71.72 24.5067 72.28 24.7067 72.28 24.92L71.48 28.28C70.7867 28.2 69.2133 28.12 66.76 28.04C64.3067 27.9334 61.0133 27.88 56.88 27.88L56.44 27.84C55.2133 27.84 54.3867 28.0934 53.96 28.6C53.5333 29.08 53.3067 29.6934 53.28 30.44V31.12C53.28 32 53.52 32.6667 54 33.12C54.5067 33.5467 55.3333 33.76 56.48 33.76H65.36C67.0667 33.76 68.52 33.9334 69.72 34.28C70.92 34.6267 71.84 35.2667 72.48 36.2C73.12 37.1067 73.44 38.4534 73.44 40.24V40.88C73.44 42.88 72.92 44.4934 71.88 45.72C70.8667 46.9467 69.0933 47.56 66.56 47.56H53.28Z"
+                  fill="#020202"
+                />
+              </svg>
+            </div>
 
             <div className="h-[20%] w-full">
               <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">
@@ -721,4 +671,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Gsignup;

@@ -19,7 +19,7 @@
 .glow-text:hover {
   color: white; /* Set the color when hovering */
   text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff; /* Add glow effect */
-  font-size: 20px; /* Set the font size when hovering */
+  /* font-size: 20px;  */
 }
 
 /* CSS for continuous glowing animation */
@@ -45,7 +45,7 @@
 .glow-animation:hover {
   color: white; /* Set the color when hovering */
   text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff; /* Set the initial glow on hover */
-  font-size: 20px; /* Set the font size when hovering */
+  /* font-size: 20px; Set the font size when hovering */
   animation: none; /* Disable the continuous glow animation on hover */
 }
 

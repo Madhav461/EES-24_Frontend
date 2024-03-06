@@ -1,3 +1,41 @@
+
+.TeamNameHeading{
+
+    color: white;
+    font-family: Goldman;
+    padding-left: 1%;
+    font-size: 1.5vw;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+.dashboardtext{
+
+    color: white;
+    font-family: Goldman;
+    padding-left: 1%;
+    font-size: 1.5vw;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+
+
+
+}
+
+.buttontext{
+
+    color: black;
+    font-family: Goldman;
+    padding-left: 1%;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+
 /* Switching between desktop/mobile views*/
 @media screen and (min-width: 1920px) {
     .dash_mobileview {
@@ -968,339 +1006,20 @@
     }
 }
 
-@media screen and (max-width: 350px) {
-    .dmb-upper {
-        width: 50.16px;
-        height: 35.28px;
-    }
 
-    .dmb-lower {
-        width: 24.9px;
-        height: 18.9px;
-    }
 
-    .dmb-lower3 {
-        width: 48.08px;
-        height: 20.5px;
-    }
 
-    .p1-dashboard-mb{
-        font-size: 9px;
-        padding: 1.5rem 0.25rem 0.5rem 0.5rem;
-    }
-    
-    .name-dashboard-mb {
-        font-size: 18px;
-        margin-bottom: -3.5rem;
-    }
 
-    .radinite-dashboard-mb {
-        font-size: 10px;
-    }
 
-    .upper-dashboard-mb {
-        margin-bottom: -1.5rem;
-    }
-    
-    .container-dashboard-mb {
-        padding: 0%;
-        margin: 0% auto 0.5% auto;
-    }
 
-    .radinite-dashboard-mb {
-        padding-top: 10%;
-    }
-}
-.y19{
-    padding-left:0%;
-    position: absolute;
-    top:63%;
-    font-family: Michroma;
-}
-.y29{
-    left:1%;
-    position:absolute;
-    top:11%;
-    height:75%;
-}
-.y39{
-    display: inline-block;
-    position:absolute;
-    left:10%;
-    top:26%;
-    width:900px;
-    border-bottom: 1.8px solid black;
-    margin-bottom: 0px;
-    font-family: Michroma;
-    height:22px;
-}
-.y49{
-    display: inline-block;
-    position:absolute;
-    left:10%;
-    top:40%;
-    width:900px;
-    border-bottom: 1.8px solid black;
-    margin-bottom: 0px;
-    font-family: Michroma;
-    height:22px;
-}
-.y56{
-    width:78vw;
-}
-#Name{
-    border:none;
-    display: inline-block;
-    padding-right: 25%;
-    font-family: Michroma;
-    font-size: 10px;
-}
-#Email{
-    border:none;
-    display:inline-block;
-    padding-right: 25%;
-    font-family: Michroma;
-    font-size: 10px;
-}
-#Electronics{
-    border:none;
-    display: inline-block;
-    padding-right: 25%;
-    font-family: Michroma;
-    font-size: 10px;
-}
-#PhoneNumber{
-    border:none;
-    display: inline-block;
-    font-family: Michroma;
-    font-size: 10px;
-}
-#Year{
-    border:none;
-    display: inline-block;
-    font-family: Michroma;
-    font-size: 10px;
-}
-#College{
-    border:none;
-    display: inline-block;
-    padding-right: 25%;
-    font-family: Michroma;
-    font-size: 10px;
-}
-.yashtheman{
-    position: absolute;
-    top:65%;
-    left:9%;
-}
-::placeholder{
-    color:black;
-}
-@media (max-width:1000px){
-    #Name{
-        border:none;
-        display: inline-block;
-        padding-right: 15%;
-        font-family: Michroma;
-        font-size: 9px;
-    }
-    #Email{
-        border:none;
-        display:inline-block;
-        padding-right: 15%;
-        font-family: Michroma;
-        font-size: 7px;
-    }
-    #Electronics{
-        border:none;
-        display: inline-block;
-        padding-right: 15%;
-        font-family: Michroma;
-        font-size: 7px;
-    }
-    #PhoneNumber{
-        border:none;
-        display: inline-block;
-        font-family: Michroma;
-        font-size: 7px;
-    }
-    #Year{
-        border:none;
-        display: inline-block;
-        font-family: Michroma;
-        font-size: 7px;
-    }
-    #College{
-        border:none;
-        display: inline-block;
-        padding-right: 15%;
-        font-family: Michroma;
-        font-size:7px;
-    }
-    .yashtheman{
-        position: absolute;
-        top:55%;
-        left:9%;
-        font-family: Michroma;
-        font-size: 13px;
-    }
-    .y39{
-        display: inline-block;
-        position:absolute;
-        left:10%;
-        top:15%;
-        width:60vw;
-        border-bottom: 1.8px solid black;
-        margin-bottom: 0px;
-        font-family: Michroma;
-        height:22px;
-    }
-    .y49{
-        display: inline-block;
-        position:absolute;
-        left:10%;
-        top:28%;
-        width:60vw;
-        border-bottom: 1.8px solid black;
-        margin-bottom: 0px;
-        font-family: Michroma;
-        height:22px;
-    }
-}
-@media (max-width:1100px) and (min-width:1001px){
-    #Name{
-        border:none;
-        display: inline-block;
-        padding-right: 8%;
-    }
-    #Email{
-        border:none;
-        display:inline-block;
-        padding-right: 8%;
-    }
-    #Electronics{
-        border:none;
-        display: inline-block;
-        padding-right:8%;
-    }
-    #PhoneNumber{
-        border:none;
-        display: inline-block;
-    }
-    #Year{
-        border:none;
-        display: inline-block;
-    }
-    #College{
-        border:none;
-        display: inline-block;
-        padding-right: 8%;
-    }
-    .yashtheman{
-        position: absolute;
-        top:53%;
-        left:9%;
-    }
-    .y39{
-        display: inline-block;
-        position:absolute;
-        left:10%;
-        top:19%;
-        width:64vw;
-        border-bottom: 1.8px solid black;
-        margin-bottom: 0px;
-        font-family: Michroma;
-        height:22px;
-    }
-    .y49{
-        display: inline-block;
-        position:absolute;
-        left:10%;
-        top:32%;
-        width:64vw;
-        border-bottom: 1.8px solid black;
-        margin-bottom: 0px;
-        font-family: Michroma;
-        height:22px;
-    }
-}
-@media (max-width:1200px) and (min-width:1101px){
-    #Name{
-        border:none;
-        display: inline-block;
-        padding-right: 8%;
-    }
-    #Email{
-        border:none;
-        display:inline-block;
-        padding-right: 8%;
-    }
-    #Electronics{
-        border:none;
-        display: inline-block;
-        padding-right:8%;
-    }
-    #PhoneNumber{
-        border:none;
-        display: inline-block;
-    }
-    #Year{
-        border:none;
-        display: inline-block;
-    }
-    #College{
-        border:none;
-        display: inline-block;
-        padding-right: 8%;
-    }
-    .yashtheman{
-        position: absolute;
-        top:53%;
-        left:9%;
-    }
-    .y56{
-        width:82.5vw;
-    }
-}
-/*@media (min-height:1024px){
-    .y29{
-        left:1%;
-        position:absolute;
-        top:10%;
-        height:75%;
-    }
-    .y39{
-        display: inline-block;
-        position:absolute;
-        left:10%;
-        top:20%;
-        width:70vw;
-        border-bottom: 1.5px dotted black;
-        margin-bottom: 0px;
-    }
-    .y49{
-        display: inline-block;
-        position:absolute;
-        left:10%;
-        top:35%;
-        width:70vw;
-        border-bottom: 1.5px dotted black;
-        margin-bottom: 0px;
-    }
-}*/
-@media (max-width:1440px) and (min-width:1201px){
-    .y56{
-        width:82vw;
-    }
-}
 
-@media (min-width:1600px){
-    .y56{
-        width:68.5vw;
+
+/* @media screen and (max-width: 1000px)
+{
+    .textSizefixing{
+           
+        font-size:0.5vw ;
+
     }
-}
-@media (min-width:1900px){
-    .y56{
-        width:61.5vw;
-    }
-}
+} */
+

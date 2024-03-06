@@ -1,22 +1,20 @@
-import React, { useContext, Fragment } from 'react'
+import React from 'react';
 import TeamsTxt from "./NavbarComps/TeamsTxt.jsx";
 // import "./nav.css";
 // import { Link } from 'react-router-dom';
 // import React, { useState } from 'react';
-import "./nav.css";
 import { Link } from 'react-router-dom';
-import HamburgerMenu from './hamburger.js';
 import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
+import HamburgerMenu from './hamburger.js';
+import "./nav.css";
 // import GalleryTxt from './NavbarComps/GalleryTxt.jsx';
-import ScheduleTxt from "./NavbarComps/ScheduleTxt.jsx";
 import EventsTxt from './NavbarComps/EventsTxt.jsx';
-import { AuthContext } from './AuthProvider.js';
-import { Menu, Transition } from '@headlessui/react'
+import ScheduleTxt from "./NavbarComps/ScheduleTxt.jsx";
 import Profile from './Profile.js';
 // imoprt SponsorsTxt
 
 const Navhome2 = () => {
-  const { user } = useContext(AuthContext);
+  const user = true
 
   return (
     <div className='bg-gray '>

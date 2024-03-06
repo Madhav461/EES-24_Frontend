@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +8,7 @@
     color: #000;
     text-align: center;
     font-family: Goldman;
-    font-size: 3.5rem;
+    font-size: 1.35rem;
     margin-top: 8%;
     padding: 3%;
     font-style: normal;
@@ -39,7 +37,6 @@
     background-image: url("/public/Vector 91.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 0;
   }
   
   .SignUp-card-blackDiv {
@@ -176,7 +173,7 @@
       background-image: unset;
       background: white;
       height: 20%;
-      margin-bottom: 0%;
+      margin-bottom: 20%;
     }
   
     .none {
@@ -224,6 +221,19 @@
     .SignUp-card-heading {
       font-size: 0.5rem;
     }
+    .SignUp {
+        color: #000;
+        text-align: center;
+        font-family: Goldman;
+        font-size: 5vw;
+        margin-top: 8%;
+        padding: 3%;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+        letter-spacing: 5.775px;
+        margin-left: 1%;
+      }
   }
   
   /* Large screens and above */
@@ -232,6 +242,19 @@
       /* font-size: 1rem; */
       padding-bottom: 1.5rem;
     }
+    .SignUp {
+        color: #000;
+        text-align: center;
+        font-family: Goldman;
+        font-size: 3vw;
+        margin-top: 8%;
+        padding: 3%;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+        letter-spacing: 5.775px;
+        margin-left: 1%;
+      }
   }
   
   .SignUp-card-whiteDiv {
@@ -371,7 +394,6 @@
       background-image: unset;
       background: white;
       height: 20%;
-      margin-bottom: 0;
       /* margin-bottom: 20%; */
     }
   
@@ -497,8 +519,8 @@
   }
  
   
-  input,select
-   {
+  input,
+  select {
     width: 92%;
     height: 20%;
     padding-left: 4px;

@@ -14,7 +14,7 @@
 }
 
 .events-home-card:hover {
-    transform: scaleY(1.125) scaleX(1.125);
+    /* transform: scaleY(1.125) scaleX(1.125); */
     transition: ease-in-out;
     cursor: pointer;
 }

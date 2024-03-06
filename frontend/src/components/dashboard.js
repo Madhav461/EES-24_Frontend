@@ -10,10 +10,8 @@ const Dashboard = () => {
   const [email, setEmail] = useState("email@itbhu.ac.in");
   const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
-  const [radiniteScore, setRadiniteScore] = useState(95);
   const { number } = useSpring({
     from: { number: 0 },
-    number: radiniteScore,
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
@@ -57,54 +55,54 @@ const Dashboard = () => {
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
-                <input
+                <span
                   type="text"
                   name="Name"
                   id="Name"
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                />{" "}
-                <input
+                >{name}</span>{" "}
+                <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true"
-                />
-                <input
+                  disabled="true">
+                 {email}</span>
+                <span
                   type="number"
                   name="PhoneNumber"
                   id="PhoneNumber"
                   placeholder="0009473899"
                   value={mobile}
                   disabled="true"
-                />
+                >{mobile}</span>
               </p>
               <p className="y49">
-                <input
+                <span
                   type="text"
                   name="Electronics"
                   id="Electronics"
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                />
-                <input
+                >{branch}</span>
+                <span
                   type="text"
                   name="College"
                   id="College"
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                />{" "}
-                <input
+                >{college}</span>{" "}
+                <span
                   type="text"
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                />
+                >Ist Year</span>
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />
@@ -122,9 +120,7 @@ const Dashboard = () => {
               <img className="dhi dhi-11" src="dashboardheading.svg" />
               <img className="dhi dhi-12" src="dashboardheading.svg" />
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
-              <animated.span className="y69">
-                {number.to((radiniteScore) => radiniteScore.toFixed(0))}
-              </animated.span>
+            
             </div>
 
             <div className="details-dashboard">
@@ -138,13 +134,9 @@ const Dashboard = () => {
                 <div>{email}</div>
               </div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
-              <div className="radinite-dashboard">Radinite</div>
+           
             </div>
-            <img
-              className="radinite-logo-dashboard"
-              src="radinite.svg"
-              alt="radinite"
-            />
+           
             {/* <div className="score-logo-dashboard">
                             <img
                                 src="dashboardeclipse.svg"
@@ -333,16 +325,9 @@ const Dashboard = () => {
                   <div>{mobile}</div>
                 </div>
 
-                <div className="radinite-dashboard-mb">
-                  <div>{radiniteScore}</div>
-                  Radinite
-                </div>
+                
 
-                <img
-                  className="radinite-logo-dashboard-mb"
-                  src="radinite.svg"
-                  alt="radinite"
-                />
+               
                 {/* <div className="score-logo-dashboard">
         <img
             src="dashboardeclipse.svg"

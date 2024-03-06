@@ -39,6 +39,6 @@
 }
 
 .events-upcoming-back-button:hover {
-    transform: scaleY(1.25) scaleX(1.25);
-    transition: ease-in-out;
+    /* transform: scaleY(1.25) scaleX(1.25);
+    transition: ease-in-out; */
 }
