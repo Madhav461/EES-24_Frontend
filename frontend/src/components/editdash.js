@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
-import "./dashboard.css";
+import "./editdash.css";
 
-const Dashboard = () => {
+const EditDashboard = () => {
   const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
@@ -22,9 +22,9 @@ const Dashboard = () => {
       <Navhome className="z-10"/>
       </div>
       {/* desktop view */}
-      <div className="dash_desktopview relative overflow-hidden z-[-1]">
+      <div className="dash_desktopview relative overflow-hidden ">
       
-        <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
+        <div className="bgimg h-[100vh] w-[100vw] z-[-900] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
             src="/image 50.svg"
@@ -101,34 +101,16 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="container-dashboard absolute">
-            <div className="heading-dashboard">
-              <img className="dhi" src="dashboardheading2.svg" />
-              <img className="dhi dhi-1" src="dashboardheading.svg" />
-              <img className="dhi dhi-2" src="dashboardheading.svg" />
-              <img className="dhi dhi-3" src="dashboardheading.svg" />
-              <img className="dhi dhi-4" src="dashboardheading.svg" />
-              <img className="dhi dhi-5" src="dashboardheading.svg" />
-              <div className="heading-text-dashboard">GRADE 1</div>
-              <img className="dhi dhi-11" src="dashboardheading.svg" />
-              <img className="dhi dhi-12" src="dashboardheading.svg" />
-              {/* {<span className="y69 ">{radiniteScore}</span>} */}
-            
-            </div>
 
-            <div className="details-dashboard">
-              <div className="name-dashboard">{name}</div>
-              <div className="p1-dashboard">
-                <div>{college}</div>
-                <div>{mobile}</div>
-              </div>
-              <div className="p2-dashboard">
-                <div>{branch}</div>
-                <div>{email.length <=30 ? email : `${email.substring(0,30)}...`}</div>
-              </div>
+            <div className="details-dashboard" style={{zIndex:"1"}}>
+              <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{zIndex:"10000"}}></input></div>
+                <div className="college99"><input type="text"  id="college2" placeholder={college}></input></div>
+                <div className="branch99"><input type="text"  id="branch2" placeholder={branch}></input></div>
+                <div className="email99"><input type="email"  id="email2" placeholder={email.length <=30 ? email : `${email.substring(0,30)}...`} disabled></input></div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
-           
             </div>
-           
+            <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"  id="submitedit">Submit</button>
+            <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"  id="submitcancel">Cancel</button>
             {/* <div className="score-logo-dashboard">
                             <img
                                 src="dashboardeclipse.svg"
@@ -193,7 +175,7 @@ const Dashboard = () => {
                 alt="img"
                 className="absolute left-[-14%] bottom-[-24%] "
               />
-              PROFILE
+              EDIT PROFILE
             </div>
           </div>
           <div className="h-[80%] ">
@@ -247,7 +229,7 @@ const Dashboard = () => {
             style={{
               textAlign: "center",
               color: "white",
-              fontSize: "3.4vw",
+              fontSize: "2.4vw",
               fontFamily: "Michroma",
               fontWeight: "400",
               letterSpacing: "1.5vw",
@@ -266,7 +248,7 @@ const Dashboard = () => {
               className="absolute right-[-65%] h-[300%]"
               style={{ top: "50%", transform: "translateY(-50%)" }}
             />
-            PROFILE
+            EDIT PROFILE
           </div>
         </div>
 
@@ -309,12 +291,11 @@ const Dashboard = () => {
               </div>
 
               <div className="container-dashboard-mb">
-                <div className="name-dashboard-mb">{name}</div>
+                <div className="name-dashboard-mb"><input type="text" placeholder={name}></input></div>
                 <div className="p1-dashboard-mb">
-                  <div>{college}</div>
-                  <div>{branch}</div>
-                  <div style={{"fontSize":"85%"}}>{email.length <=15 ? email : `${email.substring(0,15)}...`}</div>
-                  <div>{mobile}</div>
+                  <div><input type="text" placeholder={college}></input></div>
+                  <div><input type="text" placeholder={branch}></input></div>
+                  <div style={{"fontSize":"85%"}}><input type="text" placeholder={email.length <=15 ? email : `${email.substring(0,15)}...`} disabled></input></div>
                 </div>
 
                 
@@ -371,4 +352,4 @@ const Dashboard = () => {
     </div>
   );
 };
-export default Dashboard;
+export default EditDashboard;
