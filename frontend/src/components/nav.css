@@ -36,7 +36,7 @@
 }
 
 .glow-animation {
-  font-size: 16px;
+  /* font-size: 16px; */
   color: #fff; /* Set the initial text color */
   transition: color 0.3s, text-shadow 0.3s, font-size 0.3s;
   animation: glow 1s infinite; /* Apply the glow animation */
@@ -45,7 +45,7 @@
 .glow-animation:hover {
   color: white; /* Set the color when hovering */
   text-shadow: 0 0 10px #16b9ff, 0 0 20px #16b9ff, 0 0 30px #16b9ff; /* Set the initial glow on hover */
-  /* font-size: 20px; Set the font size when hovering */
+  font-size:16px;/* Set the font size when hovering */
   animation: none; /* Disable the continuous glow animation on hover */
 }
 
