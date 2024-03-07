@@ -46,6 +46,7 @@
 
 .team-dashboard-icons {
     width: 20px;
+    margin-left: auto;
 }
 
 .team-dashboard-teamName-display {
@@ -100,6 +101,7 @@
     width: 350px;
     height: 250px;
     overflow-y: scroll;
+    /* overflow: hidden; */
 }
 
 .team-name-dashboard {
@@ -158,98 +160,144 @@
     }
 }
 
-@media screen and (max-width: 1500px) {
-    /* .team-dashboard-container{
-        height: 26%;
-        margin-top: -4%;
-    } */
+/* @media screen and (max-width: 1500px) {
     .teams-registered-dashboard {
         height: 60%;
     }
 }
 @media screen and (max-width: 1460px) {
     .team-dashboard-container{
-        height: 24%;
-        margin-top: -4%;
+        height: 16%;
+        margin-top: -10%;
+    }
+    .team-dashboard-members {
+        margin-top: 1%;
+        margin-bottom: 1.5%;
     }
     .team-dashboard-teamName-display {
-        padding: 1.5% 2% 1.5% 2%;
+        padding: 1% 1.5% 1% 1.5%;
+        margin: 0;
     }
     .team-dashboard-eventName-display {
-        padding: 1.5% 2% 1.5% 2%;
+        padding: 1% 1.5% 1% 1.5%;
+        margin: 0;
     }
     .team-dashboard-members-names{
-        padding: 1% 2% 1% 2%;
+        padding: 1% 1.5% 1% 1.5%;
+        margin: 0;
     }
 }
 @media screen and (max-width: 1375px) {
     .team-dashboard-container{
-        height: 20%;
-        margin-top: -6%;
-        font-size: 12px;
-    }
-    .team-dashboard-teamName-display {
-        padding: 1.5% 2% 1.5% 2%;
-    }
-    .team-dashboard-eventName-display {
-        padding: 1.5% 2% 1.5% 2%;
-    }
-    .team-dashboard-members-names{
-        padding: 1% 2% 1% 2%;
+        height: 15%;
+        margin-top: -12%;
+        font-size: 17px;
     }
 }
 @media screen and (max-width: 1200px) {
     .team-dashboard-container{
-        height: 19%;
-        margin-top: -6%;
-        font-size: 12px;
+        height: 14%;
+        margin-top: -14%;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1250px) {
+    .team-dashboard-container{
+        height: 13%;
+        margin-top: -13%;
+        font-size: 15px;
     }
 }
 @media screen and (max-width: 1180px) {
     .team-dashboard-container{
-        height: 18%;
-        margin-top: -8%;
-        font-size: 11px;
+        height: 12%;
+        margin-top: -15%;
+        font-size: 14px;
     }
 }
 @media screen and (max-width: 1080px) {
     .team-dashboard-container{
-        height: 17%;
-        margin-top: -9%;
-        font-size: 9px;
+        height: 11%;
+        margin-top: -17%;
+        font-size: 13px;
     }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1020px) {
     .team-dashboard-container{
-        height: 15%;
-        margin-top: -11%;
-    }
-    .team-dashboard-teamName-display {
-        padding: 1% 1.5% 1% 1.5%;
-    }
-    .team-dashboard-eventName-display {
-        padding: 1% 1.5% 1% 1.5%;
-    }
-    .team-dashboard-members-names{
-        padding: 1% 1.5% 1% 1.5%;
-    }
-    .team-dashboard-icons {
-        width: 15px;
+        height: 10%;
+        margin-top: -18%;
+        font-size: 12px;
     }
 }
 @media screen and (max-width: 950px) {
     .team-dashboard-container{
-        height: 12%;
-        margin-top: -14%;
-        font-size: 9px;
+        height: 9%;
+        margin-top: -20%;
+        font-size: 11px;
+    }
+} */
+
+/* @media screen and (max-width: 1460px) {
+    .team-dashboard-container{
+        height: 20%;
+        margin-top: -6%;
+    }
+    .team-dashboard-members {
+        margin-top: 1%;
+        margin-bottom: 1.5%;
     }
     .team-dashboard-teamName-display {
         padding: 1% 1.5% 1% 1.5%;
+        margin: 0;
     }
     .team-dashboard-eventName-display {
         padding: 1% 1.5% 1% 1.5%;
+        margin: 0;
     }
     .team-dashboard-members-names{
         padding: 1% 1.5% 1% 1.5%;
+        margin: 0;
     }
 }
+@media screen and (max-width: 1375px) {
+    .team-dashboard-container{
+        height: 18%;
+        margin-top: -7%;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 1250px) {
+    .team-dashboard-container{
+        height: 17%;
+        margin-top: -9%;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 1180px) {
+    .team-dashboard-container{
+        height: 16%;
+        margin-top: -10%;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .team-dashboard-container{
+        height: 15%;
+        margin-top: -11%;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 1020px) {
+    .team-dashboard-container{
+        height: 13%;
+        margin-top: -13%;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 950px) {
+    .team-dashboard-container{
+        height: 11%;
+        margin-top: -15%;
+        font-size: 11px;
+    }
+} */

@@ -1021,7 +1021,6 @@
     flex-direction: column;
 }
 
-
 @media screen and (max-width: 1921px) {
     .event-registration-mobileview {
         display: none;
@@ -1044,4 +1043,12 @@
         /* visibility:visible; */
         display: flex;
     }
+}
+
+.fpc-mobile {
+    font-family: Michroma;
+    font-size: 19px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.425px;
 }

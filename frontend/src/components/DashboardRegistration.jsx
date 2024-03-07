@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
-import "./DashboardRegistration.css";
+
 
 import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./EventRegistration.css";
 import "./EventRegistrationMobile.css";
 import "./ForgotPassword.css";
+import "./DashboardRegistration.css";
 
 const DashboardRegistration = () => {
   const [name, setName] = useState("Abhinav");
@@ -1225,7 +1226,7 @@ const DashboardRegistration = () => {
                 <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
             </div>
             <form onSubmit={handleFormSubmit} className="">
-                <div class="forgot-password-container">
+                <div class="forgot-password-container fpc-mobile">
                     <h1>Event Registration</h1>
                     <h2 class="information-text-fp">Select an event</h2>
                     <h3 class="information-text-fp-success" id="fp-success">Your team has been successfully registered.</h3>
