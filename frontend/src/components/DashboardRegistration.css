@@ -1019,6 +1019,21 @@
 .event-registration-mobileview {
     display: flex;
     flex-direction: column;
+    background: url("../../public/image 50.svg");
+}
+
+.event-registration-mobileview::after {
+    content: "";
+    background: url("../../public/image 50.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
 }
 
 @media screen and (max-width: 1921px) {
@@ -1051,4 +1066,8 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: 1.425px;
+}
+
+.dashboard-container-mobile-upper {
+    margin-top: 6%;
 }

@@ -1218,7 +1218,7 @@ const DashboardRegistration = () => {
 
           {/* Mobile view Santosh */}
           <div className="event-registration-mobileview">
-            <div className="upper-dashboard-mb">
+            <div className="upper-dashboard-mb dashboard-container-mobile-upper">
                 <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
                 <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
                 <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
