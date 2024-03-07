@@ -3,7 +3,7 @@ import "../components/gsignup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import { basicSchema } from "../schemas";
+import { basicSchema3 } from "../schemas";
 import Collegelist from "./collegelist";
 
 const onSubmit = async (values, actions) => {
@@ -55,10 +55,10 @@ const Gsignup = ({ name, email }) => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      email: "",
-      collegeName: "",
+      email:"",
+      CollegeName:"",
     },
-    validationSchema: basicSchema,
+    validationSchema: basicSchema3,
     onSubmit,
   });
 
@@ -152,9 +152,7 @@ const Gsignup = ({ name, email }) => {
                   placeholder={email}
                   type="email"
                   className={
-                    errors.email && touched.email
-                      ? "input-error w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "
-                      : "w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder  "
+                    errors.password && touched.password ? "input-error" : ""
                   }
                   onBlur={handleBlur}
                   style={{
@@ -180,8 +178,7 @@ const Gsignup = ({ name, email }) => {
               >
                 <div>
                   <select
-                    value={values.collegeName}
-
+                    id="collegeName"
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -211,7 +208,6 @@ const Gsignup = ({ name, email }) => {
                     </option>
                     <Collegelist />
                   </select>
-                  {/* {touched && !collegeName && <p style={{ color: 'red' }}>College name is required</p>} */}
                 </div>
               </div>
               <div

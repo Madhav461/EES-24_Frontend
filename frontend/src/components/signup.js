@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useContext} from "react";
 import "../components/signup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
@@ -6,32 +6,17 @@ import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import Collegelist from "./collegelist";
 import GoogleButton from "react-google-button";
+import queryString from 'query-string';
+import AuthContext from "../context/AuthContext";
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
+  // console.log(values);
+  // console.log(actions);
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
-
-function showFormData() {
-  const formData = {
-    name: getElementValue("name"),
-    email: getElementValue("email"),
-    collegeName: getSelectValue("collegeName"),
-    year: getElementValue("year"),
-    password: getElementValue("password"),
-    confirmPassword: getElementValue("confirmPassword"),
-    name: getElementValue("name"),
-    email: getElementValue("email"),
-    collegeName: getSelectValue("collegeName"),
-    year: getElementValue("year"),
-    password: getElementValue("password"),
-    confirmPassword: getElementValue("confirmPassword"),
-  };
-
-  console.log("Form Data:", formData);
-}
 
 function getElementValue(id) {
   const element = document.getElementById(id);
@@ -53,6 +38,70 @@ function getSelectValue(id) {
 }
 
 const Signup = () => {
+
+  const { googleAuthenticate } = useContext(AuthContext)
+
+  const onGoogleLoginSuccess = async () => {
+      try {
+          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup', {
+            withCredentials: true,
+        });
+          console.log(res)
+          window.location = res.data.authorization_url;
+      } catch (err) {
+          console.error(err);
+      }
+  };
+
+  let location = useLocation()
+  
+  useEffect(() => {
+      const values = queryString.parse(location.search)
+      const state = values.state ? values.state : null;
+      const code = values.code ? values.code : null;
+  
+      // console.log("State : " + state)
+      // console.log("Code : " + code)
+      let mounted = true;
+      if(mounted) {
+        try {
+          googleAuthenticate(state, code)
+        } catch (err) {
+            console.log(err);
+        }
+      }
+      return () => {
+        mounted = false;
+      }
+  }, [location])
+
+  const {signUpUser} = useContext(AuthContext)
+
+  function showFormData() {
+    const formData = {
+      name: getElementValue("name"),
+      email: getElementValue("email"),
+      collegeName: getSelectValue("collegeName"),
+      year: getElementValue("year"),
+      password: getElementValue("password"),
+      confirmPassword: getElementValue("confirmPassword"),
+      name: getElementValue("name"),
+      email: getElementValue("email"),
+      collegeName: getSelectValue("collegeName"),
+      year: getElementValue("year"),
+      password: getElementValue("password"),
+      confirmPassword: getElementValue("confirmPassword"),
+    };
+  
+    console.log(formData);
+  
+    try {
+      signUpUser(formData)
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   const {
     values,
     errors,
@@ -67,6 +116,7 @@ const Signup = () => {
       collegeName: "",
       password: "",
       confirmPassword: "",
+      collegeName:"",
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -184,9 +234,6 @@ const Signup = () => {
                 {errors.email && touched.email && (
                   <p className="error">{errors.email}</p>
                 )}
-                {errors.email && touched.email && (
-                  <p className="error">{errors.email}</p>
-                )}
               </div>
 
               <div
@@ -195,7 +242,10 @@ const Signup = () => {
               >
                 <div>
                   <select
-                    id="collegeName"
+                  value={values.CollegeName}
+                  onChange={handleChange} 
+                  onBlur={handleBlur}
+                   id="CollegeName"
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -222,6 +272,9 @@ const Signup = () => {
                     </option>
                     <Collegelist />
                   </select>
+                  {errors.CollegeName && touched.CollegeName && (
+                  <p className="error">{errors.CollegeName}</p>
+                )}
                 </div>
               </div>
               <div
@@ -276,9 +329,7 @@ const Signup = () => {
                      borderBottom: "1px solid #FFF",
                   }}
                 />
-                {errors.password && touched.password && (
-                  <p className="error">{errors.password}</p>
-                )}
+                
                 {errors.password && touched.password && (
                   <p className="error">{errors.password}</p>
                 )}
@@ -340,7 +391,7 @@ const Signup = () => {
           {/* new code for signUp button and already have an account button mobile view */}
           <div className=" button-container  flex flex-col ">
             <div className="">
-              {/* <button
+              <button
                 form="myForm"
                 id="myForm"
                 onClick={showFormData}
@@ -356,7 +407,11 @@ const Signup = () => {
                 }}
               >
                 Sign Up
-              </button> */}
+              </button>
+              <GoogleButton
+              type="light" // can be light or dark
+              onClick={onGoogleLoginSuccess}
+              />
             </div>
 
             <div className="   flex items-center justify-evenly">
@@ -698,11 +753,12 @@ const Signup = () => {
               </svg>
             </div>
             {/* this svg is the sign up button in laptop view  */}
-            <Link to="/gsignup">
               <div className="gsignup">
-                <GoogleButton text="Sign Up with Google" style={{ width: "105%" }} />
+              <GoogleButton
+                type="light" // can be light or dark
+                onClick={onGoogleLoginSuccess}
+              />
               </div>
-            </Link>
 
             <div className="h-[20%] w-full">
               <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">

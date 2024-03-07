@@ -1,16 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../components/login.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useFormik } from "formik";
-import { basicSchema } from "../schemas";
+import { advancedSchema3 } from "../schemas";
 import GoogleButton from "react-google-button";
-// import GoogleIcon from "mui/icons-material/Google";
+import AuthContext from "../context/AuthContext";
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string'
+import axios from 'axios';
 
 const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
+  // console.log(values);
+  // console.log(actions);
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
@@ -19,14 +22,56 @@ const handleClick = () => {
 };
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext)
   function showFormData() {
     const formData = {
       email: getElementValue("email"),
       password: getElementValue("password"),
     };
 
-    console.log("Form Data:", formData);
+    console.log(formData);
+    try {
+      loginUser(formData)
+    } catch(err) {
+      console.error(err)
+    }
   }
+
+  const { googleAuthenticate } = useContext(AuthContext)
+
+  const onGoogleLoginSuccess = async () => {
+      try {
+          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup', {
+            withCredentials: true,
+        });
+          console.log(res)
+          window.location = res.data.authorization_url;
+      } catch (err) {
+          console.error(err);
+      }
+  };
+
+  let location = useLocation()
+  
+  useEffect(() => {
+      const values = queryString.parse(location.search)
+      const state = values.state ? values.state : null;
+      const code = values.code ? values.code : null;
+  
+      // console.log("State : " + state)
+      // console.log("Code : " + code)
+      let mounted = true;
+      if(mounted) {
+        try {
+          googleAuthenticate(state, code)
+        } catch (err) {
+            console.log(err);
+        }
+      }
+      return () => {
+        mounted = false;
+      }
+  }, [location])
 
   function getElementValue(id) {
     const element = document.getElementById(id);
@@ -46,11 +91,9 @@ const Login = () => {
   } = useFormik({
     initialValues: {
       email: "",
-      age: "",
       password: "",
-      confirmPassword: "",
     },
-    validationSchema: basicSchema,
+    validationSchema: advancedSchema3,
     onSubmit,
   });
 
@@ -784,11 +827,10 @@ const Login = () => {
               </svg>
             </div>
             <div className="w-[100%] h-[40%] flex justify-center  items-center flex-col ">
-              <Link to="/gsignup">
-                <div className="gsignup">
-                  <GoogleButton style={{ width: "105%" }} />
-                </div>
-              </Link>
+            <GoogleButton
+              type="light" // can be light or dark
+              onClick={onGoogleLoginSuccess}
+            />
         
 
               {/* <div className="google-icon    h-[20%] w-auto ">

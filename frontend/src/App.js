@@ -27,15 +27,16 @@ import OtpVerification from "./components/OtpVerification.jsx";
 import DashboardRegistration from "./components/DashboardRegistration.jsx";
 
 import EventRegistration from "./components/EventRegistration.jsx";
-import ForgotPassword from "./components/ForgotPassword.jsx";
+import ForgotPassword from "./components/ForgotPassword.js";
 import ResetPassword from "./components/ResetPassword.jsx";
+import { AuthProvider } from './context/AuthContext';
 
 
 
 function App() {
   return (
     <Router>
-
+      <AuthProvider>
      <div className="flex flex-col w-[100vw]  max-h-fit  ">
 
      <Routes>
@@ -75,7 +76,7 @@ function App() {
           </Routes>
       </div>
     </div>
-
+    </AuthProvider>
     </Router>
   
   );

@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import Navhome2 from "./navhome.js"
 import Marquee from "react-fast-marquee";
 import AnimatedTextCharacter from "./AnimatedTextCharacter";
@@ -56,7 +56,7 @@ const Gallery = () => {
        
        
         { src: './ees_image (34).svg', alt: '' },
-        { src: './ees_image (33).svg', alt: '' },
+       
         { src: './ees_image (35).svg', alt: '' },
         { src: './ees_image (36).svg', alt: '' },
         { src: './ees_image (37).svg', alt: '' },

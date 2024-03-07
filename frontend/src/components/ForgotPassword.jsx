@@ -34,22 +34,22 @@ const ForgotPassword = () => {
 
     return (
         <>
-            <Background />
+            {/* <Background /> */}
         <form onSubmit={handleFormSubmit} className="">
             <div class="forgot-password-container">
-                <h1 style={{fontFamily: 'goldman'}}>Forgot Password</h1>
-                <h2 class="information-text-fp" style={{fontFamily: 'goldman'}}>Enter your registered email to reset your password.</h2>
-                <h3 class="information-text-fp-success" id="fp-success" style={{fontFamily: 'goldman'}}>An Email has been sent to you.</h3>
+                <h1>Forgot Password</h1>
+                <h2 class="information-text-fp">Enter your registered email to reset your password.</h2>
+                <h3 class="information-text-fp-success" id="fp-success">An Email has been sent to you.</h3>
                 <div class="form-group-fp">
-                    <input type="email" name="user_email" id="user_email" className="input" value={email} onChange={handleEmailChange} style={{fontFamily: 'goldman'}}/>
-                    <p><label for="username" style={{fontFamily: 'goldman'}}>Email</label></p>
-                    <button style={{fontFamily: 'goldman'}} onClick={() => handleBtnClick("fp-success")}>Reset Password</button>
+                    <input type="email" name="user_email" id="user_email" className="input" value={email} onChange={handleEmailChange} />
+                    <p><label for="username">Email</label></p>
+                    <button onClick={() => handleBtnClick("fp-success")}>Reset Password</button>
                 </div>
                 <div class="footer-fp">
                     {/* <h5>New here? <a href="signup">Sign Up.</a></h5>
                     <h5>Already have an account? <a href="signin">Sign In.</a></h5> */}
-                    <h5 style={{fontFamily: 'goldman'}} onClick={() => routeChange("signup")}>New here?  <span>Sign Up</span> </h5>
-                    <h5 style={{fontFamily: 'goldman'}} onClick={() => routeChange("login")}>Already have an account?  <span>Log In</span> </h5>
+                    <h5 onClick={() => routeChange("signup")}>New here?  <span>Sign Up</span> </h5>
+                    <h5 onClick={() => routeChange("login")}>Already have an account?  <span>Log In</span> </h5>
                 </div>
             </div>
         </form>
