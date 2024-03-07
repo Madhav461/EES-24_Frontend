@@ -2,58 +2,104 @@ import "./OtpVerification.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import { basicSchema4 } from "../schemas";
 import Background from "./background";
 
 const OtpVerification = () => {
-  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   const [otp, setOtp] = useState("");
-  const handleOtpChange = (event) => {
-    setOtp(event.target.value);
-  };
 
-  const handleBtnClick = (id) => {
-    const targetDiv = document.getElementById(id);
-    targetDiv.style.display = "block";
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    console.log(actions);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
   };
+  
 
-  let navigate = useNavigate();
-  const routeChange = (route) => {
-    let path = `/dashboard`;
-    navigate(path);
-  };
-
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      // Retrieve the access token from local storage
+      const authToken = localStorage.getItem("accessToken");
+
+      // Make a POST request to verify OTP
+      const otpVerificationResponse = await axios.post(
+        "http://localhost:8000/api/user/verify",
+        { otp },
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
+
+      console.log("OTP verification response:", otpVerificationResponse.data);
+
+      // Handle success or redirect the user as needed
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+      // Handle failure, show an error message, etc.
+    }
   };
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      otpvarification:0,
+        },
+    validationSchema: basicSchema4,
+    onSubmit,
+  });
+
+  console.log(errors);
 
   return (
-    <>
-      <Background />
-      <form onSubmit={handleFormSubmit} className="">
-        <div class="forgot-password-container">
-          <h1 style={{fontFamily: 'goldman'}}>OTP Verification</h1>
-          <h2 class="information-text-fp" style={{fontFamily: 'goldman'}}>OTP has been sent to your email</h2>
-          <div class="form-group-fp">
-            <input
-              type="otp"
-              name="user_otp"
-              id="user_otp"
-              className="input"
-              value={otp}
-              onChange={handleOtpChange}
-              style={{fontFamily: 'goldman'}}
-              required
+    <div className="otp-verification-container z-0 m-auto">
+      <div className="email-otp">An email has been sent .</div>
+
+      <div className="search-bar">
+        <form onSubmit={handleFormSubmit}>
+          <label className="otp-label">Enter OTP: </label>
+          <input
+          style={{width:'auto'}}
+             type="number"
+             name="otpvarification"
+             id="otpvarification"
+             placeholder="OTP"
+             value={values.otpvarification}
+               onChange={handleChange}
+             className={errors.otpvarification && touched.otpvarification ? "input-error" : ""}
+               onBlur={handleBlur}
             />
-            <p>
-              <label for="username" style={{fontFamily: 'goldman'}}>OTP</label>
-            </p>
-            <button style={{fontFamily: 'goldman'}} onClick={() => handleBtnClick("fp-success")}>
-              Verify OTP
-            </button>
-          </div>
-        </div>
-      </form>
-    </>
+            {errors.otpvarification && touched.otpvarification && (
+                  <p className="error">{errors.otpvarification}</p>
+                )}
+        
+          <button type="submit" style={{
+            width:'100%',
+            justifyContent: 'center',
+             fontFamily: "Goldman",
+             fontSize: "15px",
+             fontStyle: "normal",
+             fontWeight: 400,
+             borderRadius: 2,
+             lineHeight: "normal",
+             letterSpacing: "1.2px",
+             borderBottom: "1px solid #FFF",
+          }}>Verify OTP</button>
+        </form>
+      </div>
+    </div>
   );
 };
 

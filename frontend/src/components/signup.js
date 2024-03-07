@@ -67,6 +67,7 @@ const Signup = () => {
       collegeName: "",
       password: "",
       confirmPassword: "",
+      collegeName:"",
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -184,9 +185,6 @@ const Signup = () => {
                 {errors.email && touched.email && (
                   <p className="error">{errors.email}</p>
                 )}
-                {errors.email && touched.email && (
-                  <p className="error">{errors.email}</p>
-                )}
               </div>
 
               <div
@@ -195,7 +193,10 @@ const Signup = () => {
               >
                 <div>
                   <select
-                    id="collegeName"
+                  value={values.CollegeName}
+                  onChange={handleChange} 
+                  onBlur={handleBlur}
+                   id="CollegeName"
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -222,6 +223,9 @@ const Signup = () => {
                     </option>
                     <Collegelist />
                   </select>
+                  {errors.CollegeName && touched.CollegeName && (
+                  <p className="error">{errors.CollegeName}</p>
+                )}
                 </div>
               </div>
               <div
@@ -276,9 +280,7 @@ const Signup = () => {
                      borderBottom: "1px solid #FFF",
                   }}
                 />
-                {errors.password && touched.password && (
-                  <p className="error">{errors.password}</p>
-                )}
+                
                 {errors.password && touched.password && (
                   <p className="error">{errors.password}</p>
                 )}

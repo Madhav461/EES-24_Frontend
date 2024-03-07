@@ -315,7 +315,7 @@ const Dashboard = () => {
                 <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
               </div>
 
-              <div className="container-dashboard-mb">
+              <div className="container-dashboard-mb" >
                 <div className="name-dashboard-mb">{name}</div>
                 <div className="p1-dashboard-mb">
                   <div>{college}</div>
