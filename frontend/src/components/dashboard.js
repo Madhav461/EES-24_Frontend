@@ -24,12 +24,15 @@ const Dashboard = () => {
       {/* desktop view */}
       <div className="dash_desktopview relative overflow-hidden z-[-1]">
       
-        <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
+        <div className="bgimg h-[100vh] w-[100vw]  overflow-hidden dashboard-custom-background">
+      
+
           <img
             className="object-cover w-[100%] "
             src="/image 50.svg"
             style={{ mixBlendMode: "difference", filter: "blur(3.0px)" }}
           />
+          
         </div>
 
         {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
@@ -47,10 +50,14 @@ const Dashboard = () => {
           }}
         >
           <div className="abhinav absolute">
+            <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
+            <div className="flex">
             <img
               src="/Vector 354 (2).svg"
-              className="dashboard-background-image  object-cover w-full h-full p-0"
+              className="dashboard-background-image  object-cover w-full h-full  p-0"
             />
+            <img src="/dashboard_sideelem.svg" className="md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"></img>
+            </div>
             <div className="y19">
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
@@ -102,7 +109,7 @@ const Dashboard = () => {
           </div>
           <div className="container-dashboard absolute">
             <div className="heading-dashboard">
-              <img className="dhi" src="dashboardheading2.svg" />
+              <img className="dhi " src="dashboardheading2.svg" />
               <img className="dhi dhi-1" src="dashboardheading.svg" />
               <img className="dhi dhi-2" src="dashboardheading.svg" />
               <img className="dhi dhi-3" src="dashboardheading.svg" />
@@ -153,7 +160,7 @@ const Dashboard = () => {
             marginTop: "-2%",
           }}
         >
-          <div className=" h-[80%] ">
+          <div className=" h-[80%]  ">
             <img src="/Vector 347.svg" alt="img" className="h-[100%]" />
           </div>
           <div
@@ -172,7 +179,7 @@ const Dashboard = () => {
               height: "min-content",
             }}
           >
-            <div className="relative "style={{ fontSize: '30px', marginTop: '8%'}}>
+            <div className="relative  "style={{ fontSize: '30px', marginTop: '8%'}}>
               <img
                 src="/Vector_347.svg"
                 alt="img"
@@ -308,7 +315,7 @@ const Dashboard = () => {
                 <img className="dmb-upper dmb-upper1" src="dmbupper1.svg" />
               </div>
 
-              <div className="container-dashboard-mb">
+              <div className="container-dashboard-mb" >
                 <div className="name-dashboard-mb">{name}</div>
                 <div className="p1-dashboard-mb">
                   <div>{college}</div>
@@ -328,6 +335,7 @@ const Dashboard = () => {
         />
     </div> */}
               </div>
+              
 
               <div className="lower-dashboard-mb">
                 <img className="dmb-lower dmb-lower1" src="dmblower1.svg" />
@@ -339,6 +347,7 @@ const Dashboard = () => {
                 <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
                 <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
                 <img className="dmb-lower dmb-lower2" src="dmblower2.svg" />
+                
               </div>
             </div>
             {/* Added by Santosh */}

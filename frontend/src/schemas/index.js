@@ -14,18 +14,59 @@ export const basicSchema = yup.object().shape({
     .string()
     .oneOf([yup.ref("password"), null], "Passwords must match")
     .required("Required"),
+  CollegeName: yup
+    .string()
+    .required("Required"),
 });
 
 export const advancedSchema = yup.object().shape({
-  username: yup
+  email: yup.string().email("Please enter a valid email").required("Required"),
+});
+
+
+export const basicSchema2 = yup.object().shape({
+  email: yup.string().email("Please enter a valid email").required("Required"),
+  password: yup
     .string()
-    .min(3, "Username must be at least 3 characters long")
+    .min(5)
+    .matches(passwordRules, { message: "Please create a stronger password with min 5 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit." })
     .required("Required"),
-  jobType: yup
+  confirmPassword: yup
     .string()
-    .oneOf(["designer", "developer", "manager", "other"], "Invalid Job Type")
+    .oneOf([yup.ref("password"), null], "Passwords must match")
     .required("Required"),
-  acceptedTos: yup
-    .boolean()
-    .oneOf([true], "Please accept the terms of service"),
+  otpvarification: yup
+    .number()
+    .typeError("Please enter a 4-digit number")
+    .integer("please enter valid number")
+    .required("Required")
+    .min(1000, "Please enter a 4-digit number")
+    .max(9999, "Please enter a 4-digit number"),
+});
+
+export const advancedSchema3 = yup.object().shape({
+  email: yup.string().email("Please enter a valid email").required("Required"),
+  password: yup
+    .string()
+    .min(5)
+    .matches(passwordRules, { message: "Please create a stronger password with min 5 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit." })
+    .required("Required"),
+});
+
+export const basicSchema3 = yup.object().shape({
+  email: yup.string().email("Please enter a valid email").required("Required"),
+  CollegeName: yup
+    .string()
+    .required("Required"),
+});
+
+
+export const basicSchema4 = yup.object().shape({
+  otpvarification: yup
+  .number()
+  .typeError("Please enter a 4-digit number")
+  .integer("please enter valid number")
+  .required("Required")
+  .min(1000, "Please enter a 4-digit number")
+  .max(9999, "Please enter a 4-digit number"),
 });

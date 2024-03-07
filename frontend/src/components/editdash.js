@@ -58,10 +58,14 @@ const EditDashboard = () => {
             </Link>
           </div>
           <div className="abhinav absolute">
+          <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
+          <div className="flex">
             <img
               src="/Vector 354 (2).svg"
               className="dashboard-background-image  object-cover w-full h-full p-0"
             />
+            <img src="/dashboard_sideelem.svg" className="md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"></img>
+            </div>
             <div className="y19">
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
