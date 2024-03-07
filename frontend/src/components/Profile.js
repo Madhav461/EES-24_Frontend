@@ -1,22 +1,50 @@
 import { Menu, Transition } from '@headlessui/react';
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
+import AuthContext from '../context/AuthContext';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
 
 function Profile() {
-    const user = true
+  const { user, logoutUser, authTokens } = useContext(AuthContext);
+    const [image, setImage] = useState("/user-profile-4255.svg")
+    const navigate = useNavigate()
+    useEffect(() => {
+      const getGoogleProfile = async () => {
+        try {
+          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', {
+            headers: {
+                Authorization: `Bearer ${authTokens.access}`,
+          }});
+          console.log(res.data);
+          if(res.data.google) {
+            setImage(res.data.google.picture);
+          }
+        } catch(err) {
+          console.error(err)
+        }
+      }
+      let mounted = true;
+      if(mounted) {
+        getGoogleProfile();
+      }
+      return () => {
+        mounted = false
+      }
+    }, []);
   return (
     <div>
-      {!user && 
+      {user && 
        <Menu as="div" className="relative inline-block text-left z-50 bg-gray">
        <div>
          <Menu.Button className="bg-gray">
           
-           <img className='h-12 w-9'
+           <img className='h-12 w-9 rounded-full object-cover'
              src={
-               "/user-profile-4255.svg"
+               image
              }
              alt="down-arrow"
              width={16}
@@ -38,8 +66,8 @@ function Profile() {
            <div className="py-1 w-full z-50 flex flex-col space-y-3">
              <Menu.Item>
                {({ active }) => (
-                 <a
-                   href="/Dashboard"
+                 <button
+                  onClick={()=>{navigate('/dashboard')}}
                    className={classNames(
                      active
                        ? "bg-whitesmoke text-gray"
@@ -48,13 +76,13 @@ function Profile() {
                      )}
                    >
                      Dashboard
-                   </a>
+                   </button>
                  )}
                </Menu.Item>
                <Menu.Item>
                  {({ active }) => (
-                   <a
-                     href="#"
+                   <button
+                     onClick={logoutUser}
                      className={classNames(
                        active
                          ? "bg-whitesmoke text-gray"
@@ -63,7 +91,7 @@ function Profile() {
                      )}
                    >
                      Log out
-                   </a>
+                   </button>
                  )}
                </Menu.Item>
                   </div>
