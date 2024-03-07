@@ -5,6 +5,12 @@ import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
 import "./DashboardRegistration.css";
 
+import "./DashboardTeam.css";
+import { useNavigate } from "react-router-dom";
+import "./EventRegistration.css";
+import "./EventRegistrationMobile.css";
+import "./ForgotPassword.css";
+
 const DashboardRegistration = () => {
   const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
@@ -20,6 +26,42 @@ const DashboardRegistration = () => {
   const [ichip, setichip] = useState(false);
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
+
+  // Santosh
+  const [teamName, setTeamName] = useState("");
+  const [eventName, setEventName] = useState("");
+  const [leader, setLeader] = useState("santosh@itbhu.ac.in");
+  const [member1, setMember1] = useState("");
+
+  let navigate = useNavigate();
+  const routeChange = (route) => {
+      let path = `/dashboard/team/${route}`;
+      navigate(path);
+  };
+
+  const changeEvent = (id) => {
+      setEventName(eventNames[id]);
+  };
+  const handleMem1Change = (event) => {
+      setMember1(event.target.value);
+  };
+  const handleTeamChange = (event) => {
+      setTeamName(event.target.value);
+  };
+
+  const eventNames = [
+      "DEVBITS", "MOSAIC", "CASSANDRA", "X-IOTA", "DIGISIM", "FUNCKIT", "COMMNET", "I-CHIP",
+  ];
+
+  const handleFormSubmit = (event) => {
+      event.preventDefault();
+  };
+
+  const handleBtnClick = (id) => {
+      const targetDiv = document.getElementById(id);
+      targetDiv.style.display = "block";
+  };
+  // Santosh
 
   const events = {
     devbits,
@@ -45,7 +87,7 @@ const DashboardRegistration = () => {
       <Navhome />
 
       {/* desktop view */}
-      <div className="desktopview relative   textSizefixing overflow-hidden">
+      <div className="desktopview relative   textSizefixing overflow-hidden event-registration-desktopview">
         <div className="bgimg h-[100vh]    w-[100vw] z-[-4] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -1179,6 +1221,48 @@ const DashboardRegistration = () => {
         </div>
       </div>
 
+          {/* Mobile view Santosh */}
+          <div className="event-registration-mobileview">
+            <div className="upper-dashboard-mb">
+                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+                <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
+                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+            </div>
+            <form onSubmit={handleFormSubmit} className="">
+                <div class="forgot-password-container">
+                    <h1>Event Registration</h1>
+                    <h2 class="information-text-fp">Select an event</h2>
+                    <h3 class="information-text-fp-success" id="fp-success">Your team has been successfully registered.</h3>
+                    <div className="event-registration-dropd">
+                        <select class="select-css-event">
+                            <option key={0} onClick={() => changeEvent(0)}>DEVBITS</option>
+                            <option key={1} onClick={() => changeEvent(1)}>MOSAIC</option>
+                            <option key={2} onClick={() => changeEvent(2)}>CASSANDRA</option>
+                            <option key={3} onClick={() => changeEvent(3)}>X-IOTA</option>
+                            <option key={4} onClick={() => changeEvent(4)}>DIGISIM</option>
+                            <option key={5} onClick={() => changeEvent(5)}>FUNCKIT</option>
+                            <option key={6} onClick={() => changeEvent(6)}>COMMNET</option>
+                            <option key={7} onClick={() => changeEvent(7)}>I-CHIP</option>
+                        </select>
+                    </div>
+                    <div className="event-registration-leader">
+                        <span>Leader</span>
+                        <span>{leader}</span>
+                    </div>
+                    <div class="form-group-fp">
+                        <input type="text" name="team_name" id="team_name" className="input" value={teamName} onChange={handleTeamChange} />
+                        <p><label for="team_name">Team Name</label></p>
+                        <input type="email" name="mem1_email" id="mem1_email" className="input" value={member1} onChange={handleMem1Change} />
+                        <p><label for="mem1_email">Add a Member</label></p>
+                        <button onClick={() => handleBtnClick("fp-success")}>Register</button>
+                        <button onClick={() => handleBtnClick("fp-failure")}>Cancel</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+          {/* Mobile view Santosh */}
 
     </div>
   );
