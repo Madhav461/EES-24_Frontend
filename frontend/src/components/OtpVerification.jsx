@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema4 } from "../schemas";
 import Background from "./background";
+// import Background from "./background";
 import AuthContext from "../context/AuthContext";
 
-const OtpVerification = () => {
+const OtpVerification = (props) => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
   const { authTokens } = useContext(AuthContext)
@@ -41,6 +42,8 @@ const OtpVerification = () => {
       // Handle failure, show an error message, etc.
     }
   };
+  // const emailtosendotp={props.email};
+  const emailtosendotp="mailid@gmail.com";
   const {
     values,
     errors,
@@ -51,7 +54,7 @@ const OtpVerification = () => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      otpvarification:0,
+      otpverification:0,
         },
     validationSchema: basicSchema4,
     onSubmit,
@@ -60,41 +63,44 @@ const OtpVerification = () => {
   console.log(errors);
 
   return (
+    <div>
+      <Background></Background>
     <div className="otp-verification-container z-0 m-auto">
-      <div className="email-otp">An email has been sent .</div>
+      <div className="email-otp font-goldman " style={{fontSize:"30px"}}>An email has been sent to {emailtosendotp} .</div>
 
       <div className="search-bar">
         <form onSubmit={handleFormSubmit}>
-          <label className="otp-label">Enter OTP: </label>
+          <label className="otp-label font-goldman " style={{fontSize:"30px"}}>Enter OTP: </label>
           <input
           style={{width:'auto'}}
              type="number"
-             name="otpvarification"
-             id="otpvarification"
+             name="otpverification"
+             id="otpverification"
              placeholder="OTP"
-             value={values.otpvarification}
+             value={values.otpverification}
                onChange={handleChange}
-             className={errors.otpvarification && touched.otpvarification ? "input-error" : ""}
+             className={errors.otpverification && touched.otpverification ? "input-error" : ""}
                onBlur={handleBlur}
             />
-            {errors.otpvarification && touched.otpvarification && (
-                  <p className="error">{errors.otpvarification}</p>
+            {errors.otpverification && touched.otpverification && (
+                  <p className="error">{errors.otpverification}</p>
                 )}
         
-          <button type="submit" style={{
+          <button type="submit" className="w-[100%]" style={{
             width:'100%',
             justifyContent: 'center',
              fontFamily: "Goldman",
-             fontSize: "15px",
+             fontSize: "26px",
              fontStyle: "normal",
              fontWeight: 400,
              borderRadius: 2,
              lineHeight: "normal",
              letterSpacing: "1.2px",
-             borderBottom: "1px solid #FFF",
+             borderBottom: "1.5px solid #FFF",
           }}>Verify OTP</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

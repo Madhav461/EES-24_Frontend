@@ -1,17 +1,15 @@
 import React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./editdash.css";
 import { Link } from "react-router-dom";
-import AuthContext from "../context/AuthContext";
 
 const EditDashboard = () => {
-  const {user, authTokens, userDetails} = useContext(AuthContext)
   const [name, setName] = useState("Abhinav");
-  // const [mobile, setMobile] = useState("123456789");
+  const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
-  // const [branch, setBranch] = useState("Electronics Engineering");
+  const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
   const [displayEmail, setDisplayEmail] = useState('') 
   const [year, setYear] = useState('1')
@@ -60,13 +58,13 @@ const EditDashboard = () => {
           }}
         >
 
-          <div className="button7070">
-            <Link to="/dashboard">
-              <img src="/rightbutton.svg" alt="" className="rightbutton"/>
+          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
+            <Link to="/dashboard/registration">
+              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
             </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton"/>
-            <Link to="/dashboard/teams">
-            <img src="/leftbutton.svg" alt="" className="leftbutton"  />
+            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
+            <Link to="/dashboard/team">
+            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
             </Link>
           </div>
           <div className="abhinav absolute">
@@ -100,14 +98,14 @@ const EditDashboard = () => {
                   {email && email.length >= 40 ? displayEmail + '...' : displayEmail}</span>
               </p>
               <p className="y49">
-                {/* <span
+                <span
                   type="text"
                   name="Electronics"
                   id="Electronics"
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                >{branch}</span> */}
+                >{branch}</span>
                 <span
                   type="text"
                   name="College"
