@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./editdash.css";
+import { Link } from "react-router-dom";
 
 const EditDashboard = () => {
   const [name, setName] = useState("Abhinav");
@@ -19,11 +20,11 @@ const EditDashboard = () => {
   return (
     <div className="relative">
       <div className="absolute ">
-      <Navhome className="z-10"/>
+        <Navhome className="z-10" />
       </div>
       {/* desktop view */}
       <div className="dash_desktopview relative overflow-hidden ">
-      
+
         <div className="bgimg h-[100vh] w-[100vw] z-[-900] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -42,10 +43,20 @@ const EditDashboard = () => {
             left: "50%",
             transform: "translateX(-50%)",
             // background: "rgba(255, 255, 255, 0.05)",
-            top:'35%',
-            marginTop:"-1%",
+            top: '35%',
+            marginTop: "-1%",
           }}
         >
+
+          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
+            <Link to="/dashboard/registration">
+              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
+            </Link>
+            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
+            <Link to="/dashboard/team">
+            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
+            </Link>
+          </div>
           <div className="abhinav absolute">
           <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
           <div className="flex">
@@ -74,7 +85,7 @@ const EditDashboard = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
-                 {email.length <=40 ? email : `${email.substring(0,40)}...`}</span>
+                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}</span>
               </p>
               <p className="y49">
                 <span
@@ -106,15 +117,15 @@ const EditDashboard = () => {
           </div>
           <div className="container-dashboard absolute">
 
-            <div className="details-dashboard" style={{zIndex:"1"}}>
-              <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{zIndex:"10000"}}></input></div>
-                <div className="college99"><input type="text"  id="college2" placeholder={college}></input></div>
-                <div className="branch99"><input type="text"  id="branch2" placeholder={branch}></input></div>
-                <div className="email99"><input type="email"  id="email2" placeholder={email.length <=30 ? email : `${email.substring(0,30)}...`} disabled></input></div>
+            <div className="details-dashboard" style={{ zIndex: "1" }}>
+              <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{ zIndex: "10000", "fontFamily": "Michroma" }}></input></div>
+              <div className="college99"><input type="text" id="college2" placeholder={college} style={{ "fontFamily": "Michroma" }}></input></div>
+              <div className="branch99"><input type="text" id="branch2" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div>
+              <div className="email99"><input type="email" id="email2" placeholder={email.length <= 30 ? email : `${email.substring(0, 30)}...`} disabled style={{ "fontFamily": "Michroma" }}></input></div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
             </div>
-            <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"  id="submitedit">Submit</button>
-            <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"  id="submitcancel">Cancel</button>
+            <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit">Submit</button>
+            <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel">Cancel</button>
             {/* <div className="score-logo-dashboard">
                             <img
                                 src="dashboardeclipse.svg"
@@ -158,7 +169,7 @@ const EditDashboard = () => {
               height: "min-content",
             }}
           >
-            <div className="relative "style={{ fontSize: '30px', marginTop: '8%'}}>
+            <div className="relative " style={{ fontSize: '30px', marginTop: '8%' }}>
               <img
                 src="/Vector_347.svg"
                 alt="img"
@@ -295,16 +306,18 @@ const EditDashboard = () => {
               </div>
 
               <div className="container-dashboard-mb">
-                <div className="name-dashboard-mb"><input type="text" placeholder={name}></input></div>
+                <div className="name-dashboard-mb"><input type="text" placeholder={name} style={{ "fontFamily": "Michroma" }}></input></div>
                 <div className="p1-dashboard-mb">
-                  <div><input type="text" placeholder={college}></input></div>
-                  <div><input type="text" placeholder={branch}></input></div>
-                  <div style={{"fontSize":"85%"}}><input type="text" placeholder={email.length <=15 ? email : `${email.substring(0,15)}...`} disabled></input></div>
+                  <div><input type="text" placeholder={college} style={{ "fontFamily": "Michroma" }}></input></div>
+                  <div><input type="text" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div>
+                  <div style={{ "fontSize": "85%" }}><input type="text" placeholder={email.length <= 15 ? email : `${email.substring(0, 15)}...`} disabled style={{ "fontFamily": "Michroma" }}></input></div>
+                  <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit">Submit</button>
+                  <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel">Cancel</button>
                 </div>
 
-                
 
-               
+
+
                 {/* <div className="score-logo-dashboard">
         <img
             src="dashboardeclipse.svg"

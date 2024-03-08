@@ -11,6 +11,7 @@ import "./EventRegistration.css";
 import "./EventRegistrationMobile.css";
 import "./ForgotPassword.css";
 import "./DashboardRegistration.css";
+import {Link} from  "react-router-dom";
 
 const DashboardRegistration = () => {
   const [name, setName] = useState("Abhinav");
@@ -109,6 +110,15 @@ const DashboardRegistration = () => {
             top: "35%",
           }}
         >
+           <div className="button7070 mt-[-16px] w-[20%] ml-[8px]">
+            <Link to="/dashboard/team">
+              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
+            </Link>
+            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
+            <Link to="/editdash">
+            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
+            </Link>
+          </div>
           <div className="abhinav absolute  ">
             <img
               src="/dashboardblack.svg"
@@ -1162,6 +1172,7 @@ const DashboardRegistration = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
+            marginTop:"-7%",
           }}
         >
           <div className=" h-[80%]  ">

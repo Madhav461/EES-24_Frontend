@@ -49,6 +49,11 @@
 /* Responsiveness for desktop view */
 
 @media screen and (max-width:1920px) {
+    .button7070{
+        position: absolute;
+        left: 40.5%;
+        top: -4%;
+    }
     .card {
         height: 46%;
         width: 83.3%;
@@ -67,6 +72,11 @@
 }
 
 @media screen and (max-width:1445px) {
+    .button7070{
+        position: absolute;
+        left: 42.5%;
+        top: -4%;
+    }
     .card {
         height: 46%;
         width: 83.3%;
@@ -85,6 +95,12 @@
 }
 
 @media screen and (max-width:1025px) {
+    .button7070{
+        /* height: 20%; */
+        position: absolute;
+        left: 40.5%;
+        top: -14%;
+    }
     .card {
         height: 50%;
         width: 80%;
@@ -120,6 +136,12 @@
 }
 
 @media screen and (max-width:768px) {
+    .button7070{
+        /* height: 20%; */
+        position: absolute;
+        left: 38.5%;
+        top: -10%;
+    }
     .card {
         height: 55%;
         width: 80%;
@@ -1350,7 +1372,7 @@
     top:30%;
     left:70%;
     font-family: Michroma;
-    font-size: 150%;
+    font-size: 100%;
  }
  .cancel669{
   background-color: whitesmoke;
@@ -1359,7 +1381,7 @@
   top:50%;
   left:70%;
   font-family: Michroma;
-  font-size: 150%;
+  font-size: 100%;
 }
 }
 @media (max-width:1200px) and (min-width:1001px){

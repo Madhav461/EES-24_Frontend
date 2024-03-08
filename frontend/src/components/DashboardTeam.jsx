@@ -5,6 +5,8 @@ import { useSpring, animated } from "react-spring";
 import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
+import { Link } from "react-router-dom";
+
 
 const DashboardTeam = () => {
     const [teamName, setTeamName] = useState("My Team");
@@ -99,6 +101,15 @@ const DashboardTeam = () => {
             marginTop:"-1%",
           }}
         >
+          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
+            <Link to="/editdash">
+              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
+            </Link>
+            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
+            <Link to="/dashboard/registration">
+            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
+            </Link>
+          </div>
           <div className="abhinav absolute">
 
             <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
@@ -171,7 +182,7 @@ const DashboardTeam = () => {
               justifyContent: "space-between",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "-2%",
+              marginTop: "-4%",
             }}
           >
             <div className=" h-[80%] ">
@@ -214,7 +225,7 @@ const DashboardTeam = () => {
                   alt="img"
                   className="absolute left-[-14%] bottom-[-24%] "
                 />
-                PROFILE
+                TEAMS
               </div>
             </div>
             <div className="h-[80%] ">

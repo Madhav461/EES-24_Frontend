@@ -13,6 +13,7 @@ export const AuthProvider = ({children}) => {
     const [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authtokens') ? JSON.parse(localStorage.getItem('authtokens')) : null)
     const [user, setUser] = useState(() => localStorage.getItem('authtokens') ? jwtDecode(JSON.parse(localStorage.getItem('authtokens')).access) : null)
     const [loading, setLoading] = useState(true);
+    const [userDetails, setUserDetails] = useState(null)
 
     const navigate = useNavigate()
 
@@ -31,10 +32,12 @@ export const AuthProvider = ({children}) => {
                         "Authorization" : `Bearer ${res.data.access}`
                     }
                 })
-                console.log(check1.data);
-                console.log("check1");
+                
+                // console.log(check1.data);
+                // console.log("check1");
                 setAuthTokens(res.data);
                 setUser(jwtDecode(res.data.access));
+                // setUserDetails(check1.data)
                 localStorage.setItem('authtokens', JSON.stringify(res.data));
                 if(check1.data.profile.college === '' || check1.data.profile.year === '') {
                     navigate("/gsignup")
@@ -63,6 +66,10 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(res.data);
             setUser(jwtDecode(res.data.access));
             localStorage.setItem('authtokens', JSON.stringify(res.data));
+            const otpreq = await axios.get('https://api.eesiitbhu.co.in/api/user/verify/', {headers : {
+            "Authorization" : `Bearer ${authTokens.access}`
+            }})
+            console.log(otpreq);
             navigate('/otp');
         } catch (err) {
             console.error(err);
@@ -108,6 +115,28 @@ export const AuthProvider = ({children}) => {
         navigate('/');
     }
 
+    const updateUserInfo = async (validatedFormData) => {
+        if(authTokens) {
+            const details = {
+                'college' : validatedFormData.collegeName,
+                'name' : validatedFormData.name,
+                'year' : validatedFormData.year
+            }
+            const formData = queryString.stringify(details)
+            try {
+                const res = await axios.patch('https://api.eesiitbhu.co.in/api/user/update/', formData, {headers : {
+                    "Authorization" : `Bearer ${authTokens.access}`
+                }})
+                console.log(res);
+                if(res.status === 200) {
+                    navigate("/dashboard")
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    }
+
     const updateToken = async () => {
         console.log("Update token called");
         console.log(user)
@@ -145,6 +174,8 @@ export const AuthProvider = ({children}) => {
         authTokens: authTokens,
         signUpUser: signUpUser,
         loginUser: loginUser,
+        userDetails : userDetails,
+        updateUserInfo : updateUserInfo,
     }
 
     useEffect(() => {
@@ -159,6 +190,23 @@ export const AuthProvider = ({children}) => {
         }, tfMinutes)
         return () => clearInterval(interval)
     }, [authTokens, loading])
+
+    useEffect(() => {
+        const loadUser = async () => {
+          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
+            "Authorization" : `Bearer ${authTokens.access}`
+          }})
+          console.log(res.data);
+          setUserDetails(res.data)
+        }
+        let mounted = true;
+        if(mounted && user) {
+          loadUser()
+        }
+        return () => {
+          mounted = false;
+        }
+      }, [])
 
     return (
         <AuthContext.Provider value={contextData}>

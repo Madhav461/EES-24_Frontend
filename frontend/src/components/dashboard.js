@@ -1,21 +1,47 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
+import AuthContext from "../context/AuthContext";
+
+function getOrdinal(year) {
+  let n = parseInt(year)
+  let ord = 'th';
+  if (n % 10 == 1 && n % 100 != 11)
+  {
+    ord = 'st';
+  }
+  else if (n % 10 == 2 && n % 100 != 12)
+  {
+    ord = 'nd';
+  }
+  else if (n % 10 == 3 && n % 100 != 13)
+  {
+    ord = 'rd';
+  }
+  return ord;
+}
 
 const Dashboard = () => {
+  const {user, authTokens, userDetails} = useContext(AuthContext)
   const [name, setName] = useState("Abhinav");
-  const [mobile, setMobile] = useState("123456789");
+  // const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
-  const [branch, setBranch] = useState("Electronics Engineering");
+  // const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+  const [year, setYear] = useState('1')
   const { number } = useSpring({
     from: { number: 0 },
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
-
+  useEffect(() => {
+    setName(userDetails?.profile?.name)
+    setEmail(userDetails?.profile?.email)
+    setCollege(userDetails?.profile?.college)
+    setYear(userDetails?.profile?.year)
+  }, [userDetails])
   return (
     <div className="relative">
       <div className="absolute ">
@@ -77,17 +103,17 @@ const Dashboard = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
-                 {email.length <=40 ? email : `${email.substring(0,40)}...`}</span>
+                 {/* {email && email?.length <= 40 ? email : `${email?.substring(0,40)}...`} */}</span> 
               </p>
               <p className="y49">
-                <span
+                {/* <span
                   type="text"
                   name="Electronics"
                   id="Electronics"
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                >{branch}</span>
+                >{branch}</span> */}
                 <span
                   type="text"
                   name="College"
@@ -101,9 +127,9 @@ const Dashboard = () => {
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                >Ist Year</span>
+                >{year + getOrdinal(year)} Year</span>
               </p>
-              <p className="yashtheman">GRADE 1</p>
+              <p className="yashtheman">GRADE {year}</p>
               <img src="/motiline.svg" alt="" class="y29" />
             </div>
           </div>
@@ -115,7 +141,7 @@ const Dashboard = () => {
               <img className="dhi dhi-3" src="dashboardheading.svg" />
               <img className="dhi dhi-4" src="dashboardheading.svg" />
               <img className="dhi dhi-5" src="dashboardheading.svg" />
-              <div className="heading-text-dashboard">GRADE 1</div>
+              <div className="heading-text-dashboard">GRADE {year}</div>
               <img className="dhi dhi-11" src="dashboardheading.svg" />
               <img className="dhi dhi-12" src="dashboardheading.svg" />
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
@@ -126,11 +152,11 @@ const Dashboard = () => {
               <div className="name-dashboard">{name}</div>
               <div className="p1-dashboard">
                 <div>{college}</div>
-                <div>{mobile}</div>
+                {/* <div>{mobile}</div> */}
               </div>
               <div className="p2-dashboard">
-                <div>{branch}</div>
-                <div>{email.length <=30 ? email : `${email.substring(0,30)}...`}</div>
+                {/* <div>{branch}</div> */}
+                 <div> {/*{email.length <=30 ? email : `${email.substring(0,30)}...`}*/}{email} </div> 
               </div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
            
@@ -319,9 +345,9 @@ const Dashboard = () => {
                 <div className="name-dashboard-mb">{name}</div>
                 <div className="p1-dashboard-mb">
                   <div>{college}</div>
-                  <div>{branch}</div>
-                  <div style={{"fontSize":"85%"}}>{email.length <=15 ? email : `${email.substring(0,15)}...`}</div>
-                  <div>{mobile}</div>
+                  {/* <div>{branch}</div> */}
+                  <div style={{"fontSize":"85%"}}>{email}{/* email.length <=15 ? email : `${email.substring(0,15)}...`*/}</div>
+                  {/* <div>{mobile}</div> */}
                 </div>
 
                 
