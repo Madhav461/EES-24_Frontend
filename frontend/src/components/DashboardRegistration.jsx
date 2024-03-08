@@ -1,19 +1,20 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
 import "./DashboardRegistration.css";
-<<<<<<< Updated upstream
 import {Link} from  "react-router-dom";
-=======
 import axios from 'axios';
+import AuthContext from "../context/AuthContext";
+import queryString from 'query-string';
 
 
->>>>>>> Stashed changes
+
 
 const DashboardRegistration = () => {
-
+  
+  const { authTokens, userDetails } =useContext(AuthContext);
   const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
@@ -28,28 +29,110 @@ const DashboardRegistration = () => {
   const [ichip, setichip] = useState(false);
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
-
-
-  
   const [category, setCategory] = useState("");
   const [teamName,setTeamName]=useState('')
-  const [leaderEmail,setLeaderEmail]=useState('divyansh.sharma.cd.ece22@itbhu.ac.in')
+  const [leaderEmail,setLeaderEmail]=useState('')
+  const [memberEmail, setMemberEmail]= useState('')
+
+  const [teamsIn , setTeamsIn]= useState([]);
+
+
+
+  useEffect(() => {
+    if(userDetails) {
+      setLeaderEmail(userDetails?.profile?.email)
+    }
+  }, [userDetails])
+
+
+  useEffect(() => {
+    const getTeams = async () => {
+      try {
+        const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
+          headers: {
+            "Authorization": `Bearer ${authTokens.access}`
+          }
+        });
+
+        console.log('Response:', response.data);
+        
+        // const eventNames = response.data.map((item) => item.event_name);
+        const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
+        const eventNames2=eventNames.map(item=> item.event_name)
+        console.log('eventNames', eventNames);
+        setTeamsIn(eventNames2);
+        console.log('teamsin');
+        console.log(teamsIn);
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    getTeams();
+  },[userDetails]);
+
+
+
+  const handleInvite = async ()=>{
+
+    const dataToSend = {
+      'event_name': category,
+      'team_name': teamName,
+      'leader_email': leaderEmail,
+      'member_email':memberEmail
+
+    };
+    const dataToSend2 = queryString.stringify(dataToSend)
+
+    console.log(dataToSend);
+
+      try{
+
+
+        const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/invite/', dataToSend2, {headers :{
+          "Authorization" :`Bearer ${authTokens.access}`
+        }});
+
+        console.log(response);
+        
+
+
+      }
+      catch{
+
+      }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
   
   const handleRegister = async () => {
 
     const dataToSend = {
-      eventName: category,
-      teamName: teamName,
-      leaderEmail: leaderEmail
+      'event_name': category,
+      'team_name': teamName,
+      'leader_email': leaderEmail
     };
+    const dataToSend2 = queryString.stringify(dataToSend)
 
     console.log(dataToSend);
 
     try {
-      const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/create', dataToSend, {headers :{
+      const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
         "Authorization" :`Bearer ${authTokens.access}`
       }});
-      console.log(dataToSend);
+      console.log(dataToSend2);
       console.log('Response:', response.data);
   } catch (error) {
       console.error('Error:', error);
@@ -58,16 +141,7 @@ const DashboardRegistration = () => {
 
 };
 
-  const events = {
-    devbits,
-    cassandra,
-    mosaic,
-    funckit,
-    digisim,
-    ichip,
-    xiota,
-    commnet,
-  };
+
 
  
 
@@ -1100,38 +1174,52 @@ const DashboardRegistration = () => {
 
                   <div className="   flex flex-col   w-[100%]">
                     <div className="  flex  justify-evenly ">
-                      <p className=" dashboardtext  "> Leader </p>
+                      <p className=" dashboardtext  "> Leader  </p>
                
 
 
-                         <p className=" dashboardtext ">Leader e-mail</p>
+                         <p className=" dashboardtext ">{leaderEmail} </p>
 
                       
                     </div>
                   </div>
 
-
-                    <div className=" flex justify-evenly ">
-                      <p className=" dashboardtext   translate-y-[35%] "> Add Member Email  </p>
-              
-
-
-                         <input
-                        className="w-[50%] h-[80%]   px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                        type="text"
-                        placeholder="Enter email "
-                        style={{
-                          fontFamily: "Goldman",
-                          fontSize: "1vw",
-                          fontStyle: "normal",
-                          fontWeight: 400,
-                          lineHeight: "normal",
-                          letterSpacing: "1.2px",
-
-                        }}
-                      />
+                    {
+                        teamsIn.includes(category)  ? 
+                       (  <div className=" flex justify-evenly ">
+                       <p className=" dashboardtext   translate-y-[35%] "> Add Member Email  </p>
+               
+ 
+ 
+                          <input
+                         className="w-[50%] h-[80%]   px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                         type="text"
+                         placeholder="Enter email "
+                         onChange={(e) => {
                       
-                    </div>
+                          setMemberEmail(e.target.value)
+                          
+                        }}
+                         style={{
+                           fontFamily: "Goldman",
+                           fontSize: "1vw",
+                           fontStyle: "normal",
+                           fontWeight: 400,
+                           lineHeight: "normal",
+                           letterSpacing: "1.2px",
+                           
+ 
+                         }}
+                       />
+                       
+                     </div>
+                        ):(
+                        <div></div>
+                        ) 
+                    }      
+                  
+                    
+
                  <div className=" w-[100%] h-[20%]  flex   translate-y-[50%] gap-2  justify-center" >
                     <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={()=>{
                       setCategory("");
@@ -1145,22 +1233,15 @@ const DashboardRegistration = () => {
                     className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
                        Register
                     </button>
+
+                    <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={()=>{
+                      handleInvite();
+                    }}>
+                      Invite
+                    </button>
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
                 </div>
               )}
             </div>
