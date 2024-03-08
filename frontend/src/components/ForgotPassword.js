@@ -65,8 +65,8 @@ const ForgotPassword = () => {
       <Background />
       <form onSubmit={handleFormSubmit} className="">
         <div class="forgot-password-container">
-          <h1>Forgot Password</h1>
-          <h2 class="information-text-fp">
+          <h1 className="font-goldman">Forgot Password</h1>
+          <h2 class="information-text-fp" className="mt-[10px] font-goldman" >
             Enter your registered email to reset your password.
           </h2>
           <div class="form-group-fp">
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
                id="email"
                placeholder="EMAIL"
                type="email"
-               className={errors.email && touched.email ? "input-error" : ""}
+               className={errors.email && touched.email ? "input-error font-goldman" : "font-goldman"}
                onBlur={handleBlur}
               style={{color:'white',}}
             />
@@ -86,17 +86,17 @@ const ForgotPassword = () => {
             <p>
               
             </p>
-            <button type="submit">
+            <button type="submit" className="font-goldman">
               Reset Password
             </button>
           </div>
           <div class="footer-fp">
             {/* <h5>New here? <a href="signup">Sign Up.</a></h5>
                     <h5>Already have an account? <a href="signin">Sign In.</a></h5> */}
-            <h5 onClick={() => navigate('/signup')}>
+            <h5 className="font-goldman" onClick={() => navigate('/signup')}>
               New here? <span>Sign Up</span>{" "}
             </h5>
-            <h5 onClick={() => navigate('/login')}>
+            <h5 className="font-goldman" onClick={() => navigate('/login')}>
               Already have an account? <span>Log In</span>{" "}
             </h5>
           </div>

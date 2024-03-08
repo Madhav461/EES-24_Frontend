@@ -1,4 +1,5 @@
 .otp-verification-container {
+    /* background-image: ""; */
     margin: auto;
     display: flex;
     align-items: center;
@@ -20,9 +21,9 @@
 }
 
 .search-bar {
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    padding: 10px;
+    border: 4px solid lightgray;
+    border-radius: 15px;
+    padding: 70px;
     margin-top: 10%;
 }
 
