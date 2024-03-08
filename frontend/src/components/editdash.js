@@ -48,13 +48,13 @@ const EditDashboard = () => {
           }}
         >
 
-          <div className="button7070">
-            <Link to="/dashboard">
-              <img src="/rightbutton.svg" alt="" className="rightbutton"/>
+          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
+            <Link to="/dashboard/registration">
+              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
             </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton"/>
-            <Link to="/dashboard/teams">
-            <img src="/leftbutton.svg" alt="" className="leftbutton"  />
+            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
+            <Link to="/dashboard/team">
+            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
             </Link>
           </div>
           <div className="abhinav absolute">
