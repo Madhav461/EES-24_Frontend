@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import "./ForgotPassword.css";
 import { useFormik } from "formik";
 import { advancedSchema } from "../schemas";
+import axios from "axios";
+import queryString from 'query-string'
 
 
 const onSubmit = async (values, actions) => {
@@ -21,25 +23,24 @@ const ForgotPassword = () => {
     setEmail(event.target.value);
   };
 
-  const handleBtnClick = (id) => {
-    const targetDiv = document.getElementById(id);
-    targetDiv.style.display = "block";
-    // console.log(id);
-    // if (targetDiv.style.display !== "none") {
-    //     targetDiv.style.display = "none";
-    // } else {
-    //     targetDiv.style.display = "block";
-    // }
-  };
-
   let navigate = useNavigate();
-  const routeChange = (route) => {
-    let path = `/${route}`;
-    navigate(path);
-  };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(email);
+    const details = {
+      "email" : email
+    }
+    const formData = queryString.stringify(details)
+    try {
+      const res = await axios.post('https://api.eesiitbhu.co.in/api/user/forgot-password/', formData)
+      console.log(res);
+      if(res.status === 200) {
+        navigate('/resetpassword')
+      }
+    } catch (err) {
+      console.error(err)
+    }
   };
 
   const {
@@ -68,13 +69,10 @@ const ForgotPassword = () => {
           <h2 class="information-text-fp">
             Enter your registered email to reset your password.
           </h2>
-          <h3 class="information-text-fp-success" id="fp-success">
-            An Email has been sent to you.
-          </h3>
           <div class="form-group-fp">
             <input
-value={values.email}
-               onChange={handleChange}
+              value={email}
+               onChange={handleEmailChange}
                id="email"
                placeholder="EMAIL"
                type="email"
@@ -88,17 +86,17 @@ value={values.email}
             <p>
               
             </p>
-            <button onClick={() => handleBtnClick("fp-success")}>
+            <button type="submit">
               Reset Password
             </button>
           </div>
           <div class="footer-fp">
             {/* <h5>New here? <a href="signup">Sign Up.</a></h5>
                     <h5>Already have an account? <a href="signin">Sign In.</a></h5> */}
-            <h5 onClick={() => routeChange("signup")}>
+            <h5 onClick={() => navigate('/signup')}>
               New here? <span>Sign Up</span>{" "}
             </h5>
-            <h5 onClick={() => routeChange("login")}>
+            <h5 onClick={() => navigate('/login')}>
               Already have an account? <span>Log In</span>{" "}
             </h5>
           </div>

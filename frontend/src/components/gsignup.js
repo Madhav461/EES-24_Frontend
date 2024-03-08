@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "../components/gsignup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema3 } from "../schemas";
 import Collegelist from "./collegelist";
+import AuthContext from "../context/AuthContext";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -12,17 +13,6 @@ const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
-
-function showFormData() {
-  const formData = {
-    name: getElementValue("name"),
-    email: getElementValue("email"),
-    collegeName: getSelectValue("collegeName"),
-    year: getElementValue("year"),
-  };
-
-  console.log("Form Data:", formData);
-}
 
 function getElementValue(id) {
   const element = document.getElementById(id);
@@ -43,8 +33,28 @@ function getSelectValue(id) {
   return "";
 }
 
-const Gsignup = ({ name, email }) => {
+const Gsignup = () => {
+  const {user, authTokens, userDetails, updateUserInfo} = useContext(AuthContext)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
+  function showFormData() {
+    const formData = {
+      name: getElementValue("name"),
+      email: getElementValue("email"),
+      collegeName: getSelectValue("collegeName"),
+      year: getElementValue("year"),
+    };
   
+    console.log(formData);
+    updateUserInfo(formData);
+  }
+
+  useEffect(() => {
+    const fullname = userDetails?.google?.first_name + " " + userDetails?.google?.last_name
+    setName(fullname);
+    setEmail(userDetails?.google?.email)
+  }, [userDetails])
   const {
     values,
     errors,
@@ -125,6 +135,7 @@ const Gsignup = ({ name, email }) => {
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="text"
                   id="name"
+                  value={name}
                   placeholder={name}
                   style={{
                     fontFamily: "Goldman",
@@ -146,7 +157,7 @@ const Gsignup = ({ name, email }) => {
               >
                 <label htmlFor="email"></label>
                 <input
-                  value={values.email}
+                  value={email}
                   onChange={handleChange}
                   id="email"
                   placeholder={email}

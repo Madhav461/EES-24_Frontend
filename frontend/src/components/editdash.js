@@ -1,22 +1,30 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./editdash.css";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 const EditDashboard = () => {
+  const {user, authTokens, userDetails} = useContext(AuthContext)
   const [name, setName] = useState("Abhinav");
-  const [mobile, setMobile] = useState("123456789");
+  // const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
-  const [branch, setBranch] = useState("Electronics Engineering");
+  // const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+  const [year, setYear] = useState('1')
   const { number } = useSpring({
     from: { number: 0 },
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
-
+  useEffect(() => {
+    setName(userDetails?.profile?.name)
+    setEmail(userDetails?.profile?.email)
+    setCollege(userDetails?.profile?.college)
+    setYear(userDetails?.profile?.year)
+  }, [userDetails])
   return (
     <div className="relative">
       <div className="absolute ">
@@ -88,14 +96,14 @@ const EditDashboard = () => {
                   {email.length <= 40 ? email : `${email.substring(0, 40)}...`}</span>
               </p>
               <p className="y49">
-                <span
+                {/* <span
                   type="text"
                   name="Electronics"
                   id="Electronics"
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                >{branch}</span>
+                >{branch}</span> */}
                 <span
                   type="text"
                   name="College"
@@ -120,7 +128,7 @@ const EditDashboard = () => {
             <div className="details-dashboard" style={{ zIndex: "1" }}>
               <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{ zIndex: "10000", "fontFamily": "Michroma" }}></input></div>
               <div className="college99"><input type="text" id="college2" placeholder={college} style={{ "fontFamily": "Michroma" }}></input></div>
-              <div className="branch99"><input type="text" id="branch2" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div>
+              {/* <div className="branch99"><input type="text" id="branch2" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div> */}
               <div className="email99"><input type="email" id="email2" placeholder={email.length <= 30 ? email : `${email.substring(0, 30)}...`} disabled style={{ "fontFamily": "Michroma" }}></input></div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
             </div>
@@ -309,7 +317,7 @@ const EditDashboard = () => {
                 <div className="name-dashboard-mb"><input type="text" placeholder={name} style={{ "fontFamily": "Michroma" }}></input></div>
                 <div className="p1-dashboard-mb">
                   <div><input type="text" placeholder={college} style={{ "fontFamily": "Michroma" }}></input></div>
-                  <div><input type="text" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div>
+                  {/* <div><input type="text" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div> */}
                   <div style={{ "fontSize": "85%" }}><input type="text" placeholder={email.length <= 15 ? email : `${email.substring(0, 15)}...`} disabled style={{ "fontFamily": "Michroma" }}></input></div>
                   <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit">Submit</button>
                   <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel">Cancel</button>
