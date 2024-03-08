@@ -39,8 +39,7 @@ const DashboardTeam = () => {
     }
 
     const teamDetails = [
-        { teamName: "TeamDummy", eventName: "Dummy", leader: "Santosh", member1: "Dummy", member2: "Dummy" },
-        { teamName: "TeamDummy", eventName: "Dummy", leader: "Santosh", member1: "Dummy", member2: "Dummy" },
+        // { teamName: "TeamDummy", eventName: "Dummy", leader: "Santosh", member1: "Dummy", member2: "Dummy" },
         { teamName: "Team1", eventName: "DEVBITS", leader: "L1", member1: "M11", member2: "M12" },
         { teamName: "Team2", eventName: "MOSAIC", leader: "L2", member1: "M21", member2: "M22" },
         { teamName: "Team3", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
@@ -58,9 +57,14 @@ const DashboardTeam = () => {
         setMember2(teamDetails[id].member2);
     };
 
+    // const teamsRegistered = teamDetails.map((teamInfo, ind) => {
+    //     return (
+    //         <div className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</div>
+    //     )
+    // });
     const teamsRegistered = teamDetails.map((teamInfo, ind) => {
         return (
-            <div className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</div>
+            <ul className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</ul>
         )
     });
 
@@ -242,7 +246,9 @@ const DashboardTeam = () => {
               }}
               >
 <div className="teams-registered-dashboard">
+  <ul>
     {teamsRegistered}
+    </ul>
 </div>
 
 <div className="team-dashboard-members">
@@ -261,8 +267,7 @@ const DashboardTeam = () => {
         <div>{member2}</div>
     </div>
     <div className="team-dashboard-members-names">
-        <img className="team-dashboard-icons" src="/dashboard-team-edit.svg" alt="" onClick={() => routeChange("edit")} />
-        <img className="team-dashboard-icons" src="/dashboard-team-delete.svg" alt="" />
+        <img className="team-dashboard-icons" src="/dashboard-team-delete.svg" alt="" onClick={() => routeChange("edit")}/>
     </div>
 </div>
 
