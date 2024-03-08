@@ -2,7 +2,7 @@ import React from 'react';
 import ReactLoading from 'react-loading';
  
 const Spinner = ({ type, color }) => (
-    <div style={{"marginLeft":"35%"}}><ReactLoading type="bars" color="white" height={267} width={75}/></div>
+    <div className='h-screen flex items-center justify-center'><ReactLoading type="bars" color="white" /></div>
 );
  
 export default Spinner;

@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from "react";
+import React, {useEffect, useContext, useState} from "react";
 import "../components/signup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ import queryString from 'query-string';
 import AuthContext from "../context/AuthContext";
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import Spinner from "./Spinner";
 
 const onSubmit = async (values, actions) => {
   // console.log(values);
@@ -38,10 +39,11 @@ function getSelectValue(id) {
 }
 
 const Signup = () => {
-
+  const [loading, setLoading] = useState(false);
   const { googleAuthenticate } = useContext(AuthContext)
 
   const onGoogleLoginSuccess = async () => {
+      setLoading(true)
       try {
           const res = await axios.get('https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup', {
             withCredentials: true,
@@ -51,11 +53,13 @@ const Signup = () => {
       } catch (err) {
           console.error(err);
       }
+      setLoading(false)
   };
 
   let location = useLocation()
   
   useEffect(() => {
+      setLoading(true)
       const values = queryString.parse(location.search)
       const state = values.state ? values.state : null;
       const code = values.code ? values.code : null;
@@ -66,10 +70,12 @@ const Signup = () => {
       if(mounted) {
         try {
           googleAuthenticate(state, code)
+          setLoading(false)
         } catch (err) {
             console.log(err);
         }
       }
+      
       return () => {
         mounted = false;
       }
@@ -96,7 +102,7 @@ const Signup = () => {
     console.log(formData);
   
     try {
-      signUpUser(formData)
+      // signUpUser(formData)
     } catch (err) {
       console.error(err);
     }
@@ -124,7 +130,7 @@ const Signup = () => {
 
   console.log(errors);
 
-  return (
+  return ( loading ? <Spinner /> :
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
       style={{}}
@@ -242,7 +248,7 @@ const Signup = () => {
               >
                 <div>
                   <select
-                  value={values.CollegeName}
+                  value={values.collegeName}
                   onChange={handleChange} 
                   onBlur={handleBlur}
                    id="CollegeName"
@@ -272,8 +278,8 @@ const Signup = () => {
                     </option>
                     <Collegelist />
                   </select>
-                  {errors.CollegeName && touched.CollegeName && (
-                  <p className="error">{errors.CollegeName}</p>
+                  {errors.collegeName && touched.collegeName && (
+                  <p className="error">{errors.collegeName}</p>
                 )}
                 </div>
               </div>

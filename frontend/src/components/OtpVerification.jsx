@@ -1,37 +1,33 @@
 import "./OtpVerification.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema4 } from "../schemas";
 import Background from "./background";
+import AuthContext from "../context/AuthContext";
 
 const OtpVerification = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
+  const { authTokens } = useContext(AuthContext)
 
   const onSubmit = async (values, actions) => {
-    console.log(values);
-    console.log(actions);
+    // console.log(values);
+    // console.log(actions);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
   };
-  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      // Retrieve the access token from local storage
-      const authToken = localStorage.getItem("accessToken");
-
-      // Make a POST request to verify OTP
       const otpVerificationResponse = await axios.post(
-        "http://localhost:8000/api/user/verify",
+        "https://api.eesiitbhu.co.in/api/user/verify/",
         { otp },
         {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${authTokens.access}`,
           },
         }
       );

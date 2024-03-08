@@ -6,9 +6,8 @@ import "./ForgotPassword.css";
 import { useFormik } from "formik";
 import { basicSchema2 } from "../schemas";
 import './resetpassword.css';
+import { getElementError } from "@testing-library/react";
 const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
@@ -31,17 +30,8 @@ const ResetPassword = () => {
     setNewPassword(event.target.value);
   };
 
-  const handleBtnClick = (id) => {
-    const targetDiv = document.getElementById(id);
-    targetDiv.style.display = "block";
-  };
-
   let navigate = useNavigate();
-  const routeChange = (route) => {
-    let path = `/dashboard`;
-    navigate(path);
-  };
-
+  
   const handleFormSubmit = (event) => {
     event.preventDefault();
   };
@@ -185,7 +175,7 @@ const ResetPassword = () => {
             <p>
               <label for="cnf_password">Confirm Password</label>
             </p>
-            <button onClick={() => handleBtnClick("fp-success")}>
+            <button type="submit">
               Update Password
             </button>
           </div>

@@ -9,39 +9,18 @@ function classNames(...classes) {
   }
 
 function Profile() {
-  const { user, logoutUser, authTokens } = useContext(AuthContext);
+  const { user, logoutUser, authTokens, userDetails } = useContext(AuthContext);
     const [image, setImage] = useState("/user-profile-4255.svg")
     const navigate = useNavigate()
     useEffect(() => {
-      const getGoogleProfile = async () => {
-        try {
-          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', {
-            headers: {
-                Authorization: `Bearer ${authTokens.access}`,
-          }});
-          console.log(res.data);
-          if(res.data.google) {
-            setImage(res.data.google.picture);
-          }
-        } catch(err) {
-          console.error(err)
-        }
-      }
-      let mounted = true;
-      if(mounted) {
-        getGoogleProfile();
-      }
-      return () => {
-        mounted = false
-      }
-    }, []);
+      setImage(userDetails?.google?.picture);
+    }, [userDetails])
   return (
     <div>
       {user && 
        <Menu as="div" className="relative inline-block text-left z-50 bg-gray">
        <div>
          <Menu.Button className="bg-gray">
-          
            <img className='h-12 w-9 rounded-full object-cover'
              src={
                image
