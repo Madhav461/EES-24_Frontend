@@ -66,11 +66,12 @@ const DashboardTeam = () => {
 
     return (
         <div className="relative ">
+          <Navhome className="z-15"/>
         <div className="absolute ">
-        <Navhome className="z-15"/>
+        
         </div>
         {/* desktop view starts here*/}
-        <div className="dash_desktopview relative overflow-hidden z-10">
+        <div className="dash_desktopview relative overflow-hidden ">
         
           <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
             <img
