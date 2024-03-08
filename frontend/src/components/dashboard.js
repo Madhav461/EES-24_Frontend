@@ -37,10 +37,12 @@ const Dashboard = () => {
     config: { mass: 1, tension: 20, friction: 10 },
   });
   useEffect(() => {
-    setName(userDetails?.profile?.name)
-    setEmail(userDetails?.profile?.email)
-    setCollege(userDetails?.profile?.college)
-    setYear(userDetails?.profile?.year)
+    if(userDetails) {
+      setName(userDetails?.profile?.name)
+      setEmail(userDetails?.profile?.email)
+      setCollege(userDetails?.profile?.college)
+      setYear(userDetails?.profile?.year)
+    }
   }, [userDetails])
   return (
     <div className="relative">
