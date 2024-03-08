@@ -1238,7 +1238,7 @@ const DashboardRegistration = () => {
             </div>
             <form onSubmit={handleFormSubmit} className="">
                 <div class="forgot-password-container fpc-mobile">
-                    <h1>Event Registration</h1>
+                    <h1 className="dashboard-registration-event">Event Registration</h1>
                     <h2 class="information-text-fp">Select an event</h2>
                     <h3 class="information-text-fp-success" id="fp-success">Your team has been successfully registered.</h3>
                     <div className="event-registration-dropd">
