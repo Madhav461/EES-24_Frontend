@@ -13,7 +13,7 @@ export const AuthProvider = ({children}) => {
     const [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authtokens') ? JSON.parse(localStorage.getItem('authtokens')) : null)
     const [user, setUser] = useState(() => localStorage.getItem('authtokens') ? jwtDecode(JSON.parse(localStorage.getItem('authtokens')).access) : null)
     const [loading, setLoading] = useState(true);
-    const [userDetails, setUserDetails] = useState(null)
+    const [userDetails, setUserDetails] = useState({})
 
     const navigate = useNavigate()
 

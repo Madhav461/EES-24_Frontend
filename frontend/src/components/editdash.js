@@ -13,6 +13,7 @@ const EditDashboard = () => {
   const [email, setEmail] = useState("email@itbhu.ac.in");
   // const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+  const [displayEmail, setDisplayEmail] = useState('') 
   const [year, setYear] = useState('1')
   const { number } = useSpring({
     from: { number: 0 },
@@ -20,10 +21,13 @@ const EditDashboard = () => {
     config: { mass: 1, tension: 20, friction: 10 },
   });
   useEffect(() => {
-    setName(userDetails?.profile?.name)
-    setEmail(userDetails?.profile?.email)
-    setCollege(userDetails?.profile?.college)
-    setYear(userDetails?.profile?.year)
+    if(userDetails) {
+      setName(userDetails?.profile?.name)
+      setEmail(userDetails?.profile?.email)
+      setCollege(userDetails?.profile?.college)
+      setYear(userDetails?.profile?.year)
+      setDisplayEmail(userDetails?.profile?.email.substring(0, 30))
+    }
   }, [userDetails])
   return (
     <div className="relative">
@@ -93,7 +97,7 @@ const EditDashboard = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
-                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}</span>
+                  {email && email.length >= 40 ? displayEmail + '...' : displayEmail}</span>
               </p>
               <p className="y49">
                 {/* <span
@@ -129,7 +133,7 @@ const EditDashboard = () => {
               <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{ zIndex: "10000", "fontFamily": "Michroma" }}></input></div>
               <div className="college99"><input type="text" id="college2" placeholder={college} style={{ "fontFamily": "Michroma" }}></input></div>
               {/* <div className="branch99"><input type="text" id="branch2" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div> */}
-              <div className="email99"><input type="email" id="email2" placeholder={email.length <= 30 ? email : `${email.substring(0, 30)}...`} disabled style={{ "fontFamily": "Michroma" }}></input></div>
+              <div className="email99"><input type="email" id="email2" placeholder={email && email.length >= 40 ? displayEmail + '...' : displayEmail} disabled style={{ "fontFamily": "Michroma" }}></input></div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
             </div>
             <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit">Submit</button>
@@ -318,7 +322,7 @@ const EditDashboard = () => {
                 <div className="p1-dashboard-mb">
                   <div><input type="text" placeholder={college} style={{ "fontFamily": "Michroma" }}></input></div>
                   {/* <div><input type="text" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div> */}
-                  <div style={{ "fontSize": "85%" }}><input type="text" placeholder={email.length <= 15 ? email : `${email.substring(0, 15)}...`} disabled style={{ "fontFamily": "Michroma" }}></input></div>
+                  <div style={{ "fontSize": "85%" }}><input type="text" placeholder={email && email.length >= 40 ? displayEmail + '...' : displayEmail} disabled style={{ "fontFamily": "Michroma" }}></input></div>
                   <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit">Submit</button>
                   <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel">Cancel</button>
                 </div>
