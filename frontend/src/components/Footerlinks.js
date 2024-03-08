@@ -101,8 +101,7 @@ const Footerlinks = () => {
           />
         </svg>
 
-        {[...Array(3)].map((_, index) => (
-          <svg
+        <svg
             width="75%"
             height="63%"
             viewBox="0 0 397 63"
@@ -124,7 +123,7 @@ const Footerlinks = () => {
               <a href="https://www.iitbhu.ac.in/dept/ece" target="_blank">
                 <rect x="39" width="100%" height="80%" fill="black" />
                 <text x="43" y="25" fill="white">
-                  Links
+                  ECE Dept IIT(BHU) Varanasi
                 </text>
               </a>
             </svg>
@@ -234,7 +233,270 @@ const Footerlinks = () => {
               </filter>
             </defs>
           </svg>
-        ))}
+          <svg
+            width="75%"
+            height="63%"
+            viewBox="0 0 397 63"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ marginLeft: "2rem" }}
+          >
+            <g filter="url(#filter0_d_319_2)">
+              <path
+                d="M36.8286 41.5422V45H146.406L151.069 41.5422H36.8286Z"
+                fill="white"
+              />
+              <path
+                d="M31 4V38.0843M337 41.5422H151.069M151.069 41.5422H36.8286V45H146.406L151.069 41.5422Z"
+                stroke="white"
+              />
+            </g>
+            <svg width="340" height="50" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://maps.app.goo.gl/YDSX6VC8rhnwatBi7" target="_blank">
+                <rect x="39" width="100%" height="80%" fill="black" />
+                <text x="43" y="25" fill="white">
+                  location
+                </text>
+              </a>
+            </svg>
+
+            <path
+              d="M375.647 0L364 7.8806V15.7612L386.324 0H375.647Z"
+              fill="#D9D9D9"
+            />
+            <path
+              d="M397 0H395.059L364 24.3806V30.5373L397 5.91045V0Z"
+              fill="#D9D9D9"
+            />
+            <path
+              d="M397 14.2836L371.765 33H380.824L397 20.6866V14.2836Z"
+              fill="#D9D9D9"
+            />
+            <path d="M388.912 33H397V26.8433L388.912 33Z" fill="#D9D9D9" />
+            <line x1="10.5" y1="48" x2="10.5" y2="58" stroke="white" />
+            <line x1="5" y1="52.5" x2="15" y2="52.5" stroke="white" />
+            <g filter="url(#filter1_f_319_2)">
+              <line x1="10.5" y1="48" x2="10.5" y2="58" stroke="white" />
+              <line x1="5" y1="52.5" x2="15" y2="52.5" stroke="white" />
+            </g>
+            <line x1="351.5" y1="48" x2="351.5" y2="58" stroke="white" />
+            <line x1="346" y1="52.5" x2="356" y2="52.5" stroke="white" />
+            <g filter="url(#filter2_f_319_2)">
+              <line x1="351.5" y1="48" x2="351.5" y2="58" stroke="white" />
+              <line x1="346" y1="52.5" x2="356" y2="52.5" stroke="white" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_d_319_2"
+                x="26.5"
+                y="4"
+                width="314.5"
+                height="49.5"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_319_2"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_319_2"
+                  result="shape"
+                />
+              </filter>
+              <filter
+                id="filter1_f_319_2"
+                x="0.8"
+                y="43.8"
+                width="18.4"
+                height="18.4"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="2.1"
+                  result="effect1_foregroundBlur_319_2"
+                />
+              </filter>
+              <filter
+                id="filter2_f_319_2"
+                x="341.8"
+                y="43.8"
+                width="18.4"
+                height="18.4"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="2.1"
+                  result="effect1_foregroundBlur_319_2"
+                />
+              </filter>
+            </defs>
+          </svg>
+          <svg
+            width="75%"
+            height="63%"
+            viewBox="0 0 397 63"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ marginLeft: "2rem" }}
+          >
+            <g filter="url(#filter0_d_319_2)">
+              <path
+                d="M36.8286 41.5422V45H146.406L151.069 41.5422H36.8286Z"
+                fill="white"
+              />
+              <path
+                d="M31 4V38.0843M337 41.5422H151.069M151.069 41.5422H36.8286V45H146.406L151.069 41.5422Z"
+                stroke="white"
+              />
+            </g>
+            <svg width="340" height="50" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://en.wikipedia.org/wiki/IIT_(BHU)_Varanasigit " target="_blank">
+                <rect x="39" width="100%" height="80%" fill="black" />
+                <text x="43" y="25" fill="white">
+                  wikipedia IIT(BHU) Varanasi
+                </text>
+              </a>
+            </svg>
+
+            <path
+              d="M375.647 0L364 7.8806V15.7612L386.324 0H375.647Z"
+              fill="#D9D9D9"
+            />
+            <path
+              d="M397 0H395.059L364 24.3806V30.5373L397 5.91045V0Z"
+              fill="#D9D9D9"
+            />
+            <path
+              d="M397 14.2836L371.765 33H380.824L397 20.6866V14.2836Z"
+              fill="#D9D9D9"
+            />
+            <path d="M388.912 33H397V26.8433L388.912 33Z" fill="#D9D9D9" />
+            <line x1="10.5" y1="48" x2="10.5" y2="58" stroke="white" />
+            <line x1="5" y1="52.5" x2="15" y2="52.5" stroke="white" />
+            <g filter="url(#filter1_f_319_2)">
+              <line x1="10.5" y1="48" x2="10.5" y2="58" stroke="white" />
+              <line x1="5" y1="52.5" x2="15" y2="52.5" stroke="white" />
+            </g>
+            <line x1="351.5" y1="48" x2="351.5" y2="58" stroke="white" />
+            <line x1="346" y1="52.5" x2="356" y2="52.5" stroke="white" />
+            <g filter="url(#filter2_f_319_2)">
+              <line x1="351.5" y1="48" x2="351.5" y2="58" stroke="white" />
+              <line x1="346" y1="52.5" x2="356" y2="52.5" stroke="white" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_d_319_2"
+                x="26.5"
+                y="4"
+                width="314.5"
+                height="49.5"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_319_2"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_319_2"
+                  result="shape"
+                />
+              </filter>
+              <filter
+                id="filter1_f_319_2"
+                x="0.8"
+                y="43.8"
+                width="18.4"
+                height="18.4"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="2.1"
+                  result="effect1_foregroundBlur_319_2"
+                />
+              </filter>
+              <filter
+                id="filter2_f_319_2"
+                x="341.8"
+                y="43.8"
+                width="18.4"
+                height="18.4"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="2.1"
+                  result="effect1_foregroundBlur_319_2"
+                />
+              </filter>
+            </defs>
+          </svg>
 
         <svg
           width="75%"
@@ -258,7 +520,7 @@ const Footerlinks = () => {
             <a href="https://unstop.com/c/ees-iit-bhu-732303" target="_blank">
               <rect x="39" width="100%" height="80%" fill="black" />
               <text x="43" y="25" fill="white">
-                Links
+                unstop ees-iit-bhu
               </text>
             </a>
           </svg>
