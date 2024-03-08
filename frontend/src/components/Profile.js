@@ -13,7 +13,9 @@ function Profile() {
     const [image, setImage] = useState("/user-profile-4255.svg")
     const navigate = useNavigate()
     useEffect(() => {
-      setImage(userDetails?.google?.picture);
+      if(userDetails && userDetails?.google) {
+        setImage(userDetails?.google?.picture);
+      }
     }, [userDetails])
   return (
     <div>
