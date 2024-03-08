@@ -4,9 +4,16 @@ import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
 import "./DashboardRegistration.css";
+<<<<<<< Updated upstream
 import {Link} from  "react-router-dom";
+=======
+import axios from 'axios';
+
+
+>>>>>>> Stashed changes
 
 const DashboardRegistration = () => {
+
   const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
@@ -22,6 +29,35 @@ const DashboardRegistration = () => {
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
 
+
+  
+  const [category, setCategory] = useState("");
+  const [teamName,setTeamName]=useState('')
+  const [leaderEmail,setLeaderEmail]=useState('divyansh.sharma.cd.ece22@itbhu.ac.in')
+  
+  const handleRegister = async () => {
+
+    const dataToSend = {
+      eventName: category,
+      teamName: teamName,
+      leaderEmail: leaderEmail
+    };
+
+    console.log(dataToSend);
+
+    try {
+      const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/create', dataToSend, {headers :{
+        "Authorization" :`Bearer ${authTokens.access}`
+      }});
+      console.log(dataToSend);
+      console.log('Response:', response.data);
+  } catch (error) {
+      console.error('Error:', error);
+  }
+  
+
+};
+
   const events = {
     devbits,
     cassandra,
@@ -32,7 +68,9 @@ const DashboardRegistration = () => {
     xiota,
     commnet,
   };
-  const [category, setCategory] = useState("");
+
+ 
+
 
   const { number } = useSpring({
     from: { number: 0 },
@@ -143,7 +181,11 @@ const DashboardRegistration = () => {
               {/* devbits */}
               <div
                 className="devbitsEventBtn   w-[50%] cursor-pointer"
-                onClick={() => setCategory("devbits")}
+                onClick={() => 
+                
+                  setCategory("devbits") 
+
+              }
               >
                 {category !== "devbits" ? (
                   <div>
@@ -197,8 +239,6 @@ const DashboardRegistration = () => {
                     </svg>
                   </div>
                 ) : (
-                  //
-
                   <div>
                     <svg
                       width="80%"
@@ -810,9 +850,9 @@ const DashboardRegistration = () => {
               {/* x-iota */}
               <div
                 className="XiotaEventBtn w-[50%] cursor-pointer"
-                onClick={() => setCategory("x-iota")}
+                onClick={() => setCategory("xiota")}
               >
-                {category !== "x-iota" ? (
+                {category !== "xiota" ? (
                   <div>
                     <svg
                       width="80%"
@@ -1041,6 +1081,12 @@ const DashboardRegistration = () => {
                     className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                     type="text"
                     placeholder="Enter team name "
+                    onChange={(e) => {
+                      
+                      setTeamName(e.target.value)
+                      
+                    }}
+
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "1vw",
@@ -1094,7 +1140,9 @@ const DashboardRegistration = () => {
                     </button>
 
 
-                    <button className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
+                    <button 
+                    onClick={handleRegister}
+                    className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
                        Register
                     </button>
                     </div>
