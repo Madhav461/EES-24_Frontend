@@ -5,6 +5,8 @@ import { useSpring, animated } from "react-spring";
 import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
+import { Link } from "react-router-dom";
+
 
 const DashboardTeam = () => {
   const [teamName, setTeamName] = useState("My Team");
@@ -148,6 +150,15 @@ const DashboardTeam = () => {
             marginTop: "-1%",
           }}
         >
+          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
+            <Link to="/editdash">
+              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
+            </Link>
+            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
+            <Link to="/dashboard/registration">
+            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
+            </Link>
+          </div>
           <div className="abhinav absolute">
             <div>
             <img
@@ -223,68 +234,65 @@ const DashboardTeam = () => {
           </div>
         </div>
 
-        {/* Parth - upper Title box and svg  */}
-        <div
-          className="title_container absolute flex "
-          style={{
-            flexDirection: "row",
-            alignItems: "end",
-            justifyContent: "space-between",
-            left: "50%",
-            transform: "translateX(-50%)",
-            marginTop: "-2%",
-          }}
-        >
-          <div className=" h-[80%] ">
-            <img src="/Vector 347.svg" alt="img" className="h-[100%]" />
-          </div>
+{/* Parth - upper Title box and svg  */}
           <div
+            className="title_container absolute flex "
             style={{
-              height: "100%",
-              textAlign: "center",
-              color: "white",
-              fontSize: "150%",
-              fontFamily: "Michroma",
-              fontWeight: "400",
-              letterSpacing: 3.0,
-              wordWrap: "break-word",
-              display: "flex",
+              flexDirection: "row",
               alignItems: "end",
-              justifyContent: "center",
-              height: "min-content",
+              justifyContent: "space-between",
+              left: "50%",
+              transform: "translateX(-50%)",
+              marginTop: "-4%",
             }}
           >
+            <div className=" h-[80%] ">
+              <img src="/Vector 347.svg" alt="img" className="h-[100%]" />
+            </div>
             <div
-              className="relative "
-              style={{ fontSize: "30px", marginTop: "8%" }}
+              style={{
+                height: "100%",
+                textAlign: "center",
+                color: "white",
+                fontSize: "150%",
+                fontFamily: "Michroma",
+                fontWeight: "400",
+                letterSpacing: 3.0,
+                wordWrap: "break-word",
+                display: "flex",
+                alignItems: "end",
+                justifyContent: "center",
+                height: "min-content",
+              }}
             >
-              <img
-                src="/Vector_347.svg"
-                alt="img"
-                className="absolute left-[-14%] top-[-24%] "
-              />
-              <img
-                src="/Vector 349.svg"
-                alt="img"
-                className="absolute right-[-14%] top-[-24%] "
-              />
-              <img
-                src="/Vector 348.svg"
-                alt="img"
-                className="absolute right-[-14%] bottom-[-24%] "
-              />
-              <img
-                src="/Vector 350.svg"
-                alt="img"
-                className="absolute left-[-14%] bottom-[-24%] "
-              />
-              PROFILE
+              <div className="relative "style={{ fontSize: '30px', marginTop: '8%'}}>
+                <img
+                  src="/Vector_347.svg"
+                  alt="img"
+                  className="absolute left-[-14%] top-[-24%] "
+                />
+                <img
+                  src="/Vector 349.svg"
+                  alt="img"
+                  className="absolute right-[-14%] top-[-24%] "
+                />
+                <img
+                  src="/Vector 348.svg"
+                  alt="img"
+                  className="absolute right-[-14%] bottom-[-24%] "
+                />
+                <img
+                  src="/Vector 350.svg"
+                  alt="img"
+                  className="absolute left-[-14%] bottom-[-24%] "
+                />
+                TEAMS
+              </div>
+            </div>
+            <div className="h-[80%] ">
+              <img src="/Vector 346.svg" alt="img" className="h-[100%]" />
             </div>
           </div>
-          <div className="h-[80%] ">
-            <img src="/Vector 346.svg" alt="img" className="h-[100%]" />
-          </div>
-        </div>
 
         {/* Added by Santosh -inner content Desktop view */}
         <div className=" absolute team-dashboard-container  z-50">

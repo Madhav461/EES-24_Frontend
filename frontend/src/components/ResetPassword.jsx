@@ -6,9 +6,8 @@ import "./ForgotPassword.css";
 import { useFormik } from "formik";
 import { basicSchema2 } from "../schemas";
 import './resetpassword.css';
+import { getElementError } from "@testing-library/react";
 const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
@@ -31,17 +30,8 @@ const ResetPassword = () => {
     setNewPassword(event.target.value);
   };
 
-  const handleBtnClick = (id) => {
-    const targetDiv = document.getElementById(id);
-    targetDiv.style.display = "block";
-  };
-
   let navigate = useNavigate();
-  const routeChange = (route) => {
-    let path = `/dashboard`;
-    navigate(path);
-  };
-
+  
   const handleFormSubmit = (event) => {
     event.preventDefault();
   };
@@ -69,12 +59,12 @@ const ResetPassword = () => {
 
   return (
     <>
-      {/* <Background /> */}
-      <form onSubmit={handleFormSubmit} className="">
-        <div class="forgot-password-container">
-          <h1>Password Reset</h1>
-          <h2 class="information-text-fp">Enter your new password.</h2>
-          <h3 class="information-text-fp-success" id="fp-success">
+      <Background />
+      <form onSubmit={handleFormSubmit} className="font-golman">
+        <div class="forgot-password-container " >
+          <h1 className="font-goldman ">Password Reset</h1>
+          <h2 class="information-text-fp" className="font-goldman mt-[10px]">Enter your new password.</h2>
+          <h3 class="information-text-fp-success" id="fp-success" className="font-goldman mt-[10px]">
             Password has been updated successfully.
           </h3>
           <div class="form-group-fp">
@@ -101,7 +91,7 @@ const ResetPassword = () => {
                   <p className="error">{errors.email}</p>
                 )}
             <p>
-              <label for="username">Email</label>
+              <label for="username" className="font-goldman">Email</label>
             </p>
             <input
               type="number"
@@ -127,12 +117,12 @@ const ResetPassword = () => {
                   <p className="error">{errors.otpvarification}</p>
                 )}
             <p>
-              <label for="otp">OTP</label>
+              <label for="otp" className="font-goldman">OTP</label>
             </p>
             <input
                   id="password"
                   type="password"
-                  placeholder="PASSWORD"
+                  placeholder="Password"
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -154,7 +144,7 @@ const ResetPassword = () => {
                   <p className="error">{errors.password}</p>
                 )}
             <p>
-              <label for="new_password">New Password</label>
+              <label for="new_password" className="font-goldman">New Password</label>
             </p>
             <input
                   id="confirmPassword"
@@ -183,9 +173,9 @@ const ResetPassword = () => {
                   <p className="error">{errors.confirmPassword}</p>
                 )}
             <p>
-              <label for="cnf_password">Confirm Password</label>
+              <label for="cnf_password" className="font-goldman">Confirm Password</label>
             </p>
-            <button onClick={() => handleBtnClick("fp-success")}>
+            <button type="submit" className="font-goldman hover:bg-white">
               Update Password
             </button>
           </div>

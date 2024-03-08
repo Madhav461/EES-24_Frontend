@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import TeamsTxt from "./NavbarComps/TeamsTxt.jsx";
 // import "./nav.css";
 // import { Link } from 'react-router-dom';
@@ -12,9 +12,10 @@ import EventsTxt from './NavbarComps/EventsTxt.jsx';
 import ScheduleTxt from "./NavbarComps/ScheduleTxt.jsx";
 import Profile from './Profile.js';
 // imoprt SponsorsTxt
+import AuthContext from '../context/AuthContext.js';
 
 const Navhome2 = () => {
-  const user = true
+  const { user } = useContext(AuthContext)
 
   return (
     <div className='bg-gray '>
@@ -45,7 +46,7 @@ const Navhome2 = () => {
 
 
         <div className='flex z-50 justice1 mr-2 2k:pt-12 2k:pr-8  pr-4 justify-center items-center pt-5 lg:pt-0 lg:pb-3 ab:pt-8 space-x-5'>
-          {user &&
+          {!user &&
             <div className="relative pr-5 pl-1 ml-2 flex grow">
               <Link to="/login">
               <button className="cursor-pointer  test [border:none] md:p-0 ml-2 mr-5 pl-0 pr-0 bg-[transparent] ">
@@ -63,7 +64,7 @@ const Navhome2 = () => {
               </Link>
             </div>
           }
-          {user &&
+          {!user &&
             <div className='relative   hidden sm:flex  grow '>
               <Link to="/signup">
                 <button className="cursor-pointer [border:none] ml-5 mr-7 pl-0 pr-0 bg-[transparent] ">
@@ -106,7 +107,7 @@ const Navhome2 = () => {
 
 
       </div>
-      {!user &&
+      {user &&
        <div className='z-50 h-full absolute ab:top-[10px] ab:right-[74px] right-[10px] top-[10px]'><Profile/></div>}
      
 
