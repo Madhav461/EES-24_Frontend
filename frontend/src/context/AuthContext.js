@@ -14,10 +14,12 @@ export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(() => localStorage.getItem('authtokens') ? jwtDecode(JSON.parse(localStorage.getItem('authtokens')).access) : null)
     const [loading, setLoading] = useState(true);
     const [userDetails, setUserDetails] = useState(null)
+    const [pageloading, setPageLoading] = useState(false)
 
     const navigate = useNavigate()
 
     const googleAuthenticate = async (state, code) => {
+        setPageLoading(true);
         if(state && code) {
             const details = {
                 'code' : code,
@@ -48,9 +50,11 @@ export const AuthProvider = ({children}) => {
                 console.error(err);
             }
         }
+        setPageLoading(false)
     }
 
     const signUpUser = async (validatedFormData) => {
+        setPageLoading(true)
         const details = {
             "email" : validatedFormData.email,
             "name" : validatedFormData.name,
@@ -74,9 +78,11 @@ export const AuthProvider = ({children}) => {
         } catch (err) {
             console.error(err);
         }
+        setPageLoading(false);
     }
 
     const loginUser = async (validatedFormData) => {
+        setPageLoading(true)
         const details = {
             "email" : validatedFormData.email,
             "password" : validatedFormData.password
@@ -95,10 +101,12 @@ export const AuthProvider = ({children}) => {
         } catch(err) {
             console.error(err);
         }
+        setPageLoading(false)
     }
 
 
     const logoutUser = async () => {
+        setPageLoading(true)
         const details = {
             "refresh_token" : authTokens.refresh
         }
@@ -109,6 +117,7 @@ export const AuthProvider = ({children}) => {
         } catch(err) {
             console.log(err)
         }
+        setPageLoading(false)
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authtokens')
@@ -116,6 +125,7 @@ export const AuthProvider = ({children}) => {
     }
 
     const updateUserInfo = async (validatedFormData) => {
+        setPageLoading(true)
         if(authTokens) {
             const details = {
                 'college' : validatedFormData.collegeName,
@@ -129,12 +139,14 @@ export const AuthProvider = ({children}) => {
                 }})
                 console.log(res);
                 if(res.status === 200) {
+                    loadUser()
                     navigate("/editdash")
                 }
             } catch (err) {
                 console.error(err);
             }
         }
+        setPageLoading(false)
     }
 
     const updateToken = async () => {
@@ -167,6 +179,16 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    const loadUser = async () => {
+        setPageLoading(true)
+        const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
+        "Authorization" : `Bearer ${authTokens.access}`
+        }})
+        console.log(res.data);
+        setUserDetails(res.data)
+        setPageLoading(false)
+    }
+
     const contextData = {
         googleAuthenticate: googleAuthenticate,
         user: user,
@@ -176,6 +198,9 @@ export const AuthProvider = ({children}) => {
         loginUser: loginUser,
         userDetails : userDetails,
         updateUserInfo : updateUserInfo,
+        pageloading : pageloading,
+        setPageLoading : setPageLoading,
+        loadUser : loadUser,
     }
 
     useEffect(() => {
@@ -192,13 +217,6 @@ export const AuthProvider = ({children}) => {
     }, [authTokens, loading])
 
     useEffect(() => {
-        const loadUser = async () => {
-          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
-            "Authorization" : `Bearer ${authTokens.access}`
-          }})
-          console.log(res.data);
-          setUserDetails(res.data)
-        }
         let mounted = true;
         if(mounted && user) {
           loadUser()

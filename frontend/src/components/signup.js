@@ -39,11 +39,11 @@ function getSelectValue(id) {
 }
 
 const Signup = () => {
-  const [loading, setLoading] = useState(false);
-  const { googleAuthenticate } = useContext(AuthContext)
+  // const [loading, setLoading] = useState(false);
+  const { googleAuthenticate, pageloading, signUpUser, setPageLoading } = useContext(AuthContext)
 
   const onGoogleLoginSuccess = async () => {
-      setLoading(true)
+      setPageLoading(true)
       try {
           const res = await axios.get('https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup', {
             withCredentials: true,
@@ -53,13 +53,12 @@ const Signup = () => {
       } catch (err) {
           console.error(err);
       }
-      setLoading(false)
+      setPageLoading(false)
   };
 
   let location = useLocation()
   
   useEffect(() => {
-      setLoading(true)
       const values = queryString.parse(location.search)
       const state = values.state ? values.state : null;
       const code = values.code ? values.code : null;
@@ -70,7 +69,6 @@ const Signup = () => {
       if(mounted) {
         try {
           googleAuthenticate(state, code)
-          setLoading(false)
         } catch (err) {
             console.log(err);
         }
@@ -80,8 +78,6 @@ const Signup = () => {
         mounted = false;
       }
   }, [location])
-
-  const {signUpUser} = useContext(AuthContext)
 
   function showFormData() {
     const formData = {
@@ -130,7 +126,7 @@ const Signup = () => {
 
   console.log(errors);
 
-  return ( loading ? <Spinner /> :
+  return ( pageloading ? <Spinner /> :
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
       style={{}}
