@@ -10,6 +10,7 @@ import AuthContext from "../context/AuthContext";
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string'
 import axios from 'axios';
+import Spinner from "./Spinner";
 
 const onSubmit = async (values, actions) => {
   // console.log(values);
@@ -37,7 +38,7 @@ const Login = () => {
     }
   }
 
-  const { googleAuthenticate } = useContext(AuthContext)
+  const { googleAuthenticate, pageloading } = useContext(AuthContext)
 
   const onGoogleLoginSuccess = async () => {
       try {
@@ -98,7 +99,7 @@ const Login = () => {
   });
 
   console.log(errors);
-  return (
+  return ( pageloading ? <Spinner /> :
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
       style={{}}
@@ -315,7 +316,7 @@ const Login = () => {
                   />
                 </svg>
               </div>
-              <Link to="/otp">
+              <Link to="/forgotpassword">
                 <p className="forgotbutton">Forgot Password?</p>
               </Link>
             </form>

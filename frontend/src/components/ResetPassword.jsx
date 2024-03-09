@@ -7,6 +7,8 @@ import { useFormik } from "formik";
 import { basicSchema2 } from "../schemas";
 import './resetpassword.css';
 import { getElementError } from "@testing-library/react";
+import axios from "axios";
+import queryString from 'query-string'
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
@@ -32,8 +34,20 @@ const ResetPassword = () => {
 
   let navigate = useNavigate();
   
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const details = {
+      'email' : email,
+      'otp' : otp,
+      'password1' : newPassword,
+      'password2' : cnfPassword
+    }
+    const formData = queryString.stringify(details)
+    const res = await axios.post('https://api.eesiitbhu.co.in/api/user/change-password/', formData)
+    console.log(res)
+    if(res.status == 200) {
+      navigate('/login')
+    }
   };
 
   const {
@@ -69,8 +83,8 @@ const ResetPassword = () => {
           </h3>
           <div class="form-group-fp">
           <input
-                  value={values.email}
-                  onChange={handleChange}
+                  value={email}
+                  onChange={handleEmailChange}
                   id="email"
                   placeholder="EMAIL"
                   type="email"
@@ -98,8 +112,8 @@ const ResetPassword = () => {
               name="otpvarification"
               id="otpvarification"
               placeholder="OTP"
-              value={values.otpvarification}
-                onChange={handleChange}
+              value={otp}
+              onChange={handleOtpChange}
               className={errors.otpvarification && touched.otpvarification ? "input-error" : ""}
                 onBlur={handleBlur}
                 style={{
@@ -123,8 +137,8 @@ const ResetPassword = () => {
                   id="password"
                   type="password"
                   placeholder="Password"
-                  value={values.password}
-                  onChange={handleChange}
+                  value={newPassword}
+                  onChange={handleNPswdChange}
                   onBlur={handleBlur}
                   className={
                     errors.password && touched.password ? "input-error" : ""
@@ -150,8 +164,8 @@ const ResetPassword = () => {
                   id="confirmPassword"
                   type="password"
                   placeholder="Confirm password"
-                  value={values.confirmPassword}
-                  onChange={handleChange}
+                  value={cnfPassword}
+                  onChange={handleCPswdChange}
                   onBlur={handleBlur}
                   className={
                     errors.confirmPassword && touched.confirmPassword
