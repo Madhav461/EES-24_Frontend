@@ -1,25 +1,41 @@
-import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+
+import React from "react";
+import { useState, useEffect, useContext } from "react";
+
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./editdash.css";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+// <<<<<<< main
+
+// const EditDashboard = () => {
+//   const {userDetails} = useContext(AuthContext)
+//   const [name, setName] = useState("Abhinav");
+//   const [mobile, setMobile] = useState("123456789");
+//   const [email, setEmail] = useState("email@itbhu.ac.in");
+//   const [branch, setBranch] = useState("Electronics Engineering");
+//   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+//   const [displayEmail, setDisplayEmail] = useState('') 
+// =======
+import Spinner from "./Spinner";
 
 const EditDashboard = () => {
-  const {userDetails} = useContext(AuthContext)
-  const [name, setName] = useState("Abhinav");
-  const [mobile, setMobile] = useState("123456789");
-  const [email, setEmail] = useState("email@itbhu.ac.in");
-  const [branch, setBranch] = useState("Electronics Engineering");
-  const [college, setCollege] = useState("IIT(BHU), Varanasi");
-  const [displayEmail, setDisplayEmail] = useState('') 
+  const {userDetails, updateUserInfo, loadUser, pageloading} = useContext(AuthContext)
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("")
+  const [email, setEmail] = useState("");
+  const [branch, setBranch] = useState("");
+  const [college, setCollege] = useState("");
+  const [displayEmail, setDisplayEmail] = useState('')
+
   const [year, setYear] = useState('1')
   const { number } = useSpring({
     from: { number: 0 },
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
+
   useEffect(() => {
     if(userDetails) {
       setName(userDetails?.profile?.name)
@@ -29,7 +45,22 @@ const EditDashboard = () => {
       setDisplayEmail(userDetails?.profile?.email.substring(0, 30))
     }
   }, [userDetails])
-  return (
+
+  const handleSubmit = () => {
+    const validatedformdata = {
+      collegeName : college,
+      name : name,
+      year : year
+    }
+    console.log(validatedformdata)
+    updateUserInfo(validatedformdata)
+  }
+
+  const handleCancel = () => {
+    loadUser();
+  }
+
+  return (pageloading ? <Spinner /> :
     <div className="relative">
       <div className="absolute ">
         <Navhome className="z-10" />
@@ -129,7 +160,7 @@ const EditDashboard = () => {
                 </span>
               </p>
               <p className="y49">
-                <span
+                {/* <span
                   type="text"
                   name="Electronics"
                   id="Electronics"
@@ -139,6 +170,7 @@ const EditDashboard = () => {
                 >
                   {branch}
                 </span>
+                >{branch}</span> */}
                 <span
                   type="text"
                   name="College"
@@ -159,51 +191,14 @@ const EditDashboard = () => {
           </div>
           <div className="container-dashboard absolute">
             <div className="details-dashboard" style={{ zIndex: "1" }}>
-              <div className="name99">
-                <input
-                  type="text"
-                  className="name-dashboard"
-                  id="name2"
-                  placeholder={name}
-                  style={{ zIndex: "10000", fontFamily: "Michroma" }}
-                ></input>
-              </div>
-              <div className="college99">
-                <input
-                  type="text"
-                  id="college2"
-                  placeholder={college}
-                  style={{ fontFamily: "Michroma" }}
-                ></input>
-              </div>
-              {/* <div className="branch99"><input type="text" id="branch2" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div> */}
-              <div className="email99">
-                <input
-                  type="email"
-                  id="email2"
-                  placeholder={
-                    email && email.length >= 40
-                      ? displayEmail + "..."
-                      : displayEmail
-                  }
-                  disabled
-                  style={{ fontFamily: "Michroma" }}
-                ></input>
-              </div>
+              <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{ zIndex: "10000", "fontFamily": "Michroma" }} onChange={(event) => setName(event.target.value)} value={name}></input></div>
+              <div className="college99"><input type="text" id="college2" placeholder={college} style={{ "fontFamily": "Michroma" }} onChange={(event) => setCollege(event.target.value)} value={college}></input></div>
+              <div className="branch99" value={college}><input type="text" id="branch2" placeholder={year} style={{ "fontFamily": "Michroma" }} onChange={(e) => setYear(e.target.value)} value={year}></input></div>
+              <div className="email99"><input type="email" id="email2" placeholder={email && email.length >= 40 ? displayEmail + '...' : displayEmail} disabled style={{ "fontFamily": "Michroma" }}></input></div>
               {/* {<span className="y69 ">{radiniteScore}</span>} */}
             </div>
-            <button
-              class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"
-              id="submitedit"
-            >
-              Submit
-            </button>
-            <button
-              class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"
-              id="submitcancel"
-            >
-              Cancel
-            </button>
+            <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit" onClick={handleSubmit}>Submit</button>
+            <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel" onClick={handleCancel}>Cancel</button>
             {/* <div className="score-logo-dashboard">
                             <img
                                 src="dashboardeclipse.svg"
@@ -387,46 +382,13 @@ const EditDashboard = () => {
               </div>
 
               <div className="container-dashboard-mb">
-                <div className="name-dashboard-mb">
-                  <input
-                    type="text"
-                    placeholder={name}
-                    style={{ fontFamily: "Michroma" }}
-                  ></input>
-                </div>
+                <div className="name-dashboard-mb"><input type="text" placeholder={name} style={{ "fontFamily": "Michroma" }} value={name} onChange={(e) => setName(e.target.value)}></input></div>
                 <div className="p1-dashboard-mb">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder={college}
-                      style={{ fontFamily: "Michroma" }}
-                    ></input>
-                  </div>
-                  {/* <div><input type="text" placeholder={branch} style={{ "fontFamily": "Michroma" }}></input></div> */}
-                  <div style={{ fontSize: "85%" }}>
-                    <input
-                      type="text"
-                      placeholder={
-                        email && email.length >= 40
-                          ? displayEmail + "..."
-                          : displayEmail
-                      }
-                      disabled
-                      style={{ fontFamily: "Michroma" }}
-                    ></input>
-                  </div>
-                  <button
-                    class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"
-                    id="submitedit"
-                  >
-                    Submit
-                  </button>
-                  <button
-                    class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md"
-                    id="submitcancel"
-                  >
-                    Cancel
-                  </button>
+                  <div><input type="text" placeholder={college} style={{ "fontFamily": "Michroma" }} value={college} onChange={(e) => setCollege(e.target.value)}></input></div>
+                  <div><input type="text" placeholder={year} style={{ "fontFamily": "Michroma" }} value={year}onChange={(e) => setYear(e.target.value)}></input></div>
+                  <div style={{ "fontSize": "85%" }}><input type="text" placeholder={email && email.length >= 40 ? displayEmail + '...' : displayEmail} disabled style={{ "fontFamily": "Michroma" }}></input></div>
+                  <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit" onClick={handleSubmit}>Submit</button>
+                  <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel" onClick={handleCancel}>Cancel</button>
                 </div>
 
                 {/* <div className="score-logo-dashboard">

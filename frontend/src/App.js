@@ -23,7 +23,6 @@ import EventsUdyam from "./components/EventsUdyam.js";
 import EventsUdgam from "./components/EventsUdgam.js";
 import EventsMashal from "./components/EventsMashal.js";
 import OtpVerification from "./components/OtpVerification.jsx";
-
 import DashboardRegistration from "./components/DashboardRegistration.jsx";
 
 import EventRegistration from "./components/EventRegistration.jsx";
