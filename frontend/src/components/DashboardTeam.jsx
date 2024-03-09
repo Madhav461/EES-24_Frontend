@@ -36,71 +36,16 @@ const DashboardTeam = () => {
     navigate(path);
   };
 
-  const teamDetails = [
-    {
-      teamName: "TeamDummy",
-      eventName: "Dummy",
-      leader: "Santosh",
-      member1: "Dummy",
-      member2: "Dummy",
-    },
-    {
-      teamName: "TeamDummy",
-      eventName: "Dummy",
-      leader: "Santosh",
-      member1: "Dummy",
-      member2: "Dummy",
-    },
-    {
-      teamName: "Team1",
-      eventName: "DEVBITS",
-      leader: "L1",
-      member1: "M11",
-      member2: "M12",
-    },
-    {
-      teamName: "Team2",
-      eventName: "MOSAIC",
-      leader: "L2",
-      member1: "M21",
-      member2: "M22",
-    },
-    {
-      teamName: "Team3",
-      eventName: "CASSANDRA",
-      leader: "L3",
-      member1: "M31",
-      member2: "M32",
-    },
-    {
-      teamName: "Team4",
-      eventName: "CASSANDRA",
-      leader: "L3",
-      member1: "M31",
-      member2: "M32",
-    },
-    {
-      teamName: "Team5",
-      eventName: "CASSANDRA",
-      leader: "L3",
-      member1: "M31",
-      member2: "M32",
-    },
-    {
-      teamName: "Team6",
-      eventName: "CASSANDRA",
-      leader: "L3",
-      member1: "M31",
-      member2: "M32",
-    },
-    {
-      teamName: "Team7",
-      eventName: "CASSANDRA",
-      leader: "L3",
-      member1: "M31",
-      member2: "M32",
-    },
-  ];
+    const teamDetails = [
+        // { teamName: "TeamDummy", eventName: "Dummy", leader: "Santosh", member1: "Dummy", member2: "Dummy" },
+        { teamName: "Team1", eventName: "DEVBITS", leader: "L1", member1: "M11", member2: "M12" },
+        { teamName: "Team2", eventName: "MOSAIC", leader: "L2", member1: "M21", member2: "M22" },
+        { teamName: "Team3", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
+        { teamName: "Team4", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
+        { teamName: "Team5", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
+        { teamName: "Team6", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
+        { teamName: "Team7", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
+    ];
 
   const changeTeam = (id) => {
     setTeamName(teamDetails[id].teamName);
@@ -110,34 +55,35 @@ const DashboardTeam = () => {
     setMember2(teamDetails[id].member2);
   };
 
-  const teamsRegistered = teamDetails.map((teamInfo, ind) => {
+    // const teamsRegistered = teamDetails.map((teamInfo, ind) => {
+    //     return (
+    //         <div className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</div>
+    //     )
+    // });
+    const teamsRegistered = teamDetails.map((teamInfo, ind) => {
+        return (
+            <ul className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</ul>
+        )
+    });
+
     return (
-      <div
-        className="team-name-dashboard"
-        key={ind}
-        onClick={() => changeTeam(ind)}
-      >
-        {teamInfo.teamName}
-      </div>
-    );
-  });
-
-  return (
-    <div className="relative ">
-      <div className="absolute ">
-        <Navhome className="z-15" />
-      </div>
-      {/* desktop view starts here*/}
-      <div className="dash_desktopview relative overflow-hidden z-0">
-        <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
-          <img
-            className="object-cover w-[100%] "
-            src="/image 50.svg"
-            style={{ mixBlendMode: "difference", filter: "blur(3.0px)" }}
-          />
+        <div className="relative ">
+          <Navhome className="z-15"/>
+        <div className="absolute ">
+        
         </div>
-
-        {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
+        {/* desktop view starts here*/}
+        <div className="dash_desktopview relative overflow-hidden ">
+        
+          <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
+            <img
+              className="object-cover w-[100%] "
+              src="/image 50.svg"
+              style={{ mixBlendMode: "difference", filter: "blur(3.0px)" }}
+            />
+          </div>
+  
+          {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
          </div> */}
 
         <div
@@ -299,38 +245,39 @@ const DashboardTeam = () => {
           </div>
 
         {/* Added by Santosh -inner content Desktop view */}
-        <div className=" absolute team-dashboard-container  z-50">
-          <div className="teams-registered-dashboard">{teamsRegistered}</div>
+        <div
+        className=" absolute team-dashboard-container  z-50"
+              style={{
+                left: "50%",
+                transform: "translateX(-50%) translateY(-35%)",
+                top: "50%",
+              }}
+              >
+<div className="teams-registered-dashboard">
+  <ul>
+    {teamsRegistered}
+    </ul>
+</div>
 
-          <div className="team-dashboard-members">
-            <div className="team-dashboard-teamName-display">{teamName}</div>
-            <div className="team-dashboard-eventName-display">{eventName}</div>
-            <div className="team-dashboard-members-names">
-              <div>Leader</div>
-              <div>{leader}</div>
-            </div>
-            <div className="team-dashboard-members-names">
-              <div>Member 1</div>
-              <div>{member1}</div>
-            </div>
-            <div className="team-dashboard-members-names">
-              <div>Member 2</div>
-              <div>{member2}</div>
-            </div>
-            <div className="team-dashboard-members-names ">
-              {/* <img
-                className="team-dashboard-icons"
-                src="/dashboard-team-edit.svg"
-                alt=""
-                onClick={() => routeChange("edit")}
-              /> */}
-              <img
-                className="team-dashboard-icons "
-                src="/dashboard-team-delete.svg"
-                alt=""
-              />
-            </div>
-          </div>
+<div className="team-dashboard-members">
+    <div className="team-dashboard-teamName-display">{teamName}</div>
+    <div className="team-dashboard-eventName-display">{eventName}</div>
+    <div className="team-dashboard-members-names">
+        <div>Leader</div>
+        <div>{leader}</div>
+    </div>
+    <div className="team-dashboard-members-names">
+        <div>Member 1</div>
+        <div>{member1}</div>
+    </div>
+    <div className="team-dashboard-members-names">
+        <div>Member 2</div>
+        <div>{member2}</div>
+    </div>
+    <div className="team-dashboard-members-names">
+        <img className="team-dashboard-icons" src="/dashboard-team-delete.svg" alt="" onClick={() => routeChange("edit")}/>
+    </div>
+</div>
 
           {/* <div className="team-dashboard-radinite">
     <animated.span className="">

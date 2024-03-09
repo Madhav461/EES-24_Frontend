@@ -1007,13 +1007,6 @@
 }
 
 
-
-
-
-
-
-
-
 /* @media screen and (max-width: 1000px)
 {
     .textSizefixing{
@@ -1023,3 +1016,107 @@
     }
 } */
 
+.event-registration-mobileview {
+    display: flex;
+    flex-direction: column;
+    background: url("../../public/image 50.svg");
+}
+
+.event-registration-mobileview::after {
+    content: "";
+    background: url("../../public/image 50.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+@media screen and (max-width: 1921px) {
+    .event-registration-mobileview {
+        display: none;
+        /* visibility:hidden; */
+    }
+
+    .event-registration-desktopview {
+        /* visibility:visible; */
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .event-registration-desktopview {
+        display: none;
+        /* visibility:hidden; */
+    }
+
+    .event-registration-mobileview {
+        /* visibility:visible; */
+        display: flex;
+    }
+}
+@media screen and (max-width: 575px) {
+    .dashboard-registration-event {
+        font-size: 2rem !important;
+        width: 100%;
+    }
+}
+
+.fpc-mobile {
+    font-family: Michroma;
+    font-size: 19px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.425px;
+}
+
+.dashboard-container-mobile-upper {
+    margin-top: 6%;
+}
+
+@media screen and (max-width: 1600px) {
+    .events-selector-container {
+        height: 80%;
+        margin-top: -5%;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .events-selector-container {
+        height: 80%;
+        margin-top: -6%;
+    }
+}
+@media screen and (max-width: 1340px) {
+    .events-selector-container {
+        height: 75%;
+        margin-top: -8%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .events-selector-container {
+        height: 65%;
+        margin-top: -13%;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .events-selector-container {
+        height: 75%;
+        margin-top: -5%;
+    }
+}
+@media screen and (max-width: 960px) {
+    .events-selector-container {
+        height: 62%;
+        margin-top: -16%;
+    }
+}
+@media screen and (max-width: 750px) {
+    .events-selector-container {
+        height: 85%;
+        margin-top: -5%;
+    }
+}
