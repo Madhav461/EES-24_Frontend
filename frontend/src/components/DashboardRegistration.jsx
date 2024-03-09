@@ -294,9 +294,8 @@ const DashboardRegistration = () => {
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
-// <<<<<<< main
-//                 <span
-// =======
+
+
               <span
 
                   type="text"
@@ -314,9 +313,8 @@ const DashboardRegistration = () => {
                   value={email}
                   disabled="true">
 
-                 {/* {email && email?.length <= 40 ? email : `${email?.substring(0,40)}...`} */}</span> 
-//               </p>
-//               <p className="y49">
+
+
                 {/* <span
                   type="text"
                   name="Electronics"

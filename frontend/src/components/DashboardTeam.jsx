@@ -88,11 +88,7 @@ const DashboardTeam = () => {
 
         <div className="dash_desktopview relative overflow-hidden ">
           <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
-// =======
-//         <div className="dash_desktopview relative overflow-hidden mt-[-14px]">
-        
-//           <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background mt-[-80px]">
-// >>>>>>> main
+
             <img
               className="object-cover w-[100%] "
               src="/image 50.svg"
@@ -614,6 +610,7 @@ const DashboardTeam = () => {
         </div>
         {/* end of mobile view */}
       </div>
+     
     );
 };
 export default DashboardTeam;
