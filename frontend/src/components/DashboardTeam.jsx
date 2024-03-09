@@ -9,34 +9,32 @@ import { Link } from "react-router-dom";
 
 
 const DashboardTeam = () => {
-    const [teamName, setTeamName] = useState("My Team");
-    // const [teamName1, setTeamName1] = useState("My Team 1");
-    // const [teamName2, setTeamName2] = useState("My Team 2");
-    // const [teamName3, setTeamName3] = useState("My Team 3");
-    const [eventName, setEventName] = useState("Devbits");
-    const [leader, setLeader] = useState("Leader");
-    const [member1, setMember1] = useState("Member1");
-    const [member2, setMember2] = useState("Member2");
-    // const [radiniteScore, setRadiniteScore] = useState(95);
-    // const { number } = useSpring({
-    //     from: { number: 0 },
-    //     number: radiniteScore,
-    //     delay: 200,
-    //     config: { mass: 1, tension: 20, friction: 10 },
-    // });
+  const [teamName, setTeamName] = useState("My Team");
+  // const [teamName1, setTeamName1] = useState("My Team 1");
+  // const [teamName2, setTeamName2] = useState("My Team 2");
+  // const [teamName3, setTeamName3] = useState("My Team 3");
+  const [eventName, setEventName] = useState("Devbits");
+  const [leader, setLeader] = useState("Leader");
+  const [member1, setMember1] = useState("Member1");
+  const [member2, setMember2] = useState("Member2");
+  // const [radiniteScore, setRadiniteScore] = useState(95);
+  // const { number } = useSpring({
+  //     from: { number: 0 },
+  //     number: radiniteScore,
+  //     delay: 200,
+  //     config: { mass: 1, tension: 20, friction: 10 },
+  // });
 
-    const [name, setName] = useState("Abhinav");
-    const [email, setEmail] = useState("email@itbhu.ac.in");
-    const [branch, setBranch] = useState("Electronics Engineering");
-    const [college, setCollege] = useState("IIT(BHU), Varanasi");
-    
-  
+  const [name, setName] = useState("Abhinav");
+  const [email, setEmail] = useState("email@itbhu.ac.in");
+  const [branch, setBranch] = useState("Electronics Engineering");
+  const [college, setCollege] = useState("IIT(BHU), Varanasi");
 
-    let navigate = useNavigate();
-    const routeChange = (route) => {
-        let path = `/dashboard/team/${route}`;
-        navigate(path);
-    }
+  let navigate = useNavigate();
+  const routeChange = (route) => {
+    let path = `/dashboard/team/${route}`;
+    navigate(path);
+  };
 
     const teamDetails = [
         // { teamName: "TeamDummy", eventName: "Dummy", leader: "Santosh", member1: "Dummy", member2: "Dummy" },
@@ -49,13 +47,13 @@ const DashboardTeam = () => {
         { teamName: "Team7", eventName: "CASSANDRA", leader: "L3", member1: "M31", member2: "M32" },
     ];
 
-    const changeTeam = (id) => {
-        setTeamName(teamDetails[id].teamName);
-        setEventName(teamDetails[id].eventName);
-        setLeader(teamDetails[id].leader);
-        setMember1(teamDetails[id].member1);
-        setMember2(teamDetails[id].member2);
-    };
+  const changeTeam = (id) => {
+    setTeamName(teamDetails[id].teamName);
+    setEventName(teamDetails[id].eventName);
+    setLeader(teamDetails[id].leader);
+    setMember1(teamDetails[id].member1);
+    setMember2(teamDetails[id].member2);
+  };
 
     // const teamsRegistered = teamDetails.map((teamInfo, ind) => {
     //     return (
@@ -87,44 +85,52 @@ const DashboardTeam = () => {
   
           {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
          </div> */}
-  
-      
-  
-          {/* </santosh> */}
-  
-          <div
-          className="dashboard-background  card absolute"
+
+        <div
+          className="dashboard-background  dash-parth-card absolute"
           style={{
             left: "50%",
             transform: "translateX(-50%)",
             // background: "rgba(255, 255, 255, 0.05)",
-            top:'35%',
-            marginTop:"-1%",
+            top: "35%",
+            marginTop: "-1%",
           }}
         >
-          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
-            <Link to="/editdash">
-              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
-            </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
-            <Link to="/dashboard/registration">
-            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
-            </Link>
-          </div>
+          
           <div className="abhinav absolute">
+            
+            <div className="button7071"
+            style={{transform:'translateX(-50%)'}}>
+              <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+              </Link>
+              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
+              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+              </Link>
+              </div>
+            <div>
 
-            <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
-          <div className="flex">
             <img
-              src="/dashboardblack.svg"
-              className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
-            />
-             <img src="/dashboard_sideelem.svg" className="md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"></img>
+              src="/dashboard_topelem.svg"
+              className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
+            ></img>
+            <div className="flex">
+              <img
+                src="/dashboardblack.svg"
+                className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
+              />
+              <img
+                src="/dashboard_sideelem.svg"
+                className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+              ></img>
             </div>
+            </div>
+            
 
-<div className="y19">
+            <div className="y19">
               {" "}
-              <img src="/dash.svg" alt="" className="y56" />
+              <img src="/dash.svg" alt="" className="y56 " />
               <p className="y39">
                 <span
                   type="text"
@@ -133,15 +139,19 @@ const DashboardTeam = () => {
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >{name}</span>{" "}
+                >
+                  {name}
+                </span>{" "}
                 <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true">
-                 {email.length <=40 ? email : `${email.substring(0,40)}...`}</span>
+                  disabled="true"
+                >
+                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}
+                </span>
               </p>
               <p className="y49">
                 <span
@@ -151,7 +161,9 @@ const DashboardTeam = () => {
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                >{branch}</span>
+                >
+                  {branch}
+                </span>
                 <span
                   type="text"
                   name="College"
@@ -159,20 +171,18 @@ const DashboardTeam = () => {
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                >{college}</span>{" "}
-                <span
-                  type="text"
-                  name="Year"
-                  id="Year"
-                  placeholder="Ist Year"
-                >Ist Year</span>
+                >
+                  {college}
+                </span>{" "}
+                <span type="text" name="Year" id="Year" placeholder="Ist Year">
+                  Ist Year
+                </span>
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />
             </div>
-
           </div>
-</div>
+        </div>
 
 {/* Parth - upper Title box and svg  */}
           <div
@@ -183,7 +193,7 @@ const DashboardTeam = () => {
               justifyContent: "space-between",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "-4%",
+              marginTop: "-1.5%",
             }}
           >
             <div className=" h-[80%] ">
@@ -234,16 +244,9 @@ const DashboardTeam = () => {
             </div>
           </div>
 
-
-
         {/* Added by Santosh -inner content Desktop view */}
         <div
         className=" absolute team-dashboard-container  z-50"
-              style={{
-                left: "50%",
-                transform: "translateX(-50%) translateY(-35%)",
-                top: "50%",
-              }}
               >
 <div className="teams-registered-dashboard">
   <ul>
@@ -271,7 +274,7 @@ const DashboardTeam = () => {
     </div>
 </div>
 
-{/* <div className="team-dashboard-radinite">
+          {/* <div className="team-dashboard-radinite">
     <animated.span className="">
         {number.to((radiniteScore) => radiniteScore.toFixed(0))}
     </animated.span>
@@ -281,18 +284,18 @@ const DashboardTeam = () => {
         alt="radinite"
     />
 </div> */}
+        </div>
 
-    </div>
+        {/* Added by Santosh - Desktop view -close*/}
+      </div>
 
-    {/* Added by Santosh - Desktop view -close*/}
+      {/* end of desktop view */}
 
-</div>
 
-{/* end of desktop view */}
 
-{/* Mobile view starts here */}
+      {/* Mobile view starts here */}
 
-            <div
+      <div
         className=" dash_mobileview relative flex flex-col  overflow-hidden"
         style={{ height: "100vh" }}
       >
@@ -380,8 +383,7 @@ const DashboardTeam = () => {
                 transform: "translateX(-50%)",
               }}
             />
-            {/* Added by Santosh */}
-           
+
             {/* Added by Santosh */}
           </div>
         </div>
@@ -409,8 +411,8 @@ const DashboardTeam = () => {
           </div>
         </div>
 
-            {/* Added by Santosh - Mobile view */}
-            {/* <div
+        {/* Added by Santosh - Mobile view */}
+        {/* <div
                 className="dashboard-background-mb absolute"
                 style={{
                     left: "50%",
@@ -418,45 +420,44 @@ const DashboardTeam = () => {
                     top: "50%",
                 }}
             > */}
-            <div className="dash-team-mobile-container absolute"
-              style={{
-                left: "50%",
-                transform: "translateX(-50%) translateY(-30%)",
-                top: "50%",
-              }}>
-                <div className="upper-dashboard-mb">
-                    <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                    <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
-                    <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                    <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                    <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                </div>
+        <div
+          className="dash-team-mobile-container absolute"
+          style={{
+            left: "50%",
+            transform: "translateX(-50%) translateY(-30%)",
+            top: "50%",
+          }}
+        >
+          <div className="upper-dashboard-mb">
+            <div className="teams-registered-dashboard-mb">{teamsRegistered}</div>
+          </div>
 
-                <div className="container-dashboard-mb">
-                    <div className="name-dashboard-team-mb">
-                        {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
-                        {teamName}
-                    </div>
-                    <div className="p1-dashboard-team-mb">
+          <div className="container-dashboard-mb">
+            <div className="name-dashboard-team-mb">
+              {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
+              {teamName}
+            </div>
+            <div className="p1-dashboard-team-mb">
+              {/* <div className="team-dashboard-members"> */}
+              <div className="team-dashboard-eventName-display">
+                {eventName}
+              </div>
+              <div className="team-dashboard-members-names">
+                <div>Leader</div>
+                <div>{leader}</div>
+              </div>
+              <div className="team-dashboard-members-names">
+                <div>Member 1</div>
+                <div>{member1}</div>
+              </div>
+              <div className="team-dashboard-members-names">
+                <div>Member 2</div>
+                <div>{member2}</div>
+              </div>
+              {/* </div> */}
+            </div>
 
-                        {/* <div className="team-dashboard-members"> */}
-                        <div className="team-dashboard-eventName-display">{eventName}</div>
-                        <div className="team-dashboard-members-names">
-                            <div>Leader</div>
-                            <div>{leader}</div>
-                        </div>
-                        <div className="team-dashboard-members-names">
-                            <div>Member 1</div>
-                            <div>{member1}</div>
-                        </div>
-                        <div className="team-dashboard-members-names">
-                            <div>Member 2</div>
-                            <div>{member2}</div>
-                        </div>
-                        {/* </div> */}
-                    </div>
-
-                    {/* <div className="radinite-dashboard-mb">
+            {/* <div className="radinite-dashboard-mb">
                         <div>{radiniteScore}</div>
                         Radinite
                     </div>
@@ -466,26 +467,24 @@ const DashboardTeam = () => {
                         src="/radinite.svg"
                         alt="radinite"
                     /> */}
-                </div>
+          </div>
 
-                <div className="lower-dashboard-mb">
-                    <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-                    <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-                    <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-                    <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-                    <img className="dmb-lower dmb-lower3" src="/dmblower3.svg" />
-                    <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-                    <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-                    <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-                    <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-                </div>
-            </div>
-            {/* Added by Santosh - Mobile view */}
-
+          <div className="lower-dashboard-mb">
+            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+            <img className="dmb-lower dmb-lower3" src="/dmblower3.svg" />
+            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+          </div>
+        </div>
+        {/* Added by Santosh - Mobile view */}
       </div>
-{/* end of mobile view */}
-
-</div>
-    );
+      {/* end of mobile view */}
+    </div>
+  );
 };
 export default DashboardTeam;

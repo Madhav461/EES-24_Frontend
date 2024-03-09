@@ -228,23 +228,27 @@ const DashboardRegistration = () => {
 
         {/* <santosh> */}
         <div
-          className="dashboard-background   card absolute "
+          className="dashboard-background dash-parth-card absolute "
           style={{
             left: "50%",
             transform: "translateX(-50%)",
-            top: "35%",
+            top: "30%",
           }}
         >
-           <div className="button7070 mt-[-16px] w-[20%] ml-[8px]">
-            <Link to="/dashboard/team">
-              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
-            </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
-            <Link to="/editdash">
-            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
-            </Link>
-          </div>
+          
           <div className="abhinav absolute  ">
+
+          <div className="button7071"
+            style={{transform:'translateX(-50%)'}}>
+              <Link to="/dashboard/team" className="w-[18%] mt-[3.5px]">
+              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+              </Link>
+              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+              </Link>
+              </div>
+
             <img
               src="/dashboardblack.svg"
               className="dashboard-background-image  object-cover w-full h-full p-0"
@@ -1314,7 +1318,7 @@ const DashboardRegistration = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
-            marginTop:"-7%",
+            marginTop:"-5%",
           }}
         >
           <div className=" h-[80%]  ">
@@ -1338,7 +1342,6 @@ const DashboardRegistration = () => {
           >
             <div
               className="relative "
-              style={{ fontSize: "30px", marginTop: "8%" }}
             >
               <img
                 src="/Vector_347.svg"

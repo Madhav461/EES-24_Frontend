@@ -1,10 +1,23 @@
+
 import React from "react";
 import { useState, useEffect, useContext } from "react";
+
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./editdash.css";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+// <<<<<<< main
+
+// const EditDashboard = () => {
+//   const {userDetails} = useContext(AuthContext)
+//   const [name, setName] = useState("Abhinav");
+//   const [mobile, setMobile] = useState("123456789");
+//   const [email, setEmail] = useState("email@itbhu.ac.in");
+//   const [branch, setBranch] = useState("Electronics Engineering");
+//   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+//   const [displayEmail, setDisplayEmail] = useState('') 
+// =======
 import Spinner from "./Spinner";
 
 const EditDashboard = () => {
@@ -15,6 +28,7 @@ const EditDashboard = () => {
   const [branch, setBranch] = useState("");
   const [college, setCollege] = useState("");
   const [displayEmail, setDisplayEmail] = useState('')
+
   const [year, setYear] = useState('1')
   const { number } = useSpring({
     from: { number: 0 },
@@ -67,7 +81,7 @@ const EditDashboard = () => {
 
         {/* <santosh> */}
         <div
-          className="dashboard-background  card absolute"
+          className="dashboard-background dash-parth-card absolute"
           style={{
             left: "50%",
             transform: "translateX(-50%)",
@@ -77,16 +91,20 @@ const EditDashboard = () => {
           }}
         >
 
-          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
-            <Link to="/dashboard/registration">
-              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
-            </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
-            <Link to="/dashboard/team">
-            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
-            </Link>
-          </div>
+          
           <div className="abhinav absolute">
+
+          <div className="button7071 button7072"
+            style={{transform:'translateX(-50%)'}}>
+              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
+              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+              </Link>
+              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <Link to="/dashboard/team" className="w-[18%] mt-[3.5px]">
+              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+              </Link>
+              </div>
+
           <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
           <div className="flex">
             <img
@@ -176,7 +194,7 @@ const EditDashboard = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
-            marginTop: "-2%",
+            marginTop: "0%",
           }}
         >
           <div className=" h-[80%] ">
