@@ -71,7 +71,7 @@ export const AuthProvider = ({children}) => {
             setUser(jwtDecode(res.data.access));
             localStorage.setItem('authtokens', JSON.stringify(res.data));
             const otpreq = await axios.get('https://api.eesiitbhu.co.in/api/user/verify/', {headers : {
-            "Authorization" : `Bearer ${authTokens.access}`
+            "Authorization" : `Bearer ${res.data.access}`
             }})
             console.log(otpreq);
             navigate('/otp');
