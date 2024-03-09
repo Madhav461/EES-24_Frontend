@@ -42,7 +42,7 @@ export const AuthProvider = ({children}) => {
                 if(check1.data.profile.college === '' || check1.data.profile.year === '') {
                     navigate("/gsignup")
                 } else {
-                    navigate('/');
+                    navigate('/editdash');
                 }
             } catch (err) {
                 console.error(err);
@@ -91,7 +91,7 @@ export const AuthProvider = ({children}) => {
             setUser(jwtDecode(res.data.access))
             console.log(res.data)
             localStorage.setItem('authtokens', JSON.stringify(res.data))
-            navigate('/dashboard')
+            navigate('/editdash')
         } catch(err) {
             console.error(err);
         }
@@ -129,7 +129,7 @@ export const AuthProvider = ({children}) => {
                 }})
                 console.log(res);
                 if(res.status === 200) {
-                    navigate("/dashboard")
+                    navigate("/editdash")
                 }
             } catch (err) {
                 console.error(err);
@@ -206,7 +206,7 @@ export const AuthProvider = ({children}) => {
         return () => {
           mounted = false;
         }
-      }, [])
+      }, [user, authTokens])
 
     return (
         <AuthContext.Provider value={contextData}>
