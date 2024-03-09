@@ -87,7 +87,7 @@
 /* Responsiveness for desktop view */
 
 @media screen and (max-width:1920px) {
-    .card {
+    .dash-parth-card{
         height: 46%;
         width: 83.3%;
         top: 39%;
@@ -105,7 +105,7 @@
 }
 
 @media screen and (max-width:1445px) {
-    .card {
+    .dash-parth-card{
         height: 46%;
         width: 83.3%;
         top: 39%;
@@ -123,7 +123,7 @@
 }
 
 @media screen and (max-width:1025px) {
-    .card {
+    .dash-parth-card{
         height: 50%;
         width: 80%;
         top: 39%;
@@ -140,7 +140,7 @@
 }
 
 @media screen and (max-width:840px) {
-    .card {
+    .dash-parth-card{
         height: 52.5%;
         width: 80%;
         top: 39%;
@@ -158,7 +158,7 @@
 }
 
 @media screen and (max-width:768px) {
-    .card {
+    .dash-parth-card{
         height: 55%;
         width: 80%;
         top: 38%;
@@ -176,7 +176,7 @@
 }
 
 @media screen and (max-width:680px) {
-    .card {
+    .dash-parth-card{
         height: 55%;
         width: 80%;
         top: 35%;
@@ -194,7 +194,7 @@
 }
 
 @media screen and (max-width:600px) {
-    .card {
+    .dash-parth-card{
         height: 55%;
         width: 80%;
         top: 35%;

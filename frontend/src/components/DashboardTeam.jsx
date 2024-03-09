@@ -141,7 +141,7 @@ const DashboardTeam = () => {
          </div> */}
 
         <div
-          className="dashboard-background  card absolute"
+          className="dashboard-background  dash-parth-card absolute"
           style={{
             left: "50%",
             transform: "translateX(-50%)",
@@ -150,17 +150,21 @@ const DashboardTeam = () => {
             marginTop: "-1%",
           }}
         >
-          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
-            <Link to="/editdash">
-              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]"/>
-            </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]"/>
-            <Link to="/dashboard/registration">
-            <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]"  />
-            </Link>
-          </div>
+          
           <div className="abhinav absolute">
+            
+            <div className="button7071"
+            style={{transform:'translateX(-50%)'}}>
+              <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+              </Link>
+              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
+              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+              </Link>
+              </div>
             <div>
+
             <img
               src="/dashboard_topelem.svg"
               className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
@@ -243,7 +247,7 @@ const DashboardTeam = () => {
               justifyContent: "space-between",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "-4%",
+              marginTop: "-1.5%",
             }}
           >
             <div className=" h-[80%] ">
@@ -344,6 +348,8 @@ const DashboardTeam = () => {
       </div>
 
       {/* end of desktop view */}
+
+
 
       {/* Mobile view starts here */}
 
