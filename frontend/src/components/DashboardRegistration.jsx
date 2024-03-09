@@ -43,6 +43,12 @@ const DashboardRegistration = () => {
   const [eventName, setEventName] = useState("");
   const [leader, setLeader] = useState("santosh@itbhu.ac.in");
   const [member1, setMember1] = useState("");
+  const [category, setCategory] = useState("");
+  // const [teamName,setTeamName]=useState('')
+  const [leaderEmail,setLeaderEmail]=useState('')
+  const [memberEmail, setMemberEmail]= useState('')
+
+  const [teamsIn , setTeamsIn]= useState([]);
 
   let navigate = useNavigate();
   const routeChange = (route) => {
@@ -85,12 +91,7 @@ const DashboardRegistration = () => {
     commnet,
   };
 
-  const [category, setCategory] = useState("");
-  const [teamName,setTeamName]=useState('')
-  const [leaderEmail,setLeaderEmail]=useState('')
-  const [memberEmail, setMemberEmail]= useState('')
-
-  const [teamsIn , setTeamsIn]= useState([]);
+ 
 
 
 
@@ -100,32 +101,32 @@ const DashboardRegistration = () => {
     }
   }, [userDetails])
 
+  const getTeams = async () => {
+    try {
+      const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
+        headers: {
+          "Authorization": `Bearer ${authTokens.access}`
+        }
+      });
+
+      console.log('Response:', response.data);
+      
+      // const eventNames = response.data.map((item) => item.event_name);
+      const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
+      const eventNames2=eventNames.map(item=> item.event_name)
+      console.log('eventNames', eventNames);
+      setTeamsIn(eventNames2);
+      console.log('teamsin');
+      console.log(teamsIn);
+      
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   useEffect(() => {
-    const getTeams = async () => {
-      try {
-        const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
-          headers: {
-            "Authorization": `Bearer ${authTokens.access}`
-          }
-        });
-
-        console.log('Response:', response.data);
-        
-        // const eventNames = response.data.map((item) => item.event_name);
-        const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
-        const eventNames2=eventNames.map(item=> item.event_name)
-        console.log('eventNames', eventNames);
-        setTeamsIn(eventNames2);
-        console.log('teamsin');
-        console.log(teamsIn);
-        
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
     getTeams();
-  },[userDetails]);
+  },[userDetails, teamsIn]);
 
 
 
@@ -151,8 +152,7 @@ const DashboardRegistration = () => {
 
         console.log(response);
         
-
-
+        getTeams()
       }
       catch{
 

@@ -73,9 +73,9 @@ const DashboardTeam = () => {
         
         </div>
         {/* desktop view starts here*/}
-        <div className="dash_desktopview relative overflow-hidden ">
+        <div className="dash_desktopview relative overflow-hidden mt-[-14px]">
         
-          <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
+          <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background mt-[-80px]">
             <img
               className="object-cover w-[100%] "
               src="/image 50.svg"
@@ -97,7 +97,7 @@ const DashboardTeam = () => {
           }}
         >
           
-          <div className="abhinav absolute">
+          <div className="abhinav absolute mt-[0px]">
             
             <div className="button7071"
             style={{transform:'translateX(-50%)'}}>
@@ -193,7 +193,7 @@ const DashboardTeam = () => {
               justifyContent: "space-between",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "-1.5%",
+              marginTop: "-4.5%",
             }}
           >
             <div className=" h-[80%] ">
@@ -215,7 +215,7 @@ const DashboardTeam = () => {
                 height: "min-content",
               }}
             >
-              <div className="relative "style={{ fontSize: '30px', marginTop: '8%'}}>
+              <div className="relative "style={{ fontSize: '30px', marginTop: '8%',marginLeft:"-45%"}}>
                 <img
                   src="/Vector_347.svg"
                   alt="img"
