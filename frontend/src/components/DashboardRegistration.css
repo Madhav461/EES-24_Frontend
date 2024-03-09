@@ -112,9 +112,9 @@
     }
 
     .title_container {
-        height: 17%;
+        height: 15%;
         width: 80%;
-        top: 12.5%;
+        top: 13%;
     }
 
     .title_container div {
@@ -130,7 +130,7 @@
     }
 
     .title_container {
-        height: 14%;
+        height: 11%;
         width: 80%;
     }
 
@@ -139,7 +139,16 @@
     }
 }
 
-@media screen and (max-width:840px) {
+@media screen and (device-width:912px) {
+
+    .title_container {
+        height: 8.5%;
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width:855px) {
     .dash-parth-card{
         height: 52.5%;
         width: 80%;
@@ -147,7 +156,7 @@
     }
 
     .title_container {
-        height: 12.5%;
+        height: 9%;
         width: 80%;
         top: 15%;
     }

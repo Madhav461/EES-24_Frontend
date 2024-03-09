@@ -1,27 +1,41 @@
 .team-dashboard-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-
+    align-items: start;
+    justify-content: space-between;
+    top: 36.5%;
     text-align: center;
     color: #FFF;
     font-family: Michroma;
     font-size: 17px;
     font-style: normal;
     left: 50%;
-    transform: translateX(-50%) translateY(-30%);
-    top: 50%;
-    width: 70vw;
+    transform: translateX(-50%);
+    width: 60vw;
     margin: auto;
 }
     
+/* .dash_teams_section{
+
+} */
+
+.dash_Select_team_heading{
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: #FFF 10cap ;
+}
+
 .teams-registered-dashboard {
-    width: 40%;
+    /* border: #FFF 2px solid; */
+    width: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-top: 9%;
-    margin-top: 1%;
+    justify-content: center;
+    /* padding-top: 0%; */
+    margin-top: 0%;
 }
 
 .team-dashboard-members {
@@ -90,7 +104,7 @@
     .team-dashboard-container{
         font-size: 16px;
         width: 70vw;
-        transform: translate(-50%,-20%);
+        top: 40%;
     }
     .teams-registered-dashboard {
         width: 250px;
@@ -128,7 +142,7 @@
     .team-dashboard-container{
         font-size: 14px;
         width: 70vw;
-        transform: translate(-50%,-30%);
+        top: 40%;
     }
     .teams-registered-dashboard {
         width: 250px;
@@ -167,7 +181,7 @@
     .team-dashboard-container{
         font-size: 12px;
         width: 70vw;
-        transform: translate(-50%,-83%);
+        top: 36.5%;
     }
     .teams-registered-dashboard {
         width: 250px;
@@ -206,7 +220,7 @@
     .team-dashboard-container{
         font-size: 12px;
         width: 70vw;
-        transform: translate(-50%,-98%);
+        top: 37%;
     }
     .teams-registered-dashboard {
         width: 250px;
@@ -244,7 +258,7 @@
     .team-dashboard-container{
         font-size: 14px;
         width: 70vw;
-        transform: translate(-50%,-95%);
+        top: 36%;
     }
     .teams-registered-dashboard {
         width: 250px;
@@ -282,7 +296,7 @@
     .team-dashboard-container{
         font-size: 14px;
         width: 70vw;
-        transform: translate(-50%,-85%);
+        top: 37%;
     }
     .teams-registered-dashboard {
         width: 250px;
@@ -425,6 +439,15 @@
         font-size: 18px;
         margin-bottom: -3.5rem;
     }
+}
+
+.dash_mb_Select_team_heading{
+    color: #FFF;
+    font-family: Michroma;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: #FFF 10cap ;
 }
 
 /* @media screen and (max-width: 1500px) {
