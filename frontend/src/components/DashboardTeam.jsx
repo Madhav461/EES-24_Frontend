@@ -273,7 +273,7 @@ const DashboardTeam = () => {
           {/* Added by Santosh -inner content Desktop view */}
           <div className=" absolute team-dashboard-container  z-50">
             <div className="dash_teams_section flex flex-col justify-center items-between">
-              <div className="dash_Select_team_heading pt-[10px] pb-[10px]">
+              <div className="dash_Select_team_heading pt-[10px] pb-[10px] underline  underline-offset-4">
                 Select a Team
               </div>
             <div className="teams-registered-dashboard">
