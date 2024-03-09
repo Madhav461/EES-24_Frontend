@@ -36,7 +36,16 @@ const DashboardRegistration = () => {
   const [ichip, setichip] = useState(false);
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
+  const [year,setYear]=useState('I');
 
+  useEffect(() => {
+    if(userDetails) {
+      setName(userDetails?.profile?.name)
+      setEmail(userDetails?.profile?.email)
+      setCollege(userDetails?.profile?.college)
+      setYear(userDetails?.profile?.year)
+    }
+  }, [userDetails])
 
   // Santosh
   const [teamName, setTeamName] = useState("");
@@ -257,54 +266,38 @@ const DashboardRegistration = () => {
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
-                <input
+              <span
                   type="text"
                   name="Name"
                   id="Name"
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                />{" "}
-                <input
+                >{name}</span>{" "}
+                <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true"
-                />
-                <input
-                  type="number"
-                  name="PhoneNumber"
-                  id="PhoneNumber"
-                  placeholder="0009473899"
-                  value={mobile}
-                  disabled="true"
-                />
+                  disabled="true">
+                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}</span>
               </p>
               <p className="y49">
-                <input
-                  type="text"
-                  name="Electronics"
-                  id="Electronics"
-                  placeholder="Electronics Engineering"
-                  value={branch}
-                  disabled="true"
-                />
-                <input
+                <span
                   type="text"
                   name="College"
                   id="College"
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                />{" "}
-                <input
+                >{college}</span>{" "}
+                <span
                   type="text"
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                />
+                >{year} Year</span>
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />
