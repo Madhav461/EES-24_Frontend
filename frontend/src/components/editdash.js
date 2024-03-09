@@ -220,7 +220,7 @@ const EditDashboard = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
-            marginTop: "0%",
+            marginTop: "-2%",
           }}
         >
           <div className=" h-[80%] ">

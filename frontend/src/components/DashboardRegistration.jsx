@@ -36,13 +36,28 @@ const DashboardRegistration = () => {
   const [ichip, setichip] = useState(false);
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
+  const [year,setYear]=useState('I');
 
+  useEffect(() => {
+    if(userDetails) {
+      setName(userDetails?.profile?.name)
+      setEmail(userDetails?.profile?.email)
+      setCollege(userDetails?.profile?.college)
+      setYear(userDetails?.profile?.year)
+    }
+  }, [userDetails])
 
   // Santosh
   // const [teamName, setTeamName] = useState("");
   const [eventName, setEventName] = useState("");
   const [leader, setLeader] = useState("santosh@itbhu.ac.in");
   const [member1, setMember1] = useState("");
+  const [category, setCategory] = useState("");
+  // const [teamName,setTeamName]=useState('')
+  const [leaderEmail,setLeaderEmail]=useState('')
+  const [memberEmail, setMemberEmail]= useState('')
+
+  const [teamsIn , setTeamsIn]= useState([]);
 
   let navigate = useNavigate();
   const routeChange = (route) => {
@@ -85,12 +100,7 @@ const DashboardRegistration = () => {
     commnet,
   };
 
-  const [category, setCategory] = useState("");
-  const [teamName,setTeamName]=useState('')
-  const [leaderEmail,setLeaderEmail]=useState('')
-  const [memberEmail, setMemberEmail]= useState('')
-
-  const [teamsIn , setTeamsIn]= useState([]);
+ 
 
 
 
@@ -100,32 +110,32 @@ const DashboardRegistration = () => {
     }
   }, [userDetails])
 
+  const getTeams = async () => {
+    try {
+      const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
+        headers: {
+          "Authorization": `Bearer ${authTokens.access}`
+        }
+      });
+
+      console.log('Response:', response.data);
+      
+      // const eventNames = response.data.map((item) => item.event_name);
+      const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
+      const eventNames2=eventNames.map(item=> item.event_name)
+      console.log('eventNames', eventNames);
+      setTeamsIn(eventNames2);
+      console.log('teamsin');
+      console.log(teamsIn);
+      
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   useEffect(() => {
-    const getTeams = async () => {
-      try {
-        const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
-          headers: {
-            "Authorization": `Bearer ${authTokens.access}`
-          }
-        });
-
-        console.log('Response:', response.data);
-        
-        // const eventNames = response.data.map((item) => item.event_name);
-        const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
-        const eventNames2=eventNames.map(item=> item.event_name)
-        console.log('eventNames', eventNames);
-        setTeamsIn(eventNames2);
-        console.log('teamsin');
-        console.log(teamsIn);
-        
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
     getTeams();
-  },[userDetails]);
+  },[userDetails, teamsIn]);
 
 
 
@@ -151,8 +161,7 @@ const DashboardRegistration = () => {
 
         console.log(response);
         
-
-
+        getTeams()
       }
       catch{
 
@@ -285,7 +294,11 @@ const DashboardRegistration = () => {
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
-                <span
+// <<<<<<< main
+//                 <span
+// =======
+              <span
+
                   type="text"
                   name="Name"
                   id="Name"
@@ -300,9 +313,10 @@ const DashboardRegistration = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
+
                  {/* {email && email?.length <= 40 ? email : `${email?.substring(0,40)}...`} */}</span> 
-              </p>
-              <p className="y49">
+//               </p>
+//               <p className="y49">
                 {/* <span
                   type="text"
                   name="Electronics"
@@ -311,6 +325,11 @@ const DashboardRegistration = () => {
                   value={branch}
                   disabled="true"
                 >{branch}</span> */}
+
+                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}</span>
+              </p>
+              <p className="y49">
+
                 <span
                   type="text"
                   name="College"
@@ -324,7 +343,11 @@ const DashboardRegistration = () => {
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                >Ist year</span>
+// <<<<<<< main
+//                 >Ist year</span>
+// =======
+                >{year} Year</span>
+
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />

@@ -1,14 +1,18 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import AuthContext from "../context/AuthContext";
+import queryString from 'query-string';
 
 
 const DashboardTeam = () => {
+  const { authTokens, userDetails } =useContext(AuthContext);
   const [teamName, setTeamName] = useState("My Team");
   // const [teamName1, setTeamName1] = useState("My Team 1");
   // const [teamName2, setTeamName2] = useState("My Team 2");
@@ -24,12 +28,21 @@ const DashboardTeam = () => {
   //     delay: 200,
   //     config: { mass: 1, tension: 20, friction: 10 },
   // });
-
+  
   const [name, setName] = useState("Abhinav");
   const [email, setEmail] = useState("email@itbhu.ac.in");
   const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+  const [year,setYear]=useState('I');
 
+  useEffect(() => {
+    if(userDetails) {
+      setName(userDetails?.profile?.name)
+      setEmail(userDetails?.profile?.email)
+      setCollege(userDetails?.profile?.college)
+      setYear(userDetails?.profile?.year)
+    }
+  }, [userDetails])
   let navigate = useNavigate();
   const routeChange = (route) => {
     let path = `/dashboard/team/${route}`;
@@ -72,8 +85,14 @@ const DashboardTeam = () => {
           <Navhome className="z-15" />
         </div>
         {/* desktop view starts here*/}
+
         <div className="dash_desktopview relative overflow-hidden ">
           <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
+// =======
+//         <div className="dash_desktopview relative overflow-hidden mt-[-14px]">
+        
+//           <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background mt-[-80px]">
+// >>>>>>> main
             <img
               className="object-cover w-[100%] "
               src="/image 50.svg"
@@ -83,6 +102,7 @@ const DashboardTeam = () => {
 
           {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
          </div> */}
+
 
           <div
             className="dashboard-background  dash-parth-card absolute"
@@ -121,6 +141,30 @@ const DashboardTeam = () => {
                     className="leftbuttonw-[100%]"
                   />
                 </Link>
+
+        <div
+          className="dashboard-background  dash-parth-card absolute"
+          style={{
+            left: "50%",
+            transform: "translateX(-50%)",
+            // background: "rgba(255, 255, 255, 0.05)",
+            top: "35%",
+            marginTop: "-1%",
+          }}
+        >
+          
+          <div className="abhinav absolute mt-[10px]">
+            
+            <div className="button7071"
+            style={{transform:'translateX(-50%)'}}>
+              <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+              </Link>
+              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
+              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+              </Link>
+
               </div>
 
               <div>
@@ -139,6 +183,7 @@ const DashboardTeam = () => {
                   ></img>
                 </div>
               </div>
+
 
               <div className="y19">
                 {" "}
@@ -200,6 +245,51 @@ const DashboardTeam = () => {
                 <p className="yashtheman">GRADE 1</p>
                 <img src="/motiline.svg" alt="" class="y29" />
               </div>
+
+            <div className="y19">
+              {" "}
+              <img src="/dash.svg" alt="" className="y56 " />
+              <p className="y39">
+                <span
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  placeholder="NAME"
+                  value={name}
+                  disabled="true"
+                >
+                  {name}
+                </span>{" "}
+                <span
+                  type="email"
+                  name="Email"
+                  id="Email"
+                  placeholder="email@itbhu.ac.in"
+                  value={email}
+                  disabled="true"
+                >
+                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}
+                </span>
+              </p>
+              <p className="y49">
+              
+                <span
+                  type="text"
+                  name="College"
+                  id="College"
+                  placeholder="IIT BHU Varanasi"
+                  value={college}
+                  disabled="true"
+                >
+                  {college}
+                </span>{" "}
+                <span type="text" name="Year" id="Year" placeholder="Ist Year">
+                  Ist Year
+                </span>
+              </p>
+              <p className="yashtheman">GRADE 1</p>
+              <img src="/motiline.svg" alt="" class="y29" />
+
             </div>
           </div>
 
@@ -212,7 +302,9 @@ const DashboardTeam = () => {
               justifyContent: "space-between",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "0%",
+
+              marginTop: "-4.5%",
+
             }}
           >
             <div className=" h-[80%] ">
@@ -234,10 +326,14 @@ const DashboardTeam = () => {
                 height: "min-content",
               }}
             >
+
               <div
                 className="relative "
                 style={{ fontSize: "30px", marginTop: "8%" }}
               >
+
+//               <div className="relative "style={{ fontSize: '30px', marginTop: '8%',marginLeft:"-45%"}}>
+
                 <img
                   src="/Vector_347.svg"
                   alt="img"
