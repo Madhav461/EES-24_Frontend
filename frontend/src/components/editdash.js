@@ -67,7 +67,6 @@ const EditDashboard = () => {
       </div>
       {/* desktop view */}
       <div className="dash_desktopview relative overflow-hidden ">
-
         <div className="bgimg h-[100vh] w-[100vw] z-[-900] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -86,33 +85,53 @@ const EditDashboard = () => {
             left: "50%",
             transform: "translateX(-50%)",
             // background: "rgba(255, 255, 255, 0.05)",
-            top: '35%',
+            top: "35%",
             marginTop: "-1%",
           }}
         >
-
-          
           <div className="abhinav absolute">
-
-          <div className="button7071 button7072"
-            style={{transform:'translateX(-50%)'}}>
+            <div
+              className="button7071 "
+              style={{ transform: "translateX(-50%)" }}
+            >
               <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
-              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+                <img
+                  src="/rightbutton.svg"
+                  alt=""
+                  className="rightbutton w-[100%]"
+                />
               </Link>
-              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <img
+                src="/middlebutton.svg"
+                alt=""
+                className="middlebutton w-[18.5%]"
+              />
               <Link to="/dashboard/team" className="w-[18%] mt-[3.5px]">
-              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+                <img
+                  src="/leftbutton.svg"
+                  alt=""
+                  className="leftbuttonw-[100%]"
+                />
               </Link>
+            </div>
+
+            <div>
+                <img
+                  src="/dashboard_topelem.svg"
+                  className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
+                ></img>
+                <div className="flex">
+                  <img
+                    src="/dashboardblack.svg"
+                    className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
+                  />
+                  <img
+                    src="/dashboard_sideelem.svg"
+                    className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+                  ></img>
+                </div>
               </div>
 
-          <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
-          <div className="flex">
-            <img
-              src="/Vector 354 (2).svg"
-              className="dashboard-background-image  object-cover w-full h-full p-0"
-            />
-            <img src="/dashboard_sideelem.svg" className="md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"></img>
-            </div>
             <div className="y19">
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
@@ -124,15 +143,21 @@ const EditDashboard = () => {
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >{name}</span>{" "}
+                >
+                  {name}
+                </span>{" "}
                 <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true">
-                  {email && email.length >= 40 ? displayEmail + '...' : displayEmail}</span>
+                  disabled="true"
+                >
+                  {email && email.length >= 40
+                    ? displayEmail + "..."
+                    : displayEmail}
+                </span>
               </p>
               <p className="y49">
                 {/* <span
@@ -142,6 +167,9 @@ const EditDashboard = () => {
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
+                >
+                  {branch}
+                </span>
                 >{branch}</span> */}
                 <span
                   type="text"
@@ -150,20 +178,18 @@ const EditDashboard = () => {
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                >{college}</span>{" "}
-                <span
-                  type="text"
-                  name="Year"
-                  id="Year"
-                  placeholder="Ist Year"
-                >Ist Year</span>
+                >
+                  {college}
+                </span>{" "}
+                <span type="text" name="Year" id="Year" placeholder="Ist Year">
+                  Ist Year
+                </span>
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />
             </div>
           </div>
           <div className="container-dashboard absolute">
-
             <div className="details-dashboard" style={{ zIndex: "1" }}>
               <div className="name99"><input type="text" className="name-dashboard" id="name2" placeholder={name} style={{ zIndex: "10000", "fontFamily": "Michroma" }} onChange={(event) => setName(event.target.value)} value={name}></input></div>
               <div className="college99"><input type="text" id="college2" placeholder={college} style={{ "fontFamily": "Michroma" }} onChange={(event) => setCollege(event.target.value)} value={college}></input></div>
@@ -216,7 +242,10 @@ const EditDashboard = () => {
               height: "min-content",
             }}
           >
-            <div className="relative " style={{ fontSize: '30px', marginTop: '8%' }}>
+            <div
+              className="relative "
+              style={{ fontSize: "30px", marginTop: "8%" }}
+            >
               <img
                 src="/Vector_347.svg"
                 alt="img"
@@ -361,9 +390,6 @@ const EditDashboard = () => {
                   <button class="submit669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitedit" onClick={handleSubmit}>Submit</button>
                   <button class="cancel669 w-[20%] h-[10%] flex  items-center justify-evenly bg-white rounded-md" id="submitcancel" onClick={handleCancel}>Cancel</button>
                 </div>
-
-
-
 
                 {/* <div className="score-logo-dashboard">
         <img
