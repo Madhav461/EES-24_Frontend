@@ -28,13 +28,12 @@ const DashboardTeam = () => {
   //     delay: 200,
   //     config: { mass: 1, tension: 20, friction: 10 },
   // });
-  
+
   const [name, setName] = useState("Abhinav");
   const [email, setEmail] = useState("email@itbhu.ac.in");
   const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
   const [year,setYear]=useState('I');
-
   useEffect(() => {
     if(userDetails) {
       setName(userDetails?.profile?.name)
@@ -43,6 +42,7 @@ const DashboardTeam = () => {
       setYear(userDetails?.profile?.year)
     }
   }, [userDetails])
+
   let navigate = useNavigate();
   const routeChange = (route) => {
     let path = `/dashboard/team/${route}`;
@@ -80,115 +80,134 @@ const DashboardTeam = () => {
     });
 
     return (
-        <div className="relative ">
-          <Navhome className="z-15"/>
+      <div className="relative ">
         <div className="absolute ">
-        
+          <Navhome className="z-15" />
         </div>
         {/* desktop view starts here*/}
-        <div className="dash_desktopview relative overflow-hidden mt-[-14px]">
-        
-          <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background mt-[-80px]">
+        <div className="dash_desktopview relative overflow-hidden ">
+          <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
             <img
               className="object-cover w-[100%] "
               src="/image 50.svg"
               style={{ mixBlendMode: "difference", filter: "blur(3.0px)" }}
             />
           </div>
-  
+
           {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
          </div> */}
 
-        <div
-          className="dashboard-background  dash-parth-card absolute"
-          style={{
-            left: "50%",
-            transform: "translateX(-50%)",
-            // background: "rgba(255, 255, 255, 0.05)",
-            top: "35%",
-            marginTop: "-1%",
-          }}
-        >
-          
-          <div className="abhinav absolute mt-[10px]">
-            
-            <div className="button7071"
-            style={{transform:'translateX(-50%)'}}>
-              <Link to="/editdash" className="w-[18%] mt-[3.5px]">
-              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
-              </Link>
-              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
-              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
-              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
-              </Link>
+          <div
+            className="dashboard-background  dash-parth-card absolute"
+            style={{
+              left: "50%",
+              transform: "translateX(-50%)",
+              // background: "rgba(255, 255, 255, 0.05)",
+              top: "35%",
+              marginTop: "-1%",
+            }}
+          >
+            <div className="abhinav absolute">
+              <div
+                className="button7071"
+                style={{ transform: "translateX(-50%)" }}
+              >
+                <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+                  <img
+                    src="/rightbutton.svg"
+                    alt=""
+                    className="rightbutton w-[100%]"
+                  />
+                </Link>
+                <img
+                  src="/middlebutton.svg"
+                  alt=""
+                  className="middlebutton w-[18.5%]"
+                />
+                <Link
+                  to="/dashboard/registration"
+                  className="w-[18%] mt-[3.5px]"
+                >
+                  <img
+                    src="/leftbutton.svg"
+                    alt=""
+                    className="leftbuttonw-[100%]"
+                  />
+                </Link>
               </div>
-            <div>
 
-            <img
-              src="/dashboard_topelem.svg"
-              className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
-            ></img>
-            <div className="flex">
-              <img
-                src="/dashboardblack.svg"
-                className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
-              />
-              <img
-                src="/dashboard_sideelem.svg"
-                className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
-              ></img>
-            </div>
-            </div>
-            
+              <div>
+                <img
+                  src="/dashboard_topelem.svg"
+                  className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
+                ></img>
+                <div className="flex">
+                  <img
+                    src="/dashboardblack.svg"
+                    className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
+                  />
+                  <img
+                    src="/dashboard_sideelem.svg"
+                    className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+                  ></img>
+                </div>
+              </div>
 
-            <div className="y19">
-              {" "}
-              <img src="/dash.svg" alt="" className="y56 " />
-              <p className="y39">
-                <span
-                  type="text"
-                  name="Name"
-                  id="Name"
-                  placeholder="NAME"
-                  value={name}
-                  disabled="true"
-                >
-                  {name}
-                </span>{" "}
-                <span
-                  type="email"
-                  name="Email"
-                  id="Email"
-                  placeholder="email@itbhu.ac.in"
-                  value={email}
-                  disabled="true"
-                >
-                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}
-                </span>
-              </p>
-              <p className="y49">
-              
-                <span
-                  type="text"
-                  name="College"
-                  id="College"
-                  placeholder="IIT BHU Varanasi"
-                  value={college}
-                  disabled="true"
-                >
-                  {college}
-                </span>{" "}
-                <span type="text" name="Year" id="Year" placeholder="Ist Year">
-                  Ist Year
-                </span>
-              </p>
-              <p className="yashtheman">GRADE 1</p>
-              <img src="/motiline.svg" alt="" class="y29" />
+              <div className="y19">
+                {" "}
+                <img src="/dash.svg" alt="" className="y56 " />
+                <p className="y39">
+                  <span
+                    type="text"
+                    name="Name"
+                    id="Name"
+                    placeholder="NAME"
+                    value={name}
+                    disabled="true"
+                  >
+                    {name.length <=30?name:`${name.substring(0,30)}`}
+                  </span>{" "}
+                  <span
+                    type="email"
+                    name="Email"
+                    id="Email"
+                    placeholder="email@itbhu.ac.in"
+                    value={email}
+                    disabled="true"
+                  >
+                    {email.length <= 40
+                      ? email
+                      : `${email.substring(0, 40)}...`}
+                  </span>
+                </p>
+                <p className="y49">
+
+                  <span
+                    type="text"
+                    name="College"
+                    id="College"
+                    placeholder="IIT BHU Varanasi"
+                    value={college}
+                    disabled="true"
+                  >
+                    {college}
+                  </span>{" "}
+                  <span
+                    type="text"
+                    name="Year"
+                    id="Year"
+                    placeholder="Ist Year"
+                  >
+                    Ist Year
+                  </span>
+                </p>
+                <p className="yashtheman">GRADE 1</p>
+                <img src="/motiline.svg" alt="" class="y29" />
+              </div>
             </div>
           </div>
-        </div>
 
-{/* Parth - upper Title box and svg  */}
+          {/* Parth - upper Title box and svg  */}
           <div
             className="title_container absolute flex "
             style={{
@@ -197,7 +216,7 @@ const DashboardTeam = () => {
               justifyContent: "space-between",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "-4.5%",
+              marginTop: "0%",
             }}
           >
             <div className=" h-[80%] ">
@@ -219,7 +238,10 @@ const DashboardTeam = () => {
                 height: "min-content",
               }}
             >
-              <div className="relative "style={{ fontSize: '30px', marginTop: '8%',marginLeft:"-45%"}}>
+              <div
+                className="relative "
+                style={{ fontSize: "30px", marginTop: "8%" }}
+              >
                 <img
                   src="/Vector_347.svg"
                   alt="img"
@@ -248,201 +270,19 @@ const DashboardTeam = () => {
             </div>
           </div>
 
-        {/* Added by Santosh -inner content Desktop view */}
-        <div
-        className=" absolute team-dashboard-container  z-50"
-              >
-<div className="teams-registered-dashboard">
-  <ul>
-    {teamsRegistered}
-    </ul>
-</div>
-
-<div className="team-dashboard-members">
-    <div className="team-dashboard-teamName-display">{teamName}</div>
-    <div className="team-dashboard-eventName-display">{eventName}</div>
-    <div className="team-dashboard-members-names">
-        <div>Leader</div>
-        <div>{leader}</div>
-    </div>
-    <div className="team-dashboard-members-names">
-        <div>Member 1</div>
-        <div>{member1}</div>
-    </div>
-    <div className="team-dashboard-members-names">
-        <div>Member 2</div>
-        <div>{member2}</div>
-    </div>
-    <div className="team-dashboard-members-names">
-        <img className="team-dashboard-icons" src="/dashboard-team-delete.svg" alt="" onClick={() => routeChange("edit")}/>
-    </div>
-</div>
-
-          {/* <div className="team-dashboard-radinite">
-    <animated.span className="">
-        {number.to((radiniteScore) => radiniteScore.toFixed(0))}
-    </animated.span>
-    <img
-        className="radinite-logo-dashboard"
-        src="/radinite.svg"
-        alt="radinite"
-    />
-</div> */}
-        </div>
-
-        {/* Added by Santosh - Desktop view -close*/}
-      </div>
-
-      {/* end of desktop view */}
-
-
-
-      {/* Mobile view starts here */}
-
-      <div
-        className=" dash_mobileview relative flex flex-col  overflow-hidden"
-        style={{ height: "100vh" }}
-      >
-        {/* background image */}
-        <div className="bgimage absolute w-[100vw] overflow-hidden dashboard-custom-background">
-          <img
-            className="w-[100%]"
-            src="/Android Large - 5.svg"
-            style={{ mixBlendMode: "difference", filter: "blur(1.0px)" }}
-          />
-        </div>
-        {/* clipPath:'polygon(27%,36% 97.5%,36% 97.5%,94% 27%,94%)' , transform:'scale(0.15)',transform:'translateX(-50%)' , */}
-
-        <div className="side_svgs leftsvgs absolute left-[4%] top-[7%] flex flex-col w-[3%] ">
-          <img src="/Vector 384.svg" alt="img" className=" w-[100%]" />
-          <img src="/Vector 387.svg" alt="img" className=" w-[100%]" />
-          <img src="/Vector 388.svg" alt="img" className=" w-[100%]" />
-          <img src="/Vector 386.svg" alt="img" className=" w-[100%]" />
-        </div>
-        <div className="side_svgs rightsvgs absolute right-[4%] top-[7%] flex flex-col w-[3%] ">
-          <img src="/Vector 378.svg" alt="img" className=" w-[100%]" />
-          <img src="/Vector 382.svg" alt="img" className=" w-[100%]" />
-          <img src="/Vector 383.svg" alt="img" className=" w-[100%]" />
-          <img src="/Vector 381.svg" alt="img" className=" w-[100%]" />
-        </div>
-
-        <div
-          className="center_group absolute top-[30vw] w-[70vw]  flex"
-          style={{
-            height: "10vw",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: "10",
-          }}
-        >
-          <div
-            className="profile relative"
-            style={{
-              textAlign: "center",
-              color: "white",
-              fontSize: "3.4vw",
-              fontFamily: "Michroma",
-              fontWeight: "400",
-              letterSpacing: "1.5vw",
-              wordWrap: "break-word",
-            }}
-          >
-            <img
-              src="/Group 335.svg"
-              alt="img"
-              className="absolute left-[-65%]  h-[300%]"
-              style={{ top: "50%", transform: "translateY(-50%)" }}
-            />
-            <img
-              src="/Group 334.svg"
-              alt="img"
-              className="absolute right-[-65%] h-[300%]"
-              style={{ top: "50%", transform: "translateY(-50%)" }}
-            />
-            PROFILE
-          </div>
-        </div>
-
-        <div
-          className="main_card relative"
-          style={{
-            height: "60vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            top: "50%",
-            transform: "translateY(-50%)",
-          }}
-        >
-          <div className=" h-[100%] overflow-hidden dashboard-custom-background ">
-            <img
-              className="card_image absolute w-[90%]"
-              src="/Vector 401.svg"
-              style={{
-                mixBlendMode: "difference",
-                left: "50%",
-                transform: "translateX(-50%)",
-              }}
-            />
-
-            {/* Added by Santosh */}
-          </div>
-        </div>
-
-        <div
-          className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
-          style={{ left: "50%", transform: "translateX(-50%)" }}
-        >
-          <div className="h-[100%]">
-            <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
-            <img
-              src="/Vector 416.svg"
-              alt="img"
-              className=" h-[40%] absolute left-[5px] top-[25%] "
-            />
-          </div>
-          <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
-          <div className="h-[100%]">
-            <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
-            <img
-              src="/Vector 417.svg"
-              alt="img"
-              className=" h-[40%] absolute right-[5px] top-[25%]"
-            />
-          </div>
-        </div>
-
-        {/* Added by Santosh - Mobile view */}
-        {/* <div
-                className="dashboard-background-mb absolute"
-                style={{
-                    left: "50%",
-                    transform: "translateX(-50%) translateY(-30%)",
-                    top: "50%",
-                }}
-            > */}
-        <div
-          className="dash-team-mobile-container absolute"
-          style={{
-            left: "50%",
-            transform: "translateX(-50%) translateY(-30%)",
-            top: "50%",
-          }}
-        >
-          <div className="upper-dashboard-mb">
-            <div className="teams-registered-dashboard-mb">{teamsRegistered}</div>
-          </div>
-
-          <div className="container-dashboard-mb">
-            <div className="name-dashboard-team-mb">
-              {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
-              {teamName}
+          {/* Added by Santosh -inner content Desktop view */}
+          <div className=" absolute team-dashboard-container  z-50">
+            <div className="dash_teams_section flex flex-col justify-center items-between">
+              <div className="dash_Select_team_heading pt-[10px] pb-[10px]">
+                Select a Team
+              </div>
+            <div className="teams-registered-dashboard">
+              <ul>{teamsRegistered}</ul>
             </div>
-            <div className="p1-dashboard-team-mb">
-              {/* <div className="team-dashboard-members"> */}
+            </div>
+
+            <div className="team-dashboard-members">
+              <div className="team-dashboard-teamName-display">{teamName}</div>
               <div className="team-dashboard-eventName-display">
                 {eventName}
               </div>
@@ -458,10 +298,203 @@ const DashboardTeam = () => {
                 <div>Member 2</div>
                 <div>{member2}</div>
               </div>
-              {/* </div> */}
+              <div className="team-dashboard-members-names">
+                <img
+                  className="team-dashboard-icons"
+                  src="/dashboard-team-delete.svg"
+                  alt=""
+                  onClick={() => routeChange("edit")}
+                />
+              </div>
             </div>
 
-            {/* <div className="radinite-dashboard-mb">
+            {/* <div className="team-dashboard-radinite">
+    <animated.span className="">
+        {number.to((radiniteScore) => radiniteScore.toFixed(0))}
+    </animated.span>
+    <img
+        className="radinite-logo-dashboard"
+        src="/radinite.svg"
+        alt="radinite"
+    />
+</div> */}
+          </div>
+
+          {/* Added by Santosh - Desktop view -close*/}
+        </div>
+
+        {/* end of desktop view */}
+
+        {/* Mobile view starts here */}
+
+        <div
+          className=" dash_mobileview relative flex flex-col  overflow-hidden"
+          style={{ height: "100vh" }}
+        >
+          {/* background image */}
+          <div className="bgimage absolute w-[100vw] overflow-hidden dashboard-custom-background">
+            <img
+              className="w-[100%]"
+              src="/Android Large - 5.svg"
+              style={{ mixBlendMode: "difference", filter: "blur(1.0px)" }}
+            />
+          </div>
+          {/* clipPath:'polygon(27%,36% 97.5%,36% 97.5%,94% 27%,94%)' , transform:'scale(0.15)',transform:'translateX(-50%)' , */}
+
+          <div className="side_svgs leftsvgs absolute left-[4%] top-[7%] flex flex-col w-[3%] ">
+            <img src="/Vector 384.svg" alt="img" className=" w-[100%]" />
+            <img src="/Vector 387.svg" alt="img" className=" w-[100%]" />
+            <img src="/Vector 388.svg" alt="img" className=" w-[100%]" />
+            <img src="/Vector 386.svg" alt="img" className=" w-[100%]" />
+          </div>
+          <div className="side_svgs rightsvgs absolute right-[4%] top-[7%] flex flex-col w-[3%] ">
+            <img src="/Vector 378.svg" alt="img" className=" w-[100%]" />
+            <img src="/Vector 382.svg" alt="img" className=" w-[100%]" />
+            <img src="/Vector 383.svg" alt="img" className=" w-[100%]" />
+            <img src="/Vector 381.svg" alt="img" className=" w-[100%]" />
+          </div>
+
+          <div
+            className="center_group absolute top-[30vw] w-[70vw]  flex"
+            style={{
+              height: "10vw",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: "10",
+            }}
+          >
+            <div
+              className="profile relative"
+              style={{
+                textAlign: "center",
+                color: "white",
+                fontSize: "3.4vw",
+                fontFamily: "Michroma",
+                fontWeight: "400",
+                letterSpacing: "1.5vw",
+                wordWrap: "break-word",
+              }}
+            >
+              <img
+                src="/Group 335.svg"
+                alt="img"
+                className="absolute left-[-65%]  h-[300%]"
+                style={{ top: "50%", transform: "translateY(-50%)" }}
+              />
+              <img
+                src="/Group 334.svg"
+                alt="img"
+                className="absolute right-[-65%] h-[300%]"
+                style={{ top: "50%", transform: "translateY(-50%)" }}
+              />
+              PROFILE
+            </div>
+          </div>
+
+          <div
+            className="main_card relative"
+            style={{
+              height: "60vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              top: "50%",
+              transform: "translateY(-50%)",
+            }}
+          >
+            <div className=" h-[100%] overflow-hidden dashboard-custom-background ">
+              <img
+                className="card_image absolute w-[90%]"
+                src="/Vector 401.svg"
+                style={{
+                  mixBlendMode: "difference",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
+              />
+
+              {/* Added by Santosh */}
+            </div>
+          </div>
+
+          <div
+            className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
+            style={{ left: "50%", transform: "translateX(-50%)" }}
+          >
+            <div className="h-[100%]">
+              <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
+              <img
+                src="/Vector 416.svg"
+                alt="img"
+                className=" h-[40%] absolute left-[5px] top-[25%] "
+              />
+            </div>
+            <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
+            <div className="h-[100%]">
+              <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
+              <img
+                src="/Vector 417.svg"
+                alt="img"
+                className=" h-[40%] absolute right-[5px] top-[25%]"
+              />
+            </div>
+          </div>
+
+          {/* Added by Santosh - Mobile view */}
+          {/* <div
+                className="dashboard-background-mb absolute"
+                style={{
+                    left: "50%",
+                    transform: "translateX(-50%) translateY(-30%)",
+                    top: "50%",
+                }}
+            > */}
+          <div
+            className="dash-team-mobile-container absolute"
+            style={{
+              left: "50%",
+              transform: "translateX(-50%) translateY(-30%)",
+              top: "50%",
+            }}
+          >
+            <div className="upper-dashboard-mb flex-col justify-center">
+              {/* <div className="dash_mb_Select_team_heading text-center">
+              Select a Team
+              </div> */}
+              <div className="teams-registered-dashboard-mb">
+                {teamsRegistered}
+              </div>
+            </div>
+
+            <div className="container-dashboard-mb">
+              <div className="name-dashboard-team-mb">
+                {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
+                {teamName}
+              </div>
+              <div className="p1-dashboard-team-mb">
+                {/* <div className="team-dashboard-members"> */}
+                <div className="team-dashboard-eventName-display">
+                  {eventName}
+                </div>
+                <div className="team-dashboard-members-names">
+                  <div>Leader</div>
+                  <div>{leader}</div>
+                </div>
+                <div className="team-dashboard-members-names">
+                  <div>Member 1</div>
+                  <div>{member1}</div>
+                </div>
+                <div className="team-dashboard-members-names">
+                  <div>Member 2</div>
+                  <div>{member2}</div>
+                </div>
+                {/* </div> */}
+              </div>
+
+              {/* <div className="radinite-dashboard-mb">
                         <div>{radiniteScore}</div>
                         Radinite
                     </div>
@@ -471,24 +504,24 @@ const DashboardTeam = () => {
                         src="/radinite.svg"
                         alt="radinite"
                     /> */}
-          </div>
+            </div>
 
-          <div className="lower-dashboard-mb">
-            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-            <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
-            <img className="dmb-lower dmb-lower3" src="/dmblower3.svg" />
-            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
-            <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+            <div className="lower-dashboard-mb">
+              <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+              <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+              <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+              <img className="dmb-lower dmb-lower1" src="/dmblower1.svg" />
+              <img className="dmb-lower dmb-lower3" src="/dmblower3.svg" />
+              <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+              <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+              <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+              <img className="dmb-lower dmb-lower2" src="/dmblower2.svg" />
+            </div>
           </div>
+          {/* Added by Santosh - Mobile view */}
         </div>
-        {/* Added by Santosh - Mobile view */}
+        {/* end of mobile view */}
       </div>
-      {/* end of mobile view */}
-    </div>
-  );
+    );
 };
 export default DashboardTeam;

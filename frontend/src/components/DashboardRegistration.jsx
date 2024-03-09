@@ -37,7 +37,6 @@ const DashboardRegistration = () => {
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
   const [year,setYear]=useState('I');
-
   useEffect(() => {
     if(userDetails) {
       setName(userDetails?.profile?.name)
@@ -48,16 +47,10 @@ const DashboardRegistration = () => {
   }, [userDetails])
 
   // Santosh
-  const [teamName, setTeamName] = useState("");
+  // const [teamName, setTeamName] = useState("");
   const [eventName, setEventName] = useState("");
   const [leader, setLeader] = useState("santosh@itbhu.ac.in");
   const [member1, setMember1] = useState("");
-  const [category, setCategory] = useState("");
-  // const [teamName,setTeamName]=useState('')
-  const [leaderEmail,setLeaderEmail]=useState('')
-  const [memberEmail, setMemberEmail]= useState('')
-
-  const [teamsIn , setTeamsIn]= useState([]);
 
   let navigate = useNavigate();
   const routeChange = (route) => {
@@ -100,7 +93,12 @@ const DashboardRegistration = () => {
     commnet,
   };
 
- 
+  const [category, setCategory] = useState("");
+  const [teamName,setTeamName]=useState('')
+  const [leaderEmail,setLeaderEmail]=useState('')
+  const [memberEmail, setMemberEmail]= useState('')
+
+  const [teamsIn , setTeamsIn]= useState([]);
 
 
 
@@ -110,32 +108,32 @@ const DashboardRegistration = () => {
     }
   }, [userDetails])
 
-  const getTeams = async () => {
-    try {
-      const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
-        headers: {
-          "Authorization": `Bearer ${authTokens.access}`
-        }
-      });
-
-      console.log('Response:', response.data);
-      
-      // const eventNames = response.data.map((item) => item.event_name);
-      const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
-      const eventNames2=eventNames.map(item=> item.event_name)
-      console.log('eventNames', eventNames);
-      setTeamsIn(eventNames2);
-      console.log('teamsin');
-      console.log(teamsIn);
-      
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
 
   useEffect(() => {
+    const getTeams = async () => {
+      try {
+        const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
+          headers: {
+            "Authorization": `Bearer ${authTokens.access}`
+          }
+        });
+
+        console.log('Response:', response.data);
+        
+        // const eventNames = response.data.map((item) => item.event_name);
+        const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
+        const eventNames2=eventNames.map(item=> item.event_name)
+        console.log('eventNames', eventNames);
+        setTeamsIn(eventNames2);
+        console.log('teamsin');
+        console.log(teamsIn);
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
     getTeams();
-  },[userDetails, teamsIn]);
+  },[userDetails]);
 
 
 
@@ -161,7 +159,8 @@ const DashboardRegistration = () => {
 
         console.log(response);
         
-        getTeams()
+
+
       }
       catch{
 
@@ -219,8 +218,10 @@ const DashboardRegistration = () => {
   });
 
   return (
-    <div className=" ">
-      <Navhome />
+    <div className="relative">
+      <div className="absolute">
+        <Navhome />
+      </div>
 
       {/* desktop view */}
       <div className="desktopview relative   textSizefixing overflow-hidden event-registration-desktopview">
@@ -241,39 +242,65 @@ const DashboardRegistration = () => {
           style={{
             left: "50%",
             transform: "translateX(-50%)",
-            top: "30%",
+            top: "35%",
+            marginTop: "-1%",
           }}
         >
-          
           <div className="abhinav absolute  ">
-
-          <div className="button7071"
-            style={{transform:'translateX(-50%)'}}>
+            <div
+              className="button7071"
+              style={{ transform: "translateX(-50%)" }}
+            >
               <Link to="/dashboard/team" className="w-[18%] mt-[3.5px]">
-              <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
+                <img
+                  src="/rightbutton.svg"
+                  alt=""
+                  className="rightbutton w-[100%]"
+                />
               </Link>
-              <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
+              <img
+                src="/middlebutton.svg"
+                alt=""
+                className="middlebutton w-[18.5%]"
+              />
               <Link to="/editdash" className="w-[18%] mt-[3.5px]">
-              <img src="/leftbutton.svg" alt="" className="leftbuttonw-[100%]"/>
+                <img
+                  src="/leftbutton.svg"
+                  alt=""
+                  className="leftbuttonw-[100%]"
+                />
               </Link>
-              </div>
+            </div>
 
-            <img
-              src="/dashboardblack.svg"
-              className="dashboard-background-image  object-cover w-full h-full p-0"
-            />
+            <div>
+              <img
+                src="/dashboard_topelem.svg"
+                className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
+              ></img>
+              <div className="flex">
+                <img
+                  src="/dashboardblack.svg"
+                  className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
+                />
+                <img
+                  src="/dashboard_sideelem.svg"
+                  className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+                ></img>
+              </div>
+            </div>
+
             <div className="y19    ">
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
-              <span
+                <span
                   type="text"
                   name="Name"
                   id="Name"
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >{name}</span>{" "}
+                >{name.length <=30?name:`${name.substring(0,30)}`}</span>{" "}
                 <span
                   type="email"
                   name="Email"
@@ -281,9 +308,17 @@ const DashboardRegistration = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
-                  {email.length <= 40 ? email : `${email.substring(0, 40)}...`}</span>
+                 {email && email.length <= 40 ? email : `${email?.substring(0,40)}...`}</span> 
               </p>
               <p className="y49">
+                {/* <span
+                  type="text"
+                  name="Electronics"
+                  id="Electronics"
+                  placeholder="Electronics Engineering"
+                  value={branch}
+                  disabled="true"
+                >{branch}</span> */}
                 <span
                   type="text"
                   name="College"
@@ -297,7 +332,7 @@ const DashboardRegistration = () => {
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                >{year} Year</span>
+                >Ist year</span>
               </p>
               <p className="yashtheman">GRADE 1</p>
               <img src="/motiline.svg" alt="" class="y29" />
@@ -1203,7 +1238,7 @@ const DashboardRegistration = () => {
                   Select an event
                 </div>
               ) : (
-                <div className=" flex flex-col justify-around absolute w-[100%] h-[100%] ">
+                <div className=" flex flex-col justify-around absolute w-[100%] h-[60%] ">
                   <input
                     className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                     type="text"
@@ -1280,7 +1315,6 @@ const DashboardRegistration = () => {
                       Cancel
                     </button>
 
-
                     <button 
                     onClick={handleRegister}
                     className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
@@ -1303,6 +1337,9 @@ const DashboardRegistration = () => {
 
         {/* </santosh> */}
 
+
+      {/* Parth - upper Title box and svg  */}
+
         <div
           className="title_container absolute flex "
           style={{
@@ -1311,7 +1348,7 @@ const DashboardRegistration = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
-            marginTop:"-5%",
+            marginTop: "0%",
           }}
         >
           <div className=" h-[80%]  ">
@@ -1333,9 +1370,7 @@ const DashboardRegistration = () => {
               height: "min-content",
             }}
           >
-            <div
-              className="relative "
-            >
+            <div className="relative ">
               <img
                 src="/Vector_347.svg"
                 alt="img"
@@ -1365,50 +1400,105 @@ const DashboardRegistration = () => {
         </div>
       </div>
 
-          {/* Mobile view Santosh */}
-          <div className="event-registration-mobileview">
-            <div className="upper-dashboard-mb dashboard-container-mobile-upper">
-                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
-                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-                <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+      {/* Mobile view Santosh */}
+      <div className="event-registration-mobileview">
+        <div className="upper-dashboard-mb dashboard-container-mobile-upper">
+          <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+          <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
+          <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+          <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+          <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+        </div>
+        <form onSubmit={handleFormSubmit} className="">
+          <div class="forgot-password-container fpc-mobile">
+            <h1 className="dashboard-registration-event">Event Registration</h1>
+            <h2 class="information-text-fp">Select an event</h2>
+            <h3 class="information-text-fp-success" id="fp-success">
+              Your team has been successfully registered.
+            </h3>
+            <div className="event-registration-dropd">
+              <select class="select-css-event">
+                <option key={0} onClick={() => changeEvent(0)}>
+                  DEVBITS
+                </option>
+                <option key={1} onClick={() => changeEvent(1)}>
+                  MOSAIC
+                </option>
+                <option key={2} onClick={() => changeEvent(2)}>
+                  CASSANDRA
+                </option>
+                <option key={3} onClick={() => changeEvent(3)}>
+                  X-IOTA
+                </option>
+                <option key={4} onClick={() => changeEvent(4)}>
+                  DIGISIM
+                </option>
+                <option key={5} onClick={() => changeEvent(5)}>
+                  FUNCKIT
+                </option>
+                <option key={6} onClick={() => changeEvent(6)}>
+                  COMMNET
+                </option>
+                <option key={7} onClick={() => changeEvent(7)}>
+                  I-CHIP
+                </option>
+              </select>
             </div>
-            <form onSubmit={handleFormSubmit} className="">
-                <div class="forgot-password-container fpc-mobile">
-                    <h1 className="dashboard-registration-event">Event Registration</h1>
-                    <h2 class="information-text-fp">Select an event</h2>
-                    <h3 class="information-text-fp-success" id="fp-success">Your team has been successfully registered.</h3>
-                    <div className="event-registration-dropd">
-                        <select class="select-css-event">
-                            <option key={0} onClick={() => changeEvent(0)}>DEVBITS</option>
-                            <option key={1} onClick={() => changeEvent(1)}>MOSAIC</option>
-                            <option key={2} onClick={() => changeEvent(2)}>CASSANDRA</option>
-                            <option key={3} onClick={() => changeEvent(3)}>X-IOTA</option>
-                            <option key={4} onClick={() => changeEvent(4)}>DIGISIM</option>
-                            <option key={5} onClick={() => changeEvent(5)}>FUNCKIT</option>
-                            <option key={6} onClick={() => changeEvent(6)}>COMMNET</option>
-                            <option key={7} onClick={() => changeEvent(7)}>I-CHIP</option>
-                        </select>
-                    </div>
-                    <div className="event-registration-leader">
-                        <span>Leader</span>
-                        <span>{leader}</span>
-                    </div>
-                    <div class="form-group-fp">
-                        <input type="text" name="team_name" id="team_name" className="input" value={teamName} onChange={handleTeamChange} />
-                        <p><label for="team_name">Team Name</label></p>
-                        <input type="email" name="mem1_email" id="mem1_email" className="input" value={member1} onChange={handleMem1Change} />
-                        <p><label for="mem1_email">Add a Member</label></p>
-                        <button onClick={() => handleBtnClick("fp-success")}>Register</button>
-                        <button onClick={() => handleBtnClick("fp-failure")}>Cancel</button>
-                    </div>
-                </div>
-            </form>
+            <div className="event-registration-leader">
+              <span>Leader</span>
+              <span>{leader}</span>
+            </div>
+            <div class="form-group-fp">
+              <input
+                type="text"
+                name="team_name"
+                id="team_name"
+                className="input"
+                value={teamName}
+                onChange={handleTeamChange}
+              />
+              <p>
+                <label for="team_name">Team Name</label>
+              </p>
+              <input
+                type="email"
+                name="mem1_email"
+                id="mem1_email"
+                className="input"
+                value={member1}
+                onChange={handleMem1Change}
+              />
+              <p>
+                <label for="mem1_email">Add a Member</label>
+              </p>
+              <button onClick={() => handleBtnClick("fp-success")}>
+                Register
+              </button>
+              <button onClick={() => handleBtnClick("fp-failure")}>
+                Cancel
+              </button>
+            </div>
           </div>
-          {/* Mobile view Santosh */}
-
+        </form>
+      </div>
+      {/* Mobile view Santosh */}
     </div>
   );
 };
 export default DashboardRegistration;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
