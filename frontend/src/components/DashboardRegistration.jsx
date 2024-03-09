@@ -332,9 +332,9 @@ const DashboardRegistration = () => {
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                >Ist year</span>
+                > Year {year}</span>
               </p>
-              <p className="yashtheman">GRADE 1</p>
+              <p className="yashtheman">GRADE {year}</p>
               <img src="/motiline.svg" alt="" class="y29" />
             </div>
           </div>

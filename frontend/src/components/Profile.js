@@ -23,7 +23,7 @@ function Profile() {
        <Menu as="div" className="relative inline-block text-left z-50 bg-gray">
        <div>
          <Menu.Button className="bg-gray">
-           <img className='h-12 w-9 rounded-full object-cover'
+           <img className='h-10 w-10 rounded-full object-cover'
              src={
                image
              }

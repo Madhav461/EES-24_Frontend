@@ -132,7 +132,7 @@ const EditDashboard = () => {
                 </div>
               </div>
 
-            <div className="y19">
+              <div className="y19    ">
               {" "}
               <img src="/dash.svg" alt="" className="y56" />
               <p className="y39">
@@ -143,21 +143,15 @@ const EditDashboard = () => {
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >
-                  {name}
-                </span>{" "}
+                >{name.length <=30?name:`${name.substring(0,30)}`}</span>{" "}
                 <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true"
-                >
-                  {email && email.length >= 40
-                    ? displayEmail + "..."
-                    : displayEmail}
-                </span>
+                  disabled="true">
+                 {email && email.length <= 40 ? email : `${email?.substring(0,40)}...`}</span> 
               </p>
               <p className="y49">
                 {/* <span
@@ -167,9 +161,6 @@ const EditDashboard = () => {
                   placeholder="Electronics Engineering"
                   value={branch}
                   disabled="true"
-                >
-                  {branch}
-                </span>
                 >{branch}</span> */}
                 <span
                   type="text"
@@ -178,14 +169,15 @@ const EditDashboard = () => {
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                >
-                  {college}
-                </span>{" "}
-                <span type="text" name="Year" id="Year" placeholder="Ist Year">
-                  Ist Year
-                </span>
+                >{college}</span>{" "}
+                <span
+                  type="text"
+                  name="Year"
+                  id="Year"
+                  placeholder="Ist Year"
+                > Year {year}</span>
               </p>
-              <p className="yashtheman">GRADE 1</p>
+              <p className="yashtheman">GRADE {year}</p>
               <img src="/motiline.svg" alt="" class="y29" />
             </div>
           </div>
