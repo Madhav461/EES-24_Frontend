@@ -263,7 +263,7 @@ const DashboardRegistration = () => {
                 alt=""
                 className="middlebutton w-[18.5%]"
               />
-              <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+              <Link to="/dashboard" className="w-[18%] mt-[3.5px]">
                 <img
                   src="/leftbutton.svg"
                   alt=""
