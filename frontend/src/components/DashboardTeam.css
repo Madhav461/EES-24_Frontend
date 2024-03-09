@@ -263,7 +263,7 @@
 }
 
 /* Ipad pro */
-@media screen and (device-width:1024px) and (device-height:1366px){
+@media screen and (device-width:1024px) and (min-device-height:1366px){
     .team-dashboard-members-names {
         padding: 1.4% 4% 1.4% 4%;
     }

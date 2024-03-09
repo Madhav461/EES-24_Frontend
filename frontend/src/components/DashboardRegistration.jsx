@@ -107,7 +107,7 @@ const DashboardRegistration = () => {
           style={{
             left: "50%",
             transform: "translateX(-50%)",
-            top: "35%",
+            top: "30%",
           }}
         >
           
@@ -115,7 +115,7 @@ const DashboardRegistration = () => {
 
           <div className="button7071"
             style={{transform:'translateX(-50%)'}}>
-              <Link to="/team" className="w-[18%] mt-[3.5px]">
+              <Link to="/dashboard/team" className="w-[18%] mt-[3.5px]">
               <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
               </Link>
               <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
@@ -1200,7 +1200,6 @@ const DashboardRegistration = () => {
           >
             <div
               className="relative "
-              style={{ fontSize: "30px", marginTop: "8%" }}
             >
               <img
                 src="/Vector_347.svg"

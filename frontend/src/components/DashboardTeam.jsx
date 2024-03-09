@@ -247,11 +247,6 @@ const DashboardTeam = () => {
         {/* Added by Santosh -inner content Desktop view */}
         <div
         className=" absolute team-dashboard-container  z-50"
-              style={{
-                left: "50%",
-                transform: "translateX(-50%) translateY(-35%)",
-                top: "50%",
-              }}
               >
 <div className="teams-registered-dashboard">
   <ul>

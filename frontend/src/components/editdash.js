@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./editdash.css";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 const EditDashboard = () => {
+  const {userDetails} = useContext(AuthContext)
   const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
@@ -63,7 +65,7 @@ const EditDashboard = () => {
 
           <div className="button7071 button7072"
             style={{transform:'translateX(-50%)'}}>
-              <Link to="/registration" className="w-[18%] mt-[3.5px]">
+              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
               <img src="/rightbutton.svg" alt="" className="rightbutton w-[100%]"/>
               </Link>
               <img src="/middlebutton.svg" alt="" className="middlebutton w-[18.5%]"/>
