@@ -1,14 +1,18 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import AuthContext from "../context/AuthContext";
+import queryString from 'query-string';
 
 
 const DashboardTeam = () => {
+  const { authTokens, userDetails } =useContext(AuthContext);
   const [teamName, setTeamName] = useState("My Team");
   // const [teamName1, setTeamName1] = useState("My Team 1");
   // const [teamName2, setTeamName2] = useState("My Team 2");
@@ -24,12 +28,21 @@ const DashboardTeam = () => {
   //     delay: 200,
   //     config: { mass: 1, tension: 20, friction: 10 },
   // });
-
+  
   const [name, setName] = useState("Abhinav");
   const [email, setEmail] = useState("email@itbhu.ac.in");
   const [branch, setBranch] = useState("Electronics Engineering");
   const [college, setCollege] = useState("IIT(BHU), Varanasi");
+  const [year,setYear]=useState('I');
 
+  useEffect(() => {
+    if(userDetails) {
+      setName(userDetails?.profile?.name)
+      setEmail(userDetails?.profile?.email)
+      setCollege(userDetails?.profile?.college)
+      setYear(userDetails?.profile?.year)
+    }
+  }, [userDetails])
   let navigate = useNavigate();
   const routeChange = (route) => {
     let path = `/dashboard/team/${route}`;
@@ -154,16 +167,7 @@ const DashboardTeam = () => {
                 </span>
               </p>
               <p className="y49">
-                <span
-                  type="text"
-                  name="Electronics"
-                  id="Electronics"
-                  placeholder="Electronics Engineering"
-                  value={branch}
-                  disabled="true"
-                >
-                  {branch}
-                </span>
+              
                 <span
                   type="text"
                   name="College"
