@@ -100,7 +100,11 @@ const DashboardTeam = () => {
   useEffect(() => {
     console.log("Update team details")
     console.log({ teamDetails: teamDetails })
-    changeTeam(0);
+    if(teamDetails&&teamDetails.length>0){
+      changeTeam(0);
+    } else {
+      
+    }
   }, [teamDetails])
 
   const changeTeam = (id) => {

@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
+import axios from 'axios'
+import queryString from "query-string";
 const FooterInputForm = () => {
+  const [name, setName] = useState(null)
+  const [contacts, setContacts] = useState(null)
+  const [message, setMessage] = useState(null);
+
+  const handleSubmit = async () => {
+    const data = {
+      'name' : name,
+      'email' : contacts,
+      'question' : message
+    }
+    const formData = queryString.stringify(data);
+    console.log(data);
+    console.log(formData);
+    try {
+      const res = await axios.post('https://api.eesiitbhu.co.in/user/queries/', formData)
+      console.log(res);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <>
       <div
@@ -43,6 +66,7 @@ const FooterInputForm = () => {
             <foreignObject x="10" y="10" width="100%" height="20">
               <body xmlns="http://www.w3.org/1999/xhtml">
                 <input
+                  onChange={(e) => {setName(e.target.value)}}
                   type="text"
                   className="text"
                   style={{
@@ -136,6 +160,7 @@ const FooterInputForm = () => {
                 <input
                   type="text"
                   className="text"
+                  onChange={(e) => setContacts(e.target.value)}
                   style={{
                     width: "450%",
                     height: "100%",
@@ -225,6 +250,7 @@ const FooterInputForm = () => {
             <foreignObject x="10" y="10" width="100%" height="20">
               <body xmlns="http://www.w3.org/1999/xhtml">
                 <input
+                  onChange={(e) => setMessage(e.target.value)}
                   type="text"
                   className="text"
                   style={{
@@ -287,7 +313,7 @@ const FooterInputForm = () => {
             </filter>
           </defs>
         </svg>
-        <button type="submit" class="submit-button-mob" style={{}}>
+        <button type="submit" class="submit-button-mob" style={{}} onClick={handleSubmit}>
         Submit
       </button>
         <svg
@@ -306,7 +332,7 @@ const FooterInputForm = () => {
           />
         </svg>
       </div>
-      <button type="submit" class="submit-button" >
+      <button type="submit" class="submit-button" onClick={handleSubmit}>
         Submit
       </button>
      
