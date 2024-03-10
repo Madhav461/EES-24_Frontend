@@ -100,41 +100,37 @@ const DashboardRegistration = () => {
 
   const [teamsIn , setTeamsIn]= useState([]);
 
-
-
   useEffect(() => {
     if(userDetails) {
       setLeaderEmail(userDetails?.profile?.email)
     }
   }, [userDetails])
 
+  const getTeams = async () => {
+    try {
+      const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
+        headers: {
+          "Authorization": `Bearer ${authTokens.access}`
+        }
+      });
+
+      console.log('Response:', response.data);
+      
+      // const eventNames = response.data.map((item) => item.event_name);
+      const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
+      const eventNames2=eventNames.map(item=> item.event_name)
+      console.log('eventNames', eventNames);
+      setTeamsIn(eventNames2);
+      console.log('teamsin');
+      console.log(teamsIn);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   useEffect(() => {
-    const getTeams = async () => {
-      try {
-        const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
-          headers: {
-            "Authorization": `Bearer ${authTokens.access}`
-          }
-        });
-
-        console.log('Response:', response.data);
-        
-        // const eventNames = response.data.map((item) => item.event_name);
-        const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
-        const eventNames2=eventNames.map(item=> item.event_name)
-        console.log('eventNames', eventNames);
-        setTeamsIn(eventNames2);
-        console.log('teamsin');
-        console.log(teamsIn);
-        
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
     getTeams();
   },[userDetails]);
-
 
 
   const handleInvite = async ()=>{
@@ -152,34 +148,17 @@ const DashboardRegistration = () => {
 
       try{
 
-
         const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/invite/', dataToSend2, {headers :{
           "Authorization" :`Bearer ${authTokens.access}`
         }});
 
         console.log(response);
-        
-
 
       }
-      catch{
-
+      catch(err) {
+        console.error(err)
       }
-
-
-
   }
-
-
-
-
-
-
-
-
-
-
-
   
   const handleRegister = async () => {
 
@@ -198,17 +177,11 @@ const DashboardRegistration = () => {
       }});
       console.log(dataToSend2);
       console.log('Response:', response.data);
+      getTeams()
   } catch (error) {
       console.error('Error:', error);
   }
-  
-
 };
-
-
-
- 
-
 
   const { number } = useSpring({
     from: { number: 0 },
@@ -347,7 +320,7 @@ const DashboardRegistration = () => {
                 
                   setCategory("devbits") 
 
-              }
+                }
               >
                 {category !== "devbits" ? (
                   <div>

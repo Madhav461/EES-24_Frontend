@@ -58,7 +58,7 @@ export const AuthProvider = ({children}) => {
         const details = {
             "email" : validatedFormData.email,
             "name" : validatedFormData.name,
-            "college" : validatedFormData.collegeName,
+            "college" : validatedFormData.CollegeName,
             "year" : validatedFormData.year,
             "password" : validatedFormData.password,
             "password_confirmation" : validatedFormData.confirmPassword
@@ -71,7 +71,7 @@ export const AuthProvider = ({children}) => {
             setUser(jwtDecode(res.data.access));
             localStorage.setItem('authtokens', JSON.stringify(res.data));
             const otpreq = await axios.get('https://api.eesiitbhu.co.in/api/user/verify/', {headers : {
-            "Authorization" : `Bearer ${authTokens.access}`
+            "Authorization" : `Bearer ${res.data.access}`
             }})
             console.log(otpreq);
             navigate('/otp');

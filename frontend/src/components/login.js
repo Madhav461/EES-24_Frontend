@@ -12,27 +12,23 @@ import queryString from 'query-string'
 import axios from 'axios';
 import Spinner from "./Spinner";
 
-const onSubmit = async (values, actions) => {
-  // console.log(values);
-  // console.log(actions);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-};
-const handleClick = () => {
-  console.log("hi");
-};
+// const onSubmit = async (values, actions) => {
+//   // console.log(values);
+//   // console.log(actions);
+//   await new Promise((resolve) => setTimeout(resolve, 1000));
+//   actions.resetForm();
+// };
+// const handleClick = () => {
+//   console.log("hi");
+// };
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext)
-  function showFormData() {
-    const formData = {
-      email: getElementValue("email"),
-      password: getElementValue("password"),
-    };
+  function onSubmit(values) {
+    console.log(values)
 
-    console.log(formData);
     try {
-      loginUser(formData)
+      loginUser(values)
     } catch(err) {
       console.error(err)
     }
@@ -73,13 +69,6 @@ const Login = () => {
         mounted = false;
       }
   }, [location])
-
-  function getElementValue(id) {
-    const element = document.getElementById(id);
-
-    // Check if the element exists before accessing its value
-    return element ? element.value : "";
-  }
 
   const {
     values,
@@ -300,7 +289,7 @@ const Login = () => {
 
               <div
                 className=" w-[100%] h-[20%] LogInButtonForLaptop cursor-pointer "
-                onClick={showFormData}
+                onClick={handleSubmit}
               >
                 <svg
                   width="100%"
@@ -323,7 +312,7 @@ const Login = () => {
             <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
               <div
                 className=" w-[100%] LogInButtonForLaptop h-[100%] "
-                onClick={showFormData}
+                onClick={handleSubmit}
               >
                 <svg
                   width="75%"
@@ -348,7 +337,7 @@ const Login = () => {
           <div className=" button-container   flex flex-col ">
             <div className="">
               <button
-                onClick={showFormData}
+                onClick={handleSubmit}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
@@ -379,7 +368,7 @@ const Login = () => {
                 </div>
                 <div
                   className="loginBtn cursor-pointer relative w-[100%] h-[40%] "
-                  onClick={showFormData}
+                  onClick={handleSubmit}
                 >
                   <svg
                     width="100%"

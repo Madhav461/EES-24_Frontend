@@ -9,12 +9,7 @@ import axios from "axios";
 import queryString from 'query-string'
 
 
-const onSubmit = async (values, actions) => {
-    console.log(values);
-    console.log(actions);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
-  };
+
   
 
 const ForgotPassword = () => {
@@ -25,11 +20,10 @@ const ForgotPassword = () => {
 
   let navigate = useNavigate();
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(email);
+  const onSubmit = async () => {
+    console.log(values);
     const details = {
-      "email" : email
+      "email" : values.email
     }
     const formData = queryString.stringify(details)
     try {
@@ -63,7 +57,7 @@ const ForgotPassword = () => {
   return (
     <>
       <Background />
-      <form onSubmit={handleFormSubmit} className="">
+      <form onSubmit={handleSubmit} className="">
         <div class="forgot-password-container">
           <h1 className="font-goldman">Forgot Password</h1>
           <h2 class="information-text-fp" className="mt-[10px] font-goldman" >
@@ -71,8 +65,8 @@ const ForgotPassword = () => {
           </h2>
           <div class="form-group-fp">
             <input
-              value={email}
-               onChange={handleEmailChange}
+              value={values.email}
+               onChange={handleChange}
                id="email"
                placeholder="EMAIL"
                type="email"

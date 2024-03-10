@@ -12,31 +12,26 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import Spinner from "./Spinner";
 
-const onSubmit = async (values, actions) => {
-  // console.log(values);
-  // console.log(actions);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-};
 
-function getElementValue(id) {
-  const element = document.getElementById(id);
 
-  // Check if the element exists before accessing its value
-  return element ? element.value : "";
-}
+// function getElementValue(id) {
+//   const element = document.getElementById(id);
 
-function getSelectValue(id) {
-  const selectElement = document.getElementById(id);
+//   // Check if the element exists before accessing its value
+//   return element ? element.value : "";
+// }
 
-  // Check if the select element exists and has selected options
-  if (selectElement && selectElement.options) {
-    const selectedOption = selectElement.options[selectElement.selectedIndex];
-    return selectedOption ? selectedOption.value : "";
-  }
+// function getSelectValue(id) {
+//   const selectElement = document.getElementById(id);
 
-  return "";
-}
+//   // Check if the select element exists and has selected options
+//   if (selectElement && selectElement.options) {
+//     const selectedOption = selectElement.options[selectElement.selectedIndex];
+//     return selectedOption ? selectedOption.value : "";
+//   }
+
+//   return "";
+// }
 
 const Signup = () => {
   // const [loading, setLoading] = useState(false);
@@ -79,30 +74,20 @@ const Signup = () => {
       }
   }, [location])
 
-  function showFormData() {
-    const formData = {
-      name: getElementValue("name"),
-      email: getElementValue("email"),
-      collegeName: getSelectValue("collegeName"),
-      year: getElementValue("year"),
-      password: getElementValue("password"),
-      confirmPassword: getElementValue("confirmPassword"),
-      name: getElementValue("name"),
-      email: getElementValue("email"),
-      collegeName: getSelectValue("collegeName"),
-      year: getElementValue("year"),
-      password: getElementValue("password"),
-      confirmPassword: getElementValue("confirmPassword"),
-    };
+  // function showFormData() {
+  //   console.log(formData);
   
-    console.log(formData);
-  
+  //  
+  // }
+
+  const onSubmit = async (values, actions) => {
+    console.log(values);
     try {
-      // signUpUser(formData)
+      signUpUser(values)
     } catch (err) {
       console.error(err);
     }
-  }
+  };
 
   const {
     values,
@@ -115,10 +100,11 @@ const Signup = () => {
   } = useFormik({
     initialValues: {
       email: "",
-      collegeName: "",
+      CollegeName: "",
       password: "",
       confirmPassword: "",
-      collegeName:"",
+      name:"",
+      year:0
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -184,12 +170,14 @@ const Signup = () => {
             className="h-[100%] w-[30%]   overflow-hidden justify-evenly items-center text-white amaan"
             style={{}}
           >
-            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}}>
+            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}} onSubmit={handleSubmit}>
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
               >
                 <input
+                  value={values.name}
+                  onChange={handleChange}
                   className=""
                   type="text"
                   id="name"
@@ -244,7 +232,7 @@ const Signup = () => {
               >
                 <div>
                   <select
-                  value={values.collegeName}
+                  value={values.CollegeName}
                   onChange={handleChange} 
                   onBlur={handleBlur}
                    id="CollegeName"
@@ -274,8 +262,8 @@ const Signup = () => {
                     </option>
                     <Collegelist />
                   </select>
-                  {errors.collegeName && touched.collegeName && (
-                  <p className="error">{errors.collegeName}</p>
+                  {errors.CollegeName && touched.CollegeName && (
+                  <p className="error">{errors.CollegeName}</p>
                 )}
                 </div>
               </div>
@@ -286,11 +274,11 @@ const Signup = () => {
                 <input
                   className=" "
                   type="number"
-                 
+                  value={values.year}
                   id="year"
-                
+                  onBlur={handleBlur}
                   min="1"
-                 
+                  onChange={handleChange}
                   max="5"
                   placeholder="YEAR"
                   style={{
@@ -374,7 +362,7 @@ const Signup = () => {
               <button
                 form="myForm"
                 id="myForm"
-                onClick={showFormData}
+                onClick={handleSubmit}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
@@ -396,7 +384,7 @@ const Signup = () => {
               <button
                 form="myForm"
                 id="myForm"
-                onClick={showFormData}
+                onClick={handleSubmit}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"

@@ -7,25 +7,25 @@ import { basicSchema4 } from "../schemas";
 import Background from "./background";
 // import Background from "./background";
 import AuthContext from "../context/AuthContext";
+import queryString from "query-string"
+import Spinner from "./Spinner";
 
 const OtpVerification = (props) => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
-  const { authTokens } = useContext(AuthContext)
+  const { authTokens, setPageLoading, pageloading } = useContext(AuthContext)
 
-  const onSubmit = async (values, actions) => {
+  const onSubmit = async () => {
     // console.log(values);
-    // console.log(actions);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    setPageLoading(true)
+    const data = {
+      "otp" : values.otpverification.toString()
+    }
+    const formdata = queryString.stringify(data);
+    console.log(formdata);
     try {
       const otpVerificationResponse = await axios.post(
-        "https://api.eesiitbhu.co.in/api/user/verify/",
-        { otp },
+        "https://api.eesiitbhu.co.in/api/user/verify/", formdata ,
         {
           headers: {
             Authorization: `Bearer ${authTokens.access}`,
@@ -41,6 +41,7 @@ const OtpVerification = (props) => {
       console.error("Error verifying OTP:", error);
       // Handle failure, show an error message, etc.
     }
+    setPageLoading(false);
   };
   // const emailtosendotp={props.email};
   const emailtosendotp="mailid@gmail.com";
@@ -55,21 +56,21 @@ const OtpVerification = (props) => {
   } = useFormik({
     initialValues: {
       otpverification:0,
-        },
+    },
     validationSchema: basicSchema4,
     onSubmit,
   });
 
   console.log(errors);
 
-  return (
+  return ( pageloading ? <Spinner /> :
     <div>
       <Background></Background>
     <div className="otp-verification-container z-0 m-auto">
       <div className="email-otp font-goldman " style={{fontSize:"30px"}}>An email has been sent to {emailtosendotp} .</div>
 
       <div className="search-bar">
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleSubmit}>
           <label className="otp-label font-goldman " style={{fontSize:"30px"}}>Enter OTP: </label>
           <input
           style={{width:'auto'}}
@@ -78,7 +79,7 @@ const OtpVerification = (props) => {
              id="otpverification"
              placeholder="OTP"
              value={values.otpverification}
-               onChange={handleChange}
+            onChange={handleChange}
              className={errors.otpverification && touched.otpverification ? "input-error" : ""}
                onBlur={handleBlur}
             />

@@ -9,39 +9,41 @@ import './resetpassword.css';
 import { getElementError } from "@testing-library/react";
 import axios from "axios";
 import queryString from 'query-string'
-const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-};
+
 
 const ResetPassword = () => {
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [cnfPassword, setCnfPassword] = useState("");
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-  const handleOtpChange = (event) => {
-    setOtp(event.target.value);
-  };
-  const handleCPswdChange = (event) => {
-    setCnfPassword(event.target.value);
-  };
-  const handleNPswdChange = (event) => {
-    setNewPassword(event.target.value);
-  };
+  // const [email, setEmail] = useState("");
+  // const [otp, setOtp] = useState("");
+  // const [newPassword, setNewPassword] = useState("");
+  // const [cnfPassword, setCnfPassword] = useState("");
+  // const handleEmailChange = (event) => {
+  //   setEmail(event.target.value);
+  // };
+  // const handleOtpChange = (event) => {
+  //   setOtp(event.target.value);
+  // };
+  // const handleCPswdChange = (event) => {
+  //   setCnfPassword(event.target.value);
+  // };
+  // const handleNPswdChange = (event) => {
+  //   setNewPassword(event.target.value);
+  // };
 
   let navigate = useNavigate();
+
+  // const onSubmit = async (values, actions) => {
+  //   console.log(values);
+
+  // };
   
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  const onSubmit = async (values) => {
     const details = {
-      'email' : email,
-      'otp' : otp,
-      'password1' : newPassword,
-      'password2' : cnfPassword
+      'email' : values.email,
+      'otp' : values.otpvarification,
+      'password1' : values.password,
+      'password2' : values.confirmPassword
     }
+    console.log(details);
     const formData = queryString.stringify(details)
     const res = await axios.post('https://api.eesiitbhu.co.in/api/user/change-password/', formData)
     console.log(res)
@@ -74,7 +76,7 @@ const ResetPassword = () => {
   return (
     <>
       <Background />
-      <form onSubmit={handleFormSubmit} className="font-golman">
+      <form onSubmit={handleSubmit} className="font-golman">
         <div class="forgot-password-container " >
           <h1 className="font-goldman ">Password Reset</h1>
           <h2 class="information-text-fp" className="font-goldman mt-[10px]">Enter your new password.</h2>
@@ -83,8 +85,8 @@ const ResetPassword = () => {
           </h3>
           <div class="form-group-fp">
           <input
-                  value={email}
-                  onChange={handleEmailChange}
+                  value={values.email}
+                  onChange={handleChange}
                   id="email"
                   placeholder="EMAIL"
                   type="email"
@@ -112,8 +114,8 @@ const ResetPassword = () => {
               name="otpvarification"
               id="otpvarification"
               placeholder="OTP"
-              value={otp}
-              onChange={handleOtpChange}
+              value={values.otpvarification}
+              onChange={handleChange}
               className={errors.otpvarification && touched.otpvarification ? "input-error" : ""}
                 onBlur={handleBlur}
                 style={{
@@ -137,8 +139,8 @@ const ResetPassword = () => {
                   id="password"
                   type="password"
                   placeholder="Password"
-                  value={newPassword}
-                  onChange={handleNPswdChange}
+                  value={values.password}
+                  onChange={handleChange}
                   onBlur={handleBlur}
                   className={
                     errors.password && touched.password ? "input-error" : ""
@@ -164,8 +166,8 @@ const ResetPassword = () => {
                   id="confirmPassword"
                   type="password"
                   placeholder="Confirm password"
-                  value={cnfPassword}
-                  onChange={handleCPswdChange}
+                  value={values.confirmPassword}
+                  onChange={handleChange}
                   onBlur={handleBlur}
                   className={
                     errors.confirmPassword && touched.confirmPassword

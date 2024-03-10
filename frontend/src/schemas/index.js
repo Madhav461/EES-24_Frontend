@@ -4,6 +4,7 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 // min 5 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit.
 
 export const basicSchema = yup.object().shape({
+  name: yup.string().required("Required"),
   email: yup.string().email("Please enter a valid email").required("Required"),
   password: yup
     .string()
@@ -54,7 +55,7 @@ export const advancedSchema3 = yup.object().shape({
 });
 
 export const basicSchema3 = yup.object().shape({
-  email: yup.string().email("Please enter a valid email").required("Required"),
+  // email: yup.string().email("Please enter a valid email").required("Required"),
   CollegeName: yup
     .string()
     .required("Required"),
@@ -62,7 +63,7 @@ export const basicSchema3 = yup.object().shape({
 
 
 export const basicSchema4 = yup.object().shape({
-  otpvarification: yup
+  otpverification: yup
   .number()
   .typeError("Please enter a 4-digit number")
   .integer("please enter valid number")

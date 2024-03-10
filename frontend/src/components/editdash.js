@@ -20,6 +20,24 @@ import AuthContext from "../context/AuthContext";
 // =======
 import Spinner from "./Spinner";
 
+function getOrdinal(year) {
+  let n = parseInt(year)
+  let ord = 'th';
+  if (n % 10 == 1 && n % 100 != 11)
+  {
+    ord = 'st';
+  }
+  else if (n % 10 == 2 && n % 100 != 12)
+  {
+    ord = 'nd';
+  }
+  else if (n % 10 == 3 && n % 100 != 13)
+  {
+    ord = 'rd';
+  }
+  return ord;
+}
+
 const EditDashboard = () => {
   const {userDetails, updateUserInfo, loadUser, pageloading} = useContext(AuthContext)
   const [name, setName] = useState("");
@@ -175,7 +193,7 @@ const EditDashboard = () => {
                   name="Year"
                   id="Year"
                   placeholder="Ist Year"
-                > Year {year}</span>
+                >{year + getOrdinal(year)} Year</span>
               </p>
               <p className="yashtheman">GRADE {year}</p>
               <img src="/motiline.svg" alt="" class="y29" />

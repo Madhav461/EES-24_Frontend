@@ -3,51 +3,57 @@ import "../components/gsignup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import { basicSchema3 } from "../schemas";
+import { basicSchema3 } from "../schemas/index";
 import Collegelist from "./collegelist";
 import AuthContext from "../context/AuthContext";
 
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-};
 
-function getElementValue(id) {
-  const element = document.getElementById(id);
 
-  // Check if the element exists before accessing its value
-  return element ? element.value : "";
-}
+// function getElementValue(id) {
+//   const element = document.getElementById(id);
 
-function getSelectValue(id) {
-  const selectElement = document.getElementById(id);
+//   // Check if the element exists before accessing its value
+//   return element ? element.value : "";
+// }
 
-  // Check if the select element exists and has selected options
-  if (selectElement && selectElement.options) {
-    const selectedOption = selectElement.options[selectElement.selectedIndex];
-    return selectedOption ? selectedOption.value : "";
-  }
+// function getSelectValue(id) {
+//   const selectElement = document.getElementById(id);
 
-  return "";
-}
+//   // Check if the select element exists and has selected options
+//   if (selectElement && selectElement.options) {
+//     const selectedOption = selectElement.options[selectElement.selectedIndex];
+//     return selectedOption ? selectedOption.value : "";
+//   }
+
+//   return "";
+// }
 
 const Gsignup = () => {
   const {user, authTokens, userDetails, updateUserInfo} = useContext(AuthContext)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    const formData = {
+      name: name,
+      email: email,
+      collegeName: values.CollegeName,
+      year: values.year,
+    };
+    updateUserInfo(formData);
+  };
+
   function showFormData() {
     const formData = {
-      name: getElementValue("name"),
-      email: getElementValue("email"),
-      collegeName: getSelectValue("collegeName"),
-      year: getElementValue("year"),
+      name: name,
+      email: email,
+      collegeName: values.CollegeName,
+      year: values.year,
     };
   
     console.log(formData);
-    updateUserInfo(formData);
+    // updateUserInfo(formData);
   }
 
   useEffect(() => {
@@ -65,8 +71,8 @@ const Gsignup = () => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      email:"",
       CollegeName:"",
+      year:0,
     },
     validationSchema: basicSchema3,
     onSubmit,
@@ -126,7 +132,7 @@ const Gsignup = () => {
             className="h-[100%] w-[30%]   overflow-hidden justify-evenly items-center text-white amaan"
             style={{}}
           >
-            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}}>
+            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}} onSubmit={handleSubmit}>
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
@@ -158,14 +164,12 @@ const Gsignup = () => {
                 <label htmlFor="email"></label>
                 <input
                   value={email}
-                  onChange={handleChange}
                   id="email"
                   placeholder={email}
                   type="email"
                   className={
                     errors.password && touched.password ? "input-error" : ""
                   }
-                  onBlur={handleBlur}
                   style={{
                     fontFamily: "Goldman",
                     fontSize: "18px",
@@ -189,7 +193,10 @@ const Gsignup = () => {
               >
                 <div>
                   <select
-                    id="collegeName"
+                    value={values.CollegeName}
+                    onChange={handleChange} 
+                    onBlur={handleBlur}
+                    id="CollegeName"
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -206,7 +213,7 @@ const Gsignup = () => {
                       outline: "none",
                       marginTop:"10px",
                     }}
-                    required
+                    // required
                   >
                     
                     <option
@@ -219,6 +226,8 @@ const Gsignup = () => {
                     </option>
                     <Collegelist />
                   </select>
+                  {errors.CollegeName && touched.CollegeName && (
+                  <p className="error">{errors.CollegeName}</p>)}
                 </div>
               </div>
               <div
@@ -228,6 +237,9 @@ const Gsignup = () => {
                 <input
                   className="w-[85%] h-[20%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                   type="number"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.year}
                   id="year"
                   min="1"
                   max="5"
@@ -267,7 +279,7 @@ const Gsignup = () => {
               <button
                 form="myForm"
                 id="myForm"
-                onClick={showFormData}
+                onClick={handleSubmit}
                 type="button"
                 className="SignUpBtnForMobileView"
                 class="text-gray-900 bg-gray-100 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2.5 text-center"
@@ -626,7 +638,7 @@ const Gsignup = () => {
               <svg
                 form="myForm"
                 id="myForm"
-                onClick={showFormData}
+                onClick={handleSubmit}
                 width="286"
                 height="72"
                 viewBox="0 0 286 72"
