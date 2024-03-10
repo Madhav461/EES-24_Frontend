@@ -81,8 +81,8 @@ const DashboardTeam = () => {
 
     return (
       <div className="relative ">
-        <div className="absolute ">
-          <Navhome className="z-15" />
+        <div className="absolute z-[150]">
+          <Navhome  />
         </div>
         {/* desktop view starts here*/}
         <div className="dash_desktopview relative overflow-hidden ">
@@ -112,7 +112,7 @@ const DashboardTeam = () => {
                 className="button7071"
                 style={{ transform: "translateX(-50%)" }}
               >
-                <Link to="/dashboard" className="w-[18%] mt-[3.5px]">
+                <Link to="/editdash" className="w-[18%] mt-[3.5px]">
                   <img
                     src="/rightbutton.svg"
                     alt=""
