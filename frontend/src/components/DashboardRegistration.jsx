@@ -16,7 +16,7 @@ import axios from 'axios';
 import AuthContext from "../context/AuthContext";
 import queryString from 'query-string';
 
-
+import Select from 'react-select';
 
 
 const DashboardRegistration = () => {
@@ -54,7 +54,7 @@ const DashboardRegistration = () => {
 
   let navigate = useNavigate();
   const routeChange = (route) => {
-      let path = `/dashboard/team/${route}`;
+      let path = `/dashboard/resgistration`;
       navigate(path);
   };
 
@@ -76,10 +76,17 @@ const DashboardRegistration = () => {
       event.preventDefault();
   };
 
-  const handleBtnClick = (id) => {
-      const targetDiv = document.getElementById(id);
-      targetDiv.style.display = "block";
-  };
+  // const handleBtnClick = (id) => {
+  //     const targetDiv = document.getElementById(id);
+  //     targetDiv.style.display = "block";
+
+  //     if(id === "fp-success") {
+  //       handleRegister();
+  //     }
+  //     else {
+  //       handleInvite();
+  //     }
+  // };
   // Santosh
 
   const events = {
@@ -93,6 +100,26 @@ const DashboardRegistration = () => {
     commnet,
   };
 
+  const options = [
+    { value: 'devbits', label: 'DEVBITS' },
+    { value: 'cassandra', label: 'CASSANDRA' },
+    { value: 'mosaic', label: 'MOSAIC' },
+    { value: 'funckit', label: 'FUNCKIT' },
+    { value: 'digisim', label: 'DIGISIM' },
+    { value: 'ichip', label: 'I-CHIP' },
+    { value: 'xiota', label: 'X-IOTA' },
+    { value: 'commnet', label: 'COMMNET' },
+  ];
+  const [selectedOption, setSelectedOption] = useState(null);
+  const MyComponentOptions = () => (
+    <Select
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+        styles={{backgroundColor: 'blue', color: 'red'}}
+      />
+  )
+
   const [category, setCategory] = useState("");
   const [teamName,setTeamName]=useState('')
   const [leaderEmail,setLeaderEmail]=useState('')
@@ -103,6 +130,7 @@ const DashboardRegistration = () => {
   useEffect(() => {
     if(userDetails) {
       setLeaderEmail(userDetails?.profile?.email)
+      setLeader(userDetails?.profile?.email);
     }
   }, [userDetails])
 
@@ -169,6 +197,28 @@ const DashboardRegistration = () => {
     };
     const dataToSend2 = queryString.stringify(dataToSend)
 
+    console.log(dataToSend);
+
+    try {
+      const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
+        "Authorization" :`Bearer ${authTokens.access}`
+      }});
+      console.log(dataToSend2);
+      console.log('Response:', response.data);
+      getTeams()
+  } catch (error) {
+      console.error('Error:', error);
+  }
+};
+
+  const handleRegisterMobile = async () => {
+
+    const dataToSend = {
+      'event_name': selectedOption.value,
+      'team_name': teamName,
+      'leader_email': leaderEmail
+    };
+    const dataToSend2 = queryString.stringify(dataToSend)
     console.log(dataToSend);
 
     try {
@@ -1284,6 +1334,7 @@ const DashboardRegistration = () => {
                  <div className=" w-[100%] h-[20%]  flex   translate-y-[50%] gap-2  justify-center" >
                     <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={()=>{
                       setCategory("");
+                      routeChange();
                     }}>
                       Cancel
                     </button>
@@ -1389,37 +1440,39 @@ const DashboardRegistration = () => {
             <h3 class="information-text-fp-success" id="fp-success">
               Your team has been successfully registered.
             </h3>
-            <div className="event-registration-dropd">
-              <select class="select-css-event">
-                <option key={0} onClick={() => changeEvent(0)}>
+            <div className="event-registration-dropdown santosh-select-dashboard" onChange={() => console.log(selectedOption.value)}>
+              {/* <select class="select-css-event" onChange={(e) => {console.log()}} value={eventName}> */}
+              {/* <select class="select-css-event" onChange={console.log(category)}>
+                <option key={0} value="devbits"  onClick={()=> setCategory("devbits")}>
                   DEVBITS
                 </option>
-                <option key={1} onClick={() => changeEvent(1)}>
+                <option key={1}   value= "mosaic" onClick={()=> setCategory("mosaic")}>
                   MOSAIC
                 </option>
-                <option key={2} onClick={() => changeEvent(2)}>
+                <option key={2} value="cassandra" onClick={()=> setCategory("cassandra")}>
                   CASSANDRA
                 </option>
-                <option key={3} onClick={() => changeEvent(3)}>
+                <option key={3} value="xiota" onClick={()=> setCategory("xiota")}>
                   X-IOTA
                 </option>
-                <option key={4} onClick={() => changeEvent(4)}>
+                <option key={4}  value="digisim" onClick={()=> setCategory("digisim")}>
                   DIGISIM
                 </option>
-                <option key={5} onClick={() => changeEvent(5)}>
+                <option key={5} value="funckit" onClick={()=> setCategory("funckit")}>
                   FUNCKIT
                 </option>
-                <option key={6} onClick={() => changeEvent(6)}>
+                <option key={6} value="commnet" onClick={()=> setCategory("commnet")}>
                   COMMNET
                 </option>
-                <option key={7} onClick={() => changeEvent(7)}>
+                <option key={7} value="ichip" onClick={()=> setCategory("ichip")}>
                   I-CHIP
                 </option>
-              </select>
+              </select> */}
+              <MyComponentOptions />
             </div>
             <div className="event-registration-leader">
               <span>Leader</span>
-              <span>{leader}</span>
+              <span>{leader && leader.length <= 22 ? leader : `${leader?.substring(0,22)}...`}</span>
             </div>
             <div class="form-group-fp">
               <input
@@ -1444,12 +1497,15 @@ const DashboardRegistration = () => {
               <p>
                 <label for="mem1_email">Add a Member</label>
               </p>
-              <button onClick={() => handleBtnClick("fp-success")}>
+              <button  onClick={handleRegisterMobile}>
                 Register
               </button>
-              <button onClick={() => handleBtnClick("fp-failure")}>
-                Cancel
+              <button onClick={ handleInvite}>
+                Invite
               </button>
+              {/* <button onClick={}>
+                Cancel
+              </button> */}
             </div>
           </div>
         </form>
