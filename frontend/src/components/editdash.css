@@ -239,7 +239,7 @@
         top: 20%;
     }
 
-    .buttons {
+    .dash_mb_buttons {
         bottom: 6.5%;
     }
 
@@ -257,7 +257,7 @@
         top: 20%;
     }
 
-    .buttons {
+    .dash_mb_buttons {
         bottom: 5%;
     }
 
@@ -274,7 +274,7 @@
         width: 95vw;
     }
 
-    .buttons {
+    .dash_mb_buttons {
         bottom: 2.5%;
         height: 6vh;
     }
@@ -306,7 +306,7 @@
         top: 15%;
         width: 90vw;
     }
-    .buttons {
+    .dash_mb_buttons {
         bottom: 2.5%;
         height: 5vh;
     }

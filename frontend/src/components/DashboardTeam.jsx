@@ -112,7 +112,7 @@ const DashboardTeam = () => {
                 className="button7071"
                 style={{ transform: "translateX(-50%)" }}
               >
-                <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+                <Link to="/dashboard" className="w-[18%] mt-[3.5px]">
                   <img
                     src="/rightbutton.svg"
                     alt=""
@@ -341,6 +341,7 @@ const DashboardTeam = () => {
           </div>
           {/* clipPath:'polygon(27%,36% 97.5%,36% 97.5%,94% 27%,94%)' , transform:'scale(0.15)',transform:'translateX(-50%)' , */}
 
+      {/* Parth */}
           <div className="side_svgs leftsvgs absolute left-[4%] top-[7%] flex flex-col w-[3%] ">
             <img src="/Vector 384.svg" alt="img" className=" w-[100%]" />
             <img src="/Vector 387.svg" alt="img" className=" w-[100%]" />
@@ -390,9 +391,10 @@ const DashboardTeam = () => {
                 className="absolute right-[-65%] h-[300%]"
                 style={{ top: "50%", transform: "translateY(-50%)" }}
               />
-              PROFILE
+              TEAMS
             </div>
           </div>
+        {/* Parth */}
 
           <div
             className="main_card relative"
@@ -421,26 +423,18 @@ const DashboardTeam = () => {
           </div>
 
           <div
-            className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
+            className="dash_mb_buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
             style={{ left: "50%", transform: "translateX(-50%)" }}
           >
-            <div className="h-[100%]">
+            <Link to="/dashboard" className="h-[100%]">
               <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
-              <img
-                src="/Vector 416.svg"
-                alt="img"
-                className=" h-[40%] absolute left-[5px] top-[25%] "
-              />
-            </div>
+            </Link>
+
             <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
-            <div className="h-[100%]">
+            
+            <Link to="/dashboard/registration" className="h-[100%]">
               <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
-              <img
-                src="/Vector 417.svg"
-                alt="img"
-                className=" h-[40%] absolute right-[5px] top-[25%]"
-              />
-            </div>
+            </Link>
           </div>
 
           {/* Added by Santosh - Mobile view */}
