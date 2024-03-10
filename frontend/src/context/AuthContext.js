@@ -181,11 +181,18 @@ export const AuthProvider = ({children}) => {
 
     const loadUser = async () => {
         setPageLoading(true)
-        const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
-        "Authorization" : `Bearer ${authTokens.access}`
-        }})
-        console.log(res.data);
-        setUserDetails(res.data)
+        try {
+            const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
+            "Authorization" : `Bearer ${authTokens.access}`
+            }})
+            console.log(res.data);
+            if(res.status >= 400) {
+                updateToken();
+            }
+            setUserDetails(res.data)
+        } catch (err) {
+            console.error(err);
+        }
         setPageLoading(false)
     }
 
@@ -218,7 +225,7 @@ export const AuthProvider = ({children}) => {
 
     useEffect(() => {
         let mounted = true;
-        if(mounted && user) {
+        if(mounted && user && authTokens) {
           loadUser()
         }
         return () => {

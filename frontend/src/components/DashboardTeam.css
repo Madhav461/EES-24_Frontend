@@ -1,41 +1,25 @@
 .team-dashboard-container {
     display: flex;
     flex-direction: row;
-    align-items: start;
-    justify-content: space-between;
-    top: 36.5%;
+    justify-content: space-evenly;
+
     text-align: center;
     color: #FFF;
     font-family: Michroma;
-    font-size: 17px;
+    font-size: 19px;
     font-style: normal;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw;
+
+    width: 70vw;
     margin: auto;
-}
-    
-/* .dash_teams_section{
-
-} */
-
-.dash_Select_team_heading{
-    color: #FFF;
-    font-family: Michroma;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    text-shadow: #FFF 10cap ;
 }
 
 .teams-registered-dashboard {
-    /* border: #FFF 2px solid; */
-    width: 20%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    /* padding-top: 0%; */
-    margin-top: 0%;
+    justify-content: space-around;
+    padding-top: 7%;
+    margin-top: 1%;
 }
 
 .team-dashboard-members {
@@ -75,273 +59,7 @@
     padding: 2.5% 4% 2.5% 4%;
 }
 
-.teams-registered-dashboard {
-    width: 350px;
-    height: 175px;
-    overflow-y: scroll;
-}
 
-.team-name-dashboard {
-    padding: 4%;
-}
-
-@media screen and (max-width:1200px){
-    .team-dashboard-members-names {
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-eventName-display{
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-teamName-display{
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-icons{
-        width: 15px;
-    }
-    .team-name-dashboard {
-        padding: 3%;
-    }
-    .team-dashboard-container{
-        font-size: 16px;
-        width: 70vw;
-        top: 40%;
-    }
-    .teams-registered-dashboard {
-        width: 250px;
-        height: 100px;
-        overflow-y: scroll;
-    }
-    .dash-top-elem{
-        margin-bottom: 1px;
-        margin-left: 5px;
-        width: 20%;
-    }
-    .dash-side-elem{
-        width: 11px;
-        margin-left: 2px;
-        margin-top: 0px;
-    }
-}
-
-@media screen and (max-width:900px){
-    .team-dashboard-members-names {
-        padding: 1.3% 4% 1.3% 4%;
-    }
-    .team-dashboard-eventName-display{
-        padding: 1.3% 4% 1.3% 4%;
-    }
-    .team-dashboard-teamName-display{
-        padding: 1.3% 4% 1.3% 4%;
-    }
-    .team-dashboard-icons{
-        width: 15px;
-    }
-    .team-name-dashboard {
-        padding: 3%;
-    }
-    .team-dashboard-container{
-        font-size: 14px;
-        width: 70vw;
-        top: 40%;
-    }
-    .teams-registered-dashboard {
-        width: 250px;
-        height: 80px;
-        overflow-y: scroll;
-    }
-    .dash-top-elem{
-        margin-bottom: 1px;
-        margin-left: 5px;
-        width: 20%;
-    }
-    .dash-side-elem{
-        width: 11px;
-        margin-left: 2px;
-        margin-top: 0px;
-    }
-}
-
-/* ipad mini */
-@media screen and (device-width:768px) and (device-height:1024px){
-    .team-dashboard-members-names {
-        padding: 1% 4% 1% 4%;
-    }
-    .team-dashboard-eventName-display{
-        padding: 1% 4% 1% 4%;
-    }
-    .team-dashboard-teamName-display{
-        padding: 1% 4% 1% 4%;
-    }
-    .team-dashboard-icons{
-        width: 15px;
-    }
-    .team-name-dashboard {
-        padding: 3%;
-    }
-    .team-dashboard-container{
-        font-size: 12px;
-        width: 70vw;
-        top: 36.5%;
-    }
-    .teams-registered-dashboard {
-        width: 250px;
-        height: 100px;
-        overflow-y: scroll;
-    }
-    .dash-top-elem{
-        margin-bottom: 1px;
-        margin-left: 5px;
-        width: 20%;
-    }
-    .dash-side-elem{
-        width: 11px;
-        margin-left: 2px;
-        margin-top: 0px;
-    }
-}
-
-/* Ipad air and Asus zenbook  */
-@media screen and (min-device-width:815px) and (max-device-width:855px){
-    .team-dashboard-members-names {
-        padding: 1% 4% 1% 4%;
-    }
-    .team-dashboard-eventName-display{
-        padding: 1% 4% 1% 4%;
-    }
-    .team-dashboard-teamName-display{
-        padding: 1% 4% 1% 4%;
-    }
-    .team-dashboard-icons{
-        width: 14px;
-    }
-    .team-name-dashboard {
-        padding: 2.3%;
-    }
-    .team-dashboard-container{
-        font-size: 12px;
-        width: 70vw;
-        top: 37%;
-    }
-    .teams-registered-dashboard {
-        width: 250px;
-        height: 100px;
-        overflow-y: scroll;
-    }
-    .dash-top-elem{
-        margin-bottom: 1px;
-        margin-left: 5px;
-        width: 20%;
-    }
-    .dash-side-elem{
-        margin-left: 2px;
-        margin-top: 10px;
-    }
-}
-
-/* Surface Pro 7 */
-@media screen and (device-width:912px) and (device-height:1368px){
-    .team-dashboard-members-names {
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-eventName-display{
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-teamName-display{
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-icons{
-        width: 15px;
-    }
-    .team-name-dashboard {
-        padding: 2.3%;
-    }
-    .team-dashboard-container{
-        font-size: 14px;
-        width: 70vw;
-        top: 36%;
-    }
-    .teams-registered-dashboard {
-        width: 250px;
-        height: 100px;
-        overflow-y: scroll;
-    }
-    .dash-top-elem{
-        margin-bottom: 1px;
-        margin-left: 5px;
-        width: 20%;
-    }
-    .dash-side-elem{
-        margin-left: 2px;
-        margin-top: 10px;
-    }
-}
-
-/* Ipad pro */
-@media screen and (device-width:1024px) and (min-device-height:1366px){
-    .team-dashboard-members-names {
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-eventName-display{
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-teamName-display{
-        padding: 1.4% 4% 1.4% 4%;
-    }
-    .team-dashboard-icons{
-        width: 15px;
-    }
-    .team-name-dashboard {
-        padding: 2.3%;
-    }
-    .team-dashboard-container{
-        font-size: 14px;
-        width: 70vw;
-        top: 37%;
-    }
-    .teams-registered-dashboard {
-        width: 250px;
-        height: 100px;
-        overflow-y: scroll;
-    }
-    .dash-top-elem{
-        margin-bottom: 1px;
-        margin-left: 5px;
-        width: 20%;
-    }
-    .dash-side-elem{
-        margin-left: 2px;
-        margin-top: 10px;
-    }
-}
-
-
-
-
-/* MOBILE VIEW */
-
-
-.teams-registered-dashboard-mb {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    margin-top: 1%;
-    
-    text-align: center;
-    color: #FFF;
-    font-family: Michroma;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 300;
-    width: 235px;
-    height: 30px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-
-}
 
 .p1-dashboard-team-mb {
     grid-column: 1 / 4;
@@ -379,15 +97,25 @@
     letter-spacing: 2.325px;
 }
 
-/* .teams-registered-dashboard {
+.teams-registered-dashboard {
     width: 350px;
     height: 250px;
     overflow-y: scroll;
+    /* overflow: hidden; */
+    /* overflow: auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 0%; */
+    padding: 4%;
 }
 
 .team-name-dashboard {
     padding: 5%;
-} */
+    display: flex;
+    /* align-items: center; */
+    /* transform: translateY(140%); */
+}
 
 @media screen and (max-width: 479px) {
     .p1-dashboard-team-mb{
@@ -439,15 +167,6 @@
         font-size: 18px;
         margin-bottom: -3.5rem;
     }
-}
-
-.dash_mb_Select_team_heading{
-    color: #FFF;
-    font-family: Michroma;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    text-shadow: #FFF 10cap ;
 }
 
 /* @media screen and (max-width: 1500px) {
@@ -591,3 +310,10 @@
         font-size: 11px;
     }
 } */
+
+.team-dashboard-mem-type {
+    padding-right: 10%;
+}
+.team-dashboard-mem-details {
+    overflow: hidden;
+}

@@ -138,7 +138,7 @@ function HamburgerMenu() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   return (
-    <div id="ham_txt" className="z-10 ">
+    <div id="ham_txt" className="z-[100] ">
       <MenuLabel htmlFor="navi-toggle" onClick={handleClick} className="">
         <div className=""><Icon clicked={click}>&nbsp;</Icon></div>
       </MenuLabel>
