@@ -5,6 +5,7 @@
     "query-string": "^9.0.0",
     "react": "^18.2.0",
     "react-blurhash": "^0.3.0",
-    "react-lazy-load": "^4.0.1"
+    "react-lazy-load": "^4.0.1",
+    "react-toastify": "^10.0.4"
   }
 }
