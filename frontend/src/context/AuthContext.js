@@ -58,7 +58,7 @@ export const AuthProvider = ({children}) => {
         const details = {
             "email" : validatedFormData.email,
             "name" : validatedFormData.name,
-            "college" : validatedFormData.collegeName,
+            "college" : validatedFormData.CollegeName,
             "year" : validatedFormData.year,
             "password" : validatedFormData.password,
             "password_confirmation" : validatedFormData.confirmPassword
