@@ -112,7 +112,7 @@ const DashboardTeam = () => {
                 className="button7071"
                 style={{ transform: "translateX(-50%)" }}
               >
-                <Link to="/editdash" className="w-[18%] mt-[3.5px]">
+                <Link to="/dashboard" className="w-[18%] mt-[3.5px]">
                   <img
                     src="/rightbutton.svg"
                     alt=""

@@ -6,7 +6,7 @@ const EventsCard = ({ name, eventNum, clicked, eventName, eventInfo, eventDescri
   
   let navigate = useNavigate();
   const routeChange = (route) => {
-    let path = `/dashboard/${route}`;
+    let path = `/dashboard/registration`;
     navigate(path);
   }
   
