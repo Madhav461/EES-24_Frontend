@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, useState} from "react";
+import React, { useEffect, useContext, useState } from "react";
 import "../components/signup.css";
 import Navhome from "./navhome";
 import { Link } from "react-router-dom";
@@ -6,13 +6,11 @@ import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import Collegelist from "./collegelist";
 import GoogleButton from "react-google-button";
-import queryString from 'query-string';
+import queryString from "query-string";
 import AuthContext from "../context/AuthContext";
-import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 import Spinner from "./Spinner";
-
-
 
 // function getElementValue(id) {
 //   const element = document.getElementById(id);
@@ -35,55 +33,59 @@ import Spinner from "./Spinner";
 
 const Signup = () => {
   // const [loading, setLoading] = useState(false);
-  const { googleAuthenticate, pageloading, signUpUser, setPageLoading } = useContext(AuthContext)
+  const { googleAuthenticate, pageloading, signUpUser, setPageLoading } =
+    useContext(AuthContext);
 
   const onGoogleLoginSuccess = async () => {
-      setPageLoading(true)
-      try {
-          const res = await axios.get('https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup', {
-            withCredentials: true,
-        });
-          console.log(res)
-          window.location = res.data.authorization_url;
-      } catch (err) {
-          console.error(err);
-      }
-      setPageLoading(false)
+    setPageLoading(true);
+    try {
+      const res = await axios.get(
+        "https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup",
+        {
+          withCredentials: true,
+        }
+      );
+      console.log(res);
+      window.location = res.data.authorization_url;
+    } catch (err) {
+      console.error(err);
+    }
+    setPageLoading(false);
   };
 
-  let location = useLocation()
-  
+  let location = useLocation();
+
   useEffect(() => {
-      const values = queryString.parse(location.search)
-      const state = values.state ? values.state : null;
-      const code = values.code ? values.code : null;
-  
-      // console.log("State : " + state)
-      // console.log("Code : " + code)
-      let mounted = true;
-      if(mounted) {
-        try {
-          googleAuthenticate(state, code)
-        } catch (err) {
-            console.log(err);
-        }
+    const values = queryString.parse(location.search);
+    const state = values.state ? values.state : null;
+    const code = values.code ? values.code : null;
+
+    // console.log("State : " + state)
+    // console.log("Code : " + code)
+    let mounted = true;
+    if (mounted) {
+      try {
+        googleAuthenticate(state, code);
+      } catch (err) {
+        console.log(err);
       }
-      
-      return () => {
-        mounted = false;
-      }
-  }, [location])
+    }
+
+    return () => {
+      mounted = false;
+    };
+  }, [location]);
 
   // function showFormData() {
   //   console.log(formData);
-  
-  //  
+
+  //
   // }
 
   const onSubmit = async (values, actions) => {
     console.log(values);
     try {
-      signUpUser(values)
+      signUpUser(values);
     } catch (err) {
       console.error(err);
     }
@@ -103,8 +105,8 @@ const Signup = () => {
       CollegeName: "",
       password: "",
       confirmPassword: "",
-      name:"",
-      year:0
+      name: "",
+      year: 0,
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -112,7 +114,9 @@ const Signup = () => {
 
   console.log(errors);
 
-  return ( pageloading ? <Spinner /> :
+  return pageloading ? (
+    <Spinner />
+  ) : (
     <div
       className="flex SignUpPage  flex-col  bg-contain w-100vw h-100vh text-white justify-center items-center gap-10"
       style={{}}
@@ -130,7 +134,7 @@ const Signup = () => {
 
           <div
             className="SignUp flex my-auto  justify-center mb-[20%] items-center"
-            style={{ whiteSpace: "nowrap" }}
+            style={{ whiteSpace: "nowrap", fontSize: "2.5rem" }}
           >
             SIGN UP
           </div>
@@ -138,12 +142,10 @@ const Signup = () => {
         <div
           className="SignUp-card-blackDiv w-[96%] h-[60%] text-white  relative"
           style={{
-            
-    paddingTop: '10px',
-    paddingLeft: '10px',
-    paddingRight: '10px',
-    marginTop: '0px',
-
+            paddingTop: "10px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            marginTop: "0px",
           }}
         >
           <div
@@ -170,7 +172,12 @@ const Signup = () => {
             className="h-[100%] w-[30%]   overflow-hidden justify-evenly items-center text-white amaan"
             style={{}}
           >
-            <form className="w-full h-[75%] m-2 formDiv" id="myForm" style={{}} onSubmit={handleSubmit}>
+            <form
+              className="w-full h-[75%] m-2 formDiv"
+              id="myForm"
+              style={{}}
+              onSubmit={handleSubmit}
+            >
               <div
                 className="relative"
                 style={{ width: "contain", gap: "2rem" }}
@@ -200,26 +207,22 @@ const Signup = () => {
               >
                 <label htmlFor="email"></label>
                 <input
-                   value={values.email}
-                   onChange={handleChange}
-                   id="email"
-                   placeholder="EMAIL"
-                   type="email"
-                   className={
-                    errors.email && touched.email
-                      ? "input-error"
-                      : ""
-                  }
-                   onBlur={handleBlur}
-                   style={{
-                     fontFamily: "Goldman",
-                     fontSize: "18px",
-                     fontStyle: "normal",
-                     fontWeight: 400,
-                     lineHeight: "normal",
-                     letterSpacing: "1.2px",
-                     borderBottom: "1px solid #FFF",
-                   }}
+                  value={values.email}
+                  onChange={handleChange}
+                  id="email"
+                  placeholder="EMAIL"
+                  type="email"
+                  className={errors.email && touched.email ? "input-error" : ""}
+                  onBlur={handleBlur}
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
+                  }}
                 />
                 {errors.email && touched.email && (
                   <p className="error">{errors.email}</p>
@@ -232,10 +235,10 @@ const Signup = () => {
               >
                 <div>
                   <select
-                  value={values.CollegeName}
-                  onChange={handleChange} 
-                  onBlur={handleBlur}
-                   id="CollegeName"
+                    value={values.CollegeName}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    id="CollegeName"
                     style={{
                       fontFamily: "Goldman",
                       fontSize: "18px",
@@ -263,8 +266,8 @@ const Signup = () => {
                     <Collegelist />
                   </select>
                   {errors.CollegeName && touched.CollegeName && (
-                  <p className="error">{errors.CollegeName}</p>
-                )}
+                    <p className="error">{errors.CollegeName}</p>
+                  )}
                 </div>
               </div>
               <div
@@ -305,21 +308,19 @@ const Signup = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    
                     errors.password && touched.password ? "input-error" : ""
-                  
                   }
-                   style={{
-                     fontFamily: "Goldman",
-                     fontSize: "18px",
-                     fontStyle: "normal",
-                     fontWeight: 400,
-                     lineHeight: "normal",
-                     letterSpacing: "1.2px",
-                     borderBottom: "1px solid #FFF",
+                  style={{
+                    fontFamily: "Goldman",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                    letterSpacing: "1.2px",
+                    borderBottom: "1px solid #FFF",
                   }}
                 />
-                
+
                 {errors.password && touched.password && (
                   <p className="error">{errors.password}</p>
                 )}
@@ -338,9 +339,7 @@ const Signup = () => {
                   onBlur={handleBlur}
                   className={
                     errors.confirmPassword && touched.confirmPassword
-                     
                       ? "input-error"
-                     
                       : ""
                   }
                   style={{
@@ -391,17 +390,21 @@ const Signup = () => {
                 style={{
                   width: "100%",
                   fontFamily: "Goldman",
-                  padding: "1rem",
+                  padding: "0.5rem",
                   width: "60%",
-                  fontSize: "2rem",
+                  fontSize: "1.5rem",
+                  marginBottom: "2%",
                 }}
               >
                 Sign Up
               </button>
-              <GoogleButton
-              type="light" // can be light or dark
-              onClick={onGoogleLoginSuccess}
-              />
+              <div>
+                <GoogleButton
+                  type="light" // can be light or dark
+                  onClick={onGoogleLoginSuccess}
+                  style={{ width: "20%", marginLeft: "38%" }}
+                />
+              </div>
             </div>
 
             <div className="   flex items-center justify-evenly">
@@ -502,75 +505,78 @@ const Signup = () => {
                       alignItems: "center",
                       font: "Goldman",
                       textAlign: "center",
+                      fontSize:"0.9rem"
                     }}
                   >
                     Already have an account?
                   </p>
                 </div>
                 <div className="loginBtn cursor-pointer  relative w-[100%] h-[40%] ">
-                  <svg
-                    width="100%"
-                    height="100%"
-                    viewBox="0 0 174 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g filter="url(#filter0_i_2109_568)">
+                  <Link to="/login">
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewBox="0 0 174 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g filter="url(#filter0_i_2109_568)">
+                        <path
+                          d="M26.6731 0C25.7928 0 24.957 0.386632 24.387 1.05747L4.19962 24.8159C2.54394 26.7645 3.92881 29.7585 6.48579 29.7585H146.51C147.39 29.7585 148.226 29.3718 148.796 28.701L168.983 4.94253C170.639 2.99397 169.254 0 166.697 0H26.6731Z"
+                          fill="#1B1B1E"
+                        />
+                      </g>
                       <path
-                        d="M26.6731 0C25.7928 0 24.957 0.386632 24.387 1.05747L4.19962 24.8159C2.54394 26.7645 3.92881 29.7585 6.48579 29.7585H146.51C147.39 29.7585 148.226 29.3718 148.796 28.701L168.983 4.94253C170.639 2.99397 169.254 0 166.697 0H26.6731Z"
-                        fill="#1B1B1E"
+                        d="M60.0125 20L60.1725 18.72V10.592H62.2845V18.464H68.9085L69.5485 19.824C69.5485 19.8667 69.4045 19.9093 69.1165 19.952C68.8285 19.984 68.3325 20 67.6285 20H60.0125ZM73.8133 20C73.0986 20 72.5653 19.856 72.2133 19.568C71.8719 19.28 71.7013 18.8107 71.7013 18.16V14.88C71.7013 14.72 71.7119 14.528 71.7333 14.304C71.7653 14.0693 71.8399 13.84 71.9573 13.616C72.0853 13.392 72.2933 13.2053 72.5813 13.056C72.8799 12.9067 73.2906 12.832 73.8133 12.832H78.2293C78.7626 12.832 79.1733 12.9067 79.4613 13.056C79.7493 13.2053 79.9519 13.392 80.0693 13.616C80.1973 13.84 80.2719 14.0693 80.2933 14.304C80.3253 14.528 80.3413 14.72 80.3413 14.88V17.952C80.3413 18.144 80.3253 18.3573 80.2933 18.592C80.2719 18.8267 80.1973 19.0507 80.0693 19.264C79.9413 19.4773 79.7333 19.6533 79.4453 19.792C79.1573 19.9307 78.7519 20 78.2293 20H73.8133ZM74.4213 18.624H77.6213C78.1439 18.624 78.4053 18.4107 78.4053 17.984V14.848C78.4053 14.4213 78.1439 14.208 77.6213 14.208H74.4213C73.9093 14.208 73.6533 14.4213 73.6533 14.848V17.984C73.6533 18.4107 73.9093 18.624 74.4213 18.624ZM88.5596 22.816C87.3863 22.816 86.4316 22.8053 85.6956 22.784C84.9596 22.7627 84.3943 22.7307 83.9996 22.688C83.605 22.6453 83.333 22.592 83.1836 22.528C83.045 22.464 82.9756 22.3947 82.9756 22.32L83.4556 21.12C83.6263 21.1733 83.925 21.2373 84.3516 21.312C84.789 21.3973 85.3436 21.44 86.0156 21.44H88.7516C89.1463 21.44 89.4236 21.3813 89.5836 21.264C89.7543 21.1467 89.8396 20.9387 89.8396 20.64V19.68C89.381 19.7653 88.837 19.84 88.2076 19.904C87.589 19.968 86.8743 20 86.0636 20H85.2636C84.7303 20 84.3196 19.9307 84.0316 19.792C83.7436 19.6533 83.5356 19.4773 83.4076 19.264C83.2903 19.0507 83.2156 18.8267 83.1836 18.592C83.1623 18.3573 83.1516 18.144 83.1516 17.952V14.88C83.1516 14.72 83.1623 14.528 83.1836 14.304C83.2156 14.0693 83.2903 13.84 83.4076 13.616C83.5356 13.392 83.7436 13.2053 84.0316 13.056C84.3303 12.9067 84.741 12.832 85.2636 12.832H86.0796C87.1996 12.832 88.069 12.8533 88.6876 12.896C89.317 12.9387 89.7756 12.9867 90.0636 13.04L90.4796 12.832H91.7916V20.768C91.7916 20.96 91.7596 21.1733 91.6956 21.408C91.6423 21.6427 91.5303 21.8667 91.3596 22.08C91.189 22.2933 90.9436 22.4693 90.6236 22.608C90.3036 22.7467 89.8823 22.816 89.3596 22.816H88.5596ZM85.8716 18.624H89.3436C89.589 18.624 89.733 18.6027 89.7756 18.56C89.8183 18.5173 89.8396 18.3787 89.8396 18.144V14.32C89.477 14.2987 89.0183 14.2773 88.4636 14.256C87.909 14.224 87.317 14.208 86.6876 14.208H85.8716C85.3596 14.208 85.1036 14.4213 85.1036 14.848V17.984C85.093 18.4107 85.349 18.624 85.8716 18.624ZM99.9531 20V10.592H102.065V20H99.9531ZM105.505 20V12.832H106.817L107.457 13.152C107.905 13.0667 108.444 12.992 109.073 12.928C109.702 12.864 110.422 12.832 111.233 12.832H112.033C112.566 12.832 112.977 12.9067 113.265 13.056C113.553 13.2053 113.756 13.392 113.873 13.616C114.001 13.84 114.076 14.0693 114.097 14.304C114.129 14.528 114.145 14.72 114.145 14.88V20H112.193V14.848C112.193 14.4213 111.937 14.208 111.425 14.208H107.937C107.734 14.208 107.601 14.2293 107.537 14.272C107.484 14.304 107.457 14.4 107.457 14.56V20H105.505Z"
+                        fill="white"
                       />
-                    </g>
-                    <path
-                      d="M60.0125 20L60.1725 18.72V10.592H62.2845V18.464H68.9085L69.5485 19.824C69.5485 19.8667 69.4045 19.9093 69.1165 19.952C68.8285 19.984 68.3325 20 67.6285 20H60.0125ZM73.8133 20C73.0986 20 72.5653 19.856 72.2133 19.568C71.8719 19.28 71.7013 18.8107 71.7013 18.16V14.88C71.7013 14.72 71.7119 14.528 71.7333 14.304C71.7653 14.0693 71.8399 13.84 71.9573 13.616C72.0853 13.392 72.2933 13.2053 72.5813 13.056C72.8799 12.9067 73.2906 12.832 73.8133 12.832H78.2293C78.7626 12.832 79.1733 12.9067 79.4613 13.056C79.7493 13.2053 79.9519 13.392 80.0693 13.616C80.1973 13.84 80.2719 14.0693 80.2933 14.304C80.3253 14.528 80.3413 14.72 80.3413 14.88V17.952C80.3413 18.144 80.3253 18.3573 80.2933 18.592C80.2719 18.8267 80.1973 19.0507 80.0693 19.264C79.9413 19.4773 79.7333 19.6533 79.4453 19.792C79.1573 19.9307 78.7519 20 78.2293 20H73.8133ZM74.4213 18.624H77.6213C78.1439 18.624 78.4053 18.4107 78.4053 17.984V14.848C78.4053 14.4213 78.1439 14.208 77.6213 14.208H74.4213C73.9093 14.208 73.6533 14.4213 73.6533 14.848V17.984C73.6533 18.4107 73.9093 18.624 74.4213 18.624ZM88.5596 22.816C87.3863 22.816 86.4316 22.8053 85.6956 22.784C84.9596 22.7627 84.3943 22.7307 83.9996 22.688C83.605 22.6453 83.333 22.592 83.1836 22.528C83.045 22.464 82.9756 22.3947 82.9756 22.32L83.4556 21.12C83.6263 21.1733 83.925 21.2373 84.3516 21.312C84.789 21.3973 85.3436 21.44 86.0156 21.44H88.7516C89.1463 21.44 89.4236 21.3813 89.5836 21.264C89.7543 21.1467 89.8396 20.9387 89.8396 20.64V19.68C89.381 19.7653 88.837 19.84 88.2076 19.904C87.589 19.968 86.8743 20 86.0636 20H85.2636C84.7303 20 84.3196 19.9307 84.0316 19.792C83.7436 19.6533 83.5356 19.4773 83.4076 19.264C83.2903 19.0507 83.2156 18.8267 83.1836 18.592C83.1623 18.3573 83.1516 18.144 83.1516 17.952V14.88C83.1516 14.72 83.1623 14.528 83.1836 14.304C83.2156 14.0693 83.2903 13.84 83.4076 13.616C83.5356 13.392 83.7436 13.2053 84.0316 13.056C84.3303 12.9067 84.741 12.832 85.2636 12.832H86.0796C87.1996 12.832 88.069 12.8533 88.6876 12.896C89.317 12.9387 89.7756 12.9867 90.0636 13.04L90.4796 12.832H91.7916V20.768C91.7916 20.96 91.7596 21.1733 91.6956 21.408C91.6423 21.6427 91.5303 21.8667 91.3596 22.08C91.189 22.2933 90.9436 22.4693 90.6236 22.608C90.3036 22.7467 89.8823 22.816 89.3596 22.816H88.5596ZM85.8716 18.624H89.3436C89.589 18.624 89.733 18.6027 89.7756 18.56C89.8183 18.5173 89.8396 18.3787 89.8396 18.144V14.32C89.477 14.2987 89.0183 14.2773 88.4636 14.256C87.909 14.224 87.317 14.208 86.6876 14.208H85.8716C85.3596 14.208 85.1036 14.4213 85.1036 14.848V17.984C85.093 18.4107 85.349 18.624 85.8716 18.624ZM99.9531 20V10.592H102.065V20H99.9531ZM105.505 20V12.832H106.817L107.457 13.152C107.905 13.0667 108.444 12.992 109.073 12.928C109.702 12.864 110.422 12.832 111.233 12.832H112.033C112.566 12.832 112.977 12.9067 113.265 13.056C113.553 13.2053 113.756 13.392 113.873 13.616C114.001 13.84 114.076 14.0693 114.097 14.304C114.129 14.528 114.145 14.72 114.145 14.88V20H112.193V14.848C112.193 14.4213 111.937 14.208 111.425 14.208H107.937C107.734 14.208 107.601 14.2293 107.537 14.272C107.484 14.304 107.457 14.4 107.457 14.56V20H105.505Z"
-                      fill="white"
-                    />
-                    <defs>
-                      <filter
-                        id="filter0_i_2109_568"
-                        x="-3.52002"
-                        y="-7"
-                        width="173.223"
-                        height="36.7588"
-                        filterUnits="userSpaceOnUse"
-                        color-interpolation-filters="sRGB"
-                      >
-                        <feFlood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <feBlend
-                          mode="normal"
-                          in="SourceGraphic"
-                          in2="BackgroundImageFix"
-                          result="shape"
-                        />
-                        <feColorMatrix
-                          in="SourceAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                          result="hardAlpha"
-                        />
-                        <feOffset dx="-7" dy="-7" />
-                        <feGaussianBlur stdDeviation="9.4" />
-                        <feComposite
-                          in2="hardAlpha"
-                          operator="arithmetic"
-                          k2="-1"
-                          k3="1"
-                        />
-                        <feColorMatrix
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.75 0"
-                        />
-                        <feBlend
-                          mode="normal"
-                          in2="shape"
-                          result="effect1_innerShadow_2109_568"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
+                      <defs>
+                        <filter
+                          id="filter0_i_2109_568"
+                          x="-3.52002"
+                          y="-7"
+                          width="173.223"
+                          height="36.7588"
+                          filterUnits="userSpaceOnUse"
+                          color-interpolation-filters="sRGB"
+                        >
+                          <feFlood
+                            flood-opacity="0"
+                            result="BackgroundImageFix"
+                          />
+                          <feBlend
+                            mode="normal"
+                            in="SourceGraphic"
+                            in2="BackgroundImageFix"
+                            result="shape"
+                          />
+                          <feColorMatrix
+                            in="SourceAlpha"
+                            type="matrix"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                            result="hardAlpha"
+                          />
+                          <feOffset dx="-7" dy="-7" />
+                          <feGaussianBlur stdDeviation="9.4" />
+                          <feComposite
+                            in2="hardAlpha"
+                            operator="arithmetic"
+                            k2="-1"
+                            k3="1"
+                          />
+                          <feColorMatrix
+                            type="matrix"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.75 0"
+                          />
+                          <feBlend
+                            mode="normal"
+                            in2="shape"
+                            result="effect1_innerShadow_2109_568"
+                          />
+                        </filter>
+                      </defs>
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -743,12 +749,12 @@ const Signup = () => {
               </svg>
             </div>
             {/* this svg is the sign up button in laptop view  */}
-              <div className="gsignup">
+            <div className="gsignup">
               <GoogleButton
                 type="light" // can be light or dark
                 onClick={onGoogleLoginSuccess}
               />
-              </div>
+            </div>
 
             <div className="h-[20%] w-full">
               <div className="w-full signup-button-blackDivAlreadyHaveAnAccount">
