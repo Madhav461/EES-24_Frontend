@@ -3,7 +3,8 @@ import queryString from 'query-string'
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from 'react-router-dom'
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const AuthContext = createContext()
 
 export default AuthContext;
@@ -43,8 +44,14 @@ export const AuthProvider = ({children}) => {
                 localStorage.setItem('authtokens', JSON.stringify(res.data));
                 if(check1.data.profile.college === '' || check1.data.profile.year === '') {
                     navigate("/gsignup")
+                    toast.info("Please fill college and year  !", {
+                        position: "bottom-right"
+                      });
                 } else {
                     navigate('/dashboard');
+                    toast.success("logged in succesfully !", {
+                        position: "bottom-right"
+                      });
                 }
             } catch (err) {
                 console.error(err);
@@ -75,8 +82,14 @@ export const AuthProvider = ({children}) => {
             }})
             console.log(otpreq);
             navigate('/otp');
+            toast.info("verify the otp sent to registered mail id ", {
+                position: "bottom-right"
+              });
         } catch (err) {
             console.error(err);
+            toast.error(" Something went wrong _auth1! ", {
+                position: "bottom-right"
+              });
         }
         setPageLoading(false);
     }
@@ -98,6 +111,9 @@ export const AuthProvider = ({children}) => {
             console.log(res.data)
             localStorage.setItem('authtokens', JSON.stringify(res.data))
             navigate('/dashboard')
+            toast.success("Logged in succesfully !", {
+                position: "bottom-right"
+              });
         } catch(err) {
             console.error(err);
         }
@@ -116,12 +132,18 @@ export const AuthProvider = ({children}) => {
             console.log(res)
         } catch(err) {
             console.log(err)
+            toast.error("Something went wrong _auth1!", {
+                position: "bottom-right"
+              });
         }
         setPageLoading(false)
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authtokens')
         navigate('/');
+        toast.success("loged out succesfully !", {
+            position: "bottom-right"
+          });
     }
 
     const updateUserInfo = async (validatedFormData) => {
@@ -141,9 +163,16 @@ export const AuthProvider = ({children}) => {
                 if(res.status === 200) {
                     loadUser()
                     navigate("/dashboard")
+                    // toast.success("")
+                    toast.success("credentials updated succesfully !", {
+                        position: "bottom-right"
+                      });
                 }
             } catch (err) {
                 console.error(err);
+                toast.error("something went wrong _auth2!", {
+                    position: "bottom-right"
+                  });
             }
         }
         setPageLoading(false)
@@ -172,6 +201,9 @@ export const AuthProvider = ({children}) => {
                 localStorage.setItem("authtokens", JSON.stringify(newTokens))
             } catch (err) {
                 console.error(err);
+                toast.error("Something went wrong _auth3!", {
+                    position: "bottom-right"
+                  });
             }
             if(loading) {
                 setLoading(false);

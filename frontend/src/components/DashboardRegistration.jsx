@@ -3,7 +3,8 @@ import { useState, useEffect, useContext } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
-
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
@@ -181,10 +182,16 @@ const DashboardRegistration = () => {
         }});
 
         console.log(response);
+        toast.success("Invite sent successfully!", {
+          position: "bottom-right"
+        });
 
       }
       catch(err) {
         console.error(err)
+        toast.error("Something went wrong _registration!", {
+          position: "bottom-right"
+        });
       }
   }
   
@@ -205,9 +212,23 @@ const DashboardRegistration = () => {
       }});
       console.log(dataToSend2);
       console.log('Response:', response.data);
+      toast.success(" Team registed successfully!", {
+        position: "bottom-right"
+      });
+      toast.info("Add a member by thier regitsred mail id !",{
+        position:"bottom-right"
+      });
+
       getTeams()
+
   } catch (error) {
       console.error('Error:', error);
+      toast.error("Something went wrong while registering the team!", {
+        position: "bottom-right"
+      });
+      toast.info("Enter a team name to get regitsered!",{
+        position:"bottom-right"
+      });
   }
 };
 
@@ -227,9 +248,15 @@ const DashboardRegistration = () => {
       }});
       console.log(dataToSend2);
       console.log('Response:', response.data);
+      toast.success(" Team registered successfully!", {
+        position: "bottom-right"
+      });
       getTeams()
   } catch (error) {
       console.error('Error:', error);
+      toast.error(" Something went wrong _registration!", {
+        position: "bottom-right"
+      });
   }
 };
 

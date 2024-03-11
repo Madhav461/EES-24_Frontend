@@ -16,6 +16,7 @@ import EditDashboard from "./components/editdash.js";
 // import Dashboard from "./components/dashboard.js";
 import DashboardTeam from "./components/DashboardTeam.jsx";
 import Gallery from "./components/gallery.js";
+// import Toasty from "./components/toasty.jsx";
 
 // import Events from "./components/events.js";
 import EventsHome from "./components/EventsHome.js";
@@ -29,7 +30,8 @@ import EventRegistration from "./components/EventRegistration.jsx";
 import ForgotPassword from "./components/ForgotPassword.js";
 import ResetPassword from "./components/ResetPassword.jsx";
 import { AuthProvider } from './context/AuthContext';
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 function App() {
@@ -37,12 +39,17 @@ function App() {
     <Router>
       <AuthProvider>
      <div className="flex flex-col w-[100vw]  max-h-fit  ">
-
+      <ToastContainer />
+     
      <Routes>
+
+
         <Route exact path="/" element={<LandingPage />} />
+
       </Routes>
       <div>
           <Routes>
+            {/* <Route exact path="/toast" element ={<Toasty/>}></Route> */}
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/gsignup" element={<Gsignup />} />

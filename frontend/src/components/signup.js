@@ -11,6 +11,8 @@ import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import Spinner from "./Spinner";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 // function getElementValue(id) {
 //   const element = document.getElementById(id);
@@ -49,6 +51,9 @@ const Signup = () => {
       window.location = res.data.authorization_url;
     } catch (err) {
       console.error(err);
+      toast.error("Something went wrong _sign_3!", {
+        position: "bottom-right"
+      });
     }
     setPageLoading(false);
   };
@@ -68,6 +73,9 @@ const Signup = () => {
         googleAuthenticate(state, code);
       } catch (err) {
         console.log(err);
+        toast.error("Something went wrong_sign 1 !", {
+          position: "bottom-right"
+        });
       }
     }
 
@@ -86,7 +94,14 @@ const Signup = () => {
     console.log(values);
     try {
       signUpUser(values);
+      toast.success("Signed up succesfully!", {
+        position: "bottom-right"
+      });
+
     } catch (err) {
+      toast.error("Something went wrong _sign_2!", {
+        position: "bottom-right"
+      });
       console.error(err);
     }
   };

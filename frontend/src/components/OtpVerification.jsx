@@ -9,7 +9,8 @@ import Background from "./background";
 import AuthContext from "../context/AuthContext";
 import queryString from "query-string"
 import Spinner from "./Spinner";
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const OtpVerification = (props) => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
@@ -37,8 +38,15 @@ const OtpVerification = (props) => {
 
       // Handle success or redirect the user as needed
       navigate("/dashboard");
+      toast.success("opt verified succesfully !", {
+        position: "bottom-right"
+      });
+
     } catch (error) {
       console.error("Error verifying OTP:", error);
+      toast.error("Something went wrong _otp!", {
+        position: "bottom-right"
+      });
       // Handle failure, show an error message, etc.
     }
     setPageLoading(false);

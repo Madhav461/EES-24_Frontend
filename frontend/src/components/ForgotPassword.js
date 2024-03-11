@@ -7,7 +7,8 @@ import { useFormik } from "formik";
 import { advancedSchema } from "../schemas";
 import axios from "axios";
 import queryString from 'query-string'
-
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
   
@@ -31,9 +32,16 @@ const ForgotPassword = () => {
       console.log(res);
       if(res.status === 200) {
         navigate('/resetpassword')
+        // toast.info ("Enter registered Mail id and the 4-digit otp sent !", {
+        //   position: "bottom-right"
+        // });
+
       }
     } catch (err) {
       console.error(err)
+      toast.error("Something went wrong _forgot!", {
+        position: "bottom-right"
+      });
     }
   };
 

@@ -6,7 +6,8 @@ import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
-
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import axios from "axios";
 import queryString from 'query-string';
@@ -14,7 +15,8 @@ import { useLocation } from 'react-router-dom';
 import AuthContext from "../context/AuthContext";
 
 import "./DashboardRegistration.css";
-
+// import {toast} from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 const DashboardTeam = () => {
   const { userDetails, authTokens, user } = useContext(AuthContext);
@@ -133,9 +135,18 @@ const DashboardTeam = () => {
       });
       console.log("response", response.data);
       // teamDetails.push(...(response.data));
+      toast.success("Team deleted successfully!", {
+        position: "bottom-right"
+      });
+      // toast.info("To edit a team ")
       fillTeams()
+      
+
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong _team_delete!", {
+        position: "bottom-right"
+      });
     };
   }
 

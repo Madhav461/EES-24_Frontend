@@ -11,6 +11,8 @@ import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 import axios from "axios";
 import Spinner from "./Spinner";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const onSubmit = async (values, actions) => {
   // console.log(values);
@@ -18,6 +20,11 @@ const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
+const notify=()=>{
+  toast.info("enter your registered mail id !", {
+    position: "bottom-right"
+  });
+}
 const handleClick = () => {
   console.log("hi");
 };
@@ -35,6 +42,9 @@ const Login = () => {
       loginUser(formData);
     } catch (err) {
       console.error(err);
+      toast.error("Something went wrong_login2!", {
+        position: "bottom-right"
+      });
     }
   }
 
@@ -70,6 +80,9 @@ const Login = () => {
         googleAuthenticate(state, code);
       } catch (err) {
         console.log(err);
+        toast.error("Something went wrong_login1!", {
+          position: "bottom-right"
+        });
       }
     }
     return () => {
@@ -321,9 +334,11 @@ const Login = () => {
                   />
                 </svg>
               </div>
-              <Link to="/forgotpassword">
-                <p className="forgotbutton">Forgot Password?</p>
+
+              <Link onClick={notify} to="/forgotpassword">
+                <p className="forgotbutton" >Forgot Password?</p>
               </Link>
+
             </form>
             <div className="w-[100%] h-[20%] flex  justify-center items-center laptopDesignElement ">
               <div
