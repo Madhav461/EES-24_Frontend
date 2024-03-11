@@ -100,7 +100,7 @@
 .teams-registered-dashboard {
     width: 350px;
     height: 250px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     /* overflow: hidden; */
     /* overflow: auto; */
     display: flex;

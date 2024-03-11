@@ -1425,7 +1425,7 @@ const DashboardRegistration = () => {
       </div>
 
       {/* Mobile view Santosh */}
-      <div className="event-registration-mobileview">
+      <div className="event-registration-mobileview flex flex-col items-center">
         <div className="upper-dashboard-mb dashboard-container-mobile-upper">
           <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
           <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
@@ -1509,8 +1509,20 @@ const DashboardRegistration = () => {
             </div>
           </div>
         </form>
+        <div
+          className="dash_mb_buttons  flex flex-row justify-between w-[90vw] mb-[20px] mt-[-20px] h-[12.5vw]">
+          <Link to="/dashboard/team" className="h-[100%]">
+              <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
+            </Link>
+
+            <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
+            
+            <Link to="/dashboard" className="h-[100%]">
+              <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
+            </Link>
+        </div>
       </div>
-      {/* Mobile view Santosh */}
+      {/* Mobile view ends here -Santosh*/}
     </div>
   );
 };

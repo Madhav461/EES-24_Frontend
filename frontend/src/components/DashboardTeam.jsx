@@ -139,11 +139,15 @@ const DashboardTeam = () => {
     };
   }
 
-  // const teamsRegistered = teamDetails.map((teamInfo, ind) => {
+  // const teamsRegistered = [{ teamName: "Team1", eventName: "DEVBITS", leader: "L1", member1: "M11", member2: "M12" }];
+  // if(teamDetails.length > 0) {
+  //   teamsRegistered = teamDetails.map((teamInfo, ind) => {
   //     return (
   //         <div className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</div>
-  //     )
+  //     );
   // });
+  // }
+
   const teamsRegistered = ({ teamName, ind }) => {
     return (
       <ul className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamName}</ul>
@@ -198,13 +202,11 @@ const DashboardTeam = () => {
 
   return (
     <div className="relative ">
-      <Navhome className="z-15" />
-      <div className="absolute ">
-
+      <div className="absolute z-[150]">
+        <Navhome />
       </div>
       {/* desktop view starts here*/}
       <div className="dash_desktopview relative overflow-hidden ">
-
         <div className="bgimg h-[100vh] w-[100vw] overflow-hidden dashboard-custom-background">
           <img
             className="object-cover w-[100%] "
@@ -216,38 +218,59 @@ const DashboardTeam = () => {
         {/* <div className="card absolute " style={{ left:'50%', transform:'translateX(-50%)', background: 'rgba(255, 255, 255, 0.05)', border: '1px white solid', backdropFilter: 'blur(20.50px)'}}>
          </div> */}
 
-
-
         {/* </santosh> */}
 
         <div
-          className="dashboard-background  card absolute"
+          className="dashboard-background dash-parth-card absolute"
           style={{
             left: "50%",
             transform: "translateX(-50%)",
             // background: "rgba(255, 255, 255, 0.05)",
-            top: '35%',
+            top: "35%",
             marginTop: "-1%",
           }}
         >
-          <div className="button7070 mt-[-10px] w-[20%] ml-[8px]">
-            <Link to="/dashboard">
-              <img src="/rightbutton.svg" alt="" className="rightbutton  w-[18%]" />
-            </Link>
-            <img src="/middlebutton.svg" alt="" className="middlebutton ml-[4px] w-[18.5%]" />
-            <Link to="/dashboard/registration">
-              <img src="/leftbutton.svg" alt="" className="leftbutton ml-[4px] w-[18%]" />
-            </Link>
-          </div>
           <div className="abhinav absolute">
+            <div
+              className="button7071"
+              style={{ transform: "translateX(-50%)" }}
+            >
+              <Link to="/dashboard" className="w-[18%] mt-[3.5px]">
+                <img
+                  src="/rightbutton.svg"
+                  alt=""
+                  className="rightbutton  w-[100%]"
+                />
+              </Link>
+              <img
+                src="/middlebutton.svg"
+                alt=""
+                className="middlebutton w-[18.5%]"
+              />
+              <Link to="/dashboard/registration"  className="w-[18%] mt-[3.5px]">
+                <img
+                  src="/leftbutton.svg"
+                  alt=""
+                  className="leftbutton w-[100%]"
+                />
+              </Link>
+            </div>
 
-            <img src="/dashboard_topelem.svg" className="w-[16%] mb-[-15px] ml-[20px]"></img>
+            <div>
+            <img
+              src="/dashboard_topelem.svg"
+              className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
+            ></img>
             <div className="flex">
               <img
                 src="/dashboardblack.svg"
                 className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
               />
-              <img src="/dashboard_sideelem.svg" className="md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"></img>
+              <img
+                src="/dashboard_sideelem.svg"
+                className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+              ></img>
+            </div>
             </div>
 
             <div className="y19    ">
@@ -261,15 +284,21 @@ const DashboardTeam = () => {
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >{name.length <=30?name:`${name.substring(0,30)}`}</span>{" "}
+                >
+                  {name.length <= 30 ? name : `${name.substring(0, 30)}`}
+                </span>{" "}
                 <span
                   type="email"
                   name="Email"
                   id="Email"
                   placeholder="email@itbhu.ac.in"
                   value={email}
-                  disabled="true">
-                 {email && email.length <= 40 ? email : `${email?.substring(0,40)}...`}</span> 
+                  disabled="true"
+                >
+                  {email && email.length <= 40
+                    ? email
+                    : `${email?.substring(0, 40)}...`}
+                </span>
               </p>
               <p className="y49">
                 {/* <span
@@ -287,13 +316,13 @@ const DashboardTeam = () => {
                   placeholder="IIT BHU Varanasi"
                   value={college}
                   disabled="true"
-                >{college}</span>{" "}
-                <span
-                  type="text"
-                  name="Year"
-                  id="Year"
-                  placeholder="Ist Year"
-                > Year {year}</span>
+                >
+                  {college}
+                </span>{" "}
+                <span type="text" name="Year" id="Year" placeholder="Ist Year">
+                  {" "}
+                  Year {year}
+                </span>
               </p>
               <p className="yashtheman">GRADE {year}</p>
               <img src="/motiline.svg" alt="" class="y29" />
@@ -310,7 +339,7 @@ const DashboardTeam = () => {
             justifyContent: "space-between",
             left: "50%",
             transform: "translateX(-50%)",
-            marginTop: "-4%",
+            marginTop: "0%",
           }}
         >
           <div className=" h-[80%] ">
@@ -332,7 +361,10 @@ const DashboardTeam = () => {
               height: "min-content",
             }}
           >
-            <div className="relative " style={{ fontSize: '30px', marginTop: '8%' }}>
+            <div
+              className="relative "
+              style={{ fontSize: "30px", marginTop: "8%" }}
+            >
               <img
                 src="/Vector_347.svg"
                 alt="img"
@@ -361,8 +393,6 @@ const DashboardTeam = () => {
           </div>
         </div>
 
-
-
         {/* Added by Santosh -inner content Desktop view */}
         <div
           className=" absolute team-dashboard-container  z-50"
@@ -382,9 +412,7 @@ const DashboardTeam = () => {
               {/* devbits */}
               <div
                 className="devbitsEventBtn   w-[50%] cursor-pointer"
-                onClick={() =>
-                  handleEventClick("devbits")
-                }
+                onClick={() => handleEventClick("devbits")}
               >
                 {category !== "devbits" ? (
                   <div>
@@ -1271,24 +1299,36 @@ const DashboardTeam = () => {
           </div>
 
           <div className="team-dashboard-members">
-            {isActive && <>
-              <div className="team-dashboard-teamName-display">{teamName}</div>
-              <div className="team-dashboard-eventName-display">{eventName}</div>
-              <div className="team-dashboard-members-names">
-                <div className="team-dashboard-mem-type">Leader</div>
-                <div className="team-dashboard-mem-details">{leader}</div>
-              </div>
-              <div className="team-dashboard-members-names">
-                <div className="team-dashboard-mem-type">Member 1</div>
-                <div className="team-dashboard-mem-details">{member1}</div>
-              </div>
-              <div className="team-dashboard-members-names">
-                <div className="team-dashboard-mem-type">Member 2</div>
-                <div className="team-dashboard-mem-details">{member2}</div>
-              </div>
-              <div className="team-dashboard-members-names">
-                <img className="team-dashboard-icons" src="/dashboard-team-delete.svg" alt="" onClick={handleDelete} />
-              </div> </>}
+            {isActive && (
+              <>
+                <div className="team-dashboard-teamName-display">
+                  {teamName}
+                </div>
+                <div className="team-dashboard-eventName-display">
+                  {eventName}
+                </div>
+                <div className="team-dashboard-members-names">
+                  <div className="team-dashboard-mem-type">Leader</div>
+                  <div className="team-dashboard-mem-details">{leader}</div>
+                </div>
+                <div className="team-dashboard-members-names">
+                  <div className="team-dashboard-mem-type">Member 1</div>
+                  <div className="team-dashboard-mem-details">{member1}</div>
+                </div>
+                <div className="team-dashboard-members-names">
+                  <div className="team-dashboard-mem-type">Member 2</div>
+                  <div className="team-dashboard-mem-details">{member2}</div>
+                </div>
+                <div className="team-dashboard-members-names">
+                  <img
+                    className="team-dashboard-icons"
+                    src="/dashboard-team-delete.svg"
+                    alt=""
+                    onClick={handleDelete}
+                  />
+                </div>{" "}
+              </>
+            )}
           </div>
 
           {/* <div className="team-dashboard-radinite">
@@ -1301,11 +1341,9 @@ const DashboardTeam = () => {
         alt="radinite"
     />
 </div> */}
-
         </div>
 
         {/* Added by Santosh - Desktop view -close*/}
-
       </div>
 
       {/* end of desktop view */}
@@ -1325,7 +1363,7 @@ const DashboardTeam = () => {
           />
         </div>
         {/* clipPath:'polygon(27%,36% 97.5%,36% 97.5%,94% 27%,94%)' , transform:'scale(0.15)',transform:'translateX(-50%)' , */}
-
+      {/* Parth */}
         <div className="side_svgs leftsvgs absolute left-[4%] top-[7%] flex flex-col w-[3%] ">
           <img src="/Vector 384.svg" alt="img" className=" w-[100%]" />
           <img src="/Vector 387.svg" alt="img" className=" w-[100%]" />
@@ -1375,9 +1413,10 @@ const DashboardTeam = () => {
               className="absolute right-[-65%] h-[300%]"
               style={{ top: "50%", transform: "translateY(-50%)" }}
             />
-            PROFILE
+            TEAMS
           </div>
         </div>
+        {/* Parth */}
 
         <div
           className="main_card relative"
@@ -1400,34 +1439,25 @@ const DashboardTeam = () => {
                 transform: "translateX(-50%)",
               }}
             />
-            {/* Added by Santosh */}
 
             {/* Added by Santosh */}
           </div>
         </div>
 
         <div
-          className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
-          style={{ left: "50%", transform: "translateX(-50%)" }}
-        >
-          <div className="h-[100%]">
-            <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
-            <img
-              src="/Vector 416.svg"
-              alt="img"
-              className=" h-[40%] absolute left-[5px] top-[25%] "
-            />
+            className="dash_mb_buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
+            style={{ left: "50%", transform: "translateX(-50%)" }}
+          >
+            <Link to="/dashboard" className="h-[100%]">
+              <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
+            </Link>
+
+            <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
+            
+            <Link to="/dashboard/registration" className="h-[100%]">
+              <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
+            </Link>
           </div>
-          <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
-          <div className="h-[100%]">
-            <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
-            <img
-              src="/Vector 417.svg"
-              alt="img"
-              className=" h-[40%] absolute right-[5px] top-[25%]"
-            />
-          </div>
-        </div>
 
         {/* Added by Santosh - Mobile view */}
         {/* <div
@@ -1438,18 +1468,21 @@ const DashboardTeam = () => {
                     top: "50%",
                 }}
             > */}
-        <div className="dash-team-mobile-container absolute"
+        <div
+          className="dash-team-mobile-container absolute"
           style={{
             left: "50%",
             transform: "translateX(-50%) translateY(-30%)",
             top: "50%",
-          }}>
-          <div className="upper-dashboard-mb">
-            <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-            <img className="dmb-upper dmb-upper2" src="/dmbupper2.svg" />
-            <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-            <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
-            <img className="dmb-upper dmb-upper1" src="/dmbupper1.svg" />
+          }}
+        >
+          <div className="upper-dashboard-mb flex-col justify-center">
+            {/* <div className="dash_mb_Select_team_heading text-center">
+              Select a Team
+              </div> */}
+              <div className="teams-registered-dashboard-mb">
+                {teamsRegistered}
+              </div>
           </div>
 
           <div className="container-dashboard-mb">
@@ -1458,9 +1491,10 @@ const DashboardTeam = () => {
               {teamName}
             </div>
             <div className="p1-dashboard-team-mb">
-
               {/* <div className="team-dashboard-members"> */}
-              <div className="team-dashboard-eventName-display">{eventName}</div>
+              <div className="team-dashboard-eventName-display">
+                {eventName}
+              </div>
               <div className="team-dashboard-members-names">
                 <div>Leader</div>
                 <div>{leader}</div>
@@ -1501,10 +1535,8 @@ const DashboardTeam = () => {
           </div>
         </div>
         {/* Added by Santosh - Mobile view */}
-
       </div>
       {/* end of mobile view */}
-
     </div>
   );
 };

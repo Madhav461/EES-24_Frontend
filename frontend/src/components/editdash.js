@@ -330,23 +330,23 @@ const EditDashboard = () => {
             style={{
               textAlign: "center",
               color: "white",
-              fontSize: "2.4vw",
+              fontSize: "3.4vw",
               fontFamily: "Michroma",
               fontWeight: "400",
-              letterSpacing: "1.5vw",
+              letterSpacing: "1.20vw",
               wordWrap: "break-word",
             }}
           >
             <img
               src="/Group 335.svg"
               alt="img"
-              className="absolute left-[-65%]  h-[300%]"
+              className="absolute left-[-35%]  h-[250%]"
               style={{ top: "50%", transform: "translateY(-50%)" }}
             />
             <img
               src="/Group 334.svg"
               alt="img"
-              className="absolute right-[-65%] h-[300%]"
+              className="absolute right-[-35%] h-[250%]"
               style={{ top: "50%", transform: "translateY(-50%)" }}
             />
             EDIT PROFILE
@@ -427,26 +427,18 @@ const EditDashboard = () => {
         </div>
 
         <div
-          className="buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
+          className="dash_mb_buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
           style={{ left: "50%", transform: "translateX(-50%)" }}
         >
-          <div className="h-[100%]">
-            <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
-            <img
-              src="/Vector 416.svg"
-              alt="img"
-              className=" h-[40%] absolute left-[5px] top-[25%] "
-            />
-          </div>
-          <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
-          <div className="h-[100%]">
-            <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
-            <img
-              src="/Vector 417.svg"
-              alt="img"
-              className=" h-[40%] absolute right-[5px] top-[25%]"
-            />
-          </div>
+          <Link to="/dashboard/registration" className="h-[100%]">
+              <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
+            </Link>
+
+            <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
+            
+            <Link to="/dashboard/team" className="h-[100%]">
+              <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
+            </Link>
         </div>
       </div>
     </div>
