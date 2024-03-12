@@ -5,7 +5,11 @@ import { jwtDecode } from "jwt-decode";
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import dayjs from 'dayjs'
+
 const AuthContext = createContext()
+
+export const axiosInstance = axios.create();
 
 export default AuthContext;
 
@@ -30,7 +34,7 @@ export const AuthProvider = ({children}) => {
             console.log(formBody);
             try {
                 const res = await axios.post(`https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2/`, formBody, { type : 'application/x-www-form-urlencoded', withCredentials : true})
-                const check1 = await axios.get(`https://api.eesiitbhu.co.in/api/user/`, {
+                const check1 = await axiosInstance.get(`https://api.eesiitbhu.co.in/api/user/`, {
                     headers : {
                         "Authorization" : `Bearer ${res.data.access}`
                     }
@@ -77,15 +81,16 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(res.data);
             setUser(jwtDecode(res.data.access));
             localStorage.setItem('authtokens', JSON.stringify(res.data));
+            navigate('/otp');
             const otpreq = await axios.get('https://api.eesiitbhu.co.in/api/user/verify/', {headers : {
             "Authorization" : `Bearer ${res.data.access}`
             }})
             console.log(otpreq);
-            navigate('/otp');
             toast.info("verify the otp sent to registered mail id ", {
                 position: "bottom-right"
-              });
+            });
         } catch (err) {
+            navigate('/')
             console.error(err);
             toast.error(" Something went wrong _auth1! ", {
                 position: "bottom-right"
@@ -111,6 +116,7 @@ export const AuthProvider = ({children}) => {
             console.log(res.data)
             localStorage.setItem('authtokens', JSON.stringify(res.data))
             navigate('/dashboard')
+            window.location.reload();
             toast.success("Logged in succesfully !", {
                 position: "bottom-right"
               });
@@ -122,6 +128,7 @@ export const AuthProvider = ({children}) => {
 
 
     const logoutUser = async () => {
+        console.log("logoutUser");
         setPageLoading(true)
         const details = {
             "refresh_token" : authTokens.refresh
@@ -134,7 +141,7 @@ export const AuthProvider = ({children}) => {
             console.log(err)
             toast.error("Something went wrong _auth1!", {
                 position: "bottom-right"
-              });
+            });
         }
         setPageLoading(false)
         setAuthTokens(null)
@@ -143,7 +150,7 @@ export const AuthProvider = ({children}) => {
         navigate('/');
         toast.success("loged out succesfully !", {
             position: "bottom-right"
-          });
+        });
     }
 
     const updateUserInfo = async (validatedFormData) => {
@@ -156,7 +163,7 @@ export const AuthProvider = ({children}) => {
             }
             const formData = queryString.stringify(details)
             try {
-                const res = await axios.patch('https://api.eesiitbhu.co.in/api/user/update/', formData, {headers : {
+                const res = await axiosInstance.patch('https://api.eesiitbhu.co.in/api/user/update/', formData, {headers : {
                     "Authorization" : `Bearer ${authTokens.access}`
                 }})
                 console.log(res);
@@ -178,49 +185,40 @@ export const AuthProvider = ({children}) => {
         setPageLoading(false)
     }
 
-    const updateToken = async () => {
-        console.log("Update token called");
-        console.log(user)
-        if(authTokens) {
-            const token = {
-                "refresh" : authTokens.refresh,
-            }
-            const formBody = queryString.stringify(token);
-            console.log(formBody);
-            try {
-                const res = await axios.post('https://api.eesiitbhu.co.in/api/user/auth/jwt/refresh/', formBody, {
-                    type : 'application/json'
-                });
-                console.log(res);
-                const newTokens = {
-                    'access' : res.data.access,
-                    'refresh' : res.data.refresh,
-                }
-                setAuthTokens(newTokens)
-                setUser(jwtDecode(res.data.access))
-                localStorage.setItem("authtokens", JSON.stringify(newTokens))
-            } catch (err) {
-                console.error(err);
-                toast.error("Something went wrong _auth3!", {
-                    position: "bottom-right"
-                  });
-            }
-            if(loading) {
-                setLoading(false);
-            }
+    axiosInstance.interceptors.request.use(async (req) => {
+        console.log("Interceptor Ran");
+        const isExpired = dayjs.unix(user?.exp).diff(dayjs()) < 1;
+        console.log(isExpired)
+
+        if(!isExpired) return req;
+
+        const token = {
+            "refresh" : authTokens.refresh,
         }
-    }
+        const formBody = queryString.stringify(token);
+        try{
+            const res = await axios.post('https://api.eesiitbhu.co.in/api/user/auth/jwt/refresh/', formBody)
+            console.log(res);
+            setAuthTokens(res.data);
+            setUser(jwtDecode(res.data.access));
+            if(res.status >= 400) {
+                console.log("Error");
+                logoutUser();
+            }
+        } catch(err) {
+            console.log("Err");
+            logoutUser();
+            console.error(err);
+        }
+    })
 
     const loadUser = async () => {
         setPageLoading(true)
         try {
-            const res = await axios.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
+            const res = await axiosInstance.get('https://api.eesiitbhu.co.in/api/user/', { headers : {
             "Authorization" : `Bearer ${authTokens.access}`
             }})
             console.log(res.data);
-            if(res.status >= 400) {
-                updateToken();
-            }
             setUserDetails(res.data)
         } catch (err) {
             console.error(err);
@@ -241,19 +239,6 @@ export const AuthProvider = ({children}) => {
         setPageLoading : setPageLoading,
         loadUser : loadUser,
     }
-
-    useEffect(() => {
-        if(loading) {
-            updateToken()
-        }
-        const tfMinutes = 1000*60*25
-        const interval = setInterval(()=> {
-            if(authTokens) {
-                updateToken()
-            }
-        }, tfMinutes)
-        return () => clearInterval(interval)
-    }, [authTokens, loading])
 
     useEffect(() => {
         let mounted = true;

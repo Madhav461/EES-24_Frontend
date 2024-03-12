@@ -11,13 +11,16 @@ import queryString from "query-string"
 import Spinner from "./Spinner";
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { axiosInstance } from "../context/AuthContext";
+
 const OtpVerification = (props) => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
-  const { authTokens, setPageLoading, pageloading } = useContext(AuthContext)
+  const { authTokens, setPageLoading, pageloading, user } = useContext(AuthContext)
 
-  const onSubmit = async () => {
+  const onSubmit = async (values) => {
     // console.log(values);
+    console.log(values);
     setPageLoading(true)
     const data = {
       "otp" : values.otpverification.toString()
@@ -25,7 +28,7 @@ const OtpVerification = (props) => {
     const formdata = queryString.stringify(data);
     console.log(formdata);
     try {
-      const otpVerificationResponse = await axios.post(
+      const otpVerificationResponse = await axiosInstance.post(
         "https://api.eesiitbhu.co.in/api/user/verify/", formdata ,
         {
           headers: {
@@ -95,7 +98,9 @@ const OtpVerification = (props) => {
                   <p className="error">{errors.otpverification}</p>
                 )}
         
-          <button type="submit" className="w-[100%]" style={{
+          <button type="button" className="w-[100%]"
+          onClick={handleSubmit}
+           style={{
             width:'100%',
             justifyContent: 'center',
              fontFamily: "Goldman",

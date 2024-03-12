@@ -14,7 +14,7 @@ import "./ForgotPassword.css";
 import "./DashboardRegistration.css";
 import {Link} from  "react-router-dom";
 import axios from 'axios';
-import AuthContext from "../context/AuthContext";
+import AuthContext, { axiosInstance } from "../context/AuthContext";
 import queryString from 'query-string';
 
 import Select from 'react-select';
@@ -77,19 +77,6 @@ const DashboardRegistration = () => {
       event.preventDefault();
   };
 
-  // const handleBtnClick = (id) => {
-  //     const targetDiv = document.getElementById(id);
-  //     targetDiv.style.display = "block";
-
-  //     if(id === "fp-success") {
-  //       handleRegister();
-  //     }
-  //     else {
-  //       handleInvite();
-  //     }
-  // };
-  // Santosh
-
   const events = {
     devbits,
     cassandra,
@@ -127,6 +114,7 @@ const DashboardRegistration = () => {
   const [memberEmail, setMemberEmail]= useState('')
 
   const [teamsIn , setTeamsIn]= useState([]);
+  const [filteredTeamNames, setFilteredTeamNames] = useState([]);
 
   useEffect(() => {
     if(userDetails) {
@@ -137,7 +125,7 @@ const DashboardRegistration = () => {
 
   const getTeams = async () => {
     try {
-      const response = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/', {
+      const response = await axiosInstance.get('https://api.eesiitbhu.co.in/udyam/teams/', {
         headers: {
           "Authorization": `Bearer ${authTokens.access}`
         }
@@ -147,11 +135,12 @@ const DashboardRegistration = () => {
       
       // const eventNames = response.data.map((item) => item.event_name);
       const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
-      const eventNames2=eventNames.map(item=> item.event_name)
+      const eventNames2 = eventNames.map(item => item.event_name)
+      setFilteredTeamNames(eventNames);
       console.log('eventNames', eventNames);
       setTeamsIn(eventNames2);
       console.log('teamsin');
-      console.log(teamsIn);
+      console.log(eventNames2);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -177,7 +166,7 @@ const DashboardRegistration = () => {
 
       try{
 
-        const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/invite/', dataToSend2, {headers :{
+        const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/invite/', dataToSend2, {headers :{
           "Authorization" :`Bearer ${authTokens.access}`
         }});
 
@@ -207,7 +196,7 @@ const DashboardRegistration = () => {
     console.log(dataToSend);
 
     try {
-      const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
+      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
         "Authorization" :`Bearer ${authTokens.access}`
       }});
       console.log(dataToSend2);
@@ -243,7 +232,7 @@ const DashboardRegistration = () => {
     console.log(dataToSend);
 
     try {
-      const response = await axios.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
+      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
         "Authorization" :`Bearer ${authTokens.access}`
       }});
       console.log(dataToSend2);
@@ -394,9 +383,13 @@ const DashboardRegistration = () => {
               <div
                 className="devbitsEventBtn   w-[50%] cursor-pointer"
                 onClick={() => 
-                
-                  setCategory("devbits") 
-
+                  {
+                    setCategory("devbits") 
+                    if(teamsIn.includes("devbits")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "devbits")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "devbits")[0].team_name)
+                    }
+                  }
                 }
               >
                 {category !== "devbits" ? (
@@ -507,7 +500,13 @@ const DashboardRegistration = () => {
               {/* cassandra */}
               <div
                 className="CassandraEventBtn  w-[50%] cursor-pointer"
-                onClick={() => setCategory("cassandra")}
+                onClick={() => {
+                  setCategory("cassandra") 
+                    if(teamsIn.includes("cassandra")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "cassandra")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "cassandra")[0].team_name)
+                    }
+                }}
               >
                 {category !== "cassandra" ? (
                   <div>
@@ -619,7 +618,13 @@ const DashboardRegistration = () => {
               {/* mosaic */}
               <div
                 className="MosaicEventBtn w-[50%] cursor-pointer"
-                onClick={() => setCategory("mosaic")}
+                onClick={() => {
+                  setCategory("mosaic") 
+                    if(teamsIn.includes("mosaic")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "mosaic")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "mosaic")[0].team_name)
+                    }
+                }}
               >
                 {category !== "mosaic" ? (
                   <div>
@@ -731,7 +736,13 @@ const DashboardRegistration = () => {
               {/*  funckit */}
               <div
                 className="FunckitEventBtn  w-[50%] cursor-pointer"
-                onClick={() => setCategory("funckit")}
+                onClick={() => {
+                  setCategory("funckit") 
+                    if(teamsIn.includes("funckit")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "funckit")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "funckit")[0].team_name)
+                    }
+                }}
               >
                 {category !== "funckit" ? (
                   <div>
@@ -842,7 +853,13 @@ const DashboardRegistration = () => {
               {/* digisim */}
               <div
                 className="DigisimEventBtn w-[50%]  cursor-pointer"
-                onClick={() => setCategory("digisim")}
+                onClick={() => {
+                  setCategory("digisim") 
+                    if(teamsIn.includes("digisim")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "digisim")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "digisim")[0].team_name)
+                    }
+                }}
               >
                 {category !== "digisim" ? (
                   <div>
@@ -952,7 +969,13 @@ const DashboardRegistration = () => {
               {/* i-chip */}
               <div
                 className="IchipEventBtn  w-[50%] cursor-pointer"
-                onClick={() => setCategory("ichip")}
+                onClick={() => {
+                  setCategory("ichip") 
+                    if(teamsIn.includes("ichip")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "ichip")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "ichip")[0].team_name)
+                    }
+                }}
               >
                 {category !== "ichip" ? (
                   <div>
@@ -1062,7 +1085,13 @@ const DashboardRegistration = () => {
               {/* x-iota */}
               <div
                 className="XiotaEventBtn w-[50%] cursor-pointer"
-                onClick={() => setCategory("xiota")}
+                onClick={() => {
+                  setCategory("xiota") 
+                    if(teamsIn.includes("xiota")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "xiota")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "xiota")[0].team_name)
+                    }
+                }}
               >
                 {category !== "xiota" ? (
                   <div>
@@ -1174,7 +1203,13 @@ const DashboardRegistration = () => {
               {/* x-iota */}
               <div
                 className="CommnetEventBtn w-[50%] cursor-pointer"
-                onClick={() => setCategory("commnet")}
+                onClick={() => {
+                  setCategory("commnet") 
+                    if(teamsIn.includes("commnet")) {
+                      setTeamName(filteredTeamNames.filter(items => items.event_name === "commnet")[0].team_name)
+                      console.log(filteredTeamNames.filter(items => items.event_name === "commnet")[0].team_name)
+                    }
+                }}
               >
                 {category !== "commnet" ? (
                   <div>
@@ -1289,6 +1324,22 @@ const DashboardRegistration = () => {
                 </div>
               ) : (
                 <div className=" flex flex-col justify-around absolute w-[100%] h-[60%] ">
+                {  teamsIn.includes(category) ? <input
+                    className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                    type="text"
+                    placeholder={filteredTeamNames.filter(item => item.event_name === category)[0]?.team_name}
+                    value={filteredTeamNames.filter(item => item.event_name === category)[0]?.team_name}
+                    style={{
+                      fontFamily: "Goldman",
+                      fontSize: "1vw",
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                      letterSpacing: "1.2px",
+                      borderBottom: "1px solid #FFF",
+                    }}
+                    disabled
+                  /> :
                   <input
                     className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                     type="text"
@@ -1309,7 +1360,7 @@ const DashboardRegistration = () => {
                       borderBottom: "1px solid #FFF",
                     }}
                   />
-
+                }
                   <div className="   flex flex-col   w-[100%]">
                     <div className="  flex  justify-evenly ">
                       <p className=" dashboardtext  "> Leader  </p>

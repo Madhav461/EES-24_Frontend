@@ -12,7 +12,7 @@ import { useContext } from "react";
 import axios from "axios";
 import queryString from 'query-string';
 import { useLocation } from 'react-router-dom';
-import AuthContext from "../context/AuthContext";
+import AuthContext, { axiosInstance } from "../context/AuthContext";
 
 import "./DashboardRegistration.css";
 // import {toast} from "react-toastify";
@@ -74,7 +74,7 @@ const DashboardTeam = () => {
 
   const fillTeams = async (route) => {
     try {
-      const response = await axios.get(`https://api.eesiitbhu.co.in/udyam/teams/`, {
+      const response = await axiosInstance.get(`https://api.eesiitbhu.co.in/udyam/teams/`, {
         headers: {
           "Authorization": `Bearer ${authTokens.access}`
         }
@@ -128,7 +128,7 @@ const DashboardTeam = () => {
     }
     const formData = queryString.stringify(details)
     try {
-      const response = await axios.post(`https://api.eesiitbhu.co.in/udyam/teams/delete/`, formData, {
+      const response = await axiosInstance.post(`https://api.eesiitbhu.co.in/udyam/teams/delete/`, formData, {
         headers: {
           "Authorization": `Bearer ${authTokens.access}`
         }
