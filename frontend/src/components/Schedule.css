@@ -11,25 +11,77 @@
     font-size: 20px;
 
 }
+.Schedule_screen{
+    height: 1088px;
+}
+.Schedule_grid{
+    height: 938px;
+    font-size: 30px;
+}
+.schedule_gap{
+    height: 150px;
+}
+.Schedule_display{
+    font-size: 20px;
+    font-family:Audiowide;
+    word-spacing: 8px;
+    letter-spacing: 1.5px;
+    line-height: 28px;
+}
+
+/* @media screen and (max-width: 1980px){
+    #Schedule_screen{
+        height: 1088px;
+    }
+    #Schedule_grid{
+        height: 938px;
+        font-size: 30px;
+    }
+} */
 @media screen and (max-width: 1080px){
     #schedule_title{
         font-size: 68px;
     }
+
+    
 }
 @media screen and (max-width: 860px){
+    .Schedule_display{
+        font-size: 10px;
+        font-family:Audiowide;
+        word-spacing: 4px;
+        letter-spacing: 1.5px;
+        line-height: 20px;
+    }
     #schedule_title{
         font-size: 54px;
     }
+    #schedule_title{
+        font-size: 28px;
+    }
+    .Schedule_screen{
+        height: 600px;
+    }
+    .Schedule_grid{
+        height: 500px;
+        font-size: 15px;
+    }
+    .schedule_gap{
+        height: 100px;
+    }
+
 }
 @media screen and (max-width: 650px){
     #schedule_title{
         font-size: 30px;
     }
+
+    
 }
 @media screen and (max-width: 480px){
-    #schedule_title{
-        font-size: 28px;
-    }
+
+
+    
 }
 @media screen and (max-width: 375px){
     #schedule_title{
