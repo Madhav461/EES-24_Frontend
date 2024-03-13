@@ -94,9 +94,9 @@ const Signup = () => {
     console.log(values);
     try {
       signUpUser(values);
-      toast.success("Signed up succesfully!", {
-        position: "bottom-right"
-      });
+      // toast.success("Signed up succesfully!", {
+      //   position: "bottom-right"
+      // });
 
     } catch (err) {
       toast.error("Something went wrong _sign_2!", {
