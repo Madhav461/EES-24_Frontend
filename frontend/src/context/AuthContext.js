@@ -200,6 +200,13 @@ export const AuthProvider = ({children}) => {
 
         if(!isExpired) return req;
 
+        const refreshDecoded = jwtDecode(authTokens?.refresh)
+        console.log(refreshDecoded);
+        const isRefreshExpired = dayjs.unix(refreshDecoded?.exp).diff(dayjs()) < 1;
+        if(isRefreshExpired) {
+            logoutUser();
+            return;
+        }
         const token = {
             "refresh" : authTokens.refresh,
         }
