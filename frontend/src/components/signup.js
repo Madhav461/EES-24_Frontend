@@ -42,7 +42,7 @@ const Signup = () => {
     setPageLoading(true);
     try {
       const res = await axios.get(
-        "https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=http://localhost:3000/signup",
+        `https://api.eesiitbhu.co.in/api/user/auth/social/o/google-oauth2?redirect_uri=${window.location.href}`,
         {
           withCredentials: true,
         }
