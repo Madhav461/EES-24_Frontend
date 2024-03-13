@@ -32,9 +32,9 @@ const ForgotPassword = () => {
       console.log(res);
       if(res.status === 200) {
         navigate('/resetpassword')
-        // toast.info ("Enter registered Mail id and the 4-digit otp sent !", {
-        //   position: "bottom-right"
-        // });
+        toast.info ("Enter the 4-digit otp sent to your registered mail id !", {
+          position: "bottom-right"
+        });
 
       }
     } catch (err) {

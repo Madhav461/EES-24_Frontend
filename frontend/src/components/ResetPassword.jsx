@@ -9,7 +9,8 @@ import './resetpassword.css';
 import { getElementError } from "@testing-library/react";
 import axios from "axios";
 import queryString from 'query-string'
-
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const ResetPassword = () => {
   // const [email, setEmail] = useState("");
@@ -45,11 +46,27 @@ const ResetPassword = () => {
     }
     console.log(details);
     const formData = queryString.stringify(details)
-    const res = await axios.post('https://api.eesiitbhu.co.in/api/user/change-password/', formData)
-    console.log(res)
-    if(res.status == 200) {
-      navigate('/login')
+    try {
+      const res = await axios.post('https://api.eesiitbhu.co.in/api/user/change-password/', formData)
+      console.log(res)
+      if(res.status == 200) {
+        navigate('/login')
+        toast.success("Password updated successfully !", {
+          position: "bottom-right"
+        });
+      }
+      else{
+        toast.error("Something went wrong !", {
+          position: "bottom-right"
+        });
+      }
+    } catch (err) {
+      toast.error("Something went wrong !", {
+        position: "bottom-right"
+      });
+      console.error(err)
     }
+    
   };
 
   const {

@@ -74,6 +74,11 @@ export const AuthProvider = ({children}) => {
         console.log(formBody);
         try {
             const res = await axios.post(`https://api.eesiitbhu.co.in/api/user/register/`, formBody, { type : 'application/json'})
+            if(res.status === 400) {
+                toast.error(res.data, {
+                    position: "bottom-right"
+                  });
+            }
             setAuthTokens(res.data);
             setUser(jwtDecode(res.data.access));
             localStorage.setItem('authtokens', JSON.stringify(res.data));
@@ -87,7 +92,7 @@ export const AuthProvider = ({children}) => {
               });
         } catch (err) {
             console.error(err);
-            toast.error(" Something went wrong _auth1! ", {
+            toast.error("User already exists", {
                 position: "bottom-right"
               });
         }
@@ -115,6 +120,9 @@ export const AuthProvider = ({children}) => {
                 position: "bottom-right"
               });
         } catch(err) {
+            toast.error("invalid credentials !", {
+                position: "bottom-right"
+              });
             console.error(err);
         }
         setPageLoading(false)
@@ -180,13 +188,13 @@ export const AuthProvider = ({children}) => {
 
     const updateToken = async () => {
         console.log("Update token called");
-        console.log(user)
+        // console.log(user)
         if(authTokens) {
             const token = {
                 "refresh" : authTokens.refresh,
             }
             const formBody = queryString.stringify(token);
-            console.log(formBody);
+            // console.log(formBody);
             try {
                 const res = await axios.post('https://api.eesiitbhu.co.in/api/user/auth/jwt/refresh/', formBody, {
                     type : 'application/json'
@@ -201,9 +209,9 @@ export const AuthProvider = ({children}) => {
                 localStorage.setItem("authtokens", JSON.stringify(newTokens))
             } catch (err) {
                 console.error(err);
-                toast.error("Something went wrong _auth3!", {
-                    position: "bottom-right"
-                  });
+                // toast.error("Something went wrong _auth3!", {
+                //     position: "bottom-right"
+                //   });
             }
             if(loading) {
                 setLoading(false);
@@ -246,7 +254,7 @@ export const AuthProvider = ({children}) => {
         if(loading) {
             updateToken()
         }
-        const tfMinutes = 1000*60*25
+        const tfMinutes = 1000*25*60
         const interval = setInterval(()=> {
             if(authTokens) {
                 updateToken()

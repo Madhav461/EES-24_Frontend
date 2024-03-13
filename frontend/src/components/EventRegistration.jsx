@@ -1,24 +1,77 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import Background from "./background";
 import { useNavigate } from "react-router-dom";
 import "./EventRegistration.css";
+import { useLocation } from "react-router-dom";
+import queryString from "query-string";
+import axios from 'axios'
+import AuthContext from "../context/AuthContext";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const EventRegistration = () => {
 
-    const teamDetails = { teamName: "TeamName", eventName: "DEVBITS", leader: "Santosh", member1: "You", member2: "Unknown" };
-
-    const [teamName, setTeamName] = useState(teamDetails.teamName);
-    const [eventName, setEventName] = useState(teamDetails.eventName);
-    const [leader, setLeader] = useState(teamDetails.leader);
-    const [member1, setMember1] = useState(teamDetails.member1);
-    const [member2, setMember2] = useState(teamDetails.member2);
+    // const teamDetails = { teamName: "TeamName", eventName: "DEVBITS", leader: "Santosh", member1: "You", member2: "Unknown" };
+    const {authTokens, userDetails} = useContext(AuthContext)
+    const [teamName, setTeamName] = useState(null);
+    const [eventName, setEventName] = useState(null);
+    // const [leader, setLeader] = useState(teamDetails.leader);
+    const [member1, setMember1] = useState(null);
+    // const [member2, setMember2] = useState(teamDetails.member2);
 
     let navigate = useNavigate();
-    const routeChange = (route) => {
-        let path = `/dashboard`;
-        navigate(path);
+    const handleSubmit = async (route) => {
+        if(teamName && eventName && member1) {
+            const details = {
+                'team_name' : teamName,
+                'event_name' : eventName,
+                'member_email' : member1
+            }
+            // const params =(details);
+            try {
+                const res = await axios.get('https://api.eesiitbhu.co.in/udyam/teams/join', {params : details, headers : {
+                    "Authorization" : `Bearer ${authTokens.access}`
+                }})
+                console.log(res);
+                // console.log(`comparison ${res.status === 400}`)
+                if(res.status === 400) {
+                    toast.error("You have already registered in another team for the same event", {position : "bottom-right"})
+                } else {
+                    toast.success("ypu joined the team succesfully !", {
+                        position: "bottom-right"
+                    });
+                }  
+                
+                navigate('/dashboard/team');
+            } catch (err) {
+                console.error(err);
+                toast.error("you couldnt join the team !", {
+                    position: "bottom-right"
+                  });
+            }
+            // navigate('/dashboard');
+        } 
     }
+
+    let location = useLocation();
+
+    useEffect(() => {
+        const values = queryString.parse(location.search);
+        const team_name = values.team_name ? values.team_name : null;
+        const event_name = values.event_name ? values.event_name : null;
+        const member_email = values.member_email ? values.member_email : null;
+
+        setTeamName(team_name);
+        setEventName(event_name);
+        setMember1(member_email);
+        
+        if(userDetails && userDetails?.profile?.email != member_email) {
+            navigate('/dashboard');
+            // console.log(`comparison : ${userDetails.profile.email === member_email}`)
+        }
+
+    },[userDetails])
 
     return (
         <>
@@ -43,8 +96,8 @@ const EventRegistration = () => {
                     <li class="list-group-item">{member2}</li>
                 </ul> */}
                     <div class="btn-container-registration">
-                        <button class="btn-registration btn-success-registration btn-round-2-registration" onClick={() => routeChange()}>Accept</button>
-                        <button class="btn-registration btn-danger-registration btn-round-2-registration" onClick={() => routeChange()}>Deny</button>
+                        <button class="btn-registration btn-success-registration btn-round-2-registration" onClick={() => handleSubmit()}>Accept</button>
+                        <button class="btn-registration btn-danger-registration btn-round-2-registration" onClick={() => navigate('/dashboard')}>Deny</button>
                     </div>
                 </div>
             </div>

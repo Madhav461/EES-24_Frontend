@@ -144,7 +144,7 @@ const DashboardTeam = () => {
 
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong _team_delete!", {
+      toast.error("You cannot delete the team _team_delete!", {
         position: "bottom-right"
       });
     };

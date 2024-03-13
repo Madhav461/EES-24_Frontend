@@ -11,6 +11,16 @@ import Navhome2 from "./navhome";
 import Footer from "./Footer";
 
 const EventsUdyam = () => {
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+}, []);
 
   let navigate = useNavigate();
   const routeChange = (rute) => {
@@ -98,8 +108,16 @@ const EventsUdyam = () => {
         <div className="event-card-button-container">
         <EventsCard name="1" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            {/* <button onClick={() => routeChange("signup")}>PS</button>
+            <button onClick={() => routeChange("signup")}>Submit</button> */}
+
+                  <button
+                    class="apply-button" 
+                    data-hackathon-slug="devbits-24-hackathon" 
+                    data-button-theme="light"
+                    className=" h-[44px] w-[216px]"
+                  ></button>
+
           </div>
         </div>
         <div className="event-card-button-container">
