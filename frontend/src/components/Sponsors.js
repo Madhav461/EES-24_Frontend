@@ -42,6 +42,11 @@ const SponsorsFull = () => {
         "/sponsors-12.svg",
         "/sponsors-13.svg",
         "/sponsors-14.svg",
+        "/sponsors-15.svg",
+        "/sponsors-16.svg",
+        "/sponsors-17.svg",
+        "/sponsors-18.svg",
+
     ];
 
     const urlsFin = [...urlsInit];
@@ -89,7 +94,7 @@ const SponsorsFull = () => {
                         <div className="line1"></div>
                         <img
                             // src={url}
-                            src={"/sponsors-" + (14-ind)+ ".svg"}
+                            src={"/sponsors-" + (18-ind)+ ".svg"}
                             alt=""
                             className="icon"
                         />

@@ -23,8 +23,8 @@ const EventsUdyam = () => {
 }, []);
 
   let navigate = useNavigate();
-  const routeChange = (rute) => {
-    let path = `/events`;
+  const routeChange = (route) => {
+    let path = {route};
     navigate(path);
   }
 
@@ -108,8 +108,8 @@ const EventsUdyam = () => {
         <div className="event-card-button-container">
         <EventsCard name="1" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            {/* <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button> */}
+            {/* <button onClick={()=>{window.open('https://www.linkedin.com/in/mathangisri/?originalSubdomain=in%20','_blank')}}>PS</button>
+            <button onClick={()=>{window.open('https://www.linkedin.com/in/mathangisri/?originalSubdomain=in%20','_blank')}}>Submit</button> */}
 
                   <button
                     class="apply-button" 
@@ -123,50 +123,50 @@ const EventsUdyam = () => {
         <div className="event-card-button-container">
         <EventsCard name="2" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{window.open('https://www.kaggle.com/t/fa4288b5357b46a982eb2b374ce5fec3')}}>PS</button>
+            <button onClick={()=>{window.open('https://forms.gle/AkzXW7gijj1NTPWK9')}}>Submit</button>
           </div>
         </div>
         <div className="event-card-button-container">
         <EventsCard name="3" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{}}>PS</button>
+            <button onClick={()=>{}}>Submit</button>
           </div>
         </div>
         <div className="event-card-button-container">
         <EventsCard name="4" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{window.open('https://drive.google.com/file/d/1ezm1jAv_uVKavQaKxkKb3AUsWUQvC_2r/view?usp=sharing')}}>PS</button>
+            <button onClick={()=>{window.open('https://forms.gle/ZXy3AWA5FnkhgLdu6')}}>Submit</button>
           </div>
         </div>
         <div className="event-card-button-container">
         <EventsCard name="5" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{window.open('https://drive.google.com/file/d/1gHztkWIndfDc8ovryd2A1Rn4ZztmD8ma/view?usp=sharing')}}>PS</button>
+            <button onClick={()=>{window.open('https://docs.google.com/forms/d/e/1FAIpQLScVP4XEen5Sr3xo01IAaW4H8cpR7xk2Cy-L_ZtF5hAmB-wPcw/viewform?usp=sf_link')}}>Submit</button>
           </div>
         </div>
         <div className="event-card-button-container">
         <EventsCard name="6" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{window.open('https://drive.google.com/file/d/1GUFOtXkmieCIwqiK5cjuALk9ePJBxBo2/view?usp=sharing')}}>PS</button>
+            <button onClick={()=>{window.open('https://docs.google.com/forms/d/1Kpf5NgQjH7YFI1KHP5Xc4PlrmLTg3XXBYo5uKl6QKZs/edit')}}>Submit</button>
           </div>
         </div>
         <div className="event-card-button-container">
         <EventsCard name="7" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{window.open('https://drive.google.com/file/d/10y8VcAtckpVOp_KS7KQvdjNSLz9GOka0/view?usp=sharing')}}>PS</button>
+            <button onClick={()=>{window.open('https://forms.gle/mnBGPnVPvyUE1raj9')}}>Submit</button>
           </div>
         </div>
         <div className="event-card-button-container">
         <EventsCard name="8" eventNum={ClickedEvent} clicked={clicked} eventName={eventNames} eventInfo={eventInfo} eventImg={eventImages} eventDescription={eventDescriptions} eventTitle = {eventTitles}/>
           <div className="event-card-buttons">
-            <button onClick={() => routeChange("signup")}>PS</button>
-            <button onClick={() => routeChange("signup")}>Submit</button>
+            <button onClick={()=>{window.open('https://drive.google.com/file/d/1sbBhmPGgoatn0UM6CSUEDoMXQUygak7z/view?usp=sharing')}}>PS</button>
+            <button onClick={()=>{window.open('https://forms.gle/5C3WZ3PEbQstq8aTA')}}>Submit</button>
           </div>
         </div>
       </div>
