@@ -6,7 +6,8 @@ import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import axios from "axios";
 import queryString from 'query-string';
@@ -45,7 +46,7 @@ const DashboardTeam = () => {
   const [category, setCategory] = useState("");
   const [isActive, setIsActive] = useState(false);
   useEffect(() => {
-    if(userDetails) {
+    if (userDetails) {
       setName(userDetails?.profile?.name)
       setEmail(userDetails?.profile?.email)
       setCollege(userDetails?.profile?.college)
@@ -90,6 +91,9 @@ const DashboardTeam = () => {
 
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong !", {
+        position: "bottom-right"
+      });
     };
   }
 
@@ -101,10 +105,10 @@ const DashboardTeam = () => {
   useEffect(() => {
     console.log("Update team details")
     console.log({ teamDetails: teamDetails })
-    if(teamDetails&&teamDetails.length>0){
+    if (teamDetails && teamDetails.length > 0) {
       changeTeam(0);
     } else {
-      
+
     }
   }, [teamDetails])
 
@@ -133,10 +137,19 @@ const DashboardTeam = () => {
         }
       });
       console.log("response", response.data);
+      toast.success("team deleted successfully!", {
+        position: "bottom-right"
+      });
       // teamDetails.push(...(response.data));
       fillTeams()
     } catch (error) {
       console.log(error);
+      toast.error("team couldnt be deleted!", {
+        position: "bottom-right"
+      });
+      toast.info("Only team leader can delete a team!", {
+        position: "bottom-right"
+      });
     };
   }
 
@@ -178,23 +191,42 @@ const DashboardTeam = () => {
     }
   }
 
+  const [teamsIn, setTeamsIn] = useState([]);
+  useEffect(() => {
+    if (teamDetails && teamDetails.length) {
+      const updatedTeams = teamDetails.map((teamInfo) => {
+        return teamInfo.event_name
+      });
+      setTeamsIn(updatedTeams);
+    }
+  }, [teamDetails]);
+
   const handleEventSelectMobile = () => {
-    if (teamDetails && teamDetails.length > 0 && selectedOption) {
-      // console.log("handleEventSelect", selectedOption.value);
-      const ind = teamDetails.findIndex(x => x.event_name === selectedOption.value);
-      // if (ind === undefined) {
-      //   ind = 0;
+    console.log(teamsIn);
+    if (teamDetails && teamDetails.length && selectedOption && teamsIn && teamsIn.length) {
+      // const ind = teamDetails.findIndex(x => x.event_name === selectedOption.value);
+      // // if (ind === undefined) {
+      // //   ind = 0;
+      // // }
+      // console.log(ind);
+      // if (ind >= 0) {
+      //   changeTeam(ind);
+      //   setIsActive(true);
       // }
-      console.log(ind);
-      if (ind >= 0) {
-        changeTeam(ind);
+      // else {
+      //   setIsActive(false);
+      // }
+
+      if (teamsIn && teamsIn.length && teamsIn.includes(selectedOption?.value)) {
+        changeTeam(teamsIn.indexOf(selectedOption?.value));
+        console.log("ind", teamsIn.indexOf(selectedOption?.value));
         setIsActive(true);
       }
       else {
         setIsActive(false);
       }
     }
-    console.log("handleEventSelect", selectedOption.value);
+    console.log("handleEventSelect", selectedOption?.value);
   }
 
   // const [apiData, setApiData] = useState([]);  
@@ -232,11 +264,11 @@ const DashboardTeam = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const MyComponentOptions = () => (
     <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-        // onClick={updateSelectedOption}
-      />
+      defaultValue={selectedOption}
+      onChange={setSelectedOption}
+      options={options}
+    // onClick={updateSelectedOption}
+    />
   )
 
   const updateSelectedOption = () => {
@@ -247,7 +279,7 @@ const DashboardTeam = () => {
   }
 
   useEffect(() => {
-    if(selectedOption) {
+    if (userDetails && selectedOption && teamsIn && teamsIn.length) {
       handleEventSelectMobile();
     }
   }, [selectedOption]);
@@ -300,7 +332,7 @@ const DashboardTeam = () => {
                 alt=""
                 className="middlebutton w-[18.5%]"
               />
-              <Link to="/dashboard/registration"  className="w-[18%] mt-[3.5px]">
+              <Link to="/dashboard/registration" className="w-[18%] mt-[3.5px]">
                 <img
                   src="/leftbutton.svg"
                   alt=""
@@ -310,20 +342,20 @@ const DashboardTeam = () => {
             </div>
 
             <div>
-            <img
-              src="/dashboard_topelem.svg"
-              className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
-            ></img>
-            <div className="flex">
               <img
-                src="/dashboardblack.svg"
-                className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
-              />
-              <img
-                src="/dashboard_sideelem.svg"
-                className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+                src="/dashboard_topelem.svg"
+                className="dash-top-elem w-[16%] mb-[-10px] ml-[20px]"
               ></img>
-            </div>
+              <div className="flex">
+                <img
+                  src="/dashboardblack.svg"
+                  className="dashboard-background-image mt-[-16px] object-cover w-full h-full p-0"
+                />
+                <img
+                  src="/dashboard_sideelem.svg"
+                  className="dash-side-elem md:w-[14px] w-[40px] md:mb-[60px] mb-[20px] mt-[-60px] ml-[-15px]"
+                ></img>
+              </div>
             </div>
 
             <div className="y19    ">
@@ -1416,7 +1448,7 @@ const DashboardTeam = () => {
           />
         </div>
         {/* clipPath:'polygon(27%,36% 97.5%,36% 97.5%,94% 27%,94%)' , transform:'scale(0.15)',transform:'translateX(-50%)' , */}
-      {/* Parth */}
+        {/* Parth */}
         <div className="side_svgs leftsvgs absolute left-[4%] top-[7%] flex flex-col w-[3%] ">
           <img src="/Vector 384.svg" alt="img" className=" w-[100%]" />
           <img src="/Vector 387.svg" alt="img" className=" w-[100%]" />
@@ -1498,19 +1530,19 @@ const DashboardTeam = () => {
         </div>
 
         <div
-            className="dash_mb_buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
-            style={{ left: "50%", transform: "translateX(-50%)" }}
-          >
-            <Link to="/dashboard" className="h-[100%]">
-              <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
-            </Link>
+          className="dash_mb_buttons absolute flex flex-row justify-between w-[90vw] bottom-[10%] h-[12.5vw]"
+          style={{ left: "50%", transform: "translateX(-50%)" }}
+        >
+          <Link to="/dashboard" className="h-[100%]">
+            <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
+          </Link>
 
-            <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
-            
-            <Link to="/dashboard/registration" className="h-[100%]">
-              <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
-            </Link>
-          </div>
+          <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
+
+          <Link to="/dashboard/registration" className="h-[100%]">
+            <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
+          </Link>
+        </div>
 
         {/* Added by Santosh - Mobile view */}
         {/* <div
@@ -1533,36 +1565,49 @@ const DashboardTeam = () => {
             {/* <div className="dash_mb_Select_team_heading text-center">
               Select a Team
               </div> */}
-              <div className="teams-registered-dashboard-mb santosh-select-dashboard" onChange={handleEventSelectMobile} onClick={handleEventSelectMobile}>
-                {/* {teamsRegistered} */}
-                <MyComponentOptions />
-              </div>
+            <div className="teams-registered-dashboard-mb santosh-select-dashboard" onClick={handleEventSelectMobile}>
+              {/* {teamsRegistered} */}
+              <MyComponentOptions />
+            </div>
           </div>
 
           <div className="container-dashboard-mb">
-            <div className="name-dashboard-team-mb">
-              {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
-              {teamName}
-            </div>
-            <div className="p1-dashboard-team-mb">
-              {/* <div className="team-dashboard-members"> */}
-              <div className="team-dashboard-eventName-display">
-                {eventName}
-              </div>
-              <div className="team-dashboard-members-names">
-                <div>Leader</div>
-                <div>{leader}</div>
-              </div>
-              <div className="team-dashboard-members-names">
-                <div>Member 1</div>
-                <div>{member1}</div>
-              </div>
-              <div className="team-dashboard-members-names">
-                <div>Member 2</div>
-                <div>{member2}</div>
-              </div>
-              {/* </div> */}
-            </div>
+            {isActive &&
+              <>
+
+                <div className="name-dashboard-team-mb">
+                  {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
+                  {teamName}
+                  <img
+                    className="team-dashboard-icons team-dashboard-icons-mob"
+                    src="/dashboard-team-delete.svg"
+                    alt=""
+                    onClick={handleDelete}
+                  />
+                </div>
+                <div className="p1-dashboard-team-mb">
+                  {/* <div className="team-dashboard-members"> */}
+                  <div className="team-dashboard-eventName-display">
+                    {eventName}
+                  </div>
+                  <div className="team-dashboard-members-names">
+                    <div>Leader</div>
+                    <div>{leader}</div>
+                  </div>
+                  <div className="team-dashboard-members-names">
+                    <div>Member 1</div>
+                    <div>{member1}</div>
+                  </div>
+                  <div className="team-dashboard-members-names">
+                    <div>Member 2</div>
+                    <div>{member2}</div>
+                  </div>
+                  {/* </div> */}
+                </div>
+
+              </>
+            }
+
 
             {/* <div className="radinite-dashboard-mb">
                         <div>{radiniteScore}</div>
