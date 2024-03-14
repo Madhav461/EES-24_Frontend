@@ -6,17 +6,16 @@ import "./DashboardTeam.css";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { Link } from "react-router-dom";
-import {toast} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { useContext } from "react";
 import axios from "axios";
 import queryString from 'query-string';
 import { useLocation } from 'react-router-dom';
-import AuthContext, { axiosInstance } from "../context/AuthContext";
+import AuthContext from "../context/AuthContext";
 
 import "./DashboardRegistration.css";
-// import {toast} from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import Select from 'react-select';
+
 
 const DashboardTeam = () => {
   const { userDetails, authTokens, user } = useContext(AuthContext);
@@ -74,7 +73,7 @@ const DashboardTeam = () => {
 
   const fillTeams = async (route) => {
     try {
-      const response = await axiosInstance.get(`https://api.eesiitbhu.co.in/udyam/teams/`, {
+      const response = await axios.get(`https://api.eesiitbhu.co.in/udyam/teams/`, {
         headers: {
           "Authorization": `Bearer ${authTokens.access}`
         }
@@ -110,7 +109,7 @@ const DashboardTeam = () => {
   }, [teamDetails])
 
   const changeTeam = (id) => {
-    if (teamDetails) {
+    if (teamDetails && teamDetails.length > 0) {
       setTeamName(teamDetails[id].team_name);
       setEventName(teamDetails[id].event_name);
       setLeader(teamDetails[id].leader_email);
@@ -128,30 +127,21 @@ const DashboardTeam = () => {
     }
     const formData = queryString.stringify(details)
     try {
-      const response = await axiosInstance.post(`https://api.eesiitbhu.co.in/udyam/teams/delete/`, formData, {
+      const response = await axios.post(`https://api.eesiitbhu.co.in/udyam/teams/delete/`, formData, {
         headers: {
           "Authorization": `Bearer ${authTokens.access}`
         }
       });
       console.log("response", response.data);
       // teamDetails.push(...(response.data));
-      toast.success("Team deleted successfully!", {
-        position: "bottom-right"
-      });
-      // toast.info("To edit a team ")
       fillTeams()
-      
-
     } catch (error) {
       console.log(error);
-      toast.error("You cannot delete the team _team_delete!", {
-        position: "bottom-right"
-      });
     };
   }
 
-  // const teamsRegistered = [{ teamName: "Team1", eventName: "DEVBITS", leader: "L1", member1: "M11", member2: "M12" }];
-  // if(teamDetails.length > 0) {
+  // let teamsRegistered = [{ teamName: "Team1", eventName: "DEVBITS", leader: "L1", member1: "M11", member2: "M12" }];
+  // if(teamDetails && teamDetails.length > 0) {
   //   teamsRegistered = teamDetails.map((teamInfo, ind) => {
   //     return (
   //         <div className="team-name-dashboard" key={ind} onClick={() => changeTeam(ind)}>{teamInfo.teamName}</div>
@@ -188,6 +178,25 @@ const DashboardTeam = () => {
     }
   }
 
+  const handleEventSelectMobile = () => {
+    if (teamDetails && teamDetails.length > 0 && selectedOption) {
+      // console.log("handleEventSelect", selectedOption.value);
+      const ind = teamDetails.findIndex(x => x.event_name === selectedOption.value);
+      // if (ind === undefined) {
+      //   ind = 0;
+      // }
+      console.log(ind);
+      if (ind >= 0) {
+        changeTeam(ind);
+        setIsActive(true);
+      }
+      else {
+        setIsActive(false);
+      }
+    }
+    console.log("handleEventSelect", selectedOption.value);
+  }
+
   // const [apiData, setApiData] = useState([]);  
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -209,6 +218,39 @@ const DashboardTeam = () => {
   //   <ul className="team-name-dashboard" key={index} onClick={() => changeTeam(index)}>{item.team_name}</ul> 
   // ));
   // console.log("Rendering", teamsToRender);
+
+  const options = [
+    { value: 'devbits', label: 'DEVBITS' },
+    { value: 'cassandra', label: 'CASSANDRA' },
+    { value: 'mosaic', label: 'MOSAIC' },
+    { value: 'funckit', label: 'FUNCKIT' },
+    { value: 'digisim', label: 'DIGISIM' },
+    { value: 'ichip', label: 'I-CHIP' },
+    { value: 'xiota', label: 'X-IOTA' },
+    { value: 'commnet', label: 'COMMNET' },
+  ];
+  const [selectedOption, setSelectedOption] = useState(null);
+  const MyComponentOptions = () => (
+    <Select
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+        // onClick={updateSelectedOption}
+      />
+  )
+
+  const updateSelectedOption = () => {
+    setSelectedOption((state) => {
+      console.log(state);
+      return state;
+    })
+  }
+
+  useEffect(() => {
+    if(selectedOption) {
+      handleEventSelectMobile();
+    }
+  }, [selectedOption]);
 
 
   return (
@@ -1491,8 +1533,9 @@ const DashboardTeam = () => {
             {/* <div className="dash_mb_Select_team_heading text-center">
               Select a Team
               </div> */}
-              <div className="teams-registered-dashboard-mb">
-                {teamsRegistered}
+              <div className="teams-registered-dashboard-mb santosh-select-dashboard" onChange={handleEventSelectMobile} onClick={handleEventSelectMobile}>
+                {/* {teamsRegistered} */}
+                <MyComponentOptions />
               </div>
           </div>
 
