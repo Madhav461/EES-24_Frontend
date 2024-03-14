@@ -27,7 +27,7 @@ const DashboardTeam = () => {
   // const [teamName3, setTeamName3] = useState("My Team 3");
   const [eventName, setEventName] = useState("Devbits");
   const [leader, setLeader] = useState("Leader");
-  const [member1, setMember1] = useState("Member1");
+  const [member1, setMember1] = useState("undefined");
   const [member2, setMember2] = useState("Member2");
   // const [radiniteScore, setRadiniteScore] = useState(95);
   // const { number } = useSpring({
@@ -1387,22 +1387,27 @@ const DashboardTeam = () => {
             {isActive && (
               <>
                 <div className="team-dashboard-teamName-display">
-                  {teamName}
+                {teamName.length<=10?teamName:`${teamName.substring(0,9)}...`}
                 </div>
                 <div className="team-dashboard-eventName-display">
                   {eventName}
                 </div>
                 <div className="team-dashboard-members-names">
-                  <div className="team-dashboard-mem-type">Leader</div>
-                  <div className="team-dashboard-mem-details">{leader}</div>
+                  <div className="team-dashboard-mem-type ">Leader</div>
+                  {/* <div className="team-dashboard-mem-details">{leader.length <=25?leader:`${leader.substring(0,25)}`}</div> */}
+                  <div className="team-dashboard-memdetails ">{leader.length <=25?leader:`${leader.substring(0,22)}...`}</div>
                 </div>
                 <div className="team-dashboard-members-names">
-                  <div className="team-dashboard-mem-type">Member 1</div>
-                  <div className="team-dashboard-mem-details">{member1}</div>
+                  <div className="team-dashboard-mem-type ">Member 1</div>
+                  {/* <div className="team-dashboard-mem-details">{member1.length <=25?member1:`${member1.substring(0,25)}`}</div> */}
+                  <div className="team-dashboard-memdetails">{member1==null?member1:`${member1.substring(0,22)}...`}</div>
+
                 </div>
                 <div className="team-dashboard-members-names">
-                  <div className="team-dashboard-mem-type">Member 2</div>
-                  <div className="team-dashboard-mem-details">{member2}</div>
+                  <div className="team-dashboard-mem-type ">Member 2</div>
+                  {/* <div className="team-dashboard-mem-details">{member2.length <=30?member2:`${member2.substring(0,25)}`}</div> */}
+                  <div className="team-dashboard-memdetails">{member2==null?member2:`${member2.substring(0,22)}...`}</div>
+
                 </div>
                 <div className="team-dashboard-members-names">
                   <img
@@ -1577,7 +1582,8 @@ const DashboardTeam = () => {
 
                 <div className="name-dashboard-team-mb">
                   {/* <div className="team-dashboard-teamName-display">{teamName1}</div> */}
-                  {teamName}
+                  {/* {teamName} */}
+                  {teamName.length<=10?teamName:`${teamName.substring(0,9)}...`}
                   <img
                     className="team-dashboard-icons team-dashboard-icons-mob"
                     src="/dashboard-team-delete.svg"
@@ -1589,18 +1595,21 @@ const DashboardTeam = () => {
                   {/* <div className="team-dashboard-members"> */}
                   <div className="team-dashboard-eventName-display">
                     {eventName}
+                    {/* {eventName.length<=10?eventName:`${eventName.substring(0,9)}...`} */}
                   </div>
                   <div className="team-dashboard-members-names">
                     <div>Leader</div>
-                    <div>{leader}</div>
+                    {/* <div>{leader}</div> */}
+                    <div>{leader.length <=25?leader:`${leader.substring(0,20)}...`}</div>
+                    
                   </div>
                   <div className="team-dashboard-members-names">
                     <div>Member 1</div>
-                    <div>{member1}</div>
+                    <div>{member1==null?member1:`${member1.substring(0,20)}...`}</div>
                   </div>
                   <div className="team-dashboard-members-names">
                     <div>Member 2</div>
-                    <div>{member2}</div>
+                    <div>{member2==null?member2:`${member2.substring(0,20)}...`}</div>
                   </div>
                   {/* </div> */}
                 </div>
