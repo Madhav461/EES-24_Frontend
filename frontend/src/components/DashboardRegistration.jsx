@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import Navhome from "./navhome";
 import { useSpring, animated } from "react-spring";
 import "./dashboard.css";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./DashboardTeam.css";
@@ -12,7 +12,7 @@ import "./EventRegistration.css";
 import "./EventRegistrationMobile.css";
 import "./ForgotPassword.css";
 import "./DashboardRegistration.css";
-import {Link} from  "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import AuthContext, { axiosInstance } from "../context/AuthContext";
 import queryString from 'query-string';
@@ -21,8 +21,8 @@ import Select from 'react-select';
 
 
 const DashboardRegistration = () => {
-  
-  const { authTokens, userDetails } =useContext(AuthContext);
+
+  const { authTokens, userDetails } = useContext(AuthContext);
   const [name, setName] = useState("Abhinav");
   const [mobile, setMobile] = useState("123456789");
   const [email, setEmail] = useState("email@itbhu.ac.in");
@@ -37,9 +37,9 @@ const DashboardRegistration = () => {
   const [ichip, setichip] = useState(false);
   const [xiota, setxiota] = useState(false);
   const [commnet, setcommnet] = useState(false);
-  const [year,setYear]=useState('I');
+  const [year, setYear] = useState('I');
   useEffect(() => {
-    if(userDetails) {
+    if (userDetails) {
       setName(userDetails?.profile?.name)
       setEmail(userDetails?.profile?.email)
       setCollege(userDetails?.profile?.college)
@@ -55,26 +55,26 @@ const DashboardRegistration = () => {
 
   let navigate = useNavigate();
   const routeChange = (route) => {
-      let path = `/dashboard/resgistration`;
-      navigate(path);
+    let path = `/dashboard/resgistration`;
+    navigate(path);
   };
 
   const changeEvent = (id) => {
-      setEventName(eventNames[id]);
+    setEventName(eventNames[id]);
   };
   const handleMem1Change = (event) => {
-      setMember1(event.target.value);
+    setMember1(event.target.value);
   };
   const handleTeamChange = (event) => {
-      setTeamName(event.target.value);
+    setTeamName(event.target.value);
   };
 
   const eventNames = [
-      "DEVBITS", "MOSAIC", "CASSANDRA", "X-IOTA", "DIGISIM", "FUNCKIT", "COMMNET", "I-CHIP",
+    "DEVBITS", "MOSAIC", "CASSANDRA", "X-IOTA", "DIGISIM", "FUNCKIT", "COMMNET", "I-CHIP",
   ];
 
   const handleFormSubmit = (event) => {
-      event.preventDefault();
+    event.preventDefault();
   };
 
   const events = {
@@ -101,23 +101,24 @@ const DashboardRegistration = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const MyComponentOptions = () => (
     <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-        styles={{backgroundColor: 'blue', color: 'red'}}
-      />
+      defaultValue={selectedOption}
+      onChange={setSelectedOption}
+      options={options}
+      styles={{ backgroundColor: 'blue', color: 'red' }}
+    />
   )
 
   const [category, setCategory] = useState("");
-  const [teamName,setTeamName]=useState('')
-  const [leaderEmail,setLeaderEmail]=useState('')
-  const [memberEmail, setMemberEmail]= useState('')
+  const [teamName, setTeamName] = useState('')
+  const [leaderEmail, setLeaderEmail] = useState('')
+  const [memberEmail, setMemberEmail] = useState('')
 
-  const [teamsIn , setTeamsIn]= useState([]);
+  const [teamsIn, setTeamsIn] = useState([]);
   const [filteredTeamNames, setFilteredTeamNames] = useState([]);
+  const [teamsInNames, setTeamsInNames] = useState([]);
 
   useEffect(() => {
-    if(userDetails) {
+    if (userDetails) {
       setLeaderEmail(userDetails?.profile?.email)
       setLeader(userDetails?.profile?.email);
     }
@@ -132,15 +133,19 @@ const DashboardRegistration = () => {
       });
 
       console.log('Response:', response.data);
-      
+
       // const eventNames = response.data.map((item) => item.event_name);
       const eventNames = response.data.filter(item => item.leader_email === userDetails?.profile?.email);
       const eventNames2 = eventNames.map(item => item.event_name)
       setFilteredTeamNames(eventNames);
+
+      const teamNamesData = eventNames.map(item => item.team_name);
+      setTeamsInNames(teamNamesData);
       console.log('eventNames', eventNames);
       setTeamsIn(eventNames2);
       console.log('teamsin');
       console.log(eventNames2);
+      console.log(teamsIn);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -148,42 +153,44 @@ const DashboardRegistration = () => {
 
   useEffect(() => {
     getTeams();
-  },[userDetails]);
+  }, [userDetails]);
 
 
-  const handleInvite = async ()=>{
+  const handleInvite = async () => {
 
     const dataToSend = {
       'event_name': category,
       'team_name': teamName,
       'leader_email': leaderEmail,
-      'member_email':memberEmail
+      'member_email': memberEmail
 
     };
     const dataToSend2 = queryString.stringify(dataToSend)
 
     console.log(dataToSend);
 
-      try{
+    try {
 
-        const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/invite/', dataToSend2, {headers :{
-          "Authorization" :`Bearer ${authTokens.access}`
-        }});
+      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/invite/', dataToSend2, {
+        headers: {
+          "Authorization": `Bearer ${authTokens.access}`
+        }
+      });
 
-        console.log(response);
-        toast.success("Invite sent successfully!", {
-          position: "bottom-right"
-        });
+      console.log(response);
+      toast.success("Invite sent successfully!", {
+        position: "bottom-right"
+      });
 
-      }
-      catch(err) {
-        console.error(err)
-        toast.error("Something went wrong _registration!", {
-          position: "bottom-right"
-        });
-      }
+    }
+    catch (err) {
+      console.error(err)
+      toast.error("Something went wrong _registration!", {
+        position: "bottom-right"
+      });
+    }
   }
-  
+
   const handleRegister = async () => {
 
     const dataToSend = {
@@ -196,30 +203,32 @@ const DashboardRegistration = () => {
     console.log(dataToSend);
 
     try {
-      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
-        "Authorization" :`Bearer ${authTokens.access}`
-      }});
+      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {
+        headers: {
+          "Authorization": `Bearer ${authTokens.access}`
+        }
+      });
       console.log(dataToSend2);
       console.log('Response:', response.data);
       toast.success(" Team registed successfully!", {
         position: "bottom-right"
       });
-      toast.info("Add a member by thier regitsred mail id !",{
-        position:"bottom-right"
+      toast.info("Add a member by thier regitsred mail id !", {
+        position: "bottom-right"
       });
 
       getTeams()
 
-  } catch (error) {
+    } catch (error) {
       console.error('Error:', error);
       toast.error("Something went wrong while registering the team!", {
         position: "bottom-right"
       });
-      toast.info("Enter a team name to get regitsered!",{
-        position:"bottom-right"
+      toast.info("Enter a team name to get regitsered!", {
+        position: "bottom-right"
       });
-  }
-};
+    }
+  };
 
   const handleRegisterMobile = async () => {
 
@@ -232,22 +241,50 @@ const DashboardRegistration = () => {
     console.log(dataToSend);
 
     try {
-      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {headers :{
-        "Authorization" :`Bearer ${authTokens.access}`
-      }});
+      const response = await axiosInstance.post('https://api.eesiitbhu.co.in/udyam/teams/create/', dataToSend2, {
+        headers: {
+          "Authorization": `Bearer ${authTokens.access}`
+        }
+      });
       console.log(dataToSend2);
       console.log('Response:', response.data);
       toast.success(" Team registered successfully!", {
         position: "bottom-right"
       });
       getTeams()
-  } catch (error) {
+    } catch (error) {
       console.error('Error:', error);
       toast.error(" Something went wrong _registration!", {
         position: "bottom-right"
       });
+    }
+  };
+  const [activeInvite, setActiveInvite] = useState(false);
+  const showInvite = () => {
+    console.log("show invite", leader === userDetails?.profile?.email && teamsIn.includes(selectedOption?.value), selectedOption?.value);
+    if (teamsIn.length > 0 && leader === userDetails?.profile?.email && teamsIn.includes(selectedOption?.value)) {
+      setActiveInvite(true);
+      // setTeamName(teamsInNames[teamsIn.indexOf(selectedOption?.value)]);
+    } else {
+      setActiveInvite(false);
+    }
   }
-};
+  useEffect(() => {
+    if (userDetails) {
+      showInvite();
+      if (teamsIn.length > 0 && teamsIn.includes(selectedOption?.value)) {
+        const newTeamName = teamsInNames[teamsIn.indexOf(selectedOption?.value)]
+        setTeamName(newTeamName);
+        // const fuckUUpdate = () => {
+        //   setTeamName(newTeamName);
+        // }
+        // fuckUUpdate();
+      }
+      else {
+        setTeamName("");
+      }
+    }
+  }, [selectedOption]);
 
   const { number } = useSpring({
     from: { number: 0 },
@@ -339,7 +376,7 @@ const DashboardRegistration = () => {
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >{name.length <=30?name:`${name.substring(0,30)}`}</span>{" "}
+                >{name.length <= 30 ? name : `${name.substring(0, 30)}`}</span>{" "}
                 <span
                   type="email"
                   name="Email"
@@ -347,7 +384,7 @@ const DashboardRegistration = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
-                 {email && email.length <= 40 ? email : `${email?.substring(0,40)}...`}</span> 
+                  {email && email.length <= 40 ? email : `${email?.substring(0, 40)}...`}</span>
               </p>
               <p className="y49">
                 {/* <span
@@ -382,14 +419,13 @@ const DashboardRegistration = () => {
               {/* devbits */}
               <div
                 className="devbitsEventBtn   w-[50%] cursor-pointer"
-                onClick={() => 
-                  {
-                    setCategory("devbits") 
-                    if(teamsIn.includes("devbits")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "devbits")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "devbits")[0].team_name)
-                    }
+                onClick={() => {
+                  setCategory("devbits")
+                  if (teamsIn.includes("devbits")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "devbits")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "devbits")[0].team_name)
                   }
+                }
                 }
               >
                 {category !== "devbits" ? (
@@ -501,11 +537,11 @@ const DashboardRegistration = () => {
               <div
                 className="CassandraEventBtn  w-[50%] cursor-pointer"
                 onClick={() => {
-                  setCategory("cassandra") 
-                    if(teamsIn.includes("cassandra")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "cassandra")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "cassandra")[0].team_name)
-                    }
+                  setCategory("cassandra")
+                  if (teamsIn.includes("cassandra")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "cassandra")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "cassandra")[0].team_name)
+                  }
                 }}
               >
                 {category !== "cassandra" ? (
@@ -619,11 +655,11 @@ const DashboardRegistration = () => {
               <div
                 className="MosaicEventBtn w-[50%] cursor-pointer"
                 onClick={() => {
-                  setCategory("mosaic") 
-                    if(teamsIn.includes("mosaic")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "mosaic")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "mosaic")[0].team_name)
-                    }
+                  setCategory("mosaic")
+                  if (teamsIn.includes("mosaic")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "mosaic")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "mosaic")[0].team_name)
+                  }
                 }}
               >
                 {category !== "mosaic" ? (
@@ -737,11 +773,11 @@ const DashboardRegistration = () => {
               <div
                 className="FunckitEventBtn  w-[50%] cursor-pointer"
                 onClick={() => {
-                  setCategory("funckit") 
-                    if(teamsIn.includes("funckit")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "funckit")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "funckit")[0].team_name)
-                    }
+                  setCategory("funckit")
+                  if (teamsIn.includes("funckit")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "funckit")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "funckit")[0].team_name)
+                  }
                 }}
               >
                 {category !== "funckit" ? (
@@ -854,11 +890,11 @@ const DashboardRegistration = () => {
               <div
                 className="DigisimEventBtn w-[50%]  cursor-pointer"
                 onClick={() => {
-                  setCategory("digisim") 
-                    if(teamsIn.includes("digisim")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "digisim")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "digisim")[0].team_name)
-                    }
+                  setCategory("digisim")
+                  if (teamsIn.includes("digisim")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "digisim")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "digisim")[0].team_name)
+                  }
                 }}
               >
                 {category !== "digisim" ? (
@@ -970,11 +1006,11 @@ const DashboardRegistration = () => {
               <div
                 className="IchipEventBtn  w-[50%] cursor-pointer"
                 onClick={() => {
-                  setCategory("ichip") 
-                    if(teamsIn.includes("ichip")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "ichip")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "ichip")[0].team_name)
-                    }
+                  setCategory("ichip")
+                  if (teamsIn.includes("ichip")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "ichip")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "ichip")[0].team_name)
+                  }
                 }}
               >
                 {category !== "ichip" ? (
@@ -1086,11 +1122,11 @@ const DashboardRegistration = () => {
               <div
                 className="XiotaEventBtn w-[50%] cursor-pointer"
                 onClick={() => {
-                  setCategory("xiota") 
-                    if(teamsIn.includes("xiota")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "xiota")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "xiota")[0].team_name)
-                    }
+                  setCategory("xiota")
+                  if (teamsIn.includes("xiota")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "xiota")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "xiota")[0].team_name)
+                  }
                 }}
               >
                 {category !== "xiota" ? (
@@ -1204,11 +1240,11 @@ const DashboardRegistration = () => {
               <div
                 className="CommnetEventBtn w-[50%] cursor-pointer"
                 onClick={() => {
-                  setCategory("commnet") 
-                    if(teamsIn.includes("commnet")) {
-                      setTeamName(filteredTeamNames.filter(items => items.event_name === "commnet")[0].team_name)
-                      console.log(filteredTeamNames.filter(items => items.event_name === "commnet")[0].team_name)
-                    }
+                  setCategory("commnet")
+                  if (teamsIn.includes("commnet")) {
+                    setTeamName(filteredTeamNames.filter(items => items.event_name === "commnet")[0].team_name)
+                    console.log(filteredTeamNames.filter(items => items.event_name === "commnet")[0].team_name)
+                  }
                 }}
               >
                 {category !== "commnet" ? (
@@ -1324,7 +1360,7 @@ const DashboardRegistration = () => {
                 </div>
               ) : (
                 <div className=" flex flex-col justify-around absolute w-[100%] h-[60%] ">
-                {  teamsIn.includes(category) ? <input
+                  {teamsIn.includes(category) ? <input
                     className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
                     type="text"
                     placeholder={filteredTeamNames.filter(item => item.event_name === category)[0]?.team_name}
@@ -1340,97 +1376,97 @@ const DashboardRegistration = () => {
                     }}
                     disabled
                   /> :
-                  <input
-                    className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                    type="text"
-                    placeholder="Enter team name "
-                    onChange={(e) => {
-                      
-                      setTeamName(e.target.value)
-                      
-                    }}
+                    <input
+                      className="w-[85%]  placeholder:text-[1vw]  h-[10%] px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                      type="text"
+                      placeholder="Enter team name "
+                      onChange={(e) => {
 
-                    style={{
-                      fontFamily: "Goldman",
-                      fontSize: "1vw",
-                      fontStyle: "normal",
-                      fontWeight: 400,
-                      lineHeight: "normal",
-                      letterSpacing: "1.2px",
-                      borderBottom: "1px solid #FFF",
-                    }}
-                  />
-                }
+                        setTeamName(e.target.value)
+
+                      }}
+
+                      style={{
+                        fontFamily: "Goldman",
+                        fontSize: "1vw",
+                        fontStyle: "normal",
+                        fontWeight: 400,
+                        lineHeight: "normal",
+                        letterSpacing: "1.2px",
+                        borderBottom: "1px solid #FFF",
+                      }}
+                    />
+                  }
                   <div className="   flex flex-col   w-[100%]">
                     <div className="  flex  justify-evenly ">
                       <p className=" dashboardtext  "> Leader  </p>
-               
 
 
-                         <p className=" dashboardtext ">{leaderEmail} </p>
 
-                      
+                      <p className=" dashboardtext ">{leaderEmail} </p>
+
+
                     </div>
                   </div>
 
-                    {
-                        teamsIn.includes(category)  ? 
-                       (  <div className=" flex justify-evenly ">
-                       <p className=" dashboardtext   translate-y-[35%] "> Add Member Email  </p>
-               
- 
- 
-                          <input
-                         className="w-[50%] h-[80%]   px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
-                         type="text"
-                         placeholder="Enter email "
-                         onChange={(e) => {
-                      
-                          setMemberEmail(e.target.value)
-                          
-                        }}
-                         style={{
-                           fontFamily: "Goldman",
-                           fontSize: "1vw",
-                           fontStyle: "normal",
-                           fontWeight: 400,
-                           lineHeight: "normal",
-                           letterSpacing: "1.2px",
-                           
- 
-                         }}
-                       />
-                       
-                     </div>
-                        ):(
-                        <div></div>
-                        ) 
-                    }      
-                  
-                    
+                  {
+                    teamsIn.includes(category) ?
+                      (<div className=" flex justify-evenly ">
+                        <p className=" dashboardtext   translate-y-[35%] "> Add Member Email  </p>
 
-                 <div className=" w-[100%] h-[20%]  flex   translate-y-[50%] gap-2  justify-center" >
-                    <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={()=>{
+
+
+                        <input
+                          className="w-[50%] h-[80%]   px-4 py-2 mb-2 text-white bg-transparent white-placeholder "
+                          type="text"
+                          placeholder="Enter email "
+                          onChange={(e) => {
+
+                            setMemberEmail(e.target.value)
+
+                          }}
+                          style={{
+                            fontFamily: "Goldman",
+                            fontSize: "1vw",
+                            fontStyle: "normal",
+                            fontWeight: 400,
+                            lineHeight: "normal",
+                            letterSpacing: "1.2px",
+
+
+                          }}
+                        />
+
+                      </div>
+                      ) : (
+                        <div></div>
+                      )
+                  }
+
+
+
+                  <div className=" w-[100%] h-[20%]  flex   translate-y-[50%] gap-2  justify-center" >
+                    <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={() => {
                       setCategory("");
                       routeChange();
                     }}>
                       Cancel
                     </button>
 
-                    <button 
-                    onClick={handleRegister}
-                    className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
-                       Register
+                    <button
+                      onClick={handleRegister}
+                      className="w-[20%] buttontext rounded-md  text-[2vw] h-[80%]">
+                      Register
                     </button>
 
-                    <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={()=>{
+                    <button className="w-[20%] buttontext rounded-md h-[80%]" onClick={() => {
                       handleInvite();
                     }}>
                       Invite
                     </button>
-                    </div>
+                  </div>
 
-      
+
                 </div>
               )}
             </div>
@@ -1440,7 +1476,7 @@ const DashboardRegistration = () => {
         {/* </santosh> */}
 
 
-      {/* Parth - upper Title box and svg  */}
+        {/* Parth - upper Title box and svg  */}
 
         <div
           className="title_container absolute flex "
@@ -1518,7 +1554,7 @@ const DashboardRegistration = () => {
             <h3 class="information-text-fp-success" id="fp-success">
               Your team has been successfully registered.
             </h3>
-            <div className="event-registration-dropdown santosh-select-dashboard" onChange={() => console.log(selectedOption.value)}>
+            <div className="event-registration-dropdown santosh-select-dashboard" onChange={() => console.log(selectedOption?.value)}>
               {/* <select class="select-css-event" onChange={(e) => {console.log()}} value={eventName}> */}
               {/* <select class="select-css-event" onChange={console.log(category)}>
                 <option key={0} value="devbits"  onClick={()=> setCategory("devbits")}>
@@ -1550,7 +1586,7 @@ const DashboardRegistration = () => {
             </div>
             <div className="event-registration-leader">
               <span>Leader</span>
-              <span>{leader && leader.length <= 22 ? leader : `${leader?.substring(0,22)}...`}</span>
+              <span>{leader && leader.length <= 22 ? leader : `${leader?.substring(0, 22)}...`}</span>
             </div>
             <div class="form-group-fp">
               <input
@@ -1564,23 +1600,31 @@ const DashboardRegistration = () => {
               <p>
                 <label for="team_name">Team Name</label>
               </p>
-              <input
-                type="email"
-                name="mem1_email"
-                id="mem1_email"
-                className="input"
-                value={member1}
-                onChange={handleMem1Change}
-              />
-              <p>
-                <label for="mem1_email">Add a Member</label>
-              </p>
-              <button  onClick={handleRegisterMobile}>
+              {activeInvite &&
+                <>
+                  <input
+                    type="email"
+                    name="mem1_email"
+                    id="mem1_email"
+                    className="input"
+                    value={member1}
+                    onChange={handleMem1Change}
+                  />
+                  <p>
+                    <label for="mem1_email">Add a Member</label>
+                  </p>
+                </>
+              }
+
+              <button onClick={handleRegisterMobile}>
                 Register
               </button>
-              <button onClick={ handleInvite}>
-                Invite
-              </button>
+              {activeInvite &&
+                <button onClick={handleInvite}>
+                  Invite
+                </button>
+              }
+
               {/* <button onClick={}>
                 Cancel
               </button> */}
@@ -1590,14 +1634,14 @@ const DashboardRegistration = () => {
         <div
           className="dash_mb_buttons  flex flex-row justify-between w-[90vw] mb-[20px] mt-[-20px] h-[12.5vw]">
           <Link to="/dashboard/team" className="h-[100%]">
-              <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
-            </Link>
+            <img src="/Vector 390.svg" alt="img" className=" h-[100%]" />
+          </Link>
 
-            <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
-            
-            <Link to="/dashboard" className="h-[100%]">
-              <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
-            </Link>
+          <img src="/Vector 391.svg" alt="img" className=" h-[100%]" />
+
+          <Link to="/dashboard" className="h-[100%]">
+            <img src="/Vector 402.svg" alt="img" className=" h-[100%]" />
+          </Link>
         </div>
       </div>
       {/* Mobile view ends here -Santosh*/}
@@ -1605,19 +1649,4 @@ const DashboardRegistration = () => {
   );
 };
 export default DashboardRegistration;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
