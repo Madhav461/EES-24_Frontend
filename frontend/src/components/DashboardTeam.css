@@ -95,6 +95,12 @@
     font-size: 26px;
     font-weight: 400;
     letter-spacing: 2.325px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-dashboard-icons-mob {
+    padding-right: 5%;
 }
 
 .teams-registered-dashboard {
