@@ -32,6 +32,7 @@ import ResetPassword from "./components/ResetPassword.jsx";
 import { AuthProvider } from './context/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import PrivateRoutes from './utils/PrivateRoute.js'
 
 
 function App() {
@@ -52,12 +53,11 @@ function App() {
             {/* <Route exact path="/toast" element ={<Toasty/>}></Route> */}
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/gsignup" element={<Gsignup />} />
+            
             <Route exact path="/otp" element={<OtpVerification />} />
             <Route exact path="/forgotpassword" element={<ForgotPassword />} />
             <Route exact path="/resetpassword" element={<ResetPassword />} />
-            <Route exact path="/dashboard/team" element={<DashboardTeam />} />
-            <Route exact path="/dashboard" element={<EditDashboard />} />
+            
             <Route exact path="/events" element={<EventsHome />} />
             <Route exact path="/gallery" element={<Gallery />} />
             {/* <Route exact path="/editdash" element={<EditDashboard />} /> */}
@@ -65,7 +65,7 @@ function App() {
             <Route exact path="/events/udyam" element={<EventsUdyam />} />
             <Route exact path="/events/udgam" element={<EventsUdgam />} />
             <Route exact path="/events/mashal" element={<EventsMashal />} />
-            <Route exact path="/invite" element={<EventRegistration />} />
+            
             
             {/* <Route exact path="/events" element={<Events />} />  */}
             <Route exact path="/teams" element={<TEAMS_EXTERNAL />} />
@@ -76,7 +76,13 @@ function App() {
             <Route exact path="/teams/content_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/design_team" element={<TeamsIndividual />} />
             <Route exact path="/teams/publicity_team" element={<TeamsIndividual />} />
-            <Route exact path="/dashboard/registration" element={<DashboardRegistration />} />
+            <Route element={<PrivateRoutes />}>
+              <Route exact path="/dashboard/registration" element={<DashboardRegistration />} />
+              <Route exact path="/dashboard/team" element={<DashboardTeam />} />
+              <Route exact path="/dashboard" element={<EditDashboard />} />
+              <Route exact path="/gsignup" element={<Gsignup />} />
+              <Route exact path="/invite" element={<EventRegistration />} />
+            </Route>
 
 
           </Routes>

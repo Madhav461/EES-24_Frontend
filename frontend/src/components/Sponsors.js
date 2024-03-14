@@ -95,7 +95,7 @@ const SponsorsFull = () => {
                         <img
                             // src={url}
                             src={"/sponsors-" + (18-ind)+ ".svg"}
-                            alt=""
+                            alt="DEVFOLIO LOGO"
                             className="icon"
                         />
                         <div className="line2"></div>

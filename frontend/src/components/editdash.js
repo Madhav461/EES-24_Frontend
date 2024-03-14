@@ -161,7 +161,7 @@ const EditDashboard = () => {
                   placeholder="NAME"
                   value={name}
                   disabled="true"
-                >{name.length <=30?name:`${name.substring(0,30)}`}</span>{" "}
+                >{name.length <=30?name:`${name.substring(0,25)}`}</span>{" "}
                 <span
                   type="email"
                   name="Email"
@@ -169,7 +169,7 @@ const EditDashboard = () => {
                   placeholder="email@itbhu.ac.in"
                   value={email}
                   disabled="true">
-                 {email && email.length <= 40 ? email : `${email?.substring(0,40)}...`}</span> 
+                 {email && email.length <= 40 ? email : `${email?.substring(0,25)}...`}</span> 
               </p>
               <p className="y49">
                 {/* <span
