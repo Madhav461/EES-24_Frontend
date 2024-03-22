@@ -116,7 +116,8 @@ const EventsUdyam = () => {
                     data-hackathon-slug="devbits-24-hackathon" 
                     data-button-theme="light"
                     className=" h-[44px] w-[216px]"
-                  ></button>
+                    onClick={()=>window.open('https://devbits-24-hackathon.devfolio.co/')}
+                  >PS</button>
 
           </div>
         </div>
